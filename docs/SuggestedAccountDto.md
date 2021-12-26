@@ -1,4 +1,4 @@
-# OpenapiClient::SuggestedAccountDto
+# MyDataMyConsent::SuggestedAccountDto
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::SuggestedAccountDto.new(
+instance = MyDataMyConsent::SuggestedAccountDto.new(
   issuer_id: null,
   account_id: null,
   issuer_name: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::FilterType
+# MyDataMyConsent::FilterType
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::FilterType.new()
+instance = MyDataMyConsent::FilterType.new()
 ```
 

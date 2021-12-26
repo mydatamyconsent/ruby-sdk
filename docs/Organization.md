@@ -1,4 +1,4 @@
-# OpenapiClient::Organization
+# MyDataMyConsent::Organization
 
 ## Properties
 
@@ -23,6 +23,7 @@
 | **brand_name** | **String** |  | [optional] |
 | **authorized_personnel_tax_id** | **String** |  | [optional] |
 | **authorized_personnel_name** | **String** |  | [optional] |
+| **authorized_personnel_kyc_document_type** | [**AuthorizedPersonnelKycDocumentType**](AuthorizedPersonnelKycDocumentType.md) |  | [optional] |
 | **registration_id** | **String** |  | [optional] |
 | **vat_id** | **String** |  | [optional] |
 | **tax_id** | **String** |  | [optional] |
@@ -37,6 +38,8 @@
 | **privacy_policy_url** | **String** |  | [optional] |
 | **terms_of_service_url** | **String** |  | [optional] |
 | **website_url** | **String** |  | [optional] |
+| **help_line_number** | **String** |  | [optional] |
+| **support_email** | **String** |  | [optional] |
 | **is_government_organization** | **Boolean** |  | [optional] |
 | **dl_api_key** | **String** |  | [optional] |
 | **is_kyo_completed** | **Boolean** |  | [optional] |
@@ -65,9 +68,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::Organization.new(
+instance = MyDataMyConsent::Organization.new(
   created_by: null,
   created_at_utc: null,
   updated_by: null,
@@ -87,6 +90,7 @@ instance = OpenapiClient::Organization.new(
   brand_name: null,
   authorized_personnel_tax_id: null,
   authorized_personnel_name: null,
+  authorized_personnel_kyc_document_type: null,
   registration_id: null,
   vat_id: null,
   tax_id: null,
@@ -101,6 +105,8 @@ instance = OpenapiClient::Organization.new(
   privacy_policy_url: null,
   terms_of_service_url: null,
   website_url: null,
+  help_line_number: null,
+  support_email: null,
   is_government_organization: null,
   dl_api_key: null,
   is_kyo_completed: null,

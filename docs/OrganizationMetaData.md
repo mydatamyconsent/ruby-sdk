@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationMetaData
+# MyDataMyConsent::OrganizationMetaData
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::OrganizationMetaData.new(
+instance = MyDataMyConsent::OrganizationMetaData.new(
   digi_locker_metadata: null
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::Gender
+# MyDataMyConsent::Gender
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::Gender.new()
+instance = MyDataMyConsent::Gender.new()
 ```
 

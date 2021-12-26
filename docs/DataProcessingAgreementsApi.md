@@ -1,4 +1,4 @@
-# OpenapiClient::DataProcessingAgreementsApi
+# MyDataMyConsent::DataProcessingAgreementsApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,9 +22,9 @@ Get all data processing agreements.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataProcessingAgreementsApi.new
+api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 opts = {
   page_no: 56, # Integer | Page number.
   page_size: 56 # Integer | Number of items to return.
@@ -34,7 +34,7 @@ begin
   # Get all data processing agreements.
   result = api_instance.v1_data_agreements_get(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_get: #{e}"
 end
 ```
@@ -52,7 +52,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DataProcessingAgreementPaginatedList>
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_get_with_http_info: #{e}"
 end
 ```
@@ -88,15 +88,15 @@ Delete a data processing agreement. This will not delete a published or a agreem
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataProcessingAgreementsApi.new
+api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 id = TODO # String | 
 
 begin
   # Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
   api_instance.v1_data_agreements_id_delete(id)
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_delete: #{e}"
 end
 ```
@@ -114,7 +114,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_delete_with_http_info: #{e}"
 end
 ```
@@ -149,16 +149,16 @@ Get data processing agreement by Id.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataProcessingAgreementsApi.new
+api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 id = TODO # String | 
 
 begin
   # Get data processing agreement by Id.
   result = api_instance.v1_data_agreements_id_get(id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_get: #{e}"
 end
 ```
@@ -176,7 +176,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DataProcessingAgreement>
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_get_with_http_info: #{e}"
 end
 ```
@@ -211,19 +211,19 @@ Update a data processing agreement.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataProcessingAgreementsApi.new
+api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 id = TODO # String | 
 opts = {
-  data_processing_agreement: OpenapiClient::DataProcessingAgreement.new # DataProcessingAgreement | 
+  data_processing_agreement: MyDataMyConsent::DataProcessingAgreement.new # DataProcessingAgreement | 
 }
 
 begin
   # Update a data processing agreement.
   result = api_instance.v1_data_agreements_id_put(id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_put: #{e}"
 end
 ```
@@ -241,7 +241,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DataProcessingAgreement>
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_put_with_http_info: #{e}"
 end
 ```
@@ -277,15 +277,15 @@ Terminate a data processing agreement.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataProcessingAgreementsApi.new
+api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 id = TODO # String | 
 
 begin
   # Terminate a data processing agreement.
   api_instance.v1_data_agreements_id_terminate_put(id)
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_terminate_put: #{e}"
 end
 ```
@@ -303,7 +303,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_terminate_put_with_http_info: #{e}"
 end
 ```
@@ -338,18 +338,18 @@ Create a data processing agreement.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataProcessingAgreementsApi.new
+api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 opts = {
-  data_processing_agreement: OpenapiClient::DataProcessingAgreement.new # DataProcessingAgreement | 
+  data_processing_agreement: MyDataMyConsent::DataProcessingAgreement.new # DataProcessingAgreement | 
 }
 
 begin
   # Create a data processing agreement.
   result = api_instance.v1_data_agreements_post(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_post: #{e}"
 end
 ```
@@ -367,7 +367,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DataProcessingAgreement>
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_post_with_http_info: #{e}"
 end
 ```

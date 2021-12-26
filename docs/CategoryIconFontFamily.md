@@ -1,4 +1,4 @@
-# OpenapiClient::CategoryIconFontFamily
+# MyDataMyConsent::CategoryIconFontFamily
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::CategoryIconFontFamily.new()
+instance = MyDataMyConsent::CategoryIconFontFamily.new()
 ```
 

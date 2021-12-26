@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationCategory
+# MyDataMyConsent::OrganizationCategory
 
 ## Properties
 
@@ -21,9 +21,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::OrganizationCategory.new(
+instance = MyDataMyConsent::OrganizationCategory.new(
   created_by: null,
   created_at_utc: null,
   updated_by: null,

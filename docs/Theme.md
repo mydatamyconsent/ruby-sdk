@@ -1,4 +1,4 @@
-# OpenapiClient::Theme
+# MyDataMyConsent::Theme
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::Theme.new()
+instance = MyDataMyConsent::Theme.new()
 ```
 

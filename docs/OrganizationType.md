@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationType
+# MyDataMyConsent::OrganizationType
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::OrganizationType.new(
+instance = MyDataMyConsent::OrganizationType.new(
   id: null,
   country_id: null,
   type_name: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::DataProtectionOfficer
+# MyDataMyConsent::DataProtectionOfficer
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DataProtectionOfficer.new(
+instance = MyDataMyConsent::DataProtectionOfficer.new(
   name: null,
   email: null,
   phone_number: null,

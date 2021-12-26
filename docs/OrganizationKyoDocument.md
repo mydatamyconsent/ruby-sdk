@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationKyoDocument
+# MyDataMyConsent::OrganizationKyoDocument
 
 ## Properties
 
@@ -21,9 +21,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::OrganizationKyoDocument.new(
+instance = MyDataMyConsent::OrganizationKyoDocument.new(
   id: null,
   organization_id: null,
   document_name: null,

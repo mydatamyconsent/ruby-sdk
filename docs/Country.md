@@ -1,4 +1,4 @@
-# OpenapiClient::Country
+# MyDataMyConsent::Country
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::Country.new(
+instance = MyDataMyConsent::Country.new(
   id: null,
   name: null,
   iso3: null,

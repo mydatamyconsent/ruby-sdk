@@ -1,4 +1,4 @@
-# OpenapiClient::IdentifierStringKeyValuePair
+# MyDataMyConsent::IdentifierStringKeyValuePair
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::IdentifierStringKeyValuePair.new(
+instance = MyDataMyConsent::IdentifierStringKeyValuePair.new(
   key: null,
   value: null
 )

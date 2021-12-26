@@ -1,4 +1,4 @@
-# OpenapiClient::UriDetails
+# MyDataMyConsent::UriDetails
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::UriDetails.new(
+instance = MyDataMyConsent::UriDetails.new(
   aadhaar: null,
   uri: null,
   doc_type: null,

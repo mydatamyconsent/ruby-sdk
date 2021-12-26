@@ -1,4 +1,4 @@
-# OpenapiClient::ProofDocumentType
+# MyDataMyConsent::ProofDocumentType
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::ProofDocumentType.new()
+instance = MyDataMyConsent::ProofDocumentType.new()
 ```
 

@@ -1,4 +1,4 @@
-# OpenapiClient::DigiLockerCompatIssuerApi
+# MyDataMyConsent::DigiLockerCompatIssuerApi
 
 All URIs are relative to *http://localhost*
 
@@ -17,18 +17,18 @@ Digilocker Compatible endpoint to Issue Documents.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DigiLockerCompatIssuerApi.new
+api_instance = MyDataMyConsent::DigiLockerCompatIssuerApi.new
 opts = {
-  push_uri_request: OpenapiClient::PushUriRequest.new # PushUriRequest | 
+  push_uri_request: MyDataMyConsent::PushUriRequest.new # PushUriRequest | 
 }
 
 begin
   # Digilocker Compatible endpoint to Issue Documents.
   result = api_instance.issuer_issuedoc1_xml_post(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DigiLockerCompatIssuerApi->issuer_issuedoc1_xml_post: #{e}"
 end
 ```
@@ -46,7 +46,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PushUriResponse>
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DigiLockerCompatIssuerApi->issuer_issuedoc1_xml_post_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::DataProcessingAgreement
+# MyDataMyConsent::DataProcessingAgreement
 
 ## Properties
 
@@ -23,9 +23,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DataProcessingAgreement.new(
+instance = MyDataMyConsent::DataProcessingAgreement.new(
   created_by: null,
   created_at_utc: null,
   updated_by: null,

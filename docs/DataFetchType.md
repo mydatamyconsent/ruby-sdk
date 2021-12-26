@@ -1,4 +1,4 @@
-# OpenapiClient::DataFetchType
+# MyDataMyConsent::DataFetchType
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DataFetchType.new()
+instance = MyDataMyConsent::DataFetchType.new()
 ```
 

@@ -1,4 +1,4 @@
-# OpenapiClient::DataProviderDiscoveryApi
+# MyDataMyConsent::DataProviderDiscoveryApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,9 +20,9 @@ Discover all data providers in My Data My Consent by country and filters.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataProviderDiscoveryApi.new
+api_instance = MyDataMyConsent::DataProviderDiscoveryApi.new
 opts = {
   account_type: 'account_type_example', # String | Account type.
   document_type: 'document_type_example', # String | Document type.
@@ -36,7 +36,7 @@ begin
   # Discover all data providers in My Data My Consent by country and filters.
   result = api_instance.v1_data_providers_get(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProviderDiscoveryApi->v1_data_providers_get: #{e}"
 end
 ```
@@ -54,7 +54,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DataProviderPaginatedList>
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProviderDiscoveryApi->v1_data_providers_get_with_http_info: #{e}"
 end
 ```
@@ -96,16 +96,16 @@ Get a Data Provider details.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataProviderDiscoveryApi.new
+api_instance = MyDataMyConsent::DataProviderDiscoveryApi.new
 provider_id = 'provider_id_example' # String | Provider Id.
 
 begin
   # Get a Data Provider details.
   result = api_instance.v1_data_providers_provider_id_get(provider_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProviderDiscoveryApi->v1_data_providers_provider_id_get: #{e}"
 end
 ```
@@ -123,7 +123,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DataProvider>
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProviderDiscoveryApi->v1_data_providers_provider_id_get_with_http_info: #{e}"
 end
 ```

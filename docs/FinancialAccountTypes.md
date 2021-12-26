@@ -1,4 +1,4 @@
-# OpenapiClient::FinancialAccountTypes
+# MyDataMyConsent::FinancialAccountTypes
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::FinancialAccountTypes.new()
+instance = MyDataMyConsent::FinancialAccountTypes.new()
 ```
 

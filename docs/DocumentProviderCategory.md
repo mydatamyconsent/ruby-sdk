@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentProviderCategory
+# MyDataMyConsent::DocumentProviderCategory
 
 ## Properties
 
@@ -22,9 +22,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DocumentProviderCategory.new(
+instance = MyDataMyConsent::DocumentProviderCategory.new(
   created_by: null,
   created_at_utc: null,
   updated_by: null,

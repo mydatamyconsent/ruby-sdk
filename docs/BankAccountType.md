@@ -1,4 +1,4 @@
-# OpenapiClient::BankAccountType
+# MyDataMyConsent::BankAccountType
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::BankAccountType.new()
+instance = MyDataMyConsent::BankAccountType.new()
 ```
 

@@ -1,4 +1,4 @@
-# OpenapiClient::RefreshToken
+# MyDataMyConsent::RefreshToken
 
 ## Properties
 
@@ -29,9 +29,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::RefreshToken.new(
+instance = MyDataMyConsent::RefreshToken.new(
   created_by: null,
   created_at_utc: null,
   updated_by: null,

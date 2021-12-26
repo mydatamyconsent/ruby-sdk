@@ -1,4 +1,4 @@
-# OpenapiClient::ProblemDetails
+# MyDataMyConsent::ProblemDetails
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::ProblemDetails.new(
+instance = MyDataMyConsent::ProblemDetails.new(
   type: null,
   title: null,
   status: null,

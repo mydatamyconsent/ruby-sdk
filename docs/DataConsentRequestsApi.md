@@ -1,4 +1,4 @@
-# OpenapiClient::DataConsentRequestsApi
+# MyDataMyConsent::DataConsentRequestsApi
 
 All URIs are relative to *http://localhost*
 
@@ -22,15 +22,15 @@ Cancel a Consent Request by ID.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentRequestsApi.new
+api_instance = MyDataMyConsent::DataConsentRequestsApi.new
 request_id = TODO # String | consent request id.
 
 begin
   # Cancel a Consent Request by ID.
   api_instance.cancel_consent_request(request_id)
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->cancel_consent_request: #{e}"
 end
 ```
@@ -48,7 +48,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->cancel_consent_request_with_http_info: #{e}"
 end
 ```
@@ -83,18 +83,18 @@ Create a consent request.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentRequestsApi.new
+api_instance = MyDataMyConsent::DataConsentRequestsApi.new
 opts = {
-  data_consent_request_model: OpenapiClient::DataConsentRequestModel.new # DataConsentRequestModel | MyDataMyConsent.Models.Consents.DataConsentRequestModel.
+  data_consent_request_model: MyDataMyConsent::DataConsentRequestModel.new # DataConsentRequestModel | MyDataMyConsent.Models.Consents.DataConsentRequestModel.
 }
 
 begin
   # Create a consent request.
   result = api_instance.create_request(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->create_request: #{e}"
 end
 ```
@@ -112,7 +112,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DataConsent>
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->create_request_with_http_info: #{e}"
 end
 ```
@@ -147,18 +147,18 @@ Get all Consent Requests.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentRequestsApi.new
+api_instance = MyDataMyConsent::DataConsentRequestsApi.new
 opts = {
-  status: OpenapiClient::DataConsentStatus::PENDING # DataConsentStatus | 
+  status: MyDataMyConsent::DataConsentStatus::PENDING # DataConsentStatus | 
 }
 
 begin
   # Get all Consent Requests.
   result = api_instance.get_all_consent_requests(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->get_all_consent_requests: #{e}"
 end
 ```
@@ -176,7 +176,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->get_all_consent_requests_with_http_info: #{e}"
 end
 ```
@@ -211,16 +211,16 @@ Get a Consent Request by ID.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentRequestsApi.new
+api_instance = MyDataMyConsent::DataConsentRequestsApi.new
 request_id = TODO # String | 
 
 begin
   # Get a Consent Request by ID.
   result = api_instance.get_consent_request_by_id(request_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->get_consent_request_by_id: #{e}"
 end
 ```
@@ -238,7 +238,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DataConsentDetailsDto>
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->get_consent_request_by_id_with_http_info: #{e}"
 end
 ```

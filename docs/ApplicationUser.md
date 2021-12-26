@@ -1,4 +1,4 @@
-# OpenapiClient::ApplicationUser
+# MyDataMyConsent::ApplicationUser
 
 ## Properties
 
@@ -45,9 +45,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::ApplicationUser.new(
+instance = MyDataMyConsent::ApplicationUser.new(
   id: null,
   user_name: null,
   normalized_user_name: null,

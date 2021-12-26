@@ -1,4 +1,4 @@
-# OpenapiClient::FileType
+# MyDataMyConsent::FileType
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::FileType.new()
+instance = MyDataMyConsent::FileType.new()
 ```
 

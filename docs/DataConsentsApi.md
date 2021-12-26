@@ -1,4 +1,4 @@
-# OpenapiClient::DataConsentsApi
+# MyDataMyConsent::DataConsentsApi
 
 All URIs are relative to *http://localhost*
 
@@ -26,9 +26,9 @@ Get consented financial account details.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = 'consent_id_example' # String | 
 account_id = 'account_id_example' # String | 
 
@@ -36,7 +36,7 @@ begin
   # Get consented financial account details.
   result = api_instance.v1_consents_consent_id_accounts_account_id_get(consent_id, account_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_accounts_account_id_get: #{e}"
 end
 ```
@@ -54,7 +54,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_accounts_account_id_get_with_http_info: #{e}"
 end
 ```
@@ -90,9 +90,9 @@ Get consented financial account insights.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = 'consent_id_example' # String | 
 account_id = 'account_id_example' # String | 
 
@@ -100,7 +100,7 @@ begin
   # Get consented financial account insights.
   result = api_instance.v1_consents_consent_id_accounts_account_id_insights_get(consent_id, account_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_accounts_account_id_insights_get: #{e}"
 end
 ```
@@ -118,7 +118,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_accounts_account_id_insights_get_with_http_info: #{e}"
 end
 ```
@@ -154,9 +154,9 @@ Get consented financial account transactions.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = 'consent_id_example' # String | 
 account_id = 'account_id_example' # String | 
 opts = {
@@ -169,7 +169,7 @@ begin
   # Get consented financial account transactions.
   result = api_instance.v1_consents_consent_id_accounts_account_id_transactions_get(consent_id, account_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_accounts_account_id_transactions_get: #{e}"
 end
 ```
@@ -187,7 +187,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_accounts_account_id_transactions_get_with_http_info: #{e}"
 end
 ```
@@ -226,16 +226,16 @@ Get all accounts in a consent.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = 'consent_id_example' # String | 
 
 begin
   # Get all accounts in a consent.
   result = api_instance.v1_consents_consent_id_accounts_get(consent_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_accounts_get: #{e}"
 end
 ```
@@ -253,7 +253,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_accounts_get_with_http_info: #{e}"
 end
 ```
@@ -288,9 +288,9 @@ Get analysis of a consented document.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = 'consent_id_example' # String | 
 document_id = 'document_id_example' # String | Document Id.
 
@@ -298,7 +298,7 @@ begin
   # Get analysis of a consented document.
   result = api_instance.v1_consents_consent_id_documents_document_id_analysis_get(consent_id, document_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_documents_document_id_analysis_get: #{e}"
 end
 ```
@@ -316,7 +316,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_documents_document_id_analysis_get_with_http_info: #{e}"
 end
 ```
@@ -352,9 +352,9 @@ Download a consented document.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = 'consent_id_example' # String | 
 document_id = 'document_id_example' # String | Document Id.
 
@@ -362,7 +362,7 @@ begin
   # Download a consented document.
   result = api_instance.v1_consents_consent_id_documents_document_id_download_get(consent_id, document_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_documents_document_id_download_get: #{e}"
 end
 ```
@@ -380,7 +380,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_documents_document_id_download_get_with_http_info: #{e}"
 end
 ```
@@ -416,9 +416,9 @@ Get consented document details.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = 'consent_id_example' # String | 
 document_id = 'document_id_example' # String | Document Id.
 
@@ -426,7 +426,7 @@ begin
   # Get consented document details.
   result = api_instance.v1_consents_consent_id_documents_document_id_get(consent_id, document_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_documents_document_id_get: #{e}"
 end
 ```
@@ -444,7 +444,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_documents_document_id_get_with_http_info: #{e}"
 end
 ```
@@ -480,16 +480,16 @@ Get all documents in a consent.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = 'consent_id_example' # String | 
 
 begin
   # Get all documents in a consent.
   result = api_instance.v1_consents_consent_id_documents_get(consent_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_documents_get: #{e}"
 end
 ```
@@ -507,7 +507,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_documents_get_with_http_info: #{e}"
 end
 ```
@@ -542,16 +542,16 @@ Get consent details by consent id.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = 'consent_id_example' # String | 
 
 begin
   # Get consent details by consent id.
   result = api_instance.v1_consents_consent_id_get(consent_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_get: #{e}"
 end
 ```
@@ -569,7 +569,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_consent_id_get_with_http_info: #{e}"
 end
 ```
@@ -604,11 +604,11 @@ Get all consents filtered by status and time.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DataConsentsApi.new
+api_instance = MyDataMyConsent::DataConsentsApi.new
 opts = {
-  status: OpenapiClient::DataConsentStatus::PENDING, # DataConsentStatus | MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+  status: MyDataMyConsent::DataConsentStatus::PENDING, # DataConsentStatus | MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
   start_date: Time.parse('2013-10-20T19:20:30+01:00'), # Time | System.DateTime.
   end_date: Time.parse('2013-10-20T19:20:30+01:00') # Time | till dateSystem.DateTime.
 }
@@ -617,7 +617,7 @@ begin
   # Get all consents filtered by status and time.
   result = api_instance.v1_consents_get(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_get: #{e}"
 end
 ```
@@ -635,7 +635,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->v1_consents_get_with_http_info: #{e}"
 end
 ```

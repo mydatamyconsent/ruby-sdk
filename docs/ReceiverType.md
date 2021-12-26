@@ -1,4 +1,4 @@
-# OpenapiClient::ReceiverType
+# MyDataMyConsent::ReceiverType
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::ReceiverType.new()
+instance = MyDataMyConsent::ReceiverType.new()
 ```
 

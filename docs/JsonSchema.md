@@ -1,4 +1,4 @@
-# OpenapiClient::JsonSchema
+# MyDataMyConsent::JsonSchema
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::JsonSchema.new(
+instance = MyDataMyConsent::JsonSchema.new(
   keywords: null,
   other_data: null
 )

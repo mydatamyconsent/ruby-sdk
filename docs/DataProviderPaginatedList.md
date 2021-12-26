@@ -1,4 +1,4 @@
-# OpenapiClient::DataProviderPaginatedList
+# MyDataMyConsent::DataProviderPaginatedList
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DataProviderPaginatedList.new(
+instance = MyDataMyConsent::DataProviderPaginatedList.new(
   page_index: null,
   page_size: null,
   total_pages: null,

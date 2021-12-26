@@ -1,4 +1,4 @@
-# OpenapiClient::DataFetchFrequencyUnit
+# MyDataMyConsent::DataFetchFrequencyUnit
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DataFetchFrequencyUnit.new()
+instance = MyDataMyConsent::DataFetchFrequencyUnit.new()
 ```
 

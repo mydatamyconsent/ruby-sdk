@@ -1,4 +1,4 @@
-# OpenapiClient::DataConsentRequesterDto
+# MyDataMyConsent::DataConsentRequesterDto
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DataConsentRequesterDto.new(
+instance = MyDataMyConsent::DataConsentRequesterDto.new(
   name: null,
   logo_url: null,
   description: null,

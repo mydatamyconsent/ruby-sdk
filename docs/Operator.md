@@ -1,4 +1,4 @@
-# OpenapiClient::Operator
+# MyDataMyConsent::Operator
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::Operator.new()
+instance = MyDataMyConsent::Operator.new()
 ```
 

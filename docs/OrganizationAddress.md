@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationAddress
+# MyDataMyConsent::OrganizationAddress
 
 ## Properties
 
@@ -35,9 +35,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::OrganizationAddress.new(
+instance = MyDataMyConsent::OrganizationAddress.new(
   created_by: null,
   created_at_utc: null,
   updated_by: null,

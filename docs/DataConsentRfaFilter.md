@@ -1,4 +1,4 @@
-# OpenapiClient::DataConsentRfaFilter
+# MyDataMyConsent::DataConsentRfaFilter
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DataConsentRfaFilter.new(
+instance = MyDataMyConsent::DataConsentRfaFilter.new(
   filter_type: null,
   operator: null,
   value: null

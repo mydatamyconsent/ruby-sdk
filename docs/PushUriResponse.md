@@ -1,4 +1,4 @@
-# OpenapiClient::PushUriResponse
+# MyDataMyConsent::PushUriResponse
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::PushUriResponse.new(
+instance = MyDataMyConsent::PushUriResponse.new(
   response_status: null,
   response_message: null,
   ns2: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::DataLifeUnit
+# MyDataMyConsent::DataLifeUnit
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DataLifeUnit.new()
+instance = MyDataMyConsent::DataLifeUnit.new()
 ```
 

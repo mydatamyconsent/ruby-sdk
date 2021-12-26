@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentIssueRequest
+# MyDataMyConsent::DocumentIssueRequest
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DocumentIssueRequest.new(
+instance = MyDataMyConsent::DocumentIssueRequest.new(
   document_type_id: null,
   identifier: null,
   name: null,

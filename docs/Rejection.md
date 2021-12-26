@@ -1,4 +1,4 @@
-# OpenapiClient::Rejection
+# MyDataMyConsent::Rejection
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::Rejection.new(
+instance = MyDataMyConsent::Rejection.new(
   reason: null,
   rejected_by: null,
   rejected_at_utc: null

@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentsApi
+# MyDataMyConsent::DocumentsApi
 
 All URIs are relative to *http://localhost*
 
@@ -20,18 +20,18 @@ Issue a new document.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = MyDataMyConsent::DocumentsApi.new
 opts = {
-  document_issue_request: OpenapiClient::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'identifier_example', name: 'name_example', description: 'description_example', receiver: OpenapiClient::Receiver.new, base64_pdf_document: 'base64_pdf_document_example'}) # DocumentIssueRequest | 
+  document_issue_request: MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'identifier_example', name: 'name_example', description: 'description_example', receiver: MyDataMyConsent::Receiver.new, base64_pdf_document: 'base64_pdf_document_example'}) # DocumentIssueRequest | 
 }
 
 begin
   # Issue a new document.
   result = api_instance.issue_document(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->issue_document: #{e}"
 end
 ```
@@ -49,7 +49,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Boolean
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->issue_document_with_http_info: #{e}"
 end
 ```
@@ -84,15 +84,15 @@ Get issued document.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = MyDataMyConsent::DocumentsApi.new
 document_id = TODO # String | Document id.
 
 begin
   # Get issued document.
   api_instance.v1_documents_issued_document_id_get(document_id)
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->v1_documents_issued_document_id_get: #{e}"
 end
 ```
@@ -110,7 +110,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->v1_documents_issued_document_id_get_with_http_info: #{e}"
 end
 ```
@@ -145,9 +145,9 @@ Get issued documents.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = MyDataMyConsent::DocumentsApi.new
 opts = {
   document_type_id: TODO, # String | 
   from_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | 
@@ -159,7 +159,7 @@ opts = {
 begin
   # Get issued documents.
   api_instance.v1_documents_issued_get(opts)
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->v1_documents_issued_get: #{e}"
 end
 ```
@@ -177,7 +177,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->v1_documents_issued_get_with_http_info: #{e}"
 end
 ```
@@ -216,9 +216,9 @@ Get registered document types.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'mydatamyconsent'
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = MyDataMyConsent::DocumentsApi.new
 opts = {
   page_size: 56, # Integer | 
   page_no: 56 # Integer | 
@@ -227,7 +227,7 @@ opts = {
 begin
   # Get registered document types.
   api_instance.v1_documents_types_get(opts)
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->v1_documents_types_get: #{e}"
 end
 ```
@@ -245,7 +245,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->v1_documents_types_get_with_http_info: #{e}"
 end
 ```

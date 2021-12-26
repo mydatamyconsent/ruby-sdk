@@ -1,4 +1,4 @@
-# OpenapiClient::DataConsentIdentifier
+# MyDataMyConsent::DataConsentIdentifier
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'mydatamyconsent'
 
-instance = OpenapiClient::DataConsentIdentifier.new(
+instance = MyDataMyConsent::DataConsentIdentifier.new(
   key: null,
   value: null
 )
