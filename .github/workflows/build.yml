@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@168d6a54b412713c0ed60998a78093a270ca8d84
+      - uses: ruby/setup-ruby@180e1d1f1c5eadbfbab3dab6fb79ab0c07e3cecc
         with:
           ruby-version: 2.6 
       
