@@ -4,10 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **custom_key** | **String** |  | [optional] |
 | **drn** | **String** |  | [optional] |
-| **from_datetime** | **Time** |  | [optional] |
-| **to_datetime** | **Time** |  | [optional] |
-| **provider_id** | **String** |  | [optional] |
 | **document_type_id** | **String** |  | [optional] |
 | **document_identifier** | **String** |  | [optional] |
 
@@ -17,10 +15,8 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::DataConsentRequestedDocument.new(
+  custom_key: null,
   drn: null,
-  from_datetime: null,
-  to_datetime: null,
-  provider_id: null,
   document_type_id: null,
   document_identifier: null
 )

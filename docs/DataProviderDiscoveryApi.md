@@ -66,8 +66,8 @@ end
 | **account_type** | **String** | Account type. | [optional] |
 | **document_type** | **String** | Document type. | [optional] |
 | **organization_category** | **String** | Organization category. | [optional] |
-| **page_no** | **Integer** | Page number. | [optional] |
-| **page_size** | **Integer** | Page size. | [optional] |
+| **page_no** | **Integer** | Page number. | [optional][default to 1] |
+| **page_size** | **Integer** | Page size. | [optional][default to 25] |
 | **country** | **String** | ISO2 Country code. | [optional][default to &#39;IN&#39;] |
 
 ### Return type

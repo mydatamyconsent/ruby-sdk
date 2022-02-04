@@ -15,60 +15,21 @@ require 'time'
 
 module MyDataMyConsent
   class DataConsentRequestModel
-    attr_accessor :organization_id
-
-    attr_accessor :transaction_id
-
-    attr_accessor :identifiers
+    attr_accessor :consent_template_id
 
     attr_accessor :start_date_time
 
     attr_accessor :expiry_date_time
 
-    attr_accessor :description
-
-    attr_accessor :purpose_code
-
-    attr_accessor :purpose_link
-
-    attr_accessor :data_life_unit
-
-    attr_accessor :data_life_value
-
-    attr_accessor :data_fetch_frequency_unit
-
-    attr_accessor :data_fetch_frequency_unit_value
-
-    attr_accessor :data_fetch_type
-
-    attr_accessor :agreement_id
-
-    attr_accessor :identity_claims
-
-    attr_accessor :financial_accounts
-
-    attr_accessor :documents
+    attr_accessor :receiver
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'organization_id' => :'organizationId',
-        :'transaction_id' => :'transactionId',
-        :'identifiers' => :'identifiers',
+        :'consent_template_id' => :'consentTemplateId',
         :'start_date_time' => :'startDateTime',
         :'expiry_date_time' => :'expiryDateTime',
-        :'description' => :'description',
-        :'purpose_code' => :'purposeCode',
-        :'purpose_link' => :'purposeLink',
-        :'data_life_unit' => :'dataLifeUnit',
-        :'data_life_value' => :'dataLifeValue',
-        :'data_fetch_frequency_unit' => :'dataFetchFrequencyUnit',
-        :'data_fetch_frequency_unit_value' => :'dataFetchFrequencyUnitValue',
-        :'data_fetch_type' => :'dataFetchType',
-        :'agreement_id' => :'agreementId',
-        :'identity_claims' => :'identityClaims',
-        :'financial_accounts' => :'financialAccounts',
-        :'documents' => :'documents'
+        :'receiver' => :'receiver'
       }
     end
 
@@ -80,38 +41,16 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'organization_id' => :'String',
-        :'transaction_id' => :'String',
-        :'identifiers' => :'Hash<String, String>',
+        :'consent_template_id' => :'String',
         :'start_date_time' => :'Time',
         :'expiry_date_time' => :'Time',
-        :'description' => :'String',
-        :'purpose_code' => :'String',
-        :'purpose_link' => :'String',
-        :'data_life_unit' => :'DataLifeUnit',
-        :'data_life_value' => :'Integer',
-        :'data_fetch_frequency_unit' => :'DataFetchFrequencyUnit',
-        :'data_fetch_frequency_unit_value' => :'Integer',
-        :'data_fetch_type' => :'DataFetchType',
-        :'agreement_id' => :'String',
-        :'identity_claims' => :'Array<IdentityClaim>',
-        :'financial_accounts' => :'Array<DataConsentRequestedFaDto>',
-        :'documents' => :'Array<DataConsentRequestedDocumentDto>'
+        :'receiver' => :'Receiver'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'transaction_id',
-        :'identifiers',
-        :'start_date_time',
-        :'description',
-        :'purpose_code',
-        :'purpose_link',
-        :'identity_claims',
-        :'financial_accounts',
-        :'documents'
       ])
     end
 
@@ -130,18 +69,8 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'organization_id')
-        self.organization_id = attributes[:'organization_id']
-      end
-
-      if attributes.key?(:'transaction_id')
-        self.transaction_id = attributes[:'transaction_id']
-      end
-
-      if attributes.key?(:'identifiers')
-        if (value = attributes[:'identifiers']).is_a?(Hash)
-          self.identifiers = value
-        end
+      if attributes.key?(:'consent_template_id')
+        self.consent_template_id = attributes[:'consent_template_id']
       end
 
       if attributes.key?(:'start_date_time')
@@ -152,58 +81,8 @@ module MyDataMyConsent
         self.expiry_date_time = attributes[:'expiry_date_time']
       end
 
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'purpose_code')
-        self.purpose_code = attributes[:'purpose_code']
-      end
-
-      if attributes.key?(:'purpose_link')
-        self.purpose_link = attributes[:'purpose_link']
-      end
-
-      if attributes.key?(:'data_life_unit')
-        self.data_life_unit = attributes[:'data_life_unit']
-      end
-
-      if attributes.key?(:'data_life_value')
-        self.data_life_value = attributes[:'data_life_value']
-      end
-
-      if attributes.key?(:'data_fetch_frequency_unit')
-        self.data_fetch_frequency_unit = attributes[:'data_fetch_frequency_unit']
-      end
-
-      if attributes.key?(:'data_fetch_frequency_unit_value')
-        self.data_fetch_frequency_unit_value = attributes[:'data_fetch_frequency_unit_value']
-      end
-
-      if attributes.key?(:'data_fetch_type')
-        self.data_fetch_type = attributes[:'data_fetch_type']
-      end
-
-      if attributes.key?(:'agreement_id')
-        self.agreement_id = attributes[:'agreement_id']
-      end
-
-      if attributes.key?(:'identity_claims')
-        if (value = attributes[:'identity_claims']).is_a?(Array)
-          self.identity_claims = value
-        end
-      end
-
-      if attributes.key?(:'financial_accounts')
-        if (value = attributes[:'financial_accounts']).is_a?(Array)
-          self.financial_accounts = value
-        end
-      end
-
-      if attributes.key?(:'documents')
-        if (value = attributes[:'documents']).is_a?(Array)
-          self.documents = value
-        end
+      if attributes.key?(:'receiver')
+        self.receiver = attributes[:'receiver']
       end
     end
 
@@ -211,12 +90,17 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @receiver.nil?
+        invalid_properties.push('invalid value for "receiver", receiver cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @receiver.nil?
       true
     end
 
@@ -225,23 +109,10 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          organization_id == o.organization_id &&
-          transaction_id == o.transaction_id &&
-          identifiers == o.identifiers &&
+          consent_template_id == o.consent_template_id &&
           start_date_time == o.start_date_time &&
           expiry_date_time == o.expiry_date_time &&
-          description == o.description &&
-          purpose_code == o.purpose_code &&
-          purpose_link == o.purpose_link &&
-          data_life_unit == o.data_life_unit &&
-          data_life_value == o.data_life_value &&
-          data_fetch_frequency_unit == o.data_fetch_frequency_unit &&
-          data_fetch_frequency_unit_value == o.data_fetch_frequency_unit_value &&
-          data_fetch_type == o.data_fetch_type &&
-          agreement_id == o.agreement_id &&
-          identity_claims == o.identity_claims &&
-          financial_accounts == o.financial_accounts &&
-          documents == o.documents
+          receiver == o.receiver
     end
 
     # @see the `==` method
@@ -253,7 +124,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [organization_id, transaction_id, identifiers, start_date_time, expiry_date_time, description, purpose_code, purpose_link, data_life_unit, data_life_value, data_fetch_frequency_unit, data_fetch_frequency_unit_value, data_fetch_type, agreement_id, identity_claims, financial_accounts, documents].hash
+      [consent_template_id, start_date_time, expiry_date_time, receiver].hash
     end
 
     # Builds the object from hash

@@ -25,8 +25,8 @@ module MyDataMyConsent
     # @option opts [String] :account_type Account type.
     # @option opts [String] :document_type Document type.
     # @option opts [String] :organization_category Organization category.
-    # @option opts [Integer] :page_no Page number.
-    # @option opts [Integer] :page_size Page size.
+    # @option opts [Integer] :page_no Page number. (default to 1)
+    # @option opts [Integer] :page_size Page size. (default to 25)
     # @option opts [String] :country ISO2 Country code. (default to 'IN')
     # @return [DataProviderPaginatedList]
     def v1_data_providers_get(opts = {})

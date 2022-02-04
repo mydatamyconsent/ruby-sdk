@@ -4,13 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **custom_key** | **String** |  | [optional] |
 | **drn** | **String** |  | [optional] |
-| **from_datetime** | **Time** |  | [optional] |
-| **to_datetime** | **Time** |  | [optional] |
-| **provider_id** | **String** |  | [optional] |
-| **account_type** | [**FinancialAccountTypes**](FinancialAccountTypes.md) |  | [optional] |
+| **account_type_id** | **String** |  | [optional] |
 | **account_identifier** | **String** |  | [optional] |
-| **filters** | [**Array&lt;DataConsentRfaFilter&gt;**](DataConsentRfaFilter.md) |  | [optional] |
 
 ## Example
 
@@ -18,13 +15,10 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::DataConsentRequestedFinancialAccount.new(
+  custom_key: null,
   drn: null,
-  from_datetime: null,
-  to_datetime: null,
-  provider_id: null,
-  account_type: null,
-  account_identifier: null,
-  filters: null
+  account_type_id: null,
+  account_identifier: null
 )
 ```
 

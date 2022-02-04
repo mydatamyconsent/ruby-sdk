@@ -23,7 +23,7 @@ module MyDataMyConsent
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [DataProcessingAgreementPaginatedList]
+    # @return [DataProcessingAgreementDtoPaginatedList]
     def v1_data_agreements_get(opts = {})
       data, _status_code, _headers = v1_data_agreements_get_with_http_info(opts)
       data
@@ -33,7 +33,7 @@ module MyDataMyConsent
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(DataProcessingAgreementPaginatedList, Integer, Hash)>] DataProcessingAgreementPaginatedList data, response status code and response headers
+    # @return [Array<(DataProcessingAgreementDtoPaginatedList, Integer, Hash)>] DataProcessingAgreementDtoPaginatedList data, response status code and response headers
     def v1_data_agreements_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_get ...'
@@ -49,7 +49,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -58,7 +58,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreementPaginatedList'
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDtoPaginatedList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -110,7 +110,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -144,7 +144,7 @@ module MyDataMyConsent
     # Get data processing agreement by Id.
     # @param id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [DataProcessingAgreement]
+    # @return [DataProcessingAgreementDto]
     def v1_data_agreements_id_get(id, opts = {})
       data, _status_code, _headers = v1_data_agreements_id_get_with_http_info(id, opts)
       data
@@ -153,7 +153,7 @@ module MyDataMyConsent
     # Get data processing agreement by Id.
     # @param id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(DataProcessingAgreement, Integer, Hash)>] DataProcessingAgreement data, response status code and response headers
+    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
     def v1_data_agreements_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_id_get ...'
@@ -171,7 +171,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -180,7 +180,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreement'
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -205,8 +205,8 @@ module MyDataMyConsent
     # Update a data processing agreement.
     # @param id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [DataProcessingAgreement] :data_processing_agreement 
-    # @return [DataProcessingAgreement]
+    # @option opts [UpdateDataProcessingAgreementRequestModel] :update_data_processing_agreement_request_model 
+    # @return [DataProcessingAgreementDto]
     def v1_data_agreements_id_put(id, opts = {})
       data, _status_code, _headers = v1_data_agreements_id_put_with_http_info(id, opts)
       data
@@ -215,8 +215,8 @@ module MyDataMyConsent
     # Update a data processing agreement.
     # @param id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [DataProcessingAgreement] :data_processing_agreement 
-    # @return [Array<(DataProcessingAgreement, Integer, Hash)>] DataProcessingAgreement data, response status code and response headers
+    # @option opts [UpdateDataProcessingAgreementRequestModel] :update_data_processing_agreement_request_model 
+    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
     def v1_data_agreements_id_put_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_id_put ...'
@@ -234,18 +234,18 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'data_processing_agreement'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'update_data_processing_agreement_request_model'])
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreement'
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -297,7 +297,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -330,8 +330,8 @@ module MyDataMyConsent
 
     # Create a data processing agreement.
     # @param [Hash] opts the optional parameters
-    # @option opts [DataProcessingAgreement] :data_processing_agreement 
-    # @return [DataProcessingAgreement]
+    # @option opts [CreateDataProcessingAgreementRequestModel] :create_data_processing_agreement_request_model 
+    # @return [DataProcessingAgreementDto]
     def v1_data_agreements_post(opts = {})
       data, _status_code, _headers = v1_data_agreements_post_with_http_info(opts)
       data
@@ -339,8 +339,8 @@ module MyDataMyConsent
 
     # Create a data processing agreement.
     # @param [Hash] opts the optional parameters
-    # @option opts [DataProcessingAgreement] :data_processing_agreement 
-    # @return [Array<(DataProcessingAgreement, Integer, Hash)>] DataProcessingAgreement data, response status code and response headers
+    # @option opts [CreateDataProcessingAgreementRequestModel] :create_data_processing_agreement_request_model 
+    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
     def v1_data_agreements_post_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_post ...'
@@ -354,18 +354,18 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/xml'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'application/xml'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'data_processing_agreement'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'create_data_processing_agreement_request_model'])
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreement'
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

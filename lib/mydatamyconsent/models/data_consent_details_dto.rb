@@ -17,38 +17,6 @@ module MyDataMyConsent
   class DataConsentDetailsDto
     attr_accessor :id
 
-    attr_accessor :requester
-
-    attr_accessor :location
-
-    attr_accessor :personal_info_requested
-
-    attr_accessor :documents
-
-    attr_accessor :financial_accounts
-
-    attr_accessor :transaction_id
-
-    attr_accessor :ip_address
-
-    attr_accessor :description
-
-    attr_accessor :purpose_code
-
-    attr_accessor :purpose_link
-
-    attr_accessor :agreement_id
-
-    attr_accessor :data_life_unit
-
-    attr_accessor :data_life_value
-
-    attr_accessor :data_fetch_frequency_unit
-
-    attr_accessor :data_fetch_frequency_unit_value
-
-    attr_accessor :data_fetch_type
-
     attr_accessor :status
 
     attr_accessor :approved_at_utc
@@ -59,43 +27,30 @@ module MyDataMyConsent
 
     attr_accessor :requested_at_utc
 
-    attr_accessor :requested_financial_accounts
+    attr_accessor :requester
 
-    attr_accessor :requested_documents
+    attr_accessor :consent_details
 
-    attr_accessor :requested_health_data
+    attr_accessor :identifiers
 
-    attr_accessor :requested_identity_details
+    attr_accessor :approved_documents
+
+    attr_accessor :approved_financials
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'requester' => :'requester',
-        :'location' => :'location',
-        :'personal_info_requested' => :'personalInfoRequested',
-        :'documents' => :'documents',
-        :'financial_accounts' => :'financialAccounts',
-        :'transaction_id' => :'transactionId',
-        :'ip_address' => :'ipAddress',
-        :'description' => :'description',
-        :'purpose_code' => :'purposeCode',
-        :'purpose_link' => :'purposeLink',
-        :'agreement_id' => :'agreementId',
-        :'data_life_unit' => :'dataLifeUnit',
-        :'data_life_value' => :'dataLifeValue',
-        :'data_fetch_frequency_unit' => :'dataFetchFrequencyUnit',
-        :'data_fetch_frequency_unit_value' => :'dataFetchFrequencyUnitValue',
-        :'data_fetch_type' => :'dataFetchType',
         :'status' => :'status',
         :'approved_at_utc' => :'approvedAtUtc',
         :'rejected_at_utc' => :'rejectedAtUtc',
         :'expires_at_utc' => :'expiresAtUtc',
         :'requested_at_utc' => :'requestedAtUtc',
-        :'requested_financial_accounts' => :'requestedFinancialAccounts',
-        :'requested_documents' => :'requestedDocuments',
-        :'requested_health_data' => :'requestedHealthData',
-        :'requested_identity_details' => :'requestedIdentityDetails'
+        :'requester' => :'requester',
+        :'consent_details' => :'consentDetails',
+        :'identifiers' => :'identifiers',
+        :'approved_documents' => :'approvedDocuments',
+        :'approved_financials' => :'approvedFinancials'
       }
     end
 
@@ -108,49 +63,27 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'id' => :'String',
-        :'requester' => :'DataConsentRequesterDto',
-        :'location' => :'String',
-        :'personal_info_requested' => :'Boolean',
-        :'documents' => :'Integer',
-        :'financial_accounts' => :'Integer',
-        :'transaction_id' => :'String',
-        :'ip_address' => :'String',
-        :'description' => :'String',
-        :'purpose_code' => :'String',
-        :'purpose_link' => :'String',
-        :'agreement_id' => :'String',
-        :'data_life_unit' => :'DataLifeUnit',
-        :'data_life_value' => :'Integer',
-        :'data_fetch_frequency_unit' => :'DataFetchFrequencyUnit',
-        :'data_fetch_frequency_unit_value' => :'Integer',
-        :'data_fetch_type' => :'DataFetchType',
         :'status' => :'DataConsentStatus',
         :'approved_at_utc' => :'Time',
         :'rejected_at_utc' => :'Time',
         :'expires_at_utc' => :'Time',
         :'requested_at_utc' => :'Time',
-        :'requested_financial_accounts' => :'Array<DataConsentRequestedAccountDto>',
-        :'requested_documents' => :'Array<DataConsentRequestedDocumentDto>',
-        :'requested_health_data' => :'Array<DataConsentRequestedDocument>',
-        :'requested_identity_details' => :'JsonSchema'
+        :'requester' => :'DataConsentRequesterDto',
+        :'consent_details' => :'GetConsentTemplateDetailsDto',
+        :'identifiers' => :'Array<DataConsentIdentifier>',
+        :'approved_documents' => :'Array<DataConsentRequestedDocument>',
+        :'approved_financials' => :'Array<DataConsentRequestedFinancialAccount>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'location',
-        :'transaction_id',
-        :'ip_address',
-        :'description',
-        :'purpose_code',
-        :'purpose_link',
-        :'agreement_id',
         :'approved_at_utc',
         :'rejected_at_utc',
-        :'requested_financial_accounts',
-        :'requested_documents',
-        :'requested_health_data',
+        :'identifiers',
+        :'approved_documents',
+        :'approved_financials'
       ])
     end
 
@@ -173,70 +106,6 @@ module MyDataMyConsent
         self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'requester')
-        self.requester = attributes[:'requester']
-      end
-
-      if attributes.key?(:'location')
-        self.location = attributes[:'location']
-      end
-
-      if attributes.key?(:'personal_info_requested')
-        self.personal_info_requested = attributes[:'personal_info_requested']
-      end
-
-      if attributes.key?(:'documents')
-        self.documents = attributes[:'documents']
-      end
-
-      if attributes.key?(:'financial_accounts')
-        self.financial_accounts = attributes[:'financial_accounts']
-      end
-
-      if attributes.key?(:'transaction_id')
-        self.transaction_id = attributes[:'transaction_id']
-      end
-
-      if attributes.key?(:'ip_address')
-        self.ip_address = attributes[:'ip_address']
-      end
-
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'purpose_code')
-        self.purpose_code = attributes[:'purpose_code']
-      end
-
-      if attributes.key?(:'purpose_link')
-        self.purpose_link = attributes[:'purpose_link']
-      end
-
-      if attributes.key?(:'agreement_id')
-        self.agreement_id = attributes[:'agreement_id']
-      end
-
-      if attributes.key?(:'data_life_unit')
-        self.data_life_unit = attributes[:'data_life_unit']
-      end
-
-      if attributes.key?(:'data_life_value')
-        self.data_life_value = attributes[:'data_life_value']
-      end
-
-      if attributes.key?(:'data_fetch_frequency_unit')
-        self.data_fetch_frequency_unit = attributes[:'data_fetch_frequency_unit']
-      end
-
-      if attributes.key?(:'data_fetch_frequency_unit_value')
-        self.data_fetch_frequency_unit_value = attributes[:'data_fetch_frequency_unit_value']
-      end
-
-      if attributes.key?(:'data_fetch_type')
-        self.data_fetch_type = attributes[:'data_fetch_type']
-      end
-
       if attributes.key?(:'status')
         self.status = attributes[:'status']
       end
@@ -257,26 +126,30 @@ module MyDataMyConsent
         self.requested_at_utc = attributes[:'requested_at_utc']
       end
 
-      if attributes.key?(:'requested_financial_accounts')
-        if (value = attributes[:'requested_financial_accounts']).is_a?(Array)
-          self.requested_financial_accounts = value
+      if attributes.key?(:'requester')
+        self.requester = attributes[:'requester']
+      end
+
+      if attributes.key?(:'consent_details')
+        self.consent_details = attributes[:'consent_details']
+      end
+
+      if attributes.key?(:'identifiers')
+        if (value = attributes[:'identifiers']).is_a?(Array)
+          self.identifiers = value
         end
       end
 
-      if attributes.key?(:'requested_documents')
-        if (value = attributes[:'requested_documents']).is_a?(Array)
-          self.requested_documents = value
+      if attributes.key?(:'approved_documents')
+        if (value = attributes[:'approved_documents']).is_a?(Array)
+          self.approved_documents = value
         end
       end
 
-      if attributes.key?(:'requested_health_data')
-        if (value = attributes[:'requested_health_data']).is_a?(Array)
-          self.requested_health_data = value
+      if attributes.key?(:'approved_financials')
+        if (value = attributes[:'approved_financials']).is_a?(Array)
+          self.approved_financials = value
         end
-      end
-
-      if attributes.key?(:'requested_identity_details')
-        self.requested_identity_details = attributes[:'requested_identity_details']
       end
     end
 
@@ -299,31 +172,16 @@ module MyDataMyConsent
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          requester == o.requester &&
-          location == o.location &&
-          personal_info_requested == o.personal_info_requested &&
-          documents == o.documents &&
-          financial_accounts == o.financial_accounts &&
-          transaction_id == o.transaction_id &&
-          ip_address == o.ip_address &&
-          description == o.description &&
-          purpose_code == o.purpose_code &&
-          purpose_link == o.purpose_link &&
-          agreement_id == o.agreement_id &&
-          data_life_unit == o.data_life_unit &&
-          data_life_value == o.data_life_value &&
-          data_fetch_frequency_unit == o.data_fetch_frequency_unit &&
-          data_fetch_frequency_unit_value == o.data_fetch_frequency_unit_value &&
-          data_fetch_type == o.data_fetch_type &&
           status == o.status &&
           approved_at_utc == o.approved_at_utc &&
           rejected_at_utc == o.rejected_at_utc &&
           expires_at_utc == o.expires_at_utc &&
           requested_at_utc == o.requested_at_utc &&
-          requested_financial_accounts == o.requested_financial_accounts &&
-          requested_documents == o.requested_documents &&
-          requested_health_data == o.requested_health_data &&
-          requested_identity_details == o.requested_identity_details
+          requester == o.requester &&
+          consent_details == o.consent_details &&
+          identifiers == o.identifiers &&
+          approved_documents == o.approved_documents &&
+          approved_financials == o.approved_financials
     end
 
     # @see the `==` method
@@ -335,7 +193,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, requester, location, personal_info_requested, documents, financial_accounts, transaction_id, ip_address, description, purpose_code, purpose_link, agreement_id, data_life_unit, data_life_value, data_fetch_frequency_unit, data_fetch_frequency_unit_value, data_fetch_type, status, approved_at_utc, rejected_at_utc, expires_at_utc, requested_at_utc, requested_financial_accounts, requested_documents, requested_health_data, requested_identity_details].hash
+      [id, status, approved_at_utc, rejected_at_utc, expires_at_utc, requested_at_utc, requester, consent_details, identifiers, approved_documents, approved_financials].hash
     end
 
     # Builds the object from hash

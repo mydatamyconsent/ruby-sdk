@@ -40,7 +40,7 @@ module MyDataMyConsent
         :'description' => :'description',
         :'receiver' => :'receiver',
         :'expires_at_utc' => :'expiresAtUtc',
-        :'base64_pdf_document' => :'base64PDFDocument',
+        :'base64_pdf_document' => :'base64PdfDocument',
         :'metadata' => :'metadata'
       }
     end

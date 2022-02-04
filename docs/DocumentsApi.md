@@ -254,8 +254,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page_size** | **Integer** |  | [optional] |
-| **page_no** | **Integer** |  | [optional] |
+| **page_size** | **Integer** |  | [optional][default to 25] |
+| **page_no** | **Integer** |  | [optional][default to 1] |
 
 ### Return type
 

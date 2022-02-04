@@ -207,8 +207,8 @@ module MyDataMyConsent
 
     # Get registered document types.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page_size 
-    # @option opts [Integer] :page_no 
+    # @option opts [Integer] :page_size  (default to 25)
+    # @option opts [Integer] :page_no  (default to 1)
     # @return [nil]
     def v1_documents_types_get(opts = {})
       v1_documents_types_get_with_http_info(opts)

@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost*
 
 ## v1_data_agreements_get
 
-> <DataProcessingAgreementPaginatedList> v1_data_agreements_get(opts)
+> <DataProcessingAgreementDtoPaginatedList> v1_data_agreements_get(opts)
 
 Get all data processing agreements.
 
@@ -43,7 +43,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataProcessingAgreementPaginatedList>, Integer, Hash)> v1_data_agreements_get_with_http_info(opts)
+> <Array(<DataProcessingAgreementDtoPaginatedList>, Integer, Hash)> v1_data_agreements_get_with_http_info(opts)
 
 ```ruby
 begin
@@ -51,7 +51,7 @@ begin
   data, status_code, headers = api_instance.v1_data_agreements_get_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DataProcessingAgreementPaginatedList>
+  p data # => <DataProcessingAgreementDtoPaginatedList>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_get_with_http_info: #{e}"
 end
@@ -66,7 +66,7 @@ end
 
 ### Return type
 
-[**DataProcessingAgreementPaginatedList**](DataProcessingAgreementPaginatedList.md)
+[**DataProcessingAgreementDtoPaginatedList**](DataProcessingAgreementDtoPaginatedList.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
+- **Accept**: application/json
 
 
 ## v1_data_agreements_id_delete
@@ -136,12 +136,12 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
+- **Accept**: application/json
 
 
 ## v1_data_agreements_id_get
 
-> <DataProcessingAgreement> v1_data_agreements_id_get(id)
+> <DataProcessingAgreementDto> v1_data_agreements_id_get(id)
 
 Get data processing agreement by Id.
 
@@ -167,7 +167,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataProcessingAgreement>, Integer, Hash)> v1_data_agreements_id_get_with_http_info(id)
+> <Array(<DataProcessingAgreementDto>, Integer, Hash)> v1_data_agreements_id_get_with_http_info(id)
 
 ```ruby
 begin
@@ -175,7 +175,7 @@ begin
   data, status_code, headers = api_instance.v1_data_agreements_id_get_with_http_info(id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DataProcessingAgreement>
+  p data # => <DataProcessingAgreementDto>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_get_with_http_info: #{e}"
 end
@@ -189,7 +189,7 @@ end
 
 ### Return type
 
-[**DataProcessingAgreement**](DataProcessingAgreement.md)
+[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
 
 ### Authorization
 
@@ -198,12 +198,12 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
+- **Accept**: application/json
 
 
 ## v1_data_agreements_id_put
 
-> <DataProcessingAgreement> v1_data_agreements_id_put(id, opts)
+> <DataProcessingAgreementDto> v1_data_agreements_id_put(id, opts)
 
 Update a data processing agreement.
 
@@ -216,7 +216,7 @@ require 'mydatamyconsent'
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 id = TODO # String | 
 opts = {
-  data_processing_agreement: MyDataMyConsent::DataProcessingAgreement.new # DataProcessingAgreement | 
+  update_data_processing_agreement_request_model: MyDataMyConsent::UpdateDataProcessingAgreementRequestModel.new({version: 'version_example', body: 'body_example', attachment_url: 'attachment_url_example'}) # UpdateDataProcessingAgreementRequestModel | 
 }
 
 begin
@@ -232,7 +232,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataProcessingAgreement>, Integer, Hash)> v1_data_agreements_id_put_with_http_info(id, opts)
+> <Array(<DataProcessingAgreementDto>, Integer, Hash)> v1_data_agreements_id_put_with_http_info(id, opts)
 
 ```ruby
 begin
@@ -240,7 +240,7 @@ begin
   data, status_code, headers = api_instance.v1_data_agreements_id_put_with_http_info(id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DataProcessingAgreement>
+  p data # => <DataProcessingAgreementDto>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_put_with_http_info: #{e}"
 end
@@ -251,11 +251,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | [**String**](.md) |  |  |
-| **data_processing_agreement** | [**DataProcessingAgreement**](DataProcessingAgreement.md) |  | [optional] |
+| **update_data_processing_agreement_request_model** | [**UpdateDataProcessingAgreementRequestModel**](UpdateDataProcessingAgreementRequestModel.md) |  | [optional] |
 
 ### Return type
 
-[**DataProcessingAgreement**](DataProcessingAgreement.md)
+[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
 
 ### Authorization
 
@@ -263,8 +263,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/xml
-- **Accept**: application/json, application/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## v1_data_agreements_id_terminate_put
@@ -325,12 +325,12 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
+- **Accept**: application/json
 
 
 ## v1_data_agreements_post
 
-> <DataProcessingAgreement> v1_data_agreements_post(opts)
+> <DataProcessingAgreementDto> v1_data_agreements_post(opts)
 
 Create a data processing agreement.
 
@@ -342,7 +342,7 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 opts = {
-  data_processing_agreement: MyDataMyConsent::DataProcessingAgreement.new # DataProcessingAgreement | 
+  create_data_processing_agreement_request_model: MyDataMyConsent::CreateDataProcessingAgreementRequestModel.new({version: 'version_example', body: 'body_example', attachment_url: 'attachment_url_example'}) # CreateDataProcessingAgreementRequestModel | 
 }
 
 begin
@@ -358,7 +358,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataProcessingAgreement>, Integer, Hash)> v1_data_agreements_post_with_http_info(opts)
+> <Array(<DataProcessingAgreementDto>, Integer, Hash)> v1_data_agreements_post_with_http_info(opts)
 
 ```ruby
 begin
@@ -366,7 +366,7 @@ begin
   data, status_code, headers = api_instance.v1_data_agreements_post_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DataProcessingAgreement>
+  p data # => <DataProcessingAgreementDto>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_post_with_http_info: #{e}"
 end
@@ -376,11 +376,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data_processing_agreement** | [**DataProcessingAgreement**](DataProcessingAgreement.md) |  | [optional] |
+| **create_data_processing_agreement_request_model** | [**CreateDataProcessingAgreementRequestModel**](CreateDataProcessingAgreementRequestModel.md) |  | [optional] |
 
 ### Return type
 
-[**DataProcessingAgreement**](DataProcessingAgreement.md)
+[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
 
 ### Authorization
 
@@ -388,6 +388,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/xml
-- **Accept**: application/json, application/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 

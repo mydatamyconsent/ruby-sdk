@@ -15,30 +15,21 @@ require 'time'
 
 module MyDataMyConsent
   class DataConsentRequestedFinancialAccount
+    attr_accessor :custom_key
+
     attr_accessor :drn
 
-    attr_accessor :from_datetime
-
-    attr_accessor :to_datetime
-
-    attr_accessor :provider_id
-
-    attr_accessor :account_type
+    attr_accessor :account_type_id
 
     attr_accessor :account_identifier
-
-    attr_accessor :filters
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'custom_key' => :'customKey',
         :'drn' => :'drn',
-        :'from_datetime' => :'fromDatetime',
-        :'to_datetime' => :'toDatetime',
-        :'provider_id' => :'providerId',
-        :'account_type' => :'accountType',
-        :'account_identifier' => :'accountIdentifier',
-        :'filters' => :'filters'
+        :'account_type_id' => :'accountTypeId',
+        :'account_identifier' => :'accountIdentifier'
       }
     end
 
@@ -50,23 +41,20 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'custom_key' => :'String',
         :'drn' => :'String',
-        :'from_datetime' => :'Time',
-        :'to_datetime' => :'Time',
-        :'provider_id' => :'String',
-        :'account_type' => :'FinancialAccountTypes',
-        :'account_identifier' => :'String',
-        :'filters' => :'Array<DataConsentRfaFilter>'
+        :'account_type_id' => :'String',
+        :'account_identifier' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'custom_key',
         :'drn',
-        :'provider_id',
-        :'account_identifier',
-        :'filters'
+        :'account_type_id',
+        :'account_identifier'
       ])
     end
 
@@ -85,34 +73,20 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'custom_key')
+        self.custom_key = attributes[:'custom_key']
+      end
+
       if attributes.key?(:'drn')
         self.drn = attributes[:'drn']
       end
 
-      if attributes.key?(:'from_datetime')
-        self.from_datetime = attributes[:'from_datetime']
-      end
-
-      if attributes.key?(:'to_datetime')
-        self.to_datetime = attributes[:'to_datetime']
-      end
-
-      if attributes.key?(:'provider_id')
-        self.provider_id = attributes[:'provider_id']
-      end
-
-      if attributes.key?(:'account_type')
-        self.account_type = attributes[:'account_type']
+      if attributes.key?(:'account_type_id')
+        self.account_type_id = attributes[:'account_type_id']
       end
 
       if attributes.key?(:'account_identifier')
         self.account_identifier = attributes[:'account_identifier']
-      end
-
-      if attributes.key?(:'filters')
-        if (value = attributes[:'filters']).is_a?(Array)
-          self.filters = value
-        end
       end
     end
 
@@ -134,13 +108,10 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          custom_key == o.custom_key &&
           drn == o.drn &&
-          from_datetime == o.from_datetime &&
-          to_datetime == o.to_datetime &&
-          provider_id == o.provider_id &&
-          account_type == o.account_type &&
-          account_identifier == o.account_identifier &&
-          filters == o.filters
+          account_type_id == o.account_type_id &&
+          account_identifier == o.account_identifier
     end
 
     # @see the `==` method
@@ -152,7 +123,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [drn, from_datetime, to_datetime, provider_id, account_type, account_identifier, filters].hash
+      [custom_key, drn, account_type_id, account_identifier].hash
     end
 
     # Builds the object from hash

@@ -4,19 +4,19 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**cancel_consent_request**](DataConsentRequestsApi.md#cancel_consent_request) | **DELETE** /v1/consent-requests/{requestId}/cancel | Cancel a Consent Request by ID. |
+| [**cancel_consent_request**](DataConsentRequestsApi.md#cancel_consent_request) | **DELETE** /v1/consent-requests/{requestId}/cancel | Revoke / Cancel the ConsentRequest based on Id. |
 | [**create_request**](DataConsentRequestsApi.md#create_request) | **POST** /v1/consent-requests | Create a consent request. |
-| [**get_all_consent_requests**](DataConsentRequestsApi.md#get_all_consent_requests) | **GET** /v1/consent-requests | Get all Consent Requests. |
-| [**get_consent_request_by_id**](DataConsentRequestsApi.md#get_consent_request_by_id) | **GET** /v1/consent-requests/{requestId} | Get a Consent Request by ID. |
+| [**get_all_consent_requests_to_individuals**](DataConsentRequestsApi.md#get_all_consent_requests_to_individuals) | **GET** /v1/consent-requests/individuals | Get all Consent Requests sent to Individuals. |
+| [**get_all_consent_requests_to_organizations**](DataConsentRequestsApi.md#get_all_consent_requests_to_organizations) | **GET** /v1/consent-requests/organizations | Get All Consent Requests sent to Organizations |
+| [**get_individual_consent_request_by_id**](DataConsentRequestsApi.md#get_individual_consent_request_by_id) | **GET** /v1/consent-requests/individuals/{requestId} | Get a Consent Request by ID. |
+| [**get_organization_consent_request_by_id**](DataConsentRequestsApi.md#get_organization_consent_request_by_id) | **GET** /v1/consent-requests/organizations/{requestId} | Get a OrganizationConsent Request by Id |
 
 
 ## cancel_consent_request
 
-> cancel_consent_request(request_id)
+> Boolean cancel_consent_request(request_id)
 
-Cancel a Consent Request by ID.
-
-.
+Revoke / Cancel the ConsentRequest based on Id.
 
 ### Examples
 
@@ -25,11 +25,12 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
-request_id = TODO # String | consent request id.
+request_id = TODO # String | 
 
 begin
-  # Cancel a Consent Request by ID.
-  api_instance.cancel_consent_request(request_id)
+  # Revoke / Cancel the ConsentRequest based on Id.
+  result = api_instance.cancel_consent_request(request_id)
+  p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->cancel_consent_request: #{e}"
 end
@@ -37,17 +38,17 @@ end
 
 #### Using the cancel_consent_request_with_http_info variant
 
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
+This returns an Array which contains the response data, status code and headers.
 
-> <Array(nil, Integer, Hash)> cancel_consent_request_with_http_info(request_id)
+> <Array(Boolean, Integer, Hash)> cancel_consent_request_with_http_info(request_id)
 
 ```ruby
 begin
-  # Cancel a Consent Request by ID.
+  # Revoke / Cancel the ConsentRequest based on Id.
   data, status_code, headers = api_instance.cancel_consent_request_with_http_info(request_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => nil
+  p data # => Boolean
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->cancel_consent_request_with_http_info: #{e}"
 end
@@ -57,11 +58,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **request_id** | [**String**](.md) | consent request id. |  |
+| **request_id** | [**String**](.md) |  |  |
 
 ### Return type
 
-nil (empty response body)
+**Boolean**
 
 ### Authorization
 
@@ -70,12 +71,12 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## create_request
 
-> <DataConsent> create_request(opts)
+> Boolean create_request(opts)
 
 Create a consent request.
 
@@ -87,7 +88,7 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
 opts = {
-  data_consent_request_model: MyDataMyConsent::DataConsentRequestModel.new # DataConsentRequestModel | MyDataMyConsent.Models.Consents.DataConsentRequestModel.
+  data_consent_request_model: MyDataMyConsent::DataConsentRequestModel.new({receiver: MyDataMyConsent::Receiver.new}) # DataConsentRequestModel | MyDataMyConsent.Models.Consents.DataConsentRequestModel.
 }
 
 begin
@@ -103,7 +104,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataConsent>, Integer, Hash)> create_request_with_http_info(opts)
+> <Array(Boolean, Integer, Hash)> create_request_with_http_info(opts)
 
 ```ruby
 begin
@@ -111,7 +112,7 @@ begin
   data, status_code, headers = api_instance.create_request_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DataConsent>
+  p data # => Boolean
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->create_request_with_http_info: #{e}"
 end
@@ -125,7 +126,7 @@ end
 
 ### Return type
 
-[**DataConsent**](DataConsent.md)
+**Boolean**
 
 ### Authorization
 
@@ -133,15 +134,15 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, application/xml
-- **Accept**: application/json, application/xml
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
-## get_all_consent_requests
+## get_all_consent_requests_to_individuals
 
-> Object get_all_consent_requests(opts)
+> Object get_all_consent_requests_to_individuals(opts)
 
-Get all Consent Requests.
+Get all Consent Requests sent to Individuals.
 
 ### Examples
 
@@ -151,33 +152,35 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
 opts = {
+  page_no: 56, # Integer | 
+  page_size: 56, # Integer | 
   status: MyDataMyConsent::DataConsentStatus::PENDING # DataConsentStatus | 
 }
 
 begin
-  # Get all Consent Requests.
-  result = api_instance.get_all_consent_requests(opts)
+  # Get all Consent Requests sent to Individuals.
+  result = api_instance.get_all_consent_requests_to_individuals(opts)
   p result
 rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataConsentRequestsApi->get_all_consent_requests: #{e}"
+  puts "Error when calling DataConsentRequestsApi->get_all_consent_requests_to_individuals: #{e}"
 end
 ```
 
-#### Using the get_all_consent_requests_with_http_info variant
+#### Using the get_all_consent_requests_to_individuals_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> get_all_consent_requests_with_http_info(opts)
+> <Array(Object, Integer, Hash)> get_all_consent_requests_to_individuals_with_http_info(opts)
 
 ```ruby
 begin
-  # Get all Consent Requests.
-  data, status_code, headers = api_instance.get_all_consent_requests_with_http_info(opts)
+  # Get all Consent Requests sent to Individuals.
+  data, status_code, headers = api_instance.get_all_consent_requests_to_individuals_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
 rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataConsentRequestsApi->get_all_consent_requests_with_http_info: #{e}"
+  puts "Error when calling DataConsentRequestsApi->get_all_consent_requests_to_individuals_with_http_info: #{e}"
 end
 ```
 
@@ -185,6 +188,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **page_no** | **Integer** |  | [optional] |
+| **page_size** | **Integer** |  | [optional] |
 | **status** | [**DataConsentStatus**](.md) |  | [optional] |
 
 ### Return type
@@ -198,12 +203,80 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
+- **Accept**: application/json
 
 
-## get_consent_request_by_id
+## get_all_consent_requests_to_organizations
 
-> <DataConsentDetailsDto> get_consent_request_by_id(request_id)
+> Object get_all_consent_requests_to_organizations(opts)
+
+Get All Consent Requests sent to Organizations
+
+### Examples
+
+```ruby
+require 'time'
+require 'mydatamyconsent'
+
+api_instance = MyDataMyConsent::DataConsentRequestsApi.new
+opts = {
+  page_no: 56, # Integer | 
+  page_size: 56, # Integer | 
+  status: MyDataMyConsent::DataConsentStatus::PENDING # DataConsentStatus | 
+}
+
+begin
+  # Get All Consent Requests sent to Organizations
+  result = api_instance.get_all_consent_requests_to_organizations(opts)
+  p result
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentRequestsApi->get_all_consent_requests_to_organizations: #{e}"
+end
+```
+
+#### Using the get_all_consent_requests_to_organizations_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(Object, Integer, Hash)> get_all_consent_requests_to_organizations_with_http_info(opts)
+
+```ruby
+begin
+  # Get All Consent Requests sent to Organizations
+  data, status_code, headers = api_instance.get_all_consent_requests_to_organizations_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => Object
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentRequestsApi->get_all_consent_requests_to_organizations_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **page_no** | **Integer** |  | [optional] |
+| **page_size** | **Integer** |  | [optional] |
+| **status** | [**DataConsentStatus**](.md) |  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_individual_consent_request_by_id
+
+> <DataConsentDetailsDto> get_individual_consent_request_by_id(request_id)
 
 Get a Consent Request by ID.
 
@@ -218,28 +291,28 @@ request_id = TODO # String |
 
 begin
   # Get a Consent Request by ID.
-  result = api_instance.get_consent_request_by_id(request_id)
+  result = api_instance.get_individual_consent_request_by_id(request_id)
   p result
 rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataConsentRequestsApi->get_consent_request_by_id: #{e}"
+  puts "Error when calling DataConsentRequestsApi->get_individual_consent_request_by_id: #{e}"
 end
 ```
 
-#### Using the get_consent_request_by_id_with_http_info variant
+#### Using the get_individual_consent_request_by_id_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataConsentDetailsDto>, Integer, Hash)> get_consent_request_by_id_with_http_info(request_id)
+> <Array(<DataConsentDetailsDto>, Integer, Hash)> get_individual_consent_request_by_id_with_http_info(request_id)
 
 ```ruby
 begin
   # Get a Consent Request by ID.
-  data, status_code, headers = api_instance.get_consent_request_by_id_with_http_info(request_id)
+  data, status_code, headers = api_instance.get_individual_consent_request_by_id_with_http_info(request_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DataConsentDetailsDto>
 rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataConsentRequestsApi->get_consent_request_by_id_with_http_info: #{e}"
+  puts "Error when calling DataConsentRequestsApi->get_individual_consent_request_by_id_with_http_info: #{e}"
 end
 ```
 
@@ -260,5 +333,67 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/xml
+- **Accept**: application/json
+
+
+## get_organization_consent_request_by_id
+
+> <DataConsentDetailsDto> get_organization_consent_request_by_id(request_id)
+
+Get a OrganizationConsent Request by Id
+
+### Examples
+
+```ruby
+require 'time'
+require 'mydatamyconsent'
+
+api_instance = MyDataMyConsent::DataConsentRequestsApi.new
+request_id = TODO # String | 
+
+begin
+  # Get a OrganizationConsent Request by Id
+  result = api_instance.get_organization_consent_request_by_id(request_id)
+  p result
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentRequestsApi->get_organization_consent_request_by_id: #{e}"
+end
+```
+
+#### Using the get_organization_consent_request_by_id_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DataConsentDetailsDto>, Integer, Hash)> get_organization_consent_request_by_id_with_http_info(request_id)
+
+```ruby
+begin
+  # Get a OrganizationConsent Request by Id
+  data, status_code, headers = api_instance.get_organization_consent_request_by_id_with_http_info(request_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DataConsentDetailsDto>
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentRequestsApi->get_organization_consent_request_by_id_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **request_id** | [**String**](.md) |  |  |
+
+### Return type
+
+[**DataConsentDetailsDto**](DataConsentDetailsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

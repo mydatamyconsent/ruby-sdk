@@ -15,13 +15,9 @@ require 'time'
 
 module MyDataMyConsent
   class DataConsentRequestedDocument
+    attr_accessor :custom_key
+
     attr_accessor :drn
-
-    attr_accessor :from_datetime
-
-    attr_accessor :to_datetime
-
-    attr_accessor :provider_id
 
     attr_accessor :document_type_id
 
@@ -30,10 +26,8 @@ module MyDataMyConsent
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'custom_key' => :'customKey',
         :'drn' => :'drn',
-        :'from_datetime' => :'fromDatetime',
-        :'to_datetime' => :'toDatetime',
-        :'provider_id' => :'providerId',
         :'document_type_id' => :'documentTypeId',
         :'document_identifier' => :'documentIdentifier'
       }
@@ -47,10 +41,8 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'custom_key' => :'String',
         :'drn' => :'String',
-        :'from_datetime' => :'Time',
-        :'to_datetime' => :'Time',
-        :'provider_id' => :'String',
         :'document_type_id' => :'String',
         :'document_identifier' => :'String'
       }
@@ -59,6 +51,7 @@ module MyDataMyConsent
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'custom_key',
         :'drn',
         :'document_type_id',
         :'document_identifier'
@@ -80,20 +73,12 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'custom_key')
+        self.custom_key = attributes[:'custom_key']
+      end
+
       if attributes.key?(:'drn')
         self.drn = attributes[:'drn']
-      end
-
-      if attributes.key?(:'from_datetime')
-        self.from_datetime = attributes[:'from_datetime']
-      end
-
-      if attributes.key?(:'to_datetime')
-        self.to_datetime = attributes[:'to_datetime']
-      end
-
-      if attributes.key?(:'provider_id')
-        self.provider_id = attributes[:'provider_id']
       end
 
       if attributes.key?(:'document_type_id')
@@ -123,10 +108,8 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          custom_key == o.custom_key &&
           drn == o.drn &&
-          from_datetime == o.from_datetime &&
-          to_datetime == o.to_datetime &&
-          provider_id == o.provider_id &&
           document_type_id == o.document_type_id &&
           document_identifier == o.document_identifier
     end
@@ -140,7 +123,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [drn, from_datetime, to_datetime, provider_id, document_type_id, document_identifier].hash
+      [custom_key, drn, document_type_id, document_identifier].hash
     end
 
     # Builds the object from hash
