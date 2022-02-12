@@ -4,11 +4,11 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **icon** | **String** |  | [optional] |
-| **title** | **String** |  | [optional] |
+| **icon_code_point** | **Integer** |  |  |
+| **title** | **String** |  |  |
 | **description** | **String** |  | [optional] |
-| **key** | **String** |  | [optional] |
-| **data_type** | **String** |  | [optional] |
+| **key** | **String** |  |  |
+| **data_type** | **String** |  |  |
 
 ## Example
 
@@ -16,7 +16,7 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::IdentitySupportedFields.new(
-  icon: null,
+  icon_code_point: null,
   title: null,
   description: null,
   key: null,

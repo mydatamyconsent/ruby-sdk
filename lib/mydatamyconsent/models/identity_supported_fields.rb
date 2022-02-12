@@ -15,7 +15,7 @@ require 'time'
 
 module MyDataMyConsent
   class IdentitySupportedFields
-    attr_accessor :icon
+    attr_accessor :icon_code_point
 
     attr_accessor :title
 
@@ -28,7 +28,7 @@ module MyDataMyConsent
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'icon' => :'icon',
+        :'icon_code_point' => :'iconCodePoint',
         :'title' => :'title',
         :'description' => :'description',
         :'key' => :'key',
@@ -44,7 +44,7 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'icon' => :'String',
+        :'icon_code_point' => :'Integer',
         :'title' => :'String',
         :'description' => :'String',
         :'key' => :'String',
@@ -55,11 +55,7 @@ module MyDataMyConsent
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'icon',
-        :'title',
         :'description',
-        :'key',
-        :'data_type'
       ])
     end
 
@@ -78,8 +74,8 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'icon')
-        self.icon = attributes[:'icon']
+      if attributes.key?(:'icon_code_point')
+        self.icon_code_point = attributes[:'icon_code_point']
       end
 
       if attributes.key?(:'title')
@@ -103,12 +99,32 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @icon_code_point.nil?
+        invalid_properties.push('invalid value for "icon_code_point", icon_code_point cannot be nil.')
+      end
+
+      if @title.nil?
+        invalid_properties.push('invalid value for "title", title cannot be nil.')
+      end
+
+      if @key.nil?
+        invalid_properties.push('invalid value for "key", key cannot be nil.')
+      end
+
+      if @data_type.nil?
+        invalid_properties.push('invalid value for "data_type", data_type cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @icon_code_point.nil?
+      return false if @title.nil?
+      return false if @key.nil?
+      return false if @data_type.nil?
       true
     end
 
@@ -117,7 +133,7 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          icon == o.icon &&
+          icon_code_point == o.icon_code_point &&
           title == o.title &&
           description == o.description &&
           key == o.key &&
@@ -133,7 +149,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [icon, title, description, key, data_type].hash
+      [icon_code_point, title, description, key, data_type].hash
     end
 
     # Builds the object from hash

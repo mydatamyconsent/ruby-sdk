@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **document_field** | **String** |  | [optional] |
-| **custom_key** | **String** |  | [optional] |
-| **drn** | **Array&lt;String&gt;** |  | [optional] |
-| **requirement** | [**DocumentsRequired**](DocumentsRequired.md) |  | [optional] |
+| **field_title** | **String** |  |  |
+| **field_slug** | **String** |  |  |
+| **drn** | **Array&lt;String&gt;** |  |  |
+| **requirement** | [**DocumentsRequired**](DocumentsRequired.md) |  |  |
 
 ## Example
 
@@ -15,8 +15,8 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::Document.new(
-  document_field: null,
-  custom_key: null,
+  field_title: null,
+  field_slug: null,
   drn: null,
   requirement: null
 )

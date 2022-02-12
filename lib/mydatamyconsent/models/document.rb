@@ -15,9 +15,9 @@ require 'time'
 
 module MyDataMyConsent
   class Document
-    attr_accessor :document_field
+    attr_accessor :field_title
 
-    attr_accessor :custom_key
+    attr_accessor :field_slug
 
     attr_accessor :drn
 
@@ -26,8 +26,8 @@ module MyDataMyConsent
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'document_field' => :'documentField',
-        :'custom_key' => :'customKey',
+        :'field_title' => :'fieldTitle',
+        :'field_slug' => :'fieldSlug',
         :'drn' => :'drn',
         :'requirement' => :'requirement'
       }
@@ -41,8 +41,8 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'document_field' => :'String',
-        :'custom_key' => :'String',
+        :'field_title' => :'String',
+        :'field_slug' => :'String',
         :'drn' => :'Array<String>',
         :'requirement' => :'DocumentsRequired'
       }
@@ -51,9 +51,6 @@ module MyDataMyConsent
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'document_field',
-        :'custom_key',
-        :'drn',
       ])
     end
 
@@ -72,12 +69,12 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'document_field')
-        self.document_field = attributes[:'document_field']
+      if attributes.key?(:'field_title')
+        self.field_title = attributes[:'field_title']
       end
 
-      if attributes.key?(:'custom_key')
-        self.custom_key = attributes[:'custom_key']
+      if attributes.key?(:'field_slug')
+        self.field_slug = attributes[:'field_slug']
       end
 
       if attributes.key?(:'drn')
@@ -95,12 +92,32 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @field_title.nil?
+        invalid_properties.push('invalid value for "field_title", field_title cannot be nil.')
+      end
+
+      if @field_slug.nil?
+        invalid_properties.push('invalid value for "field_slug", field_slug cannot be nil.')
+      end
+
+      if @drn.nil?
+        invalid_properties.push('invalid value for "drn", drn cannot be nil.')
+      end
+
+      if @requirement.nil?
+        invalid_properties.push('invalid value for "requirement", requirement cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @field_title.nil?
+      return false if @field_slug.nil?
+      return false if @drn.nil?
+      return false if @requirement.nil?
       true
     end
 
@@ -109,8 +126,8 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          document_field == o.document_field &&
-          custom_key == o.custom_key &&
+          field_title == o.field_title &&
+          field_slug == o.field_slug &&
           drn == o.drn &&
           requirement == o.requirement
     end
@@ -124,7 +141,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_field, custom_key, drn, requirement].hash
+      [field_title, field_slug, drn, requirement].hash
     end
 
     # Builds the object from hash
