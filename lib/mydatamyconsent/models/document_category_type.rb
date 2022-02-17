@@ -15,13 +15,11 @@ require 'time'
 
 module MyDataMyConsent
   class DocumentCategoryType
+    PERSONAL = "Personal".freeze
+    EDUCATION = "Education".freeze
     HEALTH = "Health".freeze
     FINANCE = "Finance".freeze
-    EDUCATION = "Education".freeze
-    BILLS = "Bills".freeze
-    TAX = "Tax".freeze
     CERTIFICATES = "Certificates".freeze
-    INVOICES = "Invoices".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
