@@ -13,6 +13,7 @@ docs/DataConsentDetailsDto.md
 docs/DataConsentDocumentsDto.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentIdentifier.md
+docs/DataConsentRequest.md
 docs/DataConsentRequestModel.md
 docs/DataConsentRequestedDocument.md
 docs/DataConsentRequestedFinancialAccount.md
@@ -87,6 +88,7 @@ lib/mydatamyconsent/models/data_consent_details_dto.rb
 lib/mydatamyconsent/models/data_consent_documents_dto.rb
 lib/mydatamyconsent/models/data_consent_financials_dto.rb
 lib/mydatamyconsent/models/data_consent_identifier.rb
+lib/mydatamyconsent/models/data_consent_request.rb
 lib/mydatamyconsent/models/data_consent_request_model.rb
 lib/mydatamyconsent/models/data_consent_requested_document.rb
 lib/mydatamyconsent/models/data_consent_requested_financial_account.rb

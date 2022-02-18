@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::DataConsentDocumentsDto](docs/DataConsentDocumentsDto.md)
  - [MyDataMyConsent::DataConsentFinancialsDto](docs/DataConsentFinancialsDto.md)
  - [MyDataMyConsent::DataConsentIdentifier](docs/DataConsentIdentifier.md)
+ - [MyDataMyConsent::DataConsentRequest](docs/DataConsentRequest.md)
  - [MyDataMyConsent::DataConsentRequestModel](docs/DataConsentRequestModel.md)
  - [MyDataMyConsent::DataConsentRequestedDocument](docs/DataConsentRequestedDocument.md)
  - [MyDataMyConsent::DataConsentRequestedFinancialAccount](docs/DataConsentRequestedFinancialAccount.md)

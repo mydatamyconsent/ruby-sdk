@@ -83,7 +83,7 @@ module MyDataMyConsent
     # Create a consent request.
     # @param [Hash] opts the optional parameters
     # @option opts [DataConsentRequestModel] :data_consent_request_model MyDataMyConsent.Models.Consents.DataConsentRequestModel.
-    # @return [Boolean]
+    # @return [DataConsentRequest]
     def create_request(opts = {})
       data, _status_code, _headers = create_request_with_http_info(opts)
       data
@@ -92,7 +92,7 @@ module MyDataMyConsent
     # Create a consent request.
     # @param [Hash] opts the optional parameters
     # @option opts [DataConsentRequestModel] :data_consent_request_model MyDataMyConsent.Models.Consents.DataConsentRequestModel.
-    # @return [Array<(Boolean, Integer, Hash)>] Boolean data, response status code and response headers
+    # @return [Array<(DataConsentRequest, Integer, Hash)>] DataConsentRequest data, response status code and response headers
     def create_request_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentRequestsApi.create_request ...'
@@ -117,7 +117,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'data_consent_request_model'])
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Boolean'
+      return_type = opts[:debug_return_type] || 'DataConsentRequest'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

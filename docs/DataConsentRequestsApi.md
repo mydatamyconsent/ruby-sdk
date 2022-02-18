@@ -76,7 +76,7 @@ No authorization required
 
 ## create_request
 
-> Boolean create_request(opts)
+> <DataConsentRequest> create_request(opts)
 
 Create a consent request.
 
@@ -104,7 +104,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Boolean, Integer, Hash)> create_request_with_http_info(opts)
+> <Array(<DataConsentRequest>, Integer, Hash)> create_request_with_http_info(opts)
 
 ```ruby
 begin
@@ -112,7 +112,7 @@ begin
   data, status_code, headers = api_instance.create_request_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Boolean
+  p data # => <DataConsentRequest>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentRequestsApi->create_request_with_http_info: #{e}"
 end
@@ -126,7 +126,7 @@ end
 
 ### Return type
 
-**Boolean**
+[**DataConsentRequest**](DataConsentRequest.md)
 
 ### Authorization
 

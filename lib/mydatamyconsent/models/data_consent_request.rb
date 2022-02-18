@@ -14,16 +14,25 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class DataConsentRequestModel
-    attr_accessor :consent_template_id
+  class DataConsentRequest
+    attr_accessor :id
 
-    attr_accessor :receiver
+    attr_accessor :template_id
+
+    attr_accessor :requested_at_utc
+
+    attr_accessor :request_expired_at_utc
+
+    attr_accessor :transaction_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'consent_template_id' => :'consentTemplateId',
-        :'receiver' => :'receiver'
+        :'id' => :'id',
+        :'template_id' => :'templateId',
+        :'requested_at_utc' => :'requestedAtUtc',
+        :'request_expired_at_utc' => :'requestExpiredAtUtc',
+        :'transaction_id' => :'transactionId'
       }
     end
 
@@ -35,14 +44,19 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'consent_template_id' => :'String',
-        :'receiver' => :'Receiver'
+        :'id' => :'String',
+        :'template_id' => :'String',
+        :'requested_at_utc' => :'Time',
+        :'request_expired_at_utc' => :'Time',
+        :'transaction_id' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'template_id',
+        :'transaction_id'
       ])
     end
 
@@ -50,23 +64,35 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DataConsentRequestModel` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DataConsentRequest` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DataConsentRequestModel`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DataConsentRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'consent_template_id')
-        self.consent_template_id = attributes[:'consent_template_id']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'receiver')
-        self.receiver = attributes[:'receiver']
+      if attributes.key?(:'template_id')
+        self.template_id = attributes[:'template_id']
+      end
+
+      if attributes.key?(:'requested_at_utc')
+        self.requested_at_utc = attributes[:'requested_at_utc']
+      end
+
+      if attributes.key?(:'request_expired_at_utc')
+        self.request_expired_at_utc = attributes[:'request_expired_at_utc']
+      end
+
+      if attributes.key?(:'transaction_id')
+        self.transaction_id = attributes[:'transaction_id']
       end
     end
 
@@ -74,17 +100,12 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @receiver.nil?
-        invalid_properties.push('invalid value for "receiver", receiver cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @receiver.nil?
       true
     end
 
@@ -93,8 +114,11 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          consent_template_id == o.consent_template_id &&
-          receiver == o.receiver
+          id == o.id &&
+          template_id == o.template_id &&
+          requested_at_utc == o.requested_at_utc &&
+          request_expired_at_utc == o.request_expired_at_utc &&
+          transaction_id == o.transaction_id
     end
 
     # @see the `==` method
@@ -106,7 +130,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [consent_template_id, receiver].hash
+      [id, template_id, requested_at_utc, request_expired_at_utc, transaction_id].hash
     end
 
     # Builds the object from hash
