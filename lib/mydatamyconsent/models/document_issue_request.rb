@@ -17,7 +17,7 @@ module MyDataMyConsent
   class DocumentIssueRequest
     attr_accessor :document_type_id
 
-    attr_accessor :identifier
+    attr_accessor :document_identifier
 
     attr_accessor :name
 
@@ -35,7 +35,7 @@ module MyDataMyConsent
     def self.attribute_map
       {
         :'document_type_id' => :'documentTypeId',
-        :'identifier' => :'identifier',
+        :'document_identifier' => :'documentIdentifier',
         :'name' => :'name',
         :'description' => :'description',
         :'receiver' => :'receiver',
@@ -54,7 +54,7 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'document_type_id' => :'String',
-        :'identifier' => :'String',
+        :'document_identifier' => :'String',
         :'name' => :'String',
         :'description' => :'String',
         :'receiver' => :'Receiver',
@@ -91,8 +91,8 @@ module MyDataMyConsent
         self.document_type_id = attributes[:'document_type_id']
       end
 
-      if attributes.key?(:'identifier')
-        self.identifier = attributes[:'identifier']
+      if attributes.key?(:'document_identifier')
+        self.document_identifier = attributes[:'document_identifier']
       end
 
       if attributes.key?(:'name')
@@ -128,8 +128,8 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "document_type_id", document_type_id cannot be nil.')
       end
 
-      if @identifier.nil?
-        invalid_properties.push('invalid value for "identifier", identifier cannot be nil.')
+      if @document_identifier.nil?
+        invalid_properties.push('invalid value for "document_identifier", document_identifier cannot be nil.')
       end
 
       if @name.nil?
@@ -155,7 +155,7 @@ module MyDataMyConsent
     # @return true if the model is valid
     def valid?
       return false if @document_type_id.nil?
-      return false if @identifier.nil?
+      return false if @document_identifier.nil?
       return false if @name.nil?
       return false if @description.nil?
       return false if @receiver.nil?
@@ -169,7 +169,7 @@ module MyDataMyConsent
       return true if self.equal?(o)
       self.class == o.class &&
           document_type_id == o.document_type_id &&
-          identifier == o.identifier &&
+          document_identifier == o.document_identifier &&
           name == o.name &&
           description == o.description &&
           receiver == o.receiver &&
@@ -187,7 +187,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_type_id, identifier, name, description, receiver, expires_at_utc, base64_pdf_document, metadata].hash
+      [document_type_id, document_identifier, name, description, receiver, expires_at_utc, base64_pdf_document, metadata].hash
     end
 
     # Builds the object from hash

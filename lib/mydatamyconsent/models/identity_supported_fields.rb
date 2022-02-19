@@ -15,7 +15,7 @@ require 'time'
 
 module MyDataMyConsent
   class IdentitySupportedFields
-    attr_accessor :icon_code_point
+    attr_accessor :icon
 
     attr_accessor :title
 
@@ -28,7 +28,7 @@ module MyDataMyConsent
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'icon_code_point' => :'iconCodePoint',
+        :'icon' => :'icon',
         :'title' => :'title',
         :'description' => :'description',
         :'key' => :'key',
@@ -44,7 +44,7 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'icon_code_point' => :'Integer',
+        :'icon' => :'Integer',
         :'title' => :'String',
         :'description' => :'String',
         :'key' => :'String',
@@ -74,8 +74,8 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'icon_code_point')
-        self.icon_code_point = attributes[:'icon_code_point']
+      if attributes.key?(:'icon')
+        self.icon = attributes[:'icon']
       end
 
       if attributes.key?(:'title')
@@ -99,8 +99,8 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @icon_code_point.nil?
-        invalid_properties.push('invalid value for "icon_code_point", icon_code_point cannot be nil.')
+      if @icon.nil?
+        invalid_properties.push('invalid value for "icon", icon cannot be nil.')
       end
 
       if @title.nil?
@@ -121,7 +121,7 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @icon_code_point.nil?
+      return false if @icon.nil?
       return false if @title.nil?
       return false if @key.nil?
       return false if @data_type.nil?
@@ -133,7 +133,7 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          icon_code_point == o.icon_code_point &&
+          icon == o.icon &&
           title == o.title &&
           description == o.description &&
           key == o.key &&
@@ -149,7 +149,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [icon_code_point, title, description, key, data_type].hash
+      [icon, title, description, key, data_type].hash
     end
 
     # Builds the object from hash

@@ -24,7 +24,7 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
 opts = {
-  document_issue_request: MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'identifier_example', name: 'name_example', description: 'description_example', receiver: MyDataMyConsent::Receiver.new, base64_pdf_document: 'base64_pdf_document_example'}) # DocumentIssueRequest | 
+  document_issue_request: MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', document_identifier: 'document_identifier_example', name: 'name_example', description: 'description_example', receiver: MyDataMyConsent::Receiver.new, base64_pdf_document: 'base64_pdf_document_example'}) # DocumentIssueRequest | 
 }
 
 begin

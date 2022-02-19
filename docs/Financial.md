@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_field** | **String** |  | [optional] |
+| **field_name** | **String** |  | [optional] |
 | **custom_key** | **String** |  | [optional] |
 | **accounts** | [**Array&lt;FinancialAccounts&gt;**](FinancialAccounts.md) |  | [optional] |
 | **requirement** | [**DocumentsRequired**](DocumentsRequired.md) |  | [optional] |
@@ -15,7 +15,7 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::Financial.new(
-  account_field: null,
+  field_name: null,
   custom_key: null,
   accounts: null,
   requirement: null

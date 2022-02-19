@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **document_type_id** | **String** |  |  |
-| **identifier** | **String** |  |  |
+| **document_identifier** | **String** |  |  |
 | **name** | **String** |  |  |
 | **description** | **String** |  |  |
 | **receiver** | [**Receiver**](Receiver.md) |  |  |
@@ -20,7 +20,7 @@ require 'mydatamyconsent'
 
 instance = MyDataMyConsent::DocumentIssueRequest.new(
   document_type_id: null,
-  identifier: null,
+  document_identifier: null,
   name: null,
   description: null,
   receiver: null,

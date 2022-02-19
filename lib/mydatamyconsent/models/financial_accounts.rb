@@ -17,7 +17,7 @@ module MyDataMyConsent
   class FinancialAccounts
     attr_accessor :drn
 
-    attr_accessor :financial_account_details_required
+    attr_accessor :required_details
 
     attr_accessor :start_date
 
@@ -27,9 +27,9 @@ module MyDataMyConsent
     def self.attribute_map
       {
         :'drn' => :'drn',
-        :'financial_account_details_required' => :'financialAccountDetailsRequired',
-        :'start_date' => :'startDate',
-        :'end_date' => :'endDate'
+        :'required_details' => :'required_details',
+        :'start_date' => :'start_date',
+        :'end_date' => :'end_date'
       }
     end
 
@@ -42,7 +42,7 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'drn' => :'String',
-        :'financial_account_details_required' => :'Array<FinancialAccountDetailsRequired>',
+        :'required_details' => :'Array<FinancialAccountDetailsRequired>',
         :'start_date' => :'Time',
         :'end_date' => :'Time'
       }
@@ -52,7 +52,7 @@ module MyDataMyConsent
     def self.openapi_nullable
       Set.new([
         :'drn',
-        :'financial_account_details_required',
+        :'required_details',
         :'start_date',
         :'end_date'
       ])
@@ -77,9 +77,9 @@ module MyDataMyConsent
         self.drn = attributes[:'drn']
       end
 
-      if attributes.key?(:'financial_account_details_required')
-        if (value = attributes[:'financial_account_details_required']).is_a?(Array)
-          self.financial_account_details_required = value
+      if attributes.key?(:'required_details')
+        if (value = attributes[:'required_details']).is_a?(Array)
+          self.required_details = value
         end
       end
 
@@ -111,7 +111,7 @@ module MyDataMyConsent
       return true if self.equal?(o)
       self.class == o.class &&
           drn == o.drn &&
-          financial_account_details_required == o.financial_account_details_required &&
+          required_details == o.required_details &&
           start_date == o.start_date &&
           end_date == o.end_date
     end
@@ -125,7 +125,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [drn, financial_account_details_required, start_date, end_date].hash
+      [drn, required_details, start_date, end_date].hash
     end
 
     # Builds the object from hash

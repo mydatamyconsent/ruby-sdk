@@ -15,7 +15,7 @@ require 'time'
 
 module MyDataMyConsent
   class Financial
-    attr_accessor :account_field
+    attr_accessor :field_name
 
     attr_accessor :custom_key
 
@@ -26,8 +26,8 @@ module MyDataMyConsent
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'account_field' => :'accountField',
-        :'custom_key' => :'customKey',
+        :'field_name' => :'field_name',
+        :'custom_key' => :'custom_key',
         :'accounts' => :'accounts',
         :'requirement' => :'requirement'
       }
@@ -41,7 +41,7 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'account_field' => :'String',
+        :'field_name' => :'String',
         :'custom_key' => :'String',
         :'accounts' => :'Array<FinancialAccounts>',
         :'requirement' => :'DocumentsRequired'
@@ -51,7 +51,7 @@ module MyDataMyConsent
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'account_field',
+        :'field_name',
         :'custom_key',
         :'accounts',
       ])
@@ -72,8 +72,8 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'account_field')
-        self.account_field = attributes[:'account_field']
+      if attributes.key?(:'field_name')
+        self.field_name = attributes[:'field_name']
       end
 
       if attributes.key?(:'custom_key')
@@ -109,7 +109,7 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          account_field == o.account_field &&
+          field_name == o.field_name &&
           custom_key == o.custom_key &&
           accounts == o.accounts &&
           requirement == o.requirement
@@ -124,7 +124,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [account_field, custom_key, accounts, requirement].hash
+      [field_name, custom_key, accounts, requirement].hash
     end
 
     # Builds the object from hash

@@ -26,8 +26,8 @@ module MyDataMyConsent
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'field_title' => :'fieldTitle',
-        :'field_slug' => :'fieldSlug',
+        :'field_title' => :'field_title',
+        :'field_slug' => :'field_slug',
         :'drn' => :'drn',
         :'requirement' => :'requirement'
       }
