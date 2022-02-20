@@ -89,7 +89,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
-id = TODO # String | Agreement id.
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Agreement id.
 
 begin
   # Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
@@ -121,7 +121,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | [**String**](.md) | Agreement id. |  |
+| **id** | **String** | Agreement id. |  |
 
 ### Return type
 
@@ -150,7 +150,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
-id = TODO # String | Agreement id.
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Agreement id.
 
 begin
   # Get data processing agreement by id.
@@ -183,7 +183,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | [**String**](.md) | Agreement id. |  |
+| **id** | **String** | Agreement id. |  |
 
 ### Return type
 
@@ -278,7 +278,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
-id = TODO # String | Agreement id.
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Agreement id.
 
 begin
   # Terminate a data processing agreement.
@@ -310,7 +310,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | [**String**](.md) | Agreement id. |  |
+| **id** | **String** | Agreement id. |  |
 
 ### Return type
 
@@ -339,7 +339,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
-id = TODO # String | Agreement id.
+id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Agreement id.
 opts = {
   update_data_processing_agreement_request_model: MyDataMyConsent::UpdateDataProcessingAgreementRequestModel.new({version: 'version_example', body: 'body_example', attachment_url: 'attachment_url_example'}) # UpdateDataProcessingAgreementRequestModel | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
 }
@@ -375,7 +375,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | [**String**](.md) | Agreement id. |  |
+| **id** | **String** | Agreement id. |  |
 | **update_data_processing_agreement_request_model** | [**UpdateDataProcessingAgreementRequestModel**](UpdateDataProcessingAgreementRequestModel.md) | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. | [optional] |
 
 ### Return type

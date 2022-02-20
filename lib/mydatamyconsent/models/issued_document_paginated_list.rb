@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class OrganizationFinancialTransactionsDtoPaginatedList
+  class IssuedDocumentPaginatedList
     attr_accessor :page_index
 
     attr_accessor :page_size
@@ -48,7 +48,7 @@ module MyDataMyConsent
         :'page_size' => :'Integer',
         :'total_pages' => :'Integer',
         :'total_items' => :'Integer',
-        :'items' => :'Array<OrganizationFinancialTransactionsDto>'
+        :'items' => :'Array<IssuedDocument>'
       }
     end
 
@@ -63,13 +63,13 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::OrganizationFinancialTransactionsDtoPaginatedList` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::IssuedDocumentPaginatedList` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::OrganizationFinancialTransactionsDtoPaginatedList`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::IssuedDocumentPaginatedList`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }

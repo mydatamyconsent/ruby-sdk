@@ -88,7 +88,7 @@ opts = {
   document_type: 'document_type_example', # String | Document type.
   organization_category: 'organization_category_example', # String | Organization category.
   page_no: 56, # Integer | Page number.
-  page_size: 56, # Integer | Page size.
+  page_size: 56, # Integer | Number of items to return.
   country: 'country_example' # String | ISO2 Country code.
 }
 
@@ -127,7 +127,7 @@ end
 | **document_type** | **String** | Document type. | [optional] |
 | **organization_category** | **String** | Organization category. | [optional] |
 | **page_no** | **Integer** | Page number. | [optional][default to 1] |
-| **page_size** | **Integer** | Page size. | [optional][default to 25] |
+| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 | **country** | **String** | ISO2 Country code. | [optional][default to &#39;IN&#39;] |
 
 ### Return type

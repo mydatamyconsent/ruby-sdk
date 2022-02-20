@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost*
 
 ## get_issued_document_by_id
 
-> get_issued_document_by_id(document_id)
+> <IssuedDocument> get_issued_document_by_id(document_id)
 
 Get issued document.
 
@@ -23,11 +23,12 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-document_id = TODO # String | Document id.
+document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Document id.
 
 begin
   # Get issued document.
-  api_instance.get_issued_document_by_id(document_id)
+  result = api_instance.get_issued_document_by_id(document_id)
+  p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_issued_document_by_id: #{e}"
 end
@@ -35,9 +36,9 @@ end
 
 #### Using the get_issued_document_by_id_with_http_info variant
 
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
+This returns an Array which contains the response data, status code and headers.
 
-> <Array(nil, Integer, Hash)> get_issued_document_by_id_with_http_info(document_id)
+> <Array(<IssuedDocument>, Integer, Hash)> get_issued_document_by_id_with_http_info(document_id)
 
 ```ruby
 begin
@@ -45,7 +46,7 @@ begin
   data, status_code, headers = api_instance.get_issued_document_by_id_with_http_info(document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => nil
+  p data # => <IssuedDocument>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_issued_document_by_id_with_http_info: #{e}"
 end
@@ -55,11 +56,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **document_id** | [**String**](.md) | Document id. |  |
+| **document_id** | **String** | Document id. |  |
 
 ### Return type
 
-nil (empty response body)
+[**IssuedDocument**](IssuedDocument.md)
 
 ### Authorization
 
@@ -68,12 +69,12 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## get_issued_documents
 
-> get_issued_documents(opts)
+> <IssuedDocumentPaginatedList> get_issued_documents(opts)
 
 Get issued documents.
 
@@ -85,7 +86,7 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
 opts = {
-  document_type_id: TODO, # String | 
+  document_type_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   from_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | 
   to_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | 
   page_size: 56, # Integer | 
@@ -94,7 +95,8 @@ opts = {
 
 begin
   # Get issued documents.
-  api_instance.get_issued_documents(opts)
+  result = api_instance.get_issued_documents(opts)
+  p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_issued_documents: #{e}"
 end
@@ -102,9 +104,9 @@ end
 
 #### Using the get_issued_documents_with_http_info variant
 
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
+This returns an Array which contains the response data, status code and headers.
 
-> <Array(nil, Integer, Hash)> get_issued_documents_with_http_info(opts)
+> <Array(<IssuedDocumentPaginatedList>, Integer, Hash)> get_issued_documents_with_http_info(opts)
 
 ```ruby
 begin
@@ -112,7 +114,7 @@ begin
   data, status_code, headers = api_instance.get_issued_documents_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => nil
+  p data # => <IssuedDocumentPaginatedList>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_issued_documents_with_http_info: #{e}"
 end
@@ -122,7 +124,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **document_type_id** | [**String**](.md) |  | [optional] |
+| **document_type_id** | **String** |  | [optional] |
 | **from_date_time** | **Time** |  | [optional] |
 | **to_date_time** | **Time** |  | [optional] |
 | **page_size** | **Integer** |  | [optional][default to 25] |
@@ -130,7 +132,7 @@ end
 
 ### Return type
 
-nil (empty response body)
+[**IssuedDocumentPaginatedList**](IssuedDocumentPaginatedList.md)
 
 ### Authorization
 
@@ -139,12 +141,12 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## get_registered_document_types
 
-> get_registered_document_types(opts)
+> <DocumentTypeDetailsDtoPaginatedList> get_registered_document_types(opts)
 
 Get registered document types.
 
@@ -156,13 +158,14 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
 opts = {
-  page_size: 56, # Integer | 
-  page_no: 56 # Integer | 
+  page_no: 56, # Integer | Page number.
+  page_size: 56 # Integer | Number of items to return.
 }
 
 begin
   # Get registered document types.
-  api_instance.get_registered_document_types(opts)
+  result = api_instance.get_registered_document_types(opts)
+  p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_registered_document_types: #{e}"
 end
@@ -170,9 +173,9 @@ end
 
 #### Using the get_registered_document_types_with_http_info variant
 
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
+This returns an Array which contains the response data, status code and headers.
 
-> <Array(nil, Integer, Hash)> get_registered_document_types_with_http_info(opts)
+> <Array(<DocumentTypeDetailsDtoPaginatedList>, Integer, Hash)> get_registered_document_types_with_http_info(opts)
 
 ```ruby
 begin
@@ -180,7 +183,7 @@ begin
   data, status_code, headers = api_instance.get_registered_document_types_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => nil
+  p data # => <DocumentTypeDetailsDtoPaginatedList>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_registered_document_types_with_http_info: #{e}"
 end
@@ -190,12 +193,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page_size** | **Integer** |  | [optional][default to 25] |
-| **page_no** | **Integer** |  | [optional][default to 1] |
+| **page_no** | **Integer** | Page number. | [optional][default to 1] |
+| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 
 ### Return type
 
-nil (empty response body)
+[**DocumentTypeDetailsDtoPaginatedList**](DocumentTypeDetailsDtoPaginatedList.md)
 
 ### Authorization
 
@@ -204,12 +207,12 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## issue_document
 
-> Boolean issue_document(document_issue_request)
+> <IssuedDocument> issue_document(document_issue_request)
 
 Issue a new document.
 
@@ -235,7 +238,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Boolean, Integer, Hash)> issue_document_with_http_info(document_issue_request)
+> <Array(<IssuedDocument>, Integer, Hash)> issue_document_with_http_info(document_issue_request)
 
 ```ruby
 begin
@@ -243,7 +246,7 @@ begin
   data, status_code, headers = api_instance.issue_document_with_http_info(document_issue_request)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Boolean
+  p data # => <IssuedDocument>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->issue_document_with_http_info: #{e}"
 end
@@ -257,7 +260,7 @@ end
 
 ### Return type
 
-**Boolean**
+[**IssuedDocument**](IssuedDocument.md)
 
 ### Authorization
 

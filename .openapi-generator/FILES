@@ -33,6 +33,9 @@ docs/DigitalSignature.md
 docs/Document.md
 docs/DocumentCategoryType.md
 docs/DocumentIssueRequest.md
+docs/DocumentSubCategoryType.md
+docs/DocumentTypeDetailsDto.md
+docs/DocumentTypeDetailsDtoPaginatedList.md
 docs/DocumentsApi.md
 docs/DocumentsRequired.md
 docs/FetchTypes.md
@@ -47,6 +50,8 @@ docs/Identifier.md
 docs/IdentifierStringKeyValuePair.md
 docs/IdentitySupportedFields.md
 docs/IndividualDataConsentRequestResponse.md
+docs/IssuedDocument.md
+docs/IssuedDocumentPaginatedList.md
 docs/Life.md
 docs/OrganizationDataConsentInfoDto.md
 docs/OrganizationDataConsentInfoDtoPaginatedList.md
@@ -62,6 +67,7 @@ docs/PushUriResponse.md
 docs/Receiver.md
 docs/ReceiverType.md
 docs/SharedWith.md
+docs/SupportedEntityType.md
 docs/UpdateDataProcessingAgreementRequestModel.md
 docs/UriDetails.md
 docs/UserAccountFinancialTransactionsDto.md
@@ -105,6 +111,9 @@ lib/mydatamyconsent/models/digital_signature.rb
 lib/mydatamyconsent/models/document.rb
 lib/mydatamyconsent/models/document_category_type.rb
 lib/mydatamyconsent/models/document_issue_request.rb
+lib/mydatamyconsent/models/document_sub_category_type.rb
+lib/mydatamyconsent/models/document_type_details_dto.rb
+lib/mydatamyconsent/models/document_type_details_dto_paginated_list.rb
 lib/mydatamyconsent/models/documents_required.rb
 lib/mydatamyconsent/models/fetch_types.rb
 lib/mydatamyconsent/models/file_type.rb
@@ -118,6 +127,8 @@ lib/mydatamyconsent/models/identifier.rb
 lib/mydatamyconsent/models/identifier_string_key_value_pair.rb
 lib/mydatamyconsent/models/identity_supported_fields.rb
 lib/mydatamyconsent/models/individual_data_consent_request_response.rb
+lib/mydatamyconsent/models/issued_document.rb
+lib/mydatamyconsent/models/issued_document_paginated_list.rb
 lib/mydatamyconsent/models/life.rb
 lib/mydatamyconsent/models/organization_data_consent_info_dto.rb
 lib/mydatamyconsent/models/organization_data_consent_info_dto_paginated_list.rb
@@ -133,6 +144,7 @@ lib/mydatamyconsent/models/push_uri_response.rb
 lib/mydatamyconsent/models/receiver.rb
 lib/mydatamyconsent/models/receiver_type.rb
 lib/mydatamyconsent/models/shared_with.rb
+lib/mydatamyconsent/models/supported_entity_type.rb
 lib/mydatamyconsent/models/update_data_processing_agreement_request_model.rb
 lib/mydatamyconsent/models/uri_details.rb
 lib/mydatamyconsent/models/user_account_financial_transactions_dto.rb

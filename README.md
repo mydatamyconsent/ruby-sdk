@@ -58,7 +58,7 @@ Please follow the [installation](#installation) procedure and then run the follo
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
-request_id = TODO # String | Individual consent request id.
+request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Individual consent request id.
 
 begin
   #Cancel the individual data consent request based on Id.
@@ -142,6 +142,9 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::Document](docs/Document.md)
  - [MyDataMyConsent::DocumentCategoryType](docs/DocumentCategoryType.md)
  - [MyDataMyConsent::DocumentIssueRequest](docs/DocumentIssueRequest.md)
+ - [MyDataMyConsent::DocumentSubCategoryType](docs/DocumentSubCategoryType.md)
+ - [MyDataMyConsent::DocumentTypeDetailsDto](docs/DocumentTypeDetailsDto.md)
+ - [MyDataMyConsent::DocumentTypeDetailsDtoPaginatedList](docs/DocumentTypeDetailsDtoPaginatedList.md)
  - [MyDataMyConsent::DocumentsRequired](docs/DocumentsRequired.md)
  - [MyDataMyConsent::FetchTypes](docs/FetchTypes.md)
  - [MyDataMyConsent::FileType](docs/FileType.md)
@@ -155,6 +158,8 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::IdentifierStringKeyValuePair](docs/IdentifierStringKeyValuePair.md)
  - [MyDataMyConsent::IdentitySupportedFields](docs/IdentitySupportedFields.md)
  - [MyDataMyConsent::IndividualDataConsentRequestResponse](docs/IndividualDataConsentRequestResponse.md)
+ - [MyDataMyConsent::IssuedDocument](docs/IssuedDocument.md)
+ - [MyDataMyConsent::IssuedDocumentPaginatedList](docs/IssuedDocumentPaginatedList.md)
  - [MyDataMyConsent::Life](docs/Life.md)
  - [MyDataMyConsent::OrganizationDataConsentInfoDto](docs/OrganizationDataConsentInfoDto.md)
  - [MyDataMyConsent::OrganizationDataConsentInfoDtoPaginatedList](docs/OrganizationDataConsentInfoDtoPaginatedList.md)
@@ -170,6 +175,7 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::Receiver](docs/Receiver.md)
  - [MyDataMyConsent::ReceiverType](docs/ReceiverType.md)
  - [MyDataMyConsent::SharedWith](docs/SharedWith.md)
+ - [MyDataMyConsent::SupportedEntityType](docs/SupportedEntityType.md)
  - [MyDataMyConsent::UpdateDataProcessingAgreementRequestModel](docs/UpdateDataProcessingAgreementRequestModel.md)
  - [MyDataMyConsent::UriDetails](docs/UriDetails.md)
  - [MyDataMyConsent::UserAccountFinancialTransactionsDto](docs/UserAccountFinancialTransactionsDto.md)

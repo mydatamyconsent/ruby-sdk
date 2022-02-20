@@ -35,8 +35,8 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
-document_id = TODO # String | Document id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
+document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Document id.
 
 begin
   # Download a individuals consented document.
@@ -69,8 +69,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
-| **document_id** | [**String**](.md) | Document id. |  |
+| **consent_id** | **String** | Consent id. |  |
+| **document_id** | **String** | Document id. |  |
 
 ### Return type
 
@@ -99,8 +99,8 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
-document_id = TODO # String | Document id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
+document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Document id.
 
 begin
   # Download a organizations consented document.
@@ -133,8 +133,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
-| **document_id** | [**String**](.md) | Document id. |  |
+| **consent_id** | **String** | Consent id. |  |
+| **document_id** | **String** | Document id. |  |
 
 ### Return type
 
@@ -163,7 +163,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
 
 begin
   # Get the individual documents based on ConsentId.
@@ -196,7 +196,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
+| **consent_id** | **String** | Consent id. |  |
 
 ### Return type
 
@@ -225,7 +225,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
 
 begin
   # Get all individual consented financial accounts.
@@ -258,7 +258,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
+| **consent_id** | **String** | Consent id. |  |
 
 ### Return type
 
@@ -287,7 +287,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
 
 begin
   # Get all organizational consented financial accounts.
@@ -320,7 +320,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
+| **consent_id** | **String** | Consent id. |  |
 
 ### Return type
 
@@ -349,7 +349,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
 
 begin
   # Get the organization documents based on ConsentId.
@@ -382,7 +382,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
+| **consent_id** | **String** | Consent id. |  |
 
 ### Return type
 
@@ -411,7 +411,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
 
 begin
   # Get all individuals consent details by consent id.
@@ -444,7 +444,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
+| **consent_id** | **String** | Consent id. |  |
 
 ### Return type
 
@@ -473,8 +473,8 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
-account_id = TODO # String | Account id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
+account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Account id.
 
 begin
   # Get individual consented financial account details based on account id.
@@ -507,8 +507,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
-| **account_id** | [**String**](.md) | Account id. |  |
+| **consent_id** | **String** | Consent id. |  |
+| **account_id** | **String** | Account id. |  |
 
 ### Return type
 
@@ -537,8 +537,8 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
-document_id = TODO # String | Document Id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
+document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Document Id.
 
 begin
   # Get individuals consent document based on document id.
@@ -571,8 +571,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
-| **document_id** | [**String**](.md) | Document Id. |  |
+| **consent_id** | **String** | Consent id. |  |
+| **document_id** | **String** | Document Id. |  |
 
 ### Return type
 
@@ -601,8 +601,8 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
-account_id = TODO # String | Account id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
+account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Account id.
 
 begin
   # Get organization consented financial account details based on account id.
@@ -635,8 +635,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
-| **account_id** | [**String**](.md) | Account id. |  |
+| **consent_id** | **String** | Consent id. |  |
+| **account_id** | **String** | Account id. |  |
 
 ### Return type
 
@@ -665,14 +665,14 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
-account_id = TODO # String | Account id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
+account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Account id.
 opts = {
   filters: 'filters_example', # String | Filters.
   from_date_time_utc: Time.parse('2013-10-20T19:20:30+01:00'), # Time | From date time in utc timezone.
   to_date_time_utc: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Til date time in utc timezone.
-  page_no: 56, # Integer | Page no.
-  page_size: 56 # Integer | Page size.
+  page_no: 56, # Integer | Page number.
+  page_size: 56 # Integer | Number of items to return.
 }
 
 begin
@@ -706,13 +706,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
-| **account_id** | [**String**](.md) | Account id. |  |
+| **consent_id** | **String** | Consent id. |  |
+| **account_id** | **String** | Account id. |  |
 | **filters** | **String** | Filters. | [optional] |
 | **from_date_time_utc** | **Time** | From date time in utc timezone. | [optional] |
 | **to_date_time_utc** | **Time** | Til date time in utc timezone. | [optional] |
-| **page_no** | **Integer** | Page no. | [optional][default to 10] |
-| **page_size** | **Integer** | Page size. | [optional][default to 25] |
+| **page_no** | **Integer** | Page number. | [optional][default to 10] |
+| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 
 ### Return type
 
@@ -746,7 +746,7 @@ opts = {
   from: Time.parse('2013-10-20T19:20:30+01:00'), # Time | From date time in utc timezone.
   to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Til date time in utc timezone.
   page_no: 56, # Integer | Page number.
-  page_size: 56 # Integer | Page size.
+  page_size: 56 # Integer | Number of items to return.
 }
 
 begin
@@ -784,7 +784,7 @@ end
 | **from** | **Time** | From date time in utc timezone. | [optional] |
 | **to** | **Time** | Til date time in utc timezone. | [optional] |
 | **page_no** | **Integer** | Page number. | [optional][default to 1] |
-| **page_size** | **Integer** | Page size. | [optional][default to 25] |
+| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 
 ### Return type
 
@@ -818,7 +818,7 @@ opts = {
   from: Time.parse('2013-10-20T19:20:30+01:00'), # Time | From date time in utc timezone.
   to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Til date time in utc timezone.
   page_no: 56, # Integer | Page number.
-  page_size: 56 # Integer | Page size.
+  page_size: 56 # Integer | Number of items to return.
 }
 
 begin
@@ -856,7 +856,7 @@ end
 | **from** | **Time** | From date time in utc timezone. | [optional] |
 | **to** | **Time** | Til date time in utc timezone. | [optional] |
 | **page_no** | **Integer** | Page number. | [optional][default to 1] |
-| **page_size** | **Integer** | Page size. | [optional][default to 25] |
+| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 
 ### Return type
 
@@ -885,14 +885,14 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
-account_id = TODO # String | Account id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
+account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Account id.
 opts = {
   filters: 'filters_example', # String | Filters.
   from_date_time_utc: Time.parse('2013-10-20T19:20:30+01:00'), # Time | From date time in utc timezone.
   to_date_time_utc: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Til date time in utc timezone.
-  page_no: 56, # Integer | Page no.
-  page_size: 56 # Integer | Page size.
+  page_no: 56, # Integer | Page number.
+  page_size: 56 # Integer | Number of items to return.
 }
 
 begin
@@ -926,13 +926,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
-| **account_id** | [**String**](.md) | Account id. |  |
+| **consent_id** | **String** | Consent id. |  |
+| **account_id** | **String** | Account id. |  |
 | **filters** | **String** | Filters. | [optional] |
 | **from_date_time_utc** | **Time** | From date time in utc timezone. | [optional] |
 | **to_date_time_utc** | **Time** | Til date time in utc timezone. | [optional] |
-| **page_no** | **Integer** | Page no. | [optional][default to 1] |
-| **page_size** | **Integer** | Page size. | [optional][default to 25] |
+| **page_no** | **Integer** | Page number. | [optional][default to 1] |
+| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 
 ### Return type
 
@@ -961,7 +961,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
 
 begin
   # Get all organization consent details by consent id.
@@ -994,7 +994,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
+| **consent_id** | **String** | Consent id. |  |
 
 ### Return type
 
@@ -1023,8 +1023,8 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = TODO # String | Consent id.
-document_id = TODO # String | Document Id.
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
+document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Document Id.
 
 begin
   # Get organization consent document based on document id.
@@ -1057,8 +1057,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **consent_id** | [**String**](.md) | Consent id. |  |
-| **document_id** | [**String**](.md) | Document Id. |  |
+| **consent_id** | **String** | Consent id. |  |
+| **document_id** | **String** | Document Id. |  |
 
 ### Return type
 

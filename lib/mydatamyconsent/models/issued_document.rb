@@ -14,25 +14,25 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class OrganizationFinancialTransactionsDtoPaginatedList
-    attr_accessor :page_index
+  class IssuedDocument
+    attr_accessor :document_id
 
-    attr_accessor :page_size
+    attr_accessor :identifier
 
-    attr_accessor :total_pages
+    attr_accessor :document_type
 
-    attr_accessor :total_items
+    attr_accessor :issued_to
 
-    attr_accessor :items
+    attr_accessor :issued_at_utc
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'page_index' => :'pageIndex',
-        :'page_size' => :'pageSize',
-        :'total_pages' => :'totalPages',
-        :'total_items' => :'totalItems',
-        :'items' => :'items'
+        :'document_id' => :'documentId',
+        :'identifier' => :'identifier',
+        :'document_type' => :'documentType',
+        :'issued_to' => :'issuedTo',
+        :'issued_at_utc' => :'issuedAtUtc'
       }
     end
 
@@ -44,18 +44,20 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'page_index' => :'Integer',
-        :'page_size' => :'Integer',
-        :'total_pages' => :'Integer',
-        :'total_items' => :'Integer',
-        :'items' => :'Array<OrganizationFinancialTransactionsDto>'
+        :'document_id' => :'String',
+        :'identifier' => :'String',
+        :'document_type' => :'String',
+        :'issued_to' => :'String',
+        :'issued_at_utc' => :'Time'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'items'
+        :'identifier',
+        :'document_type',
+        :'issued_to',
       ])
     end
 
@@ -63,37 +65,35 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::OrganizationFinancialTransactionsDtoPaginatedList` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::IssuedDocument` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::OrganizationFinancialTransactionsDtoPaginatedList`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::IssuedDocument`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'page_index')
-        self.page_index = attributes[:'page_index']
+      if attributes.key?(:'document_id')
+        self.document_id = attributes[:'document_id']
       end
 
-      if attributes.key?(:'page_size')
-        self.page_size = attributes[:'page_size']
+      if attributes.key?(:'identifier')
+        self.identifier = attributes[:'identifier']
       end
 
-      if attributes.key?(:'total_pages')
-        self.total_pages = attributes[:'total_pages']
+      if attributes.key?(:'document_type')
+        self.document_type = attributes[:'document_type']
       end
 
-      if attributes.key?(:'total_items')
-        self.total_items = attributes[:'total_items']
+      if attributes.key?(:'issued_to')
+        self.issued_to = attributes[:'issued_to']
       end
 
-      if attributes.key?(:'items')
-        if (value = attributes[:'items']).is_a?(Array)
-          self.items = value
-        end
+      if attributes.key?(:'issued_at_utc')
+        self.issued_at_utc = attributes[:'issued_at_utc']
       end
     end
 
@@ -115,11 +115,11 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          page_index == o.page_index &&
-          page_size == o.page_size &&
-          total_pages == o.total_pages &&
-          total_items == o.total_items &&
-          items == o.items
+          document_id == o.document_id &&
+          identifier == o.identifier &&
+          document_type == o.document_type &&
+          issued_to == o.issued_to &&
+          issued_at_utc == o.issued_at_utc
     end
 
     # @see the `==` method
@@ -131,7 +131,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [page_index, page_size, total_pages, total_items, items].hash
+      [document_id, identifier, document_type, issued_to, issued_at_utc].hash
     end
 
     # Builds the object from hash

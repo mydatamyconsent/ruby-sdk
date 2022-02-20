@@ -27,7 +27,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
-request_id = TODO # String | Individual consent request id.
+request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Individual consent request id.
 
 begin
   # Cancel the individual data consent request based on Id.
@@ -60,7 +60,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **request_id** | [**String**](.md) | Individual consent request id. |  |
+| **request_id** | **String** | Individual consent request id. |  |
 
 ### Return type
 
@@ -89,7 +89,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
-request_id = TODO # String | Organization consent request id.
+request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Organization consent request id.
 
 begin
   # Cancel the Organization data consent request based on Id.
@@ -122,7 +122,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **request_id** | [**String**](.md) | Organization consent request id. |  |
+| **request_id** | **String** | Organization consent request id. |  |
 
 ### Return type
 
@@ -279,8 +279,8 @@ opts = {
   status: MyDataMyConsent::DataConsentStatus::PENDING, # DataConsentStatus | Data consent status.
   start_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Start date time.
   end_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | End date time.
-  page_no: 56, # Integer | Page no.
-  page_size: 56 # Integer | Page size.
+  page_no: 56, # Integer | Page number.
+  page_size: 56 # Integer | Number of items to return.
 }
 
 begin
@@ -317,8 +317,8 @@ end
 | **status** | [**DataConsentStatus**](.md) | Data consent status. | [optional] |
 | **start_date_time** | **Time** | Start date time. | [optional] |
 | **end_date_time** | **Time** | End date time. | [optional] |
-| **page_no** | **Integer** | Page no. | [optional][default to 1] |
-| **page_size** | **Integer** | Page size. | [optional][default to 25] |
+| **page_no** | **Integer** | Page number. | [optional][default to 1] |
+| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 
 ### Return type
 
@@ -351,8 +351,8 @@ opts = {
   status: MyDataMyConsent::DataConsentStatus::PENDING, # DataConsentStatus | Data consent status.
   start_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Start date time.
   end_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | End date time.
-  page_no: 56, # Integer | Page no.
-  page_size: 56 # Integer | Page size.
+  page_no: 56, # Integer | Page number.
+  page_size: 56 # Integer | Number of items to return.
 }
 
 begin
@@ -389,8 +389,8 @@ end
 | **status** | [**DataConsentStatus**](.md) | Data consent status. | [optional] |
 | **start_date_time** | **Time** | Start date time. | [optional] |
 | **end_date_time** | **Time** | End date time. | [optional] |
-| **page_no** | **Integer** | Page no. | [optional][default to 1] |
-| **page_size** | **Integer** | Page size. | [optional][default to 25] |
+| **page_no** | **Integer** | Page number. | [optional][default to 1] |
+| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 
 ### Return type
 
@@ -419,7 +419,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
-request_id = TODO # String | Individual consent request id.
+request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Individual consent request id.
 
 begin
   # Get a Consent Request by ID.
@@ -452,7 +452,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **request_id** | [**String**](.md) | Individual consent request id. |  |
+| **request_id** | **String** | Individual consent request id. |  |
 
 ### Return type
 
@@ -481,7 +481,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
-request_id = TODO # String | Organization consent request id.
+request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Organization consent request id.
 
 begin
   # Get a OrganizationConsent Request by Id.
@@ -514,7 +514,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **request_id** | [**String**](.md) | Organization consent request id. |  |
+| **request_id** | **String** | Organization consent request id. |  |
 
 ### Return type
 

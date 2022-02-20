@@ -14,34 +14,61 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class DocumentIssueRequest
-    attr_accessor :document_type_id
+  class DocumentTypeDetailsDto
+    attr_accessor :id
 
-    attr_accessor :document_identifier
+    attr_accessor :organization_id
+
+    attr_accessor :category_type
+
+    attr_accessor :sub_category_type
+
+    attr_accessor :document_type_category_id
 
     attr_accessor :name
 
+    attr_accessor :slug
+
     attr_accessor :description
 
-    attr_accessor :receiver
+    attr_accessor :logo_url
 
-    attr_accessor :expires_at_utc
+    attr_accessor :country_iso2
 
-    attr_accessor :base64_pdf_document
+    attr_accessor :country_id
 
-    attr_accessor :metadata
+    attr_accessor :search_service_id
+
+    attr_accessor :repository_service_id
+
+    attr_accessor :supported_entity_type
+
+    attr_accessor :added_by
+
+    attr_accessor :payable_amount
+
+    attr_accessor :approved_at_utc
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'document_type_id' => :'documentTypeId',
-        :'document_identifier' => :'documentIdentifier',
+        :'id' => :'id',
+        :'organization_id' => :'organizationId',
+        :'category_type' => :'categoryType',
+        :'sub_category_type' => :'subCategoryType',
+        :'document_type_category_id' => :'documentTypeCategoryId',
         :'name' => :'name',
+        :'slug' => :'slug',
         :'description' => :'description',
-        :'receiver' => :'receiver',
-        :'expires_at_utc' => :'expiresAtUtc',
-        :'base64_pdf_document' => :'base64PdfDocument',
-        :'metadata' => :'metadata'
+        :'logo_url' => :'logoUrl',
+        :'country_iso2' => :'countryIso2',
+        :'country_id' => :'countryId',
+        :'search_service_id' => :'searchServiceId',
+        :'repository_service_id' => :'repositoryServiceId',
+        :'supported_entity_type' => :'supportedEntityType',
+        :'added_by' => :'addedBy',
+        :'payable_amount' => :'payableAmount',
+        :'approved_at_utc' => :'approvedAtUtc'
       }
     end
 
@@ -53,22 +80,34 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'document_type_id' => :'String',
-        :'document_identifier' => :'String',
+        :'id' => :'String',
+        :'organization_id' => :'String',
+        :'category_type' => :'DocumentCategoryType',
+        :'sub_category_type' => :'DocumentSubCategoryType',
+        :'document_type_category_id' => :'String',
         :'name' => :'String',
+        :'slug' => :'String',
         :'description' => :'String',
-        :'receiver' => :'Receiver',
-        :'expires_at_utc' => :'Time',
-        :'base64_pdf_document' => :'String',
-        :'metadata' => :'Object'
+        :'logo_url' => :'String',
+        :'country_iso2' => :'String',
+        :'country_id' => :'String',
+        :'search_service_id' => :'String',
+        :'repository_service_id' => :'String',
+        :'supported_entity_type' => :'SupportedEntityType',
+        :'added_by' => :'String',
+        :'payable_amount' => :'Float',
+        :'approved_at_utc' => :'Time'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'expires_at_utc',
-        :'metadata'
+        :'description',
+        :'search_service_id',
+        :'repository_service_id',
+        :'payable_amount',
+        :'approved_at_utc'
       ])
     end
 
@@ -76,47 +115,83 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DocumentIssueRequest` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DocumentTypeDetailsDto` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DocumentIssueRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DocumentTypeDetailsDto`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'document_type_id')
-        self.document_type_id = attributes[:'document_type_id']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'document_identifier')
-        self.document_identifier = attributes[:'document_identifier']
+      if attributes.key?(:'organization_id')
+        self.organization_id = attributes[:'organization_id']
+      end
+
+      if attributes.key?(:'category_type')
+        self.category_type = attributes[:'category_type']
+      end
+
+      if attributes.key?(:'sub_category_type')
+        self.sub_category_type = attributes[:'sub_category_type']
+      end
+
+      if attributes.key?(:'document_type_category_id')
+        self.document_type_category_id = attributes[:'document_type_category_id']
       end
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
       end
 
+      if attributes.key?(:'slug')
+        self.slug = attributes[:'slug']
+      end
+
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'receiver')
-        self.receiver = attributes[:'receiver']
+      if attributes.key?(:'logo_url')
+        self.logo_url = attributes[:'logo_url']
       end
 
-      if attributes.key?(:'expires_at_utc')
-        self.expires_at_utc = attributes[:'expires_at_utc']
+      if attributes.key?(:'country_iso2')
+        self.country_iso2 = attributes[:'country_iso2']
       end
 
-      if attributes.key?(:'base64_pdf_document')
-        self.base64_pdf_document = attributes[:'base64_pdf_document']
+      if attributes.key?(:'country_id')
+        self.country_id = attributes[:'country_id']
       end
 
-      if attributes.key?(:'metadata')
-        self.metadata = attributes[:'metadata']
+      if attributes.key?(:'search_service_id')
+        self.search_service_id = attributes[:'search_service_id']
+      end
+
+      if attributes.key?(:'repository_service_id')
+        self.repository_service_id = attributes[:'repository_service_id']
+      end
+
+      if attributes.key?(:'supported_entity_type')
+        self.supported_entity_type = attributes[:'supported_entity_type']
+      end
+
+      if attributes.key?(:'added_by')
+        self.added_by = attributes[:'added_by']
+      end
+
+      if attributes.key?(:'payable_amount')
+        self.payable_amount = attributes[:'payable_amount']
+      end
+
+      if attributes.key?(:'approved_at_utc')
+        self.approved_at_utc = attributes[:'approved_at_utc']
       end
     end
 
@@ -124,28 +199,52 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @document_type_id.nil?
-        invalid_properties.push('invalid value for "document_type_id", document_type_id cannot be nil.')
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
-      if @document_identifier.nil?
-        invalid_properties.push('invalid value for "document_identifier", document_identifier cannot be nil.')
+      if @organization_id.nil?
+        invalid_properties.push('invalid value for "organization_id", organization_id cannot be nil.')
+      end
+
+      if @category_type.nil?
+        invalid_properties.push('invalid value for "category_type", category_type cannot be nil.')
+      end
+
+      if @sub_category_type.nil?
+        invalid_properties.push('invalid value for "sub_category_type", sub_category_type cannot be nil.')
+      end
+
+      if @document_type_category_id.nil?
+        invalid_properties.push('invalid value for "document_type_category_id", document_type_category_id cannot be nil.')
       end
 
       if @name.nil?
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      if @slug.nil?
+        invalid_properties.push('invalid value for "slug", slug cannot be nil.')
       end
 
-      if @receiver.nil?
-        invalid_properties.push('invalid value for "receiver", receiver cannot be nil.')
+      if @logo_url.nil?
+        invalid_properties.push('invalid value for "logo_url", logo_url cannot be nil.')
       end
 
-      if @base64_pdf_document.nil?
-        invalid_properties.push('invalid value for "base64_pdf_document", base64_pdf_document cannot be nil.')
+      if @country_iso2.nil?
+        invalid_properties.push('invalid value for "country_iso2", country_iso2 cannot be nil.')
+      end
+
+      if @country_id.nil?
+        invalid_properties.push('invalid value for "country_id", country_id cannot be nil.')
+      end
+
+      if @supported_entity_type.nil?
+        invalid_properties.push('invalid value for "supported_entity_type", supported_entity_type cannot be nil.')
+      end
+
+      if @added_by.nil?
+        invalid_properties.push('invalid value for "added_by", added_by cannot be nil.')
       end
 
       invalid_properties
@@ -154,12 +253,18 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @document_type_id.nil?
-      return false if @document_identifier.nil?
+      return false if @id.nil?
+      return false if @organization_id.nil?
+      return false if @category_type.nil?
+      return false if @sub_category_type.nil?
+      return false if @document_type_category_id.nil?
       return false if @name.nil?
-      return false if @description.nil?
-      return false if @receiver.nil?
-      return false if @base64_pdf_document.nil?
+      return false if @slug.nil?
+      return false if @logo_url.nil?
+      return false if @country_iso2.nil?
+      return false if @country_id.nil?
+      return false if @supported_entity_type.nil?
+      return false if @added_by.nil?
       true
     end
 
@@ -168,14 +273,23 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          document_type_id == o.document_type_id &&
-          document_identifier == o.document_identifier &&
+          id == o.id &&
+          organization_id == o.organization_id &&
+          category_type == o.category_type &&
+          sub_category_type == o.sub_category_type &&
+          document_type_category_id == o.document_type_category_id &&
           name == o.name &&
+          slug == o.slug &&
           description == o.description &&
-          receiver == o.receiver &&
-          expires_at_utc == o.expires_at_utc &&
-          base64_pdf_document == o.base64_pdf_document &&
-          metadata == o.metadata
+          logo_url == o.logo_url &&
+          country_iso2 == o.country_iso2 &&
+          country_id == o.country_id &&
+          search_service_id == o.search_service_id &&
+          repository_service_id == o.repository_service_id &&
+          supported_entity_type == o.supported_entity_type &&
+          added_by == o.added_by &&
+          payable_amount == o.payable_amount &&
+          approved_at_utc == o.approved_at_utc
     end
 
     # @see the `==` method
@@ -187,7 +301,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_type_id, document_identifier, name, description, receiver, expires_at_utc, base64_pdf_document, metadata].hash
+      [id, organization_id, category_type, sub_category_type, document_type_category_id, name, slug, description, logo_url, country_iso2, country_id, search_service_id, repository_service_id, supported_entity_type, added_by, payable_amount, approved_at_utc].hash
     end
 
     # Builds the object from hash

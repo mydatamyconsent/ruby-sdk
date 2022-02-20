@@ -11,7 +11,7 @@
 | **receiver** | [**Receiver**](Receiver.md) |  |  |
 | **expires_at_utc** | **Time** |  | [optional] |
 | **base64_pdf_document** | **String** |  |  |
-| **metadata** | [**AnyType**](.md) |  | [optional] |
+| **metadata** | **Object** |  | [optional] |
 
 ## Example
 
