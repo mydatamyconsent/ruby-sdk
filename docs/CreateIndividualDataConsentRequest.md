@@ -1,4 +1,4 @@
-# MyDataMyConsent::DataConsentRequestModel
+# MyDataMyConsent::CreateIndividualDataConsentRequest
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::DataConsentRequestModel.new(
+instance = MyDataMyConsent::CreateIndividualDataConsentRequest.new(
   consent_template_id: null,
   receiver: null
 )

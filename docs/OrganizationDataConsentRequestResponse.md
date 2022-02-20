@@ -1,4 +1,4 @@
-# MyDataMyConsent::DataConsentRequest
+# MyDataMyConsent::OrganizationDataConsentRequestResponse
 
 ## Properties
 
@@ -7,7 +7,8 @@
 | **id** | **String** |  | [optional] |
 | **template_id** | **String** |  | [optional] |
 | **requested_at_utc** | **Time** |  | [optional] |
-| **request_expired_at_utc** | **Time** |  | [optional] |
+| **request_expires_at_utc** | **Time** |  | [optional] |
+| **status** | [**DataConsentStatus**](DataConsentStatus.md) |  | [optional] |
 | **transaction_id** | **String** |  | [optional] |
 
 ## Example
@@ -15,11 +16,12 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::DataConsentRequest.new(
+instance = MyDataMyConsent::OrganizationDataConsentRequestResponse.new(
   id: null,
   template_id: null,
   requested_at_utc: null,
-  request_expired_at_utc: null,
+  request_expires_at_utc: null,
+  status: null,
   transaction_id: null
 )
 ```

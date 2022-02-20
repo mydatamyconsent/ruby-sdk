@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**issuer_issuedoc1_xml_post**](DigiLockerCompatIssuerApi.md#issuer_issuedoc1_xml_post) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to Issue Documents. |
+| [**digilocker_compat_issue_document**](DigiLockerCompatIssuerApi.md#digilocker_compat_issue_document) | **POST** /issuer/issuedoc/1/xml | Digilocker Compatible endpoint to issue document. |
 
 
-## issuer_issuedoc1_xml_post
+## digilocker_compat_issue_document
 
-> <PushUriResponse> issuer_issuedoc1_xml_post(opts)
+> <PushUriResponse> digilocker_compat_issue_document(opts)
 
-Digilocker Compatible endpoint to Issue Documents.
+Digilocker Compatible endpoint to issue document.
 
 ### Examples
 
@@ -21,33 +21,33 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DigiLockerCompatIssuerApi.new
 opts = {
-  push_uri_request: MyDataMyConsent::PushUriRequest.new # PushUriRequest | 
+  push_uri_request: MyDataMyConsent::PushUriRequest.new # PushUriRequest | Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
 }
 
 begin
-  # Digilocker Compatible endpoint to Issue Documents.
-  result = api_instance.issuer_issuedoc1_xml_post(opts)
+  # Digilocker Compatible endpoint to issue document.
+  result = api_instance.digilocker_compat_issue_document(opts)
   p result
 rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DigiLockerCompatIssuerApi->issuer_issuedoc1_xml_post: #{e}"
+  puts "Error when calling DigiLockerCompatIssuerApi->digilocker_compat_issue_document: #{e}"
 end
 ```
 
-#### Using the issuer_issuedoc1_xml_post_with_http_info variant
+#### Using the digilocker_compat_issue_document_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PushUriResponse>, Integer, Hash)> issuer_issuedoc1_xml_post_with_http_info(opts)
+> <Array(<PushUriResponse>, Integer, Hash)> digilocker_compat_issue_document_with_http_info(opts)
 
 ```ruby
 begin
-  # Digilocker Compatible endpoint to Issue Documents.
-  data, status_code, headers = api_instance.issuer_issuedoc1_xml_post_with_http_info(opts)
+  # Digilocker Compatible endpoint to issue document.
+  data, status_code, headers = api_instance.digilocker_compat_issue_document_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PushUriResponse>
 rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DigiLockerCompatIssuerApi->issuer_issuedoc1_xml_post_with_http_info: #{e}"
+  puts "Error when calling DigiLockerCompatIssuerApi->digilocker_compat_issue_document_with_http_info: #{e}"
 end
 ```
 
@@ -55,7 +55,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **push_uri_request** | [**PushUriRequest**](PushUriRequest.md) |  | [optional] |
+| **push_uri_request** | [**PushUriRequest**](PushUriRequest.md) | Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. | [optional] |
 
 ### Return type
 

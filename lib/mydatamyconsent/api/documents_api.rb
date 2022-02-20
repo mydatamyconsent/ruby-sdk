@@ -19,71 +19,12 @@ module MyDataMyConsent
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Issue a new document.
-    # @param [Hash] opts the optional parameters
-    # @option opts [DocumentIssueRequest] :document_issue_request 
-    # @return [Boolean]
-    def issue_document(opts = {})
-      data, _status_code, _headers = issue_document_with_http_info(opts)
-      data
-    end
-
-    # Issue a new document.
-    # @param [Hash] opts the optional parameters
-    # @option opts [DocumentIssueRequest] :document_issue_request 
-    # @return [Array<(Boolean, Integer, Hash)>] Boolean data, response status code and response headers
-    def issue_document_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DocumentsApi.issue_document ...'
-      end
-      # resource path
-      local_var_path = '/v1/documents/issue'
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'document_issue_request'])
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'Boolean'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DocumentsApi.issue_document",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DocumentsApi#issue_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Get issued document.
     # @param document_id [String] Document id.
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def v1_documents_issued_document_id_get(document_id, opts = {})
-      v1_documents_issued_document_id_get_with_http_info(document_id, opts)
+    def get_issued_document_by_id(document_id, opts = {})
+      get_issued_document_by_id_with_http_info(document_id, opts)
       nil
     end
 
@@ -91,13 +32,13 @@ module MyDataMyConsent
     # @param document_id [String] Document id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def v1_documents_issued_document_id_get_with_http_info(document_id, opts = {})
+    def get_issued_document_by_id_with_http_info(document_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DocumentsApi.v1_documents_issued_document_id_get ...'
+        @api_client.config.logger.debug 'Calling API: DocumentsApi.get_issued_document_by_id ...'
       end
       # verify the required parameter 'document_id' is set
       if @api_client.config.client_side_validation && document_id.nil?
-        fail ArgumentError, "Missing the required parameter 'document_id' when calling DocumentsApi.v1_documents_issued_document_id_get"
+        fail ArgumentError, "Missing the required parameter 'document_id' when calling DocumentsApi.get_issued_document_by_id"
       end
       # resource path
       local_var_path = '/v1/documents/issued/{documentId}'.sub('{' + 'documentId' + '}', CGI.escape(document_id.to_s))
@@ -121,7 +62,7 @@ module MyDataMyConsent
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DocumentsApi.v1_documents_issued_document_id_get",
+        :operation => :"DocumentsApi.get_issued_document_by_id",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -132,7 +73,7 @@ module MyDataMyConsent
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DocumentsApi#v1_documents_issued_document_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DocumentsApi#get_issued_document_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -145,8 +86,8 @@ module MyDataMyConsent
     # @option opts [Integer] :page_size  (default to 25)
     # @option opts [Integer] :page_no  (default to 1)
     # @return [nil]
-    def v1_documents_issued_get(opts = {})
-      v1_documents_issued_get_with_http_info(opts)
+    def get_issued_documents(opts = {})
+      get_issued_documents_with_http_info(opts)
       nil
     end
 
@@ -158,9 +99,9 @@ module MyDataMyConsent
     # @option opts [Integer] :page_size 
     # @option opts [Integer] :page_no 
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def v1_documents_issued_get_with_http_info(opts = {})
+    def get_issued_documents_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DocumentsApi.v1_documents_issued_get ...'
+        @api_client.config.logger.debug 'Calling API: DocumentsApi.get_issued_documents ...'
       end
       # resource path
       local_var_path = '/v1/documents/issued'
@@ -189,7 +130,7 @@ module MyDataMyConsent
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DocumentsApi.v1_documents_issued_get",
+        :operation => :"DocumentsApi.get_issued_documents",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -200,7 +141,7 @@ module MyDataMyConsent
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DocumentsApi#v1_documents_issued_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DocumentsApi#get_issued_documents\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -210,8 +151,8 @@ module MyDataMyConsent
     # @option opts [Integer] :page_size  (default to 25)
     # @option opts [Integer] :page_no  (default to 1)
     # @return [nil]
-    def v1_documents_types_get(opts = {})
-      v1_documents_types_get_with_http_info(opts)
+    def get_registered_document_types(opts = {})
+      get_registered_document_types_with_http_info(opts)
       nil
     end
 
@@ -220,9 +161,9 @@ module MyDataMyConsent
     # @option opts [Integer] :page_size 
     # @option opts [Integer] :page_no 
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def v1_documents_types_get_with_http_info(opts = {})
+    def get_registered_document_types_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DocumentsApi.v1_documents_types_get ...'
+        @api_client.config.logger.debug 'Calling API: DocumentsApi.get_registered_document_types ...'
       end
       # resource path
       local_var_path = '/v1/documents/types'
@@ -248,7 +189,7 @@ module MyDataMyConsent
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DocumentsApi.v1_documents_types_get",
+        :operation => :"DocumentsApi.get_registered_document_types",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -259,7 +200,70 @@ module MyDataMyConsent
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DocumentsApi#v1_documents_types_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DocumentsApi#get_registered_document_types\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Issue a new document.
+    # @param document_issue_request [DocumentIssueRequest] Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+    # @param [Hash] opts the optional parameters
+    # @return [Boolean]
+    def issue_document(document_issue_request, opts = {})
+      data, _status_code, _headers = issue_document_with_http_info(document_issue_request, opts)
+      data
+    end
+
+    # Issue a new document.
+    # @param document_issue_request [DocumentIssueRequest] Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Boolean, Integer, Hash)>] Boolean data, response status code and response headers
+    def issue_document_with_http_info(document_issue_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DocumentsApi.issue_document ...'
+      end
+      # verify the required parameter 'document_issue_request' is set
+      if @api_client.config.client_side_validation && document_issue_request.nil?
+        fail ArgumentError, "Missing the required parameter 'document_issue_request' when calling DocumentsApi.issue_document"
+      end
+      # resource path
+      local_var_path = '/v1/documents/issue'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(document_issue_request)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Boolean'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DocumentsApi.issue_document",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DocumentsApi#issue_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

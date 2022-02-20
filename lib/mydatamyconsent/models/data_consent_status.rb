@@ -20,6 +20,7 @@ module MyDataMyConsent
     REJECTED = "Rejected".freeze
     REVOKED = "Revoked".freeze
     EXPIRED = "Expired".freeze
+    CANCELED = "Canceled".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

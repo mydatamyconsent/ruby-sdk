@@ -14,34 +14,17 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class DocumentIssueRequest
-    attr_accessor :document_type_id
-
-    attr_accessor :document_identifier
-
-    attr_accessor :name
-
-    attr_accessor :description
+  # Organization Data Consent Request.
+  class CreateOrganizationDataConsentRequest
+    attr_accessor :consent_template_id
 
     attr_accessor :receiver
-
-    attr_accessor :expires_at_utc
-
-    attr_accessor :base64_pdf_document
-
-    attr_accessor :metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'document_type_id' => :'documentTypeId',
-        :'document_identifier' => :'documentIdentifier',
-        :'name' => :'name',
-        :'description' => :'description',
-        :'receiver' => :'receiver',
-        :'expires_at_utc' => :'expiresAtUtc',
-        :'base64_pdf_document' => :'base64PdfDocument',
-        :'metadata' => :'metadata'
+        :'consent_template_id' => :'consentTemplateId',
+        :'receiver' => :'receiver'
       }
     end
 
@@ -53,22 +36,14 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'document_type_id' => :'String',
-        :'document_identifier' => :'String',
-        :'name' => :'String',
-        :'description' => :'String',
-        :'receiver' => :'Receiver',
-        :'expires_at_utc' => :'Time',
-        :'base64_pdf_document' => :'String',
-        :'metadata' => :'AnyType'
+        :'consent_template_id' => :'String',
+        :'receiver' => :'Receiver'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'expires_at_utc',
-        :'metadata'
       ])
     end
 
@@ -76,47 +51,23 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DocumentIssueRequest` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::CreateOrganizationDataConsentRequest` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DocumentIssueRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::CreateOrganizationDataConsentRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'document_type_id')
-        self.document_type_id = attributes[:'document_type_id']
-      end
-
-      if attributes.key?(:'document_identifier')
-        self.document_identifier = attributes[:'document_identifier']
-      end
-
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
+      if attributes.key?(:'consent_template_id')
+        self.consent_template_id = attributes[:'consent_template_id']
       end
 
       if attributes.key?(:'receiver')
         self.receiver = attributes[:'receiver']
-      end
-
-      if attributes.key?(:'expires_at_utc')
-        self.expires_at_utc = attributes[:'expires_at_utc']
-      end
-
-      if attributes.key?(:'base64_pdf_document')
-        self.base64_pdf_document = attributes[:'base64_pdf_document']
-      end
-
-      if attributes.key?(:'metadata')
-        self.metadata = attributes[:'metadata']
       end
     end
 
@@ -124,28 +75,8 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @document_type_id.nil?
-        invalid_properties.push('invalid value for "document_type_id", document_type_id cannot be nil.')
-      end
-
-      if @document_identifier.nil?
-        invalid_properties.push('invalid value for "document_identifier", document_identifier cannot be nil.')
-      end
-
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
-      end
-
       if @receiver.nil?
         invalid_properties.push('invalid value for "receiver", receiver cannot be nil.')
-      end
-
-      if @base64_pdf_document.nil?
-        invalid_properties.push('invalid value for "base64_pdf_document", base64_pdf_document cannot be nil.')
       end
 
       invalid_properties
@@ -154,12 +85,7 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @document_type_id.nil?
-      return false if @document_identifier.nil?
-      return false if @name.nil?
-      return false if @description.nil?
       return false if @receiver.nil?
-      return false if @base64_pdf_document.nil?
       true
     end
 
@@ -168,14 +94,8 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          document_type_id == o.document_type_id &&
-          document_identifier == o.document_identifier &&
-          name == o.name &&
-          description == o.description &&
-          receiver == o.receiver &&
-          expires_at_utc == o.expires_at_utc &&
-          base64_pdf_document == o.base64_pdf_document &&
-          metadata == o.metadata
+          consent_template_id == o.consent_template_id &&
+          receiver == o.receiver
     end
 
     # @see the `==` method
@@ -187,7 +107,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_type_id, document_identifier, name, description, receiver, expires_at_utc, base64_pdf_document, metadata].hash
+      [consent_template_id, receiver].hash
     end
 
     # Builds the object from hash

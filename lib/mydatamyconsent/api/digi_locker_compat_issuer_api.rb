@@ -19,22 +19,22 @@ module MyDataMyConsent
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Digilocker Compatible endpoint to Issue Documents.
+    # Digilocker Compatible endpoint to issue document.
     # @param [Hash] opts the optional parameters
-    # @option opts [PushUriRequest] :push_uri_request 
+    # @option opts [PushUriRequest] :push_uri_request Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
     # @return [PushUriResponse]
-    def issuer_issuedoc1_xml_post(opts = {})
-      data, _status_code, _headers = issuer_issuedoc1_xml_post_with_http_info(opts)
+    def digilocker_compat_issue_document(opts = {})
+      data, _status_code, _headers = digilocker_compat_issue_document_with_http_info(opts)
       data
     end
 
-    # Digilocker Compatible endpoint to Issue Documents.
+    # Digilocker Compatible endpoint to issue document.
     # @param [Hash] opts the optional parameters
-    # @option opts [PushUriRequest] :push_uri_request 
+    # @option opts [PushUriRequest] :push_uri_request Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
     # @return [Array<(PushUriResponse, Integer, Hash)>] PushUriResponse data, response status code and response headers
-    def issuer_issuedoc1_xml_post_with_http_info(opts = {})
+    def digilocker_compat_issue_document_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DigiLockerCompatIssuerApi.issuer_issuedoc1_xml_post ...'
+        @api_client.config.logger.debug 'Calling API: DigiLockerCompatIssuerApi.digilocker_compat_issue_document ...'
       end
       # resource path
       local_var_path = '/issuer/issuedoc/1/xml'
@@ -62,7 +62,7 @@ module MyDataMyConsent
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DigiLockerCompatIssuerApi.issuer_issuedoc1_xml_post",
+        :operation => :"DigiLockerCompatIssuerApi.digilocker_compat_issue_document",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -73,7 +73,7 @@ module MyDataMyConsent
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DigiLockerCompatIssuerApi#issuer_issuedoc1_xml_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DigiLockerCompatIssuerApi#digilocker_compat_issue_document\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

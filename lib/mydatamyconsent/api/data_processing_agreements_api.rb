@@ -19,331 +19,22 @@ module MyDataMyConsent
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Get all data processing agreements.
-    # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page_no Page number. (default to 1)
-    # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [DataProcessingAgreementDtoPaginatedList]
-    def v1_data_agreements_get(opts = {})
-      data, _status_code, _headers = v1_data_agreements_get_with_http_info(opts)
-      data
-    end
-
-    # Get all data processing agreements.
-    # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :page_no Page number.
-    # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(DataProcessingAgreementDtoPaginatedList, Integer, Hash)>] DataProcessingAgreementDtoPaginatedList data, response status code and response headers
-    def v1_data_agreements_get_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_get ...'
-      end
-      # resource path
-      local_var_path = '/v1/data-agreements'
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'pageNo'] = opts[:'page_no'] if !opts[:'page_no'].nil?
-      query_params[:'pageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDtoPaginatedList'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataProcessingAgreementsApi.v1_data_agreements_get",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#v1_data_agreements_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
-    # @param id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def v1_data_agreements_id_delete(id, opts = {})
-      v1_data_agreements_id_delete_with_http_info(id, opts)
-      nil
-    end
-
-    # Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
-    # @param id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def v1_data_agreements_id_delete_with_http_info(id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_id_delete ...'
-      end
-      # verify the required parameter 'id' is set
-      if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling DataProcessingAgreementsApi.v1_data_agreements_id_delete"
-      end
-      # resource path
-      local_var_path = '/v1/data-agreements/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type]
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataProcessingAgreementsApi.v1_data_agreements_id_delete",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#v1_data_agreements_id_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get data processing agreement by Id.
-    # @param id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [DataProcessingAgreementDto]
-    def v1_data_agreements_id_get(id, opts = {})
-      data, _status_code, _headers = v1_data_agreements_id_get_with_http_info(id, opts)
-      data
-    end
-
-    # Get data processing agreement by Id.
-    # @param id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
-    def v1_data_agreements_id_get_with_http_info(id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_id_get ...'
-      end
-      # verify the required parameter 'id' is set
-      if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling DataProcessingAgreementsApi.v1_data_agreements_id_get"
-      end
-      # resource path
-      local_var_path = '/v1/data-agreements/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataProcessingAgreementsApi.v1_data_agreements_id_get",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#v1_data_agreements_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Update a data processing agreement.
-    # @param id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [UpdateDataProcessingAgreementRequestModel] :update_data_processing_agreement_request_model 
-    # @return [DataProcessingAgreementDto]
-    def v1_data_agreements_id_put(id, opts = {})
-      data, _status_code, _headers = v1_data_agreements_id_put_with_http_info(id, opts)
-      data
-    end
-
-    # Update a data processing agreement.
-    # @param id [String] 
-    # @param [Hash] opts the optional parameters
-    # @option opts [UpdateDataProcessingAgreementRequestModel] :update_data_processing_agreement_request_model 
-    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
-    def v1_data_agreements_id_put_with_http_info(id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_id_put ...'
-      end
-      # verify the required parameter 'id' is set
-      if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling DataProcessingAgreementsApi.v1_data_agreements_id_put"
-      end
-      # resource path
-      local_var_path = '/v1/data-agreements/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'update_data_processing_agreement_request_model'])
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataProcessingAgreementsApi.v1_data_agreements_id_put",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#v1_data_agreements_id_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Terminate a data processing agreement.
-    # @param id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [nil]
-    def v1_data_agreements_id_terminate_put(id, opts = {})
-      v1_data_agreements_id_terminate_put_with_http_info(id, opts)
-      nil
-    end
-
-    # Terminate a data processing agreement.
-    # @param id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def v1_data_agreements_id_terminate_put_with_http_info(id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_id_terminate_put ...'
-      end
-      # verify the required parameter 'id' is set
-      if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling DataProcessingAgreementsApi.v1_data_agreements_id_terminate_put"
-      end
-      # resource path
-      local_var_path = '/v1/data-agreements/{id}/terminate'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type]
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataProcessingAgreementsApi.v1_data_agreements_id_terminate_put",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#v1_data_agreements_id_terminate_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Create a data processing agreement.
     # @param [Hash] opts the optional parameters
-    # @option opts [CreateDataProcessingAgreementRequestModel] :create_data_processing_agreement_request_model 
+    # @option opts [CreateDataProcessingAgreementRequestModel] :create_data_processing_agreement_request_model Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.
     # @return [DataProcessingAgreementDto]
-    def v1_data_agreements_post(opts = {})
-      data, _status_code, _headers = v1_data_agreements_post_with_http_info(opts)
+    def create_data_processing_agreement(opts = {})
+      data, _status_code, _headers = create_data_processing_agreement_with_http_info(opts)
       data
     end
 
     # Create a data processing agreement.
     # @param [Hash] opts the optional parameters
-    # @option opts [CreateDataProcessingAgreementRequestModel] :create_data_processing_agreement_request_model 
+    # @option opts [CreateDataProcessingAgreementRequestModel] :create_data_processing_agreement_request_model Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.
     # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
-    def v1_data_agreements_post_with_http_info(opts = {})
+    def create_data_processing_agreement_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.v1_data_agreements_post ...'
+        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.create_data_processing_agreement ...'
       end
       # resource path
       local_var_path = '/v1/data-agreements'
@@ -371,7 +62,7 @@ module MyDataMyConsent
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DataProcessingAgreementsApi.v1_data_agreements_post",
+        :operation => :"DataProcessingAgreementsApi.create_data_processing_agreement",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -382,7 +73,316 @@ module MyDataMyConsent
 
       data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#v1_data_agreements_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#create_data_processing_agreement\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+    # @param id [String] Agreement id.
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def delete_data_processing_agreement_by_id(id, opts = {})
+      delete_data_processing_agreement_by_id_with_http_info(id, opts)
+      nil
+    end
+
+    # Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+    # @param id [String] Agreement id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def delete_data_processing_agreement_by_id_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.delete_data_processing_agreement_by_id ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DataProcessingAgreementsApi.delete_data_processing_agreement_by_id"
+      end
+      # resource path
+      local_var_path = '/v1/data-agreements/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataProcessingAgreementsApi.delete_data_processing_agreement_by_id",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#delete_data_processing_agreement_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get data processing agreement by id.
+    # @param id [String] Agreement id.
+    # @param [Hash] opts the optional parameters
+    # @return [DataProcessingAgreementDto]
+    def get_data_processing_agreement_by_id(id, opts = {})
+      data, _status_code, _headers = get_data_processing_agreement_by_id_with_http_info(id, opts)
+      data
+    end
+
+    # Get data processing agreement by id.
+    # @param id [String] Agreement id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
+    def get_data_processing_agreement_by_id_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.get_data_processing_agreement_by_id ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DataProcessingAgreementsApi.get_data_processing_agreement_by_id"
+      end
+      # resource path
+      local_var_path = '/v1/data-agreements/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataProcessingAgreementsApi.get_data_processing_agreement_by_id",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#get_data_processing_agreement_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get all data processing agreements.
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page_no Page number. (default to 1)
+    # @option opts [Integer] :page_size Number of items to return. (default to 25)
+    # @return [DataProcessingAgreementDtoPaginatedList]
+    def get_data_processing_agreements(opts = {})
+      data, _status_code, _headers = get_data_processing_agreements_with_http_info(opts)
+      data
+    end
+
+    # Get all data processing agreements.
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :page_no Page number.
+    # @option opts [Integer] :page_size Number of items to return.
+    # @return [Array<(DataProcessingAgreementDtoPaginatedList, Integer, Hash)>] DataProcessingAgreementDtoPaginatedList data, response status code and response headers
+    def get_data_processing_agreements_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.get_data_processing_agreements ...'
+      end
+      # resource path
+      local_var_path = '/v1/data-agreements'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'pageNo'] = opts[:'page_no'] if !opts[:'page_no'].nil?
+      query_params[:'pageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDtoPaginatedList'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataProcessingAgreementsApi.get_data_processing_agreements",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#get_data_processing_agreements\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Terminate a data processing agreement.
+    # @param id [String] Agreement id.
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def terminate_data_processing_agreement_by_id(id, opts = {})
+      terminate_data_processing_agreement_by_id_with_http_info(id, opts)
+      nil
+    end
+
+    # Terminate a data processing agreement.
+    # @param id [String] Agreement id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def terminate_data_processing_agreement_by_id_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.terminate_data_processing_agreement_by_id ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DataProcessingAgreementsApi.terminate_data_processing_agreement_by_id"
+      end
+      # resource path
+      local_var_path = '/v1/data-agreements/{id}/terminate'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataProcessingAgreementsApi.terminate_data_processing_agreement_by_id",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#terminate_data_processing_agreement_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update a data processing agreement.
+    # @param id [String] Agreement id.
+    # @param [Hash] opts the optional parameters
+    # @option opts [UpdateDataProcessingAgreementRequestModel] :update_data_processing_agreement_request_model Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
+    # @return [DataProcessingAgreementDto]
+    def update_data_processing_agreement(id, opts = {})
+      data, _status_code, _headers = update_data_processing_agreement_with_http_info(id, opts)
+      data
+    end
+
+    # Update a data processing agreement.
+    # @param id [String] Agreement id.
+    # @param [Hash] opts the optional parameters
+    # @option opts [UpdateDataProcessingAgreementRequestModel] :update_data_processing_agreement_request_model Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
+    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
+    def update_data_processing_agreement_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.update_data_processing_agreement ...'
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling DataProcessingAgreementsApi.update_data_processing_agreement"
+      end
+      # resource path
+      local_var_path = '/v1/data-agreements/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'update_data_processing_agreement_request_model'])
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataProcessingAgreementsApi.update_data_processing_agreement",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataProcessingAgreementsApi#update_data_processing_agreement\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
