@@ -15,10 +15,15 @@
 | **created_at_utc** | **Time** |  | [optional] |
 | **status** | **String** |  | [optional] |
 | **template_type** | [**ConsentTemplateTypes**](ConsentTemplateTypes.md) |  | [optional] |
+| **data_life** | [**Life**](Life.md) |  | [optional] |
+| **request_life** | [**Life**](Life.md) |  | [optional] |
 | **frequency** | [**Life**](Life.md) |  | [optional] |
 | **identity** | [**Array&lt;IdentitySupportedFields&gt;**](IdentitySupportedFields.md) |  | [optional] |
 | **documents** | [**Array&lt;Document&gt;**](Document.md) |  | [optional] |
 | **financials** | [**Array&lt;Financial&gt;**](Financial.md) |  | [optional] |
+| **health_records** | **Array&lt;Object&gt;** |  | [optional] |
+| **approved_by** | **String** |  | [optional] |
+| **approved_at_utc** | **Time** |  | [optional] |
 
 ## Example
 
@@ -37,10 +42,15 @@ instance = MyDataMyConsent::GetConsentTemplateDetailsDto.new(
   created_at_utc: null,
   status: null,
   template_type: null,
+  data_life: null,
+  request_life: null,
   frequency: null,
   identity: null,
   documents: null,
-  financials: null
+  financials: null,
+  health_records: null,
+  approved_by: null,
+  approved_at_utc: null
 )
 ```
 

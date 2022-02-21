@@ -21,6 +21,8 @@ module MyDataMyConsent
 
     attr_accessor :description
 
+    attr_accessor :location
+
     attr_accessor :website
 
     attr_accessor :support_email
@@ -33,6 +35,7 @@ module MyDataMyConsent
         :'name' => :'name',
         :'logo_url' => :'logoUrl',
         :'description' => :'description',
+        :'location' => :'location',
         :'website' => :'website',
         :'support_email' => :'supportEmail',
         :'help_line_number' => :'helpLineNumber'
@@ -50,6 +53,7 @@ module MyDataMyConsent
         :'name' => :'String',
         :'logo_url' => :'String',
         :'description' => :'String',
+        :'location' => :'String',
         :'website' => :'String',
         :'support_email' => :'String',
         :'help_line_number' => :'String'
@@ -62,6 +66,7 @@ module MyDataMyConsent
         :'name',
         :'logo_url',
         :'description',
+        :'location',
         :'website',
         :'support_email',
         :'help_line_number'
@@ -93,6 +98,10 @@ module MyDataMyConsent
 
       if attributes.key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'location')
+        self.location = attributes[:'location']
       end
 
       if attributes.key?(:'website')
@@ -129,6 +138,7 @@ module MyDataMyConsent
           name == o.name &&
           logo_url == o.logo_url &&
           description == o.description &&
+          location == o.location &&
           website == o.website &&
           support_email == o.support_email &&
           help_line_number == o.help_line_number
@@ -143,7 +153,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, logo_url, description, website, support_email, help_line_number].hash
+      [name, logo_url, description, location, website, support_email, help_line_number].hash
     end
 
     # Builds the object from hash

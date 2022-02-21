@@ -37,6 +37,10 @@ module MyDataMyConsent
 
     attr_accessor :template_type
 
+    attr_accessor :data_life
+
+    attr_accessor :request_life
+
     attr_accessor :frequency
 
     attr_accessor :identity
@@ -44,6 +48,12 @@ module MyDataMyConsent
     attr_accessor :documents
 
     attr_accessor :financials
+
+    attr_accessor :health_records
+
+    attr_accessor :approved_by
+
+    attr_accessor :approved_at_utc
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -59,10 +69,15 @@ module MyDataMyConsent
         :'created_at_utc' => :'createdAtUtc',
         :'status' => :'status',
         :'template_type' => :'templateType',
+        :'data_life' => :'dataLife',
+        :'request_life' => :'requestLife',
         :'frequency' => :'frequency',
         :'identity' => :'identity',
         :'documents' => :'documents',
-        :'financials' => :'financials'
+        :'financials' => :'financials',
+        :'health_records' => :'healthRecords',
+        :'approved_by' => :'approvedBy',
+        :'approved_at_utc' => :'approvedAtUtc'
       }
     end
 
@@ -85,10 +100,15 @@ module MyDataMyConsent
         :'created_at_utc' => :'Time',
         :'status' => :'String',
         :'template_type' => :'ConsentTemplateTypes',
+        :'data_life' => :'Life',
+        :'request_life' => :'Life',
         :'frequency' => :'Life',
         :'identity' => :'Array<IdentitySupportedFields>',
         :'documents' => :'Array<Document>',
-        :'financials' => :'Array<Financial>'
+        :'financials' => :'Array<Financial>',
+        :'health_records' => :'Array<Object>',
+        :'approved_by' => :'String',
+        :'approved_at_utc' => :'Time'
       }
     end
 
@@ -104,7 +124,10 @@ module MyDataMyConsent
         :'status',
         :'identity',
         :'documents',
-        :'financials'
+        :'financials',
+        :'health_records',
+        :'approved_by',
+        :'approved_at_utc'
       ])
     end
 
@@ -169,6 +192,14 @@ module MyDataMyConsent
         self.template_type = attributes[:'template_type']
       end
 
+      if attributes.key?(:'data_life')
+        self.data_life = attributes[:'data_life']
+      end
+
+      if attributes.key?(:'request_life')
+        self.request_life = attributes[:'request_life']
+      end
+
       if attributes.key?(:'frequency')
         self.frequency = attributes[:'frequency']
       end
@@ -189,6 +220,20 @@ module MyDataMyConsent
         if (value = attributes[:'financials']).is_a?(Array)
           self.financials = value
         end
+      end
+
+      if attributes.key?(:'health_records')
+        if (value = attributes[:'health_records']).is_a?(Array)
+          self.health_records = value
+        end
+      end
+
+      if attributes.key?(:'approved_by')
+        self.approved_by = attributes[:'approved_by']
+      end
+
+      if attributes.key?(:'approved_at_utc')
+        self.approved_at_utc = attributes[:'approved_at_utc']
       end
     end
 
@@ -221,10 +266,15 @@ module MyDataMyConsent
           created_at_utc == o.created_at_utc &&
           status == o.status &&
           template_type == o.template_type &&
+          data_life == o.data_life &&
+          request_life == o.request_life &&
           frequency == o.frequency &&
           identity == o.identity &&
           documents == o.documents &&
-          financials == o.financials
+          financials == o.financials &&
+          health_records == o.health_records &&
+          approved_by == o.approved_by &&
+          approved_at_utc == o.approved_at_utc
     end
 
     # @see the `==` method
@@ -236,7 +286,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, description, consent_purpose, collectables, fetch_type, short_id, created_by, created_at_utc, status, template_type, frequency, identity, documents, financials].hash
+      [id, name, description, consent_purpose, collectables, fetch_type, short_id, created_by, created_at_utc, status, template_type, data_life, request_life, frequency, identity, documents, financials, health_records, approved_by, approved_at_utc].hash
     end
 
     # Builds the object from hash
