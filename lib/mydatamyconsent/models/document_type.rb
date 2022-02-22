@@ -14,61 +14,69 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class DocumentTypeDetailsDto
+  # Issuable Document Type details.
+  class DocumentType
+    # Document Type Identifier.
     attr_accessor :id
-
-    attr_accessor :organization_id
 
     attr_accessor :category_type
 
     attr_accessor :sub_category_type
 
-    attr_accessor :document_type_category_id
-
+    # Document Type Name. eg: Driving License.
     attr_accessor :name
 
+    # Document Type Unique Slug. eg: \"in.gov.gj.transport.dl\".
     attr_accessor :slug
 
+    # Document Type description. eg: Gujarat State Driving License.
     attr_accessor :description
 
+    # Logo URL of document type.
     attr_accessor :logo_url
 
-    attr_accessor :country_iso2
+    # Document search repository service name.
+    attr_accessor :search_service_name
 
-    attr_accessor :country_id
+    # Document repository service name.
+    attr_accessor :repository_service_name
 
-    attr_accessor :search_service_id
+    # Supported entity types. eg: Individual, Organization.
+    attr_accessor :supported_entity_types
 
-    attr_accessor :repository_service_id
-
-    attr_accessor :supported_entity_type
-
+    # Name of the document type creator.
     attr_accessor :added_by
 
+    # Payable amount if document is chargeable. eg: 10.25.
     attr_accessor :payable_amount
 
+    # Payable amount currency. eg: INR, USD etc.,.
+    attr_accessor :payable_amount_currency
+
+    # DateTime of approval in UTC timezone.
     attr_accessor :approved_at_utc
+
+    # Document type approval status.
+    attr_accessor :approved
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'organization_id' => :'organizationId',
         :'category_type' => :'categoryType',
         :'sub_category_type' => :'subCategoryType',
-        :'document_type_category_id' => :'documentTypeCategoryId',
         :'name' => :'name',
         :'slug' => :'slug',
         :'description' => :'description',
         :'logo_url' => :'logoUrl',
-        :'country_iso2' => :'countryIso2',
-        :'country_id' => :'countryId',
-        :'search_service_id' => :'searchServiceId',
-        :'repository_service_id' => :'repositoryServiceId',
-        :'supported_entity_type' => :'supportedEntityType',
+        :'search_service_name' => :'searchServiceName',
+        :'repository_service_name' => :'repositoryServiceName',
+        :'supported_entity_types' => :'supportedEntityTypes',
         :'added_by' => :'addedBy',
         :'payable_amount' => :'payableAmount',
-        :'approved_at_utc' => :'approvedAtUtc'
+        :'payable_amount_currency' => :'payableAmountCurrency',
+        :'approved_at_utc' => :'approvedAtUtc',
+        :'approved' => :'approved'
       }
     end
 
@@ -81,22 +89,20 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'id' => :'String',
-        :'organization_id' => :'String',
         :'category_type' => :'DocumentCategoryType',
         :'sub_category_type' => :'DocumentSubCategoryType',
-        :'document_type_category_id' => :'String',
         :'name' => :'String',
         :'slug' => :'String',
         :'description' => :'String',
         :'logo_url' => :'String',
-        :'country_iso2' => :'String',
-        :'country_id' => :'String',
-        :'search_service_id' => :'String',
-        :'repository_service_id' => :'String',
-        :'supported_entity_type' => :'SupportedEntityType',
+        :'search_service_name' => :'String',
+        :'repository_service_name' => :'String',
+        :'supported_entity_types' => :'Array<SupportedEntityType>',
         :'added_by' => :'String',
         :'payable_amount' => :'Float',
-        :'approved_at_utc' => :'Time'
+        :'payable_amount_currency' => :'String',
+        :'approved_at_utc' => :'Time',
+        :'approved' => :'Boolean'
       }
     end
 
@@ -104,10 +110,11 @@ module MyDataMyConsent
     def self.openapi_nullable
       Set.new([
         :'description',
-        :'search_service_id',
-        :'repository_service_id',
+        :'search_service_name',
+        :'repository_service_name',
         :'payable_amount',
-        :'approved_at_utc'
+        :'payable_amount_currency',
+        :'approved_at_utc',
       ])
     end
 
@@ -115,13 +122,13 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DocumentTypeDetailsDto` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DocumentType` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DocumentTypeDetailsDto`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DocumentType`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -130,20 +137,12 @@ module MyDataMyConsent
         self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'organization_id')
-        self.organization_id = attributes[:'organization_id']
-      end
-
       if attributes.key?(:'category_type')
         self.category_type = attributes[:'category_type']
       end
 
       if attributes.key?(:'sub_category_type')
         self.sub_category_type = attributes[:'sub_category_type']
-      end
-
-      if attributes.key?(:'document_type_category_id')
-        self.document_type_category_id = attributes[:'document_type_category_id']
       end
 
       if attributes.key?(:'name')
@@ -162,24 +161,18 @@ module MyDataMyConsent
         self.logo_url = attributes[:'logo_url']
       end
 
-      if attributes.key?(:'country_iso2')
-        self.country_iso2 = attributes[:'country_iso2']
+      if attributes.key?(:'search_service_name')
+        self.search_service_name = attributes[:'search_service_name']
       end
 
-      if attributes.key?(:'country_id')
-        self.country_id = attributes[:'country_id']
+      if attributes.key?(:'repository_service_name')
+        self.repository_service_name = attributes[:'repository_service_name']
       end
 
-      if attributes.key?(:'search_service_id')
-        self.search_service_id = attributes[:'search_service_id']
-      end
-
-      if attributes.key?(:'repository_service_id')
-        self.repository_service_id = attributes[:'repository_service_id']
-      end
-
-      if attributes.key?(:'supported_entity_type')
-        self.supported_entity_type = attributes[:'supported_entity_type']
+      if attributes.key?(:'supported_entity_types')
+        if (value = attributes[:'supported_entity_types']).is_a?(Array)
+          self.supported_entity_types = value
+        end
       end
 
       if attributes.key?(:'added_by')
@@ -190,8 +183,16 @@ module MyDataMyConsent
         self.payable_amount = attributes[:'payable_amount']
       end
 
+      if attributes.key?(:'payable_amount_currency')
+        self.payable_amount_currency = attributes[:'payable_amount_currency']
+      end
+
       if attributes.key?(:'approved_at_utc')
         self.approved_at_utc = attributes[:'approved_at_utc']
+      end
+
+      if attributes.key?(:'approved')
+        self.approved = attributes[:'approved']
       end
     end
 
@@ -203,20 +204,12 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
-      if @organization_id.nil?
-        invalid_properties.push('invalid value for "organization_id", organization_id cannot be nil.')
-      end
-
       if @category_type.nil?
         invalid_properties.push('invalid value for "category_type", category_type cannot be nil.')
       end
 
       if @sub_category_type.nil?
         invalid_properties.push('invalid value for "sub_category_type", sub_category_type cannot be nil.')
-      end
-
-      if @document_type_category_id.nil?
-        invalid_properties.push('invalid value for "document_type_category_id", document_type_category_id cannot be nil.')
       end
 
       if @name.nil?
@@ -231,20 +224,16 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "logo_url", logo_url cannot be nil.')
       end
 
-      if @country_iso2.nil?
-        invalid_properties.push('invalid value for "country_iso2", country_iso2 cannot be nil.')
-      end
-
-      if @country_id.nil?
-        invalid_properties.push('invalid value for "country_id", country_id cannot be nil.')
-      end
-
-      if @supported_entity_type.nil?
-        invalid_properties.push('invalid value for "supported_entity_type", supported_entity_type cannot be nil.')
+      if @supported_entity_types.nil?
+        invalid_properties.push('invalid value for "supported_entity_types", supported_entity_types cannot be nil.')
       end
 
       if @added_by.nil?
         invalid_properties.push('invalid value for "added_by", added_by cannot be nil.')
+      end
+
+      if @approved.nil?
+        invalid_properties.push('invalid value for "approved", approved cannot be nil.')
       end
 
       invalid_properties
@@ -254,17 +243,14 @@ module MyDataMyConsent
     # @return true if the model is valid
     def valid?
       return false if @id.nil?
-      return false if @organization_id.nil?
       return false if @category_type.nil?
       return false if @sub_category_type.nil?
-      return false if @document_type_category_id.nil?
       return false if @name.nil?
       return false if @slug.nil?
       return false if @logo_url.nil?
-      return false if @country_iso2.nil?
-      return false if @country_id.nil?
-      return false if @supported_entity_type.nil?
+      return false if @supported_entity_types.nil?
       return false if @added_by.nil?
+      return false if @approved.nil?
       true
     end
 
@@ -274,22 +260,20 @@ module MyDataMyConsent
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          organization_id == o.organization_id &&
           category_type == o.category_type &&
           sub_category_type == o.sub_category_type &&
-          document_type_category_id == o.document_type_category_id &&
           name == o.name &&
           slug == o.slug &&
           description == o.description &&
           logo_url == o.logo_url &&
-          country_iso2 == o.country_iso2 &&
-          country_id == o.country_id &&
-          search_service_id == o.search_service_id &&
-          repository_service_id == o.repository_service_id &&
-          supported_entity_type == o.supported_entity_type &&
+          search_service_name == o.search_service_name &&
+          repository_service_name == o.repository_service_name &&
+          supported_entity_types == o.supported_entity_types &&
           added_by == o.added_by &&
           payable_amount == o.payable_amount &&
-          approved_at_utc == o.approved_at_utc
+          payable_amount_currency == o.payable_amount_currency &&
+          approved_at_utc == o.approved_at_utc &&
+          approved == o.approved
     end
 
     # @see the `==` method
@@ -301,7 +285,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, organization_id, category_type, sub_category_type, document_type_category_id, name, slug, description, logo_url, country_iso2, country_id, search_service_id, repository_service_id, supported_entity_type, added_by, payable_amount, approved_at_utc].hash
+      [id, category_type, sub_category_type, name, slug, description, logo_url, search_service_name, repository_service_name, supported_entity_types, added_by, payable_amount, payable_amount_currency, approved_at_utc, approved].hash
     end
 
     # Builds the object from hash

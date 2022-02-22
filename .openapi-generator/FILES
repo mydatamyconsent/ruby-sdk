@@ -34,8 +34,8 @@ docs/Document.md
 docs/DocumentCategoryType.md
 docs/DocumentIssueRequest.md
 docs/DocumentSubCategoryType.md
-docs/DocumentTypeDetailsDto.md
-docs/DocumentTypeDetailsDtoPaginatedList.md
+docs/DocumentType.md
+docs/DocumentTypePaginatedList.md
 docs/DocumentsApi.md
 docs/DocumentsRequired.md
 docs/FetchTypes.md
@@ -112,8 +112,8 @@ lib/mydatamyconsent/models/document.rb
 lib/mydatamyconsent/models/document_category_type.rb
 lib/mydatamyconsent/models/document_issue_request.rb
 lib/mydatamyconsent/models/document_sub_category_type.rb
-lib/mydatamyconsent/models/document_type_details_dto.rb
-lib/mydatamyconsent/models/document_type_details_dto_paginated_list.rb
+lib/mydatamyconsent/models/document_type.rb
+lib/mydatamyconsent/models/document_type_paginated_list.rb
 lib/mydatamyconsent/models/documents_required.rb
 lib/mydatamyconsent/models/fetch_types.rb
 lib/mydatamyconsent/models/file_type.rb

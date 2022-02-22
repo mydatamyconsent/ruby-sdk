@@ -146,7 +146,7 @@ No authorization required
 
 ## get_registered_document_types
 
-> <DocumentTypeDetailsDtoPaginatedList> get_registered_document_types(opts)
+> <DocumentTypePaginatedList> get_registered_document_types(opts)
 
 Get registered document types.
 
@@ -175,7 +175,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DocumentTypeDetailsDtoPaginatedList>, Integer, Hash)> get_registered_document_types_with_http_info(opts)
+> <Array(<DocumentTypePaginatedList>, Integer, Hash)> get_registered_document_types_with_http_info(opts)
 
 ```ruby
 begin
@@ -183,7 +183,7 @@ begin
   data, status_code, headers = api_instance.get_registered_document_types_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DocumentTypeDetailsDtoPaginatedList>
+  p data # => <DocumentTypePaginatedList>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_registered_document_types_with_http_info: #{e}"
 end
@@ -198,7 +198,7 @@ end
 
 ### Return type
 
-[**DocumentTypeDetailsDtoPaginatedList**](DocumentTypeDetailsDtoPaginatedList.md)
+[**DocumentTypePaginatedList**](DocumentTypePaginatedList.md)
 
 ### Authorization
 

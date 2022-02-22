@@ -1,4 +1,4 @@
-# MyDataMyConsent::DocumentTypeDetailsDtoPaginatedList
+# MyDataMyConsent::DocumentTypePaginatedList
 
 ## Properties
 
@@ -8,14 +8,14 @@
 | **page_size** | **Integer** |  | [optional] |
 | **total_pages** | **Integer** |  | [optional][readonly] |
 | **total_items** | **Integer** |  | [optional] |
-| **items** | [**Array&lt;DocumentTypeDetailsDto&gt;**](DocumentTypeDetailsDto.md) |  | [optional] |
+| **items** | [**Array&lt;DocumentType&gt;**](DocumentType.md) |  | [optional] |
 
 ## Example
 
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::DocumentTypeDetailsDtoPaginatedList.new(
+instance = MyDataMyConsent::DocumentTypePaginatedList.new(
   page_index: null,
   page_size: null,
   total_pages: null,

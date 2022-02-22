@@ -154,7 +154,7 @@ module MyDataMyConsent
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [DocumentTypeDetailsDtoPaginatedList]
+    # @return [DocumentTypePaginatedList]
     def get_registered_document_types(opts = {})
       data, _status_code, _headers = get_registered_document_types_with_http_info(opts)
       data
@@ -164,7 +164,7 @@ module MyDataMyConsent
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(DocumentTypeDetailsDtoPaginatedList, Integer, Hash)>] DocumentTypeDetailsDtoPaginatedList data, response status code and response headers
+    # @return [Array<(DocumentTypePaginatedList, Integer, Hash)>] DocumentTypePaginatedList data, response status code and response headers
     def get_registered_document_types_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DocumentsApi.get_registered_document_types ...'
@@ -189,7 +189,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DocumentTypeDetailsDtoPaginatedList'
+      return_type = opts[:debug_return_type] || 'DocumentTypePaginatedList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
