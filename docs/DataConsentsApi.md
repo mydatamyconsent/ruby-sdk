@@ -1,6 +1,6 @@
 # MyDataMyConsent::DataConsentsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.mydatamyconsent.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -8,15 +8,15 @@ All URIs are relative to *http://localhost*
 | [**download_org_consented_document_by_id**](DataConsentsApi.md#download_org_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download a organizations consented document. |
 | [**get_all_consented_documents**](DataConsentsApi.md#get_all_consented_documents) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId. |
 | [**get_all_consented_financial_accounts**](DataConsentsApi.md#get_all_consented_financial_accounts) | **GET** /v1/consents/individuals/{consentId}/accounts | Get all individual consented financial accounts. |
-| [**get_all_organization_consented_accounts**](DataConsentsApi.md#get_all_organization_consented_accounts) | **GET** /v1/consents/organizations/{consentId}/accounts | Get all organizational consented financial accounts. |
 | [**get_all_organization_consented_documents**](DataConsentsApi.md#get_all_organization_consented_documents) | **GET** /v1/consents/organizations/{consentId}/documents | Get the organization documents based on ConsentId. |
 | [**get_consent_details_by_id**](DataConsentsApi.md#get_consent_details_by_id) | **GET** /v1/consents/individuals/{consentId} | Get all individuals consent details by consent id. |
+| [**get_consent_financial_accounts**](DataConsentsApi.md#get_consent_financial_accounts) | **GET** /v1/consents/organizations/{consentId}/accounts | Get all organizational consented financial accounts. |
 | [**get_consented_account_by_id**](DataConsentsApi.md#get_consented_account_by_id) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId} | Get individual consented financial account details based on account id. |
 | [**get_consented_document_by_id**](DataConsentsApi.md#get_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id. |
 | [**get_consented_financial_account**](DataConsentsApi.md#get_consented_financial_account) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId} | Get organization consented financial account details based on account id. |
 | [**get_consented_financial_account_transactions**](DataConsentsApi.md#get_consented_financial_account_transactions) | **GET** /v1/consents/individuals/{consentId}/accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId. |
-| [**get_consents**](DataConsentsApi.md#get_consents) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals. |
 | [**get_consents_for_organizations**](DataConsentsApi.md#get_consents_for_organizations) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations. |
+| [**get_consents_sent_to_individuals**](DataConsentsApi.md#get_consents_sent_to_individuals) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals. |
 | [**get_org_consented_account_transactions**](DataConsentsApi.md#get_org_consented_account_transactions) | **GET** /v1/consents/organizations/{consentId}/accounts/{accountId}/transactions | Get organization consented financial account transactions of an individual based on accountId. |
 | [**get_organization_consent_details_by_id**](DataConsentsApi.md#get_organization_consent_details_by_id) | **GET** /v1/consents/organizations/{consentId} | Get all organization consent details by consent id. |
 | [**get_organization_consented_document_by_id**](DataConsentsApi.md#get_organization_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organization consent document based on document id. |
@@ -274,68 +274,6 @@ No authorization required
 - **Accept**: application/json
 
 
-## get_all_organization_consented_accounts
-
-> <DataConsentFinancialsDto> get_all_organization_consented_accounts(consent_id)
-
-Get all organizational consented financial accounts.
-
-### Examples
-
-```ruby
-require 'time'
-require 'mydatamyconsent'
-
-api_instance = MyDataMyConsent::DataConsentsApi.new
-consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
-
-begin
-  # Get all organizational consented financial accounts.
-  result = api_instance.get_all_organization_consented_accounts(consent_id)
-  p result
-rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataConsentsApi->get_all_organization_consented_accounts: #{e}"
-end
-```
-
-#### Using the get_all_organization_consented_accounts_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<DataConsentFinancialsDto>, Integer, Hash)> get_all_organization_consented_accounts_with_http_info(consent_id)
-
-```ruby
-begin
-  # Get all organizational consented financial accounts.
-  data, status_code, headers = api_instance.get_all_organization_consented_accounts_with_http_info(consent_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <DataConsentFinancialsDto>
-rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataConsentsApi->get_all_organization_consented_accounts_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **consent_id** | **String** | Consent id. |  |
-
-### Return type
-
-[**DataConsentFinancialsDto**](DataConsentFinancialsDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## get_all_organization_consented_documents
 
 > <DataConsentDocumentsDto> get_all_organization_consented_documents(consent_id)
@@ -449,6 +387,68 @@ end
 ### Return type
 
 [**DataConsentDetailsDto**](DataConsentDetailsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_consent_financial_accounts
+
+> <DataConsentFinancialsDto> get_consent_financial_accounts(consent_id)
+
+Get all organizational consented financial accounts.
+
+### Examples
+
+```ruby
+require 'time'
+require 'mydatamyconsent'
+
+api_instance = MyDataMyConsent::DataConsentsApi.new
+consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consent id.
+
+begin
+  # Get all organizational consented financial accounts.
+  result = api_instance.get_consent_financial_accounts(consent_id)
+  p result
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentsApi->get_consent_financial_accounts: #{e}"
+end
+```
+
+#### Using the get_consent_financial_accounts_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<DataConsentFinancialsDto>, Integer, Hash)> get_consent_financial_accounts_with_http_info(consent_id)
+
+```ruby
+begin
+  # Get all organizational consented financial accounts.
+  data, status_code, headers = api_instance.get_consent_financial_accounts_with_http_info(consent_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <DataConsentFinancialsDto>
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentsApi->get_consent_financial_accounts_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **consent_id** | **String** | Consent id. |  |
+
+### Return type
+
+[**DataConsentFinancialsDto**](DataConsentFinancialsDto.md)
 
 ### Authorization
 
@@ -728,78 +728,6 @@ No authorization required
 - **Accept**: application/json
 
 
-## get_consents
-
-> <UserDataConsentInfoDtoPaginatedList> get_consents(opts)
-
-Get the list of Consents Sent to Individuals.
-
-### Examples
-
-```ruby
-require 'time'
-require 'mydatamyconsent'
-
-api_instance = MyDataMyConsent::DataConsentsApi.new
-opts = {
-  status: MyDataMyConsent::DataConsentStatus::PENDING, # DataConsentStatus | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
-  from: Time.parse('2013-10-20T19:20:30+01:00'), # Time | From date time in utc timezone.
-  to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Til date time in utc timezone.
-  page_no: 56, # Integer | Page number.
-  page_size: 56 # Integer | Number of items to return.
-}
-
-begin
-  # Get the list of Consents Sent to Individuals.
-  result = api_instance.get_consents(opts)
-  p result
-rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataConsentsApi->get_consents: #{e}"
-end
-```
-
-#### Using the get_consents_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<UserDataConsentInfoDtoPaginatedList>, Integer, Hash)> get_consents_with_http_info(opts)
-
-```ruby
-begin
-  # Get the list of Consents Sent to Individuals.
-  data, status_code, headers = api_instance.get_consents_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <UserDataConsentInfoDtoPaginatedList>
-rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataConsentsApi->get_consents_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **status** | [**DataConsentStatus**](.md) | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] |
-| **from** | **Time** | From date time in utc timezone. | [optional] |
-| **to** | **Time** | Til date time in utc timezone. | [optional] |
-| **page_no** | **Integer** | Page number. | [optional][default to 1] |
-| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
-
-### Return type
-
-[**UserDataConsentInfoDtoPaginatedList**](UserDataConsentInfoDtoPaginatedList.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## get_consents_for_organizations
 
 > <OrganizationDataConsentInfoDtoPaginatedList> get_consents_for_organizations(opts)
@@ -861,6 +789,78 @@ end
 ### Return type
 
 [**OrganizationDataConsentInfoDtoPaginatedList**](OrganizationDataConsentInfoDtoPaginatedList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_consents_sent_to_individuals
+
+> <UserDataConsentInfoDtoPaginatedList> get_consents_sent_to_individuals(opts)
+
+Get the list of Consents Sent to Individuals.
+
+### Examples
+
+```ruby
+require 'time'
+require 'mydatamyconsent'
+
+api_instance = MyDataMyConsent::DataConsentsApi.new
+opts = {
+  status: MyDataMyConsent::DataConsentStatus::PENDING, # DataConsentStatus | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+  from: Time.parse('2013-10-20T19:20:30+01:00'), # Time | From date time in utc timezone.
+  to: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Til date time in utc timezone.
+  page_no: 56, # Integer | Page number.
+  page_size: 56 # Integer | Number of items to return.
+}
+
+begin
+  # Get the list of Consents Sent to Individuals.
+  result = api_instance.get_consents_sent_to_individuals(opts)
+  p result
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentsApi->get_consents_sent_to_individuals: #{e}"
+end
+```
+
+#### Using the get_consents_sent_to_individuals_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<UserDataConsentInfoDtoPaginatedList>, Integer, Hash)> get_consents_sent_to_individuals_with_http_info(opts)
+
+```ruby
+begin
+  # Get the list of Consents Sent to Individuals.
+  data, status_code, headers = api_instance.get_consents_sent_to_individuals_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <UserDataConsentInfoDtoPaginatedList>
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentsApi->get_consents_sent_to_individuals_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **status** | [**DataConsentStatus**](.md) | Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus. | [optional] |
+| **from** | **Time** | From date time in utc timezone. | [optional] |
+| **to** | **Time** | Til date time in utc timezone. | [optional] |
+| **page_no** | **Integer** | Page number. | [optional][default to 1] |
+| **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
+
+### Return type
+
+[**UserDataConsentInfoDtoPaginatedList**](UserDataConsentInfoDtoPaginatedList.md)
 
 ### Authorization
 

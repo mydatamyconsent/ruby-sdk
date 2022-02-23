@@ -14,9 +14,11 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
+  # Consent request receiver details
   class Receiver
     attr_accessor :type
 
+    # Consent request receiver identifiers
     attr_accessor :identifiers
 
     attr_accessor :identification_strategy

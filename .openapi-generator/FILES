@@ -33,6 +33,8 @@ docs/DigitalSignature.md
 docs/Document.md
 docs/DocumentCategoryType.md
 docs/DocumentIssueRequest.md
+docs/DocumentIssueRequestDetails.md
+docs/DocumentReceiver.md
 docs/DocumentSubCategoryType.md
 docs/DocumentType.md
 docs/DocumentTypePaginatedList.md
@@ -67,7 +69,11 @@ docs/PushUriResponse.md
 docs/Receiver.md
 docs/ReceiverType.md
 docs/SharedWith.md
+docs/StringStringKeyValuePair.md
 docs/SupportedEntityType.md
+docs/SupportedIdentifier.md
+docs/SupportedIdentifiersApi.md
+docs/SupportedIdentifiersByCountry.md
 docs/UpdateDataProcessingAgreementRequestModel.md
 docs/UriDetails.md
 docs/UserAccountFinancialTransactionsDto.md
@@ -83,6 +89,7 @@ lib/mydatamyconsent/api/data_processing_agreements_api.rb
 lib/mydatamyconsent/api/data_provider_discovery_api.rb
 lib/mydatamyconsent/api/digi_locker_compat_issuer_api.rb
 lib/mydatamyconsent/api/documents_api.rb
+lib/mydatamyconsent/api/supported_identifiers_api.rb
 lib/mydatamyconsent/api_client.rb
 lib/mydatamyconsent/api_error.rb
 lib/mydatamyconsent/configuration.rb
@@ -111,6 +118,8 @@ lib/mydatamyconsent/models/digital_signature.rb
 lib/mydatamyconsent/models/document.rb
 lib/mydatamyconsent/models/document_category_type.rb
 lib/mydatamyconsent/models/document_issue_request.rb
+lib/mydatamyconsent/models/document_issue_request_details.rb
+lib/mydatamyconsent/models/document_receiver.rb
 lib/mydatamyconsent/models/document_sub_category_type.rb
 lib/mydatamyconsent/models/document_type.rb
 lib/mydatamyconsent/models/document_type_paginated_list.rb
@@ -144,7 +153,10 @@ lib/mydatamyconsent/models/push_uri_response.rb
 lib/mydatamyconsent/models/receiver.rb
 lib/mydatamyconsent/models/receiver_type.rb
 lib/mydatamyconsent/models/shared_with.rb
+lib/mydatamyconsent/models/string_string_key_value_pair.rb
 lib/mydatamyconsent/models/supported_entity_type.rb
+lib/mydatamyconsent/models/supported_identifier.rb
+lib/mydatamyconsent/models/supported_identifiers_by_country.rb
 lib/mydatamyconsent/models/update_data_processing_agreement_request_model.rb
 lib/mydatamyconsent/models/uri_details.rb
 lib/mydatamyconsent/models/user_account_financial_transactions_dto.rb

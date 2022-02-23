@@ -14,29 +14,22 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # Document Issue Request.
-  class DocumentIssueRequest
-    attr_accessor :document_type_id
+  class SupportedIdentifier
+    attr_accessor :key
 
-    attr_accessor :document_identifier
+    attr_accessor :name
 
     attr_accessor :description
 
-    attr_accessor :receiver
-
-    attr_accessor :expires_at_utc
-
-    attr_accessor :metadata
+    attr_accessor :example_value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'document_type_id' => :'documentTypeId',
-        :'document_identifier' => :'documentIdentifier',
+        :'key' => :'key',
+        :'name' => :'name',
         :'description' => :'description',
-        :'receiver' => :'receiver',
-        :'expires_at_utc' => :'expiresAtUtc',
-        :'metadata' => :'metadata'
+        :'example_value' => :'exampleValue'
       }
     end
 
@@ -48,20 +41,20 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'document_type_id' => :'String',
-        :'document_identifier' => :'String',
+        :'key' => :'String',
+        :'name' => :'String',
         :'description' => :'String',
-        :'receiver' => :'DocumentReceiver',
-        :'expires_at_utc' => :'Time',
-        :'metadata' => :'Hash<String, String>'
+        :'example_value' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'expires_at_utc',
-        :'metadata'
+        :'key',
+        :'name',
+        :'description',
+        :'example_value'
       ])
     end
 
@@ -69,41 +62,31 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DocumentIssueRequest` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::SupportedIdentifier` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DocumentIssueRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::SupportedIdentifier`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'document_type_id')
-        self.document_type_id = attributes[:'document_type_id']
+      if attributes.key?(:'key')
+        self.key = attributes[:'key']
       end
 
-      if attributes.key?(:'document_identifier')
-        self.document_identifier = attributes[:'document_identifier']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'receiver')
-        self.receiver = attributes[:'receiver']
-      end
-
-      if attributes.key?(:'expires_at_utc')
-        self.expires_at_utc = attributes[:'expires_at_utc']
-      end
-
-      if attributes.key?(:'metadata')
-        if (value = attributes[:'metadata']).is_a?(Hash)
-          self.metadata = value
-        end
+      if attributes.key?(:'example_value')
+        self.example_value = attributes[:'example_value']
       end
     end
 
@@ -111,32 +94,12 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @document_type_id.nil?
-        invalid_properties.push('invalid value for "document_type_id", document_type_id cannot be nil.')
-      end
-
-      if @document_identifier.nil?
-        invalid_properties.push('invalid value for "document_identifier", document_identifier cannot be nil.')
-      end
-
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
-      end
-
-      if @receiver.nil?
-        invalid_properties.push('invalid value for "receiver", receiver cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @document_type_id.nil?
-      return false if @document_identifier.nil?
-      return false if @description.nil?
-      return false if @receiver.nil?
       true
     end
 
@@ -145,12 +108,10 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          document_type_id == o.document_type_id &&
-          document_identifier == o.document_identifier &&
+          key == o.key &&
+          name == o.name &&
           description == o.description &&
-          receiver == o.receiver &&
-          expires_at_utc == o.expires_at_utc &&
-          metadata == o.metadata
+          example_value == o.example_value
     end
 
     # @see the `==` method
@@ -162,7 +123,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_type_id, document_identifier, description, receiver, expires_at_utc, metadata].hash
+      [key, name, description, example_value].hash
     end
 
     # Builds the object from hash

@@ -4,11 +4,11 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **document_id** | **String** |  | [optional] |
-| **identifier** | **String** |  | [optional] |
-| **document_type** | **String** |  | [optional] |
-| **issued_to** | **String** |  | [optional] |
-| **issued_at_utc** | **Time** |  | [optional] |
+| **id** | **String** | Document Identifier. |  |
+| **identifier** | **String** | Document Identifier. eg: GJ05FG67866586. |  |
+| **document_type** | **String** | Document type name. eg: Driving License. |  |
+| **issued_to** | **String** |  |  |
+| **issued_at_utc** | **Time** |  |  |
 
 ## Example
 
@@ -16,7 +16,7 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::IssuedDocument.new(
-  document_id: null,
+  id: null,
   identifier: null,
   document_type: null,
   issued_to: null,

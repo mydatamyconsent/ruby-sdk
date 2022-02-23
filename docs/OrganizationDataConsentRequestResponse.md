@@ -4,12 +4,12 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **String** |  | [optional] |
-| **template_id** | **String** |  | [optional] |
-| **requested_at_utc** | **Time** |  | [optional] |
-| **request_expires_at_utc** | **Time** |  | [optional] |
+| **id** | **String** | Consent request id | [optional] |
+| **template_id** | **String** | Consent request template id | [optional] |
+| **requested_at_utc** | **Time** | Requested date time in utc zone | [optional] |
+| **request_expires_at_utc** | **Time** | Request expires date time in utc zone | [optional] |
 | **status** | [**DataConsentStatus**](DataConsentStatus.md) |  | [optional] |
-| **transaction_id** | **String** |  | [optional] |
+| **transaction_id** | **String** | Requested transaction id | [optional] |
 
 ## Example
 

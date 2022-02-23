@@ -14,11 +14,15 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
+  # Issued Document Identifier.
   class IssuedDocument
-    attr_accessor :document_id
+    # Document Identifier.
+    attr_accessor :id
 
+    # Document Identifier. eg: GJ05FG67866586.
     attr_accessor :identifier
 
+    # Document type name. eg: Driving License.
     attr_accessor :document_type
 
     attr_accessor :issued_to
@@ -28,7 +32,7 @@ module MyDataMyConsent
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'document_id' => :'documentId',
+        :'id' => :'id',
         :'identifier' => :'identifier',
         :'document_type' => :'documentType',
         :'issued_to' => :'issuedTo',
@@ -44,7 +48,7 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'document_id' => :'String',
+        :'id' => :'String',
         :'identifier' => :'String',
         :'document_type' => :'String',
         :'issued_to' => :'String',
@@ -55,9 +59,6 @@ module MyDataMyConsent
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'identifier',
-        :'document_type',
-        :'issued_to',
       ])
     end
 
@@ -76,8 +77,8 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'document_id')
-        self.document_id = attributes[:'document_id']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
       if attributes.key?(:'identifier')
@@ -101,12 +102,37 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
+      if @identifier.nil?
+        invalid_properties.push('invalid value for "identifier", identifier cannot be nil.')
+      end
+
+      if @document_type.nil?
+        invalid_properties.push('invalid value for "document_type", document_type cannot be nil.')
+      end
+
+      if @issued_to.nil?
+        invalid_properties.push('invalid value for "issued_to", issued_to cannot be nil.')
+      end
+
+      if @issued_at_utc.nil?
+        invalid_properties.push('invalid value for "issued_at_utc", issued_at_utc cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @id.nil?
+      return false if @identifier.nil?
+      return false if @document_type.nil?
+      return false if @issued_to.nil?
+      return false if @issued_at_utc.nil?
       true
     end
 
@@ -115,7 +141,7 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          document_id == o.document_id &&
+          id == o.id &&
           identifier == o.identifier &&
           document_type == o.document_type &&
           issued_to == o.issued_to &&
@@ -131,7 +157,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_id, identifier, document_type, issued_to, issued_at_utc].hash
+      [id, identifier, document_type, issued_to, issued_at_utc].hash
     end
 
     # Builds the object from hash

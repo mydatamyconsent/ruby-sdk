@@ -23,16 +23,13 @@ module MyDataMyConsent
 
     attr_accessor :detail
 
-    attr_accessor :instance
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'type' => :'type',
         :'title' => :'title',
         :'status' => :'status',
-        :'detail' => :'detail',
-        :'instance' => :'instance'
+        :'detail' => :'detail'
       }
     end
 
@@ -47,8 +44,7 @@ module MyDataMyConsent
         :'type' => :'String',
         :'title' => :'String',
         :'status' => :'Integer',
-        :'detail' => :'String',
-        :'instance' => :'String'
+        :'detail' => :'String'
       }
     end
 
@@ -58,8 +54,7 @@ module MyDataMyConsent
         :'type',
         :'title',
         :'status',
-        :'detail',
-        :'instance'
+        :'detail'
       ])
     end
 
@@ -93,10 +88,6 @@ module MyDataMyConsent
       if attributes.key?(:'detail')
         self.detail = attributes[:'detail']
       end
-
-      if attributes.key?(:'instance')
-        self.instance = attributes[:'instance']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -120,8 +111,7 @@ module MyDataMyConsent
           type == o.type &&
           title == o.title &&
           status == o.status &&
-          detail == o.detail &&
-          instance == o.instance
+          detail == o.detail
     end
 
     # @see the `==` method
@@ -133,7 +123,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, title, status, detail, instance].hash
+      [type, title, status, detail].hash
     end
 
     # Builds the object from hash

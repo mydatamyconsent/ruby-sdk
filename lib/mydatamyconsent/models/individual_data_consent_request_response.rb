@@ -16,16 +16,21 @@ require 'time'
 module MyDataMyConsent
   # Individual Data Consent Request Response.
   class IndividualDataConsentRequestResponse
+    # Consent request id
     attr_accessor :id
 
+    # Consent request template id
     attr_accessor :template_id
 
+    # Requested date time in utc zone
     attr_accessor :requested_at_utc
 
+    # Request expires date time in utc zone
     attr_accessor :request_expires_at_utc
 
     attr_accessor :status
 
+    # Requested transaction id
     attr_accessor :transaction_id
 
     # Attribute mapping from ruby-style variable name to JSON key.

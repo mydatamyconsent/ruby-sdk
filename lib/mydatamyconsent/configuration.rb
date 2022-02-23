@@ -138,8 +138,8 @@ module MyDataMyConsent
     attr_accessor :force_ending_format
 
     def initialize
-      @scheme = 'http'
-      @host = 'localhost'
+      @scheme = 'https'
+      @host = 'api.mydatamyconsent.com'
       @base_path = ''
       @server_index = 0
       @server_operation_index = {}
@@ -229,7 +229,7 @@ module MyDataMyConsent
     def server_settings
       [
         {
-          url: "",
+          url: "https://api.mydatamyconsent.com",
           description: "No description provided",
         }
       ]
