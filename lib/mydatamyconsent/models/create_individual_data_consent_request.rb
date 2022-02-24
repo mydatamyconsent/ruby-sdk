@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # Individual Data Consent Request.
+  # Create individual data consent request
   class CreateIndividualDataConsentRequest
     # Consent template id
     attr_accessor :consent_template_id

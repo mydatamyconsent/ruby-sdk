@@ -142,7 +142,8 @@ module MyDataMyConsent
     end
 
     # Create a individual data consent request.
-    # @param create_individual_data_consent_request [CreateIndividualDataConsentRequest] M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+    # Create a individual data consent request.
+    # @param create_individual_data_consent_request [CreateIndividualDataConsentRequest] The Individual data consent request payload
     # @param [Hash] opts the optional parameters
     # @return [IndividualDataConsentRequestResponse]
     def create_individual_data_consent_request(create_individual_data_consent_request, opts = {})
@@ -151,7 +152,8 @@ module MyDataMyConsent
     end
 
     # Create a individual data consent request.
-    # @param create_individual_data_consent_request [CreateIndividualDataConsentRequest] M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+    # Create a individual data consent request.
+    # @param create_individual_data_consent_request [CreateIndividualDataConsentRequest] The Individual data consent request payload
     # @param [Hash] opts the optional parameters
     # @return [Array<(IndividualDataConsentRequestResponse, Integer, Hash)>] IndividualDataConsentRequestResponse data, response status code and response headers
     def create_individual_data_consent_request_with_http_info(create_individual_data_consent_request, opts = {})
@@ -208,6 +210,7 @@ module MyDataMyConsent
     end
 
     # Create a organization data consent request.
+    # Create a organization data consent request.
     # @param create_organization_data_consent_request [CreateOrganizationDataConsentRequest] M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
     # @param [Hash] opts the optional parameters
     # @return [OrganizationDataConsentRequestResponse]
@@ -216,6 +219,7 @@ module MyDataMyConsent
       data
     end
 
+    # Create a organization data consent request.
     # Create a organization data consent request.
     # @param create_organization_data_consent_request [CreateOrganizationDataConsentRequest] M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
     # @param [Hash] opts the optional parameters

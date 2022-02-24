@@ -226,7 +226,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', document_identifier: 'document_identifier_example', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER})}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', document_identifier: 'document_identifier_example', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER})}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
 
 begin
   # Issue a new document to an individual user.
@@ -288,7 +288,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', document_identifier: 'document_identifier_example', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER})}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', document_identifier: 'document_identifier_example', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER})}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
 
 begin
   # Issue a new document to an organization.

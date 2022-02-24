@@ -9,7 +9,9 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 ## get_all_supported_identifiers
 
-> <SupportedIdentifiersByCountry> get_all_supported_identifiers(country_iso2_code)
+> <SupportedIdentifier> get_all_supported_identifiers(country_iso2_code)
+
+Get all supported identifiers by country.
 
 Get all supported identifiers by country.
 
@@ -35,7 +37,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SupportedIdentifiersByCountry>, Integer, Hash)> get_all_supported_identifiers_with_http_info(country_iso2_code)
+> <Array(<SupportedIdentifier>, Integer, Hash)> get_all_supported_identifiers_with_http_info(country_iso2_code)
 
 ```ruby
 begin
@@ -43,7 +45,7 @@ begin
   data, status_code, headers = api_instance.get_all_supported_identifiers_with_http_info(country_iso2_code)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <SupportedIdentifiersByCountry>
+  p data # => <SupportedIdentifier>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling SupportedIdentifiersApi->get_all_supported_identifiers_with_http_info: #{e}"
 end
@@ -57,7 +59,7 @@ end
 
 ### Return type
 
-[**SupportedIdentifiersByCountry**](SupportedIdentifiersByCountry.md)
+[**SupportedIdentifier**](SupportedIdentifier.md)
 
 ### Authorization
 

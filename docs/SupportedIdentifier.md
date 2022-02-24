@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key** | **String** |  | [optional] |
+| **iso2** | **String** |  | [optional] |
 | **name** | **String** |  | [optional] |
-| **description** | **String** |  | [optional] |
-| **example_value** | **String** |  | [optional] |
+| **individual_identifiers** | [**Array&lt;Identifier&gt;**](Identifier.md) |  | [optional] |
+| **organization_identifiers** | [**Array&lt;Identifier&gt;**](Identifier.md) |  | [optional] |
 
 ## Example
 
@@ -15,10 +15,10 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::SupportedIdentifier.new(
-  key: null,
+  iso2: null,
   name: null,
-  description: null,
-  example_value: null
+  individual_identifiers: null,
+  organization_identifiers: null
 )
 ```
 

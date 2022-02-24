@@ -15,21 +15,21 @@ require 'time'
 
 module MyDataMyConsent
   class SupportedIdentifier
-    attr_accessor :key
+    attr_accessor :iso2
 
     attr_accessor :name
 
-    attr_accessor :description
+    attr_accessor :individual_identifiers
 
-    attr_accessor :example_value
+    attr_accessor :organization_identifiers
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'key' => :'key',
+        :'iso2' => :'iso2',
         :'name' => :'name',
-        :'description' => :'description',
-        :'example_value' => :'exampleValue'
+        :'individual_identifiers' => :'individualIdentifiers',
+        :'organization_identifiers' => :'organizationIdentifiers'
       }
     end
 
@@ -41,20 +41,20 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'key' => :'String',
+        :'iso2' => :'String',
         :'name' => :'String',
-        :'description' => :'String',
-        :'example_value' => :'String'
+        :'individual_identifiers' => :'Array<Identifier>',
+        :'organization_identifiers' => :'Array<Identifier>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'key',
+        :'iso2',
         :'name',
-        :'description',
-        :'example_value'
+        :'individual_identifiers',
+        :'organization_identifiers'
       ])
     end
 
@@ -73,20 +73,24 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'key')
-        self.key = attributes[:'key']
+      if attributes.key?(:'iso2')
+        self.iso2 = attributes[:'iso2']
       end
 
       if attributes.key?(:'name')
         self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
+      if attributes.key?(:'individual_identifiers')
+        if (value = attributes[:'individual_identifiers']).is_a?(Array)
+          self.individual_identifiers = value
+        end
       end
 
-      if attributes.key?(:'example_value')
-        self.example_value = attributes[:'example_value']
+      if attributes.key?(:'organization_identifiers')
+        if (value = attributes[:'organization_identifiers']).is_a?(Array)
+          self.organization_identifiers = value
+        end
       end
     end
 
@@ -108,10 +112,10 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          key == o.key &&
+          iso2 == o.iso2 &&
           name == o.name &&
-          description == o.description &&
-          example_value == o.example_value
+          individual_identifiers == o.individual_identifiers &&
+          organization_identifiers == o.organization_identifiers
     end
 
     # @see the `==` method
@@ -123,7 +127,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [key, name, description, example_value].hash
+      [iso2, name, individual_identifiers, organization_identifiers].hash
     end
 
     # Builds the object from hash

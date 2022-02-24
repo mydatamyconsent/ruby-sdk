@@ -1,4 +1,4 @@
-# MyDataMyConsent::CollectibleTypes
+# MyDataMyConsent::DocumentIssueRequestStatus
 
 ## Properties
 
@@ -10,6 +10,6 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::CollectibleTypes.new()
+instance = MyDataMyConsent::DocumentIssueRequestStatus.new()
 ```
 

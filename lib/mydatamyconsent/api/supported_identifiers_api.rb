@@ -20,18 +20,20 @@ module MyDataMyConsent
       @api_client = api_client
     end
     # Get all supported identifiers by country.
+    # Get all supported identifiers by country.
     # @param country_iso2_code [String] Country ISO 2 code.
     # @param [Hash] opts the optional parameters
-    # @return [SupportedIdentifiersByCountry]
+    # @return [SupportedIdentifier]
     def get_all_supported_identifiers(country_iso2_code, opts = {})
       data, _status_code, _headers = get_all_supported_identifiers_with_http_info(country_iso2_code, opts)
       data
     end
 
     # Get all supported identifiers by country.
+    # Get all supported identifiers by country.
     # @param country_iso2_code [String] Country ISO 2 code.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(SupportedIdentifiersByCountry, Integer, Hash)>] SupportedIdentifiersByCountry data, response status code and response headers
+    # @return [Array<(SupportedIdentifier, Integer, Hash)>] SupportedIdentifier data, response status code and response headers
     def get_all_supported_identifiers_with_http_info(country_iso2_code, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SupportedIdentifiersApi.get_all_supported_identifiers ...'
@@ -58,7 +60,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'SupportedIdentifiersByCountry'
+      return_type = opts[:debug_return_type] || 'SupportedIdentifier'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **type** | [**ReceiverType**](ReceiverType.md) |  | [optional] |
-| **identifiers** | [**Array&lt;IdentifierStringKeyValuePair&gt;**](IdentifierStringKeyValuePair.md) | Consent request receiver identifiers | [optional] |
+| **identifiers** | [**Array&lt;StringStringKeyValuePair&gt;**](StringStringKeyValuePair.md) | Consent request receiver identifiers | [optional] |
 | **identification_strategy** | [**IdentificationStrategy**](IdentificationStrategy.md) |  | [optional] |
 
 ## Example

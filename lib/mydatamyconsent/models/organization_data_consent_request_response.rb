@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # Organization Data Consent Request Response.
+  # OrganizationDataConsentRequestResponse
   class OrganizationDataConsentRequestResponse
     # Consent request id
     attr_accessor :id

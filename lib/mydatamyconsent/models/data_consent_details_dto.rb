@@ -17,6 +17,18 @@ module MyDataMyConsent
   class DataConsentDetailsDto
     attr_accessor :id
 
+    attr_accessor :title
+
+    attr_accessor :description
+
+    attr_accessor :data_life
+
+    attr_accessor :requester_name
+
+    attr_accessor :requester_logo
+
+    attr_accessor :location
+
     attr_accessor :status
 
     attr_accessor :approved_at_utc
@@ -27,30 +39,33 @@ module MyDataMyConsent
 
     attr_accessor :requested_at_utc
 
-    attr_accessor :requester
-
-    attr_accessor :consent_details
-
     attr_accessor :identifiers
 
-    attr_accessor :approved_documents
+    attr_accessor :documents
 
-    attr_accessor :approved_financials
+    attr_accessor :financials
+
+    attr_accessor :health_records
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
+        :'title' => :'title',
+        :'description' => :'description',
+        :'data_life' => :'dataLife',
+        :'requester_name' => :'requesterName',
+        :'requester_logo' => :'requesterLogo',
+        :'location' => :'location',
         :'status' => :'status',
         :'approved_at_utc' => :'approvedAtUtc',
         :'rejected_at_utc' => :'rejectedAtUtc',
         :'expires_at_utc' => :'expiresAtUtc',
         :'requested_at_utc' => :'requestedAtUtc',
-        :'requester' => :'requester',
-        :'consent_details' => :'consentDetails',
         :'identifiers' => :'identifiers',
-        :'approved_documents' => :'approvedDocuments',
-        :'approved_financials' => :'approvedFinancials'
+        :'documents' => :'documents',
+        :'financials' => :'financials',
+        :'health_records' => :'healthRecords'
       }
     end
 
@@ -63,27 +78,37 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'id' => :'String',
+        :'title' => :'String',
+        :'description' => :'String',
+        :'data_life' => :'Life',
+        :'requester_name' => :'String',
+        :'requester_logo' => :'String',
+        :'location' => :'String',
         :'status' => :'DataConsentStatus',
         :'approved_at_utc' => :'Time',
         :'rejected_at_utc' => :'Time',
         :'expires_at_utc' => :'Time',
         :'requested_at_utc' => :'Time',
-        :'requester' => :'DataConsentRequesterDto',
-        :'consent_details' => :'GetConsentTemplateDetailsDto',
-        :'identifiers' => :'Array<DataConsentIdentifier>',
-        :'approved_documents' => :'Array<DataConsentRequestedDocument>',
-        :'approved_financials' => :'Array<DataConsentRequestedFinancialAccount>'
+        :'identifiers' => :'JsonSchema',
+        :'documents' => :'String',
+        :'financials' => :'String',
+        :'health_records' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'title',
+        :'description',
+        :'requester_name',
+        :'requester_logo',
+        :'location',
         :'approved_at_utc',
         :'rejected_at_utc',
-        :'identifiers',
-        :'approved_documents',
-        :'approved_financials'
+        :'documents',
+        :'financials',
+        :'health_records'
       ])
     end
 
@@ -106,6 +131,30 @@ module MyDataMyConsent
         self.id = attributes[:'id']
       end
 
+      if attributes.key?(:'title')
+        self.title = attributes[:'title']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'data_life')
+        self.data_life = attributes[:'data_life']
+      end
+
+      if attributes.key?(:'requester_name')
+        self.requester_name = attributes[:'requester_name']
+      end
+
+      if attributes.key?(:'requester_logo')
+        self.requester_logo = attributes[:'requester_logo']
+      end
+
+      if attributes.key?(:'location')
+        self.location = attributes[:'location']
+      end
+
       if attributes.key?(:'status')
         self.status = attributes[:'status']
       end
@@ -126,30 +175,20 @@ module MyDataMyConsent
         self.requested_at_utc = attributes[:'requested_at_utc']
       end
 
-      if attributes.key?(:'requester')
-        self.requester = attributes[:'requester']
-      end
-
-      if attributes.key?(:'consent_details')
-        self.consent_details = attributes[:'consent_details']
-      end
-
       if attributes.key?(:'identifiers')
-        if (value = attributes[:'identifiers']).is_a?(Array)
-          self.identifiers = value
-        end
+        self.identifiers = attributes[:'identifiers']
       end
 
-      if attributes.key?(:'approved_documents')
-        if (value = attributes[:'approved_documents']).is_a?(Array)
-          self.approved_documents = value
-        end
+      if attributes.key?(:'documents')
+        self.documents = attributes[:'documents']
       end
 
-      if attributes.key?(:'approved_financials')
-        if (value = attributes[:'approved_financials']).is_a?(Array)
-          self.approved_financials = value
-        end
+      if attributes.key?(:'financials')
+        self.financials = attributes[:'financials']
+      end
+
+      if attributes.key?(:'health_records')
+        self.health_records = attributes[:'health_records']
       end
     end
 
@@ -157,12 +196,17 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @id.nil?
       true
     end
 
@@ -172,16 +216,21 @@ module MyDataMyConsent
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
+          title == o.title &&
+          description == o.description &&
+          data_life == o.data_life &&
+          requester_name == o.requester_name &&
+          requester_logo == o.requester_logo &&
+          location == o.location &&
           status == o.status &&
           approved_at_utc == o.approved_at_utc &&
           rejected_at_utc == o.rejected_at_utc &&
           expires_at_utc == o.expires_at_utc &&
           requested_at_utc == o.requested_at_utc &&
-          requester == o.requester &&
-          consent_details == o.consent_details &&
           identifiers == o.identifiers &&
-          approved_documents == o.approved_documents &&
-          approved_financials == o.approved_financials
+          documents == o.documents &&
+          financials == o.financials &&
+          health_records == o.health_records
     end
 
     # @see the `==` method
@@ -193,7 +242,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, status, approved_at_utc, rejected_at_utc, expires_at_utc, requested_at_utc, requester, consent_details, identifiers, approved_documents, approved_financials].hash
+      [id, title, description, data_life, requester_name, requester_logo, location, status, approved_at_utc, rejected_at_utc, expires_at_utc, requested_at_utc, identifiers, documents, financials, health_records].hash
     end
 
     # Builds the object from hash

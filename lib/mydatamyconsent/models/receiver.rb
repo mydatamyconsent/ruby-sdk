@@ -41,7 +41,7 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'type' => :'ReceiverType',
-        :'identifiers' => :'Array<IdentifierStringKeyValuePair>',
+        :'identifiers' => :'Array<StringStringKeyValuePair>',
         :'identification_strategy' => :'IdentificationStrategy'
       }
     end

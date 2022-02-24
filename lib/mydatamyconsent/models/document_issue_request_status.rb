@@ -14,9 +14,11 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class ConsentTemplateTypes
-    INDIVIDUAL = "Individual".freeze
-    ORGANIZATION = "Organization".freeze
+  class DocumentIssueRequestStatus
+    CREATED = "Created".freeze
+    ISSUED = "Issued".freeze
+    ACCEPTED = "Accepted".freeze
+    REJECTED = "Rejected".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
@@ -29,8 +31,8 @@ module MyDataMyConsent
     # @param [String] The enum value in the form of the string
     # @return [String] The enum value
     def build_from_hash(value)
-      constantValues = ConsentTemplateTypes.constants.select { |c| ConsentTemplateTypes::const_get(c) == value }
-      raise "Invalid ENUM value #{value} for class #ConsentTemplateTypes" if constantValues.empty?
+      constantValues = DocumentIssueRequestStatus.constants.select { |c| DocumentIssueRequestStatus::const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #DocumentIssueRequestStatus" if constantValues.empty?
       value
     end
   end

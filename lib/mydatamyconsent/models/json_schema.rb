@@ -14,70 +14,19 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class GetConsentTemplateDetailsDto
-    attr_accessor :id
+  class JsonSchema
+    attr_accessor :keywords
 
-    attr_accessor :name
+    attr_accessor :other_data
 
-    attr_accessor :description
-
-    attr_accessor :consent_purpose
-
-    attr_accessor :collectables
-
-    attr_accessor :fetch_type
-
-    attr_accessor :short_id
-
-    attr_accessor :created_by
-
-    attr_accessor :created_at_utc
-
-    attr_accessor :status
-
-    attr_accessor :template_type
-
-    attr_accessor :data_life
-
-    attr_accessor :request_life
-
-    attr_accessor :frequency
-
-    attr_accessor :identity
-
-    attr_accessor :documents
-
-    attr_accessor :financials
-
-    attr_accessor :health_records
-
-    attr_accessor :approved_by
-
-    attr_accessor :approved_at_utc
+    attr_accessor :bool_value
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'name' => :'name',
-        :'description' => :'description',
-        :'consent_purpose' => :'consentPurpose',
-        :'collectables' => :'collectables',
-        :'fetch_type' => :'fetchType',
-        :'short_id' => :'shortId',
-        :'created_by' => :'createdBy',
-        :'created_at_utc' => :'createdAtUtc',
-        :'status' => :'status',
-        :'template_type' => :'templateType',
-        :'data_life' => :'dataLife',
-        :'request_life' => :'requestLife',
-        :'frequency' => :'frequency',
-        :'identity' => :'identity',
-        :'documents' => :'documents',
-        :'financials' => :'financials',
-        :'health_records' => :'healthRecords',
-        :'approved_by' => :'approvedBy',
-        :'approved_at_utc' => :'approvedAtUtc'
+        :'keywords' => :'keywords',
+        :'other_data' => :'otherData',
+        :'bool_value' => :'boolValue'
       }
     end
 
@@ -89,45 +38,18 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'name' => :'String',
-        :'description' => :'String',
-        :'consent_purpose' => :'String',
-        :'collectables' => :'Array<CollectibleTypes>',
-        :'fetch_type' => :'FetchTypes',
-        :'short_id' => :'String',
-        :'created_by' => :'String',
-        :'created_at_utc' => :'Time',
-        :'status' => :'String',
-        :'template_type' => :'ConsentTemplateTypes',
-        :'data_life' => :'Life',
-        :'request_life' => :'Life',
-        :'frequency' => :'Life',
-        :'identity' => :'Array<IdentitySupportedFields>',
-        :'documents' => :'Array<Document>',
-        :'financials' => :'Array<Financial>',
-        :'health_records' => :'Array<Object>',
-        :'approved_by' => :'String',
-        :'approved_at_utc' => :'Time'
+        :'keywords' => :'Array<Object>',
+        :'other_data' => :'Hash<String, Object>',
+        :'bool_value' => :'Boolean'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'name',
-        :'description',
-        :'consent_purpose',
-        :'collectables',
-        :'short_id',
-        :'created_by',
-        :'status',
-        :'identity',
-        :'documents',
-        :'financials',
-        :'health_records',
-        :'approved_by',
-        :'approved_at_utc'
+        :'keywords',
+        :'other_data',
+        :'bool_value'
       ])
     end
 
@@ -135,105 +57,31 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::GetConsentTemplateDetailsDto` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::JsonSchema` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::GetConsentTemplateDetailsDto`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::JsonSchema`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'consent_purpose')
-        self.consent_purpose = attributes[:'consent_purpose']
-      end
-
-      if attributes.key?(:'collectables')
-        if (value = attributes[:'collectables']).is_a?(Array)
-          self.collectables = value
+      if attributes.key?(:'keywords')
+        if (value = attributes[:'keywords']).is_a?(Array)
+          self.keywords = value
         end
       end
 
-      if attributes.key?(:'fetch_type')
-        self.fetch_type = attributes[:'fetch_type']
-      end
-
-      if attributes.key?(:'short_id')
-        self.short_id = attributes[:'short_id']
-      end
-
-      if attributes.key?(:'created_by')
-        self.created_by = attributes[:'created_by']
-      end
-
-      if attributes.key?(:'created_at_utc')
-        self.created_at_utc = attributes[:'created_at_utc']
-      end
-
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.key?(:'template_type')
-        self.template_type = attributes[:'template_type']
-      end
-
-      if attributes.key?(:'data_life')
-        self.data_life = attributes[:'data_life']
-      end
-
-      if attributes.key?(:'request_life')
-        self.request_life = attributes[:'request_life']
-      end
-
-      if attributes.key?(:'frequency')
-        self.frequency = attributes[:'frequency']
-      end
-
-      if attributes.key?(:'identity')
-        if (value = attributes[:'identity']).is_a?(Array)
-          self.identity = value
+      if attributes.key?(:'other_data')
+        if (value = attributes[:'other_data']).is_a?(Hash)
+          self.other_data = value
         end
       end
 
-      if attributes.key?(:'documents')
-        if (value = attributes[:'documents']).is_a?(Array)
-          self.documents = value
-        end
-      end
-
-      if attributes.key?(:'financials')
-        if (value = attributes[:'financials']).is_a?(Array)
-          self.financials = value
-        end
-      end
-
-      if attributes.key?(:'health_records')
-        if (value = attributes[:'health_records']).is_a?(Array)
-          self.health_records = value
-        end
-      end
-
-      if attributes.key?(:'approved_by')
-        self.approved_by = attributes[:'approved_by']
-      end
-
-      if attributes.key?(:'approved_at_utc')
-        self.approved_at_utc = attributes[:'approved_at_utc']
+      if attributes.key?(:'bool_value')
+        self.bool_value = attributes[:'bool_value']
       end
     end
 
@@ -255,26 +103,9 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          name == o.name &&
-          description == o.description &&
-          consent_purpose == o.consent_purpose &&
-          collectables == o.collectables &&
-          fetch_type == o.fetch_type &&
-          short_id == o.short_id &&
-          created_by == o.created_by &&
-          created_at_utc == o.created_at_utc &&
-          status == o.status &&
-          template_type == o.template_type &&
-          data_life == o.data_life &&
-          request_life == o.request_life &&
-          frequency == o.frequency &&
-          identity == o.identity &&
-          documents == o.documents &&
-          financials == o.financials &&
-          health_records == o.health_records &&
-          approved_by == o.approved_by &&
-          approved_at_utc == o.approved_at_utc
+          keywords == o.keywords &&
+          other_data == o.other_data &&
+          bool_value == o.bool_value
     end
 
     # @see the `==` method
@@ -286,7 +117,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, description, consent_purpose, collectables, fetch_type, short_id, created_by, created_at_utc, status, template_type, data_life, request_life, frequency, identity, documents, financials, health_records, approved_by, approved_at_utc].hash
+      [keywords, other_data, bool_value].hash
     end
 
     # Builds the object from hash

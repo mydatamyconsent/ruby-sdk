@@ -144,6 +144,8 @@ No authorization required
 
 Create a individual data consent request.
 
+Create a individual data consent request.
+
 ### Examples
 
 ```ruby
@@ -151,7 +153,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
-create_individual_data_consent_request = MyDataMyConsent::CreateIndividualDataConsentRequest.new({receiver: MyDataMyConsent::Receiver.new}) # CreateIndividualDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+create_individual_data_consent_request = MyDataMyConsent::CreateIndividualDataConsentRequest.new({receiver: MyDataMyConsent::Receiver.new}) # CreateIndividualDataConsentRequest | The Individual data consent request payload
 
 begin
   # Create a individual data consent request.
@@ -184,7 +186,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **create_individual_data_consent_request** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md) | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest). |  |
+| **create_individual_data_consent_request** | [**CreateIndividualDataConsentRequest**](CreateIndividualDataConsentRequest.md) | The Individual data consent request payload |  |
 
 ### Return type
 
@@ -203,6 +205,8 @@ No authorization required
 ## create_organization_data_consent_request
 
 > <OrganizationDataConsentRequestResponse> create_organization_data_consent_request(create_organization_data_consent_request)
+
+Create a organization data consent request.
 
 Create a organization data consent request.
 

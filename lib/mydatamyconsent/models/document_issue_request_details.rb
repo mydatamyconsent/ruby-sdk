@@ -16,11 +16,16 @@ require 'time'
 module MyDataMyConsent
   # Document issue request details.
   class DocumentIssueRequestDetails
+    # Request Id.
+    attr_accessor :id
+
     attr_accessor :document_type_id
 
     attr_accessor :document_type_name
 
     attr_accessor :document_identifier
+
+    attr_accessor :status
 
     attr_accessor :description
 
@@ -35,9 +40,11 @@ module MyDataMyConsent
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'id' => :'id',
         :'document_type_id' => :'documentTypeId',
         :'document_type_name' => :'documentTypeName',
         :'document_identifier' => :'documentIdentifier',
+        :'status' => :'status',
         :'description' => :'description',
         :'receiver' => :'receiver',
         :'expires_at_utc' => :'expiresAtUtc',
@@ -54,9 +61,11 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'id' => :'String',
         :'document_type_id' => :'String',
         :'document_type_name' => :'String',
         :'document_identifier' => :'String',
+        :'status' => :'DocumentIssueRequestStatus',
         :'description' => :'String',
         :'receiver' => :'Object',
         :'expires_at_utc' => :'Time',
@@ -89,6 +98,10 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
+      end
+
       if attributes.key?(:'document_type_id')
         self.document_type_id = attributes[:'document_type_id']
       end
@@ -99,6 +112,10 @@ module MyDataMyConsent
 
       if attributes.key?(:'document_identifier')
         self.document_identifier = attributes[:'document_identifier']
+      end
+
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
       end
 
       if attributes.key?(:'description')
@@ -126,6 +143,10 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
       if @document_type_id.nil?
         invalid_properties.push('invalid value for "document_type_id", document_type_id cannot be nil.')
       end
@@ -152,6 +173,7 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @id.nil?
       return false if @document_type_id.nil?
       return false if @document_type_name.nil?
       return false if @document_identifier.nil?
@@ -165,9 +187,11 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          id == o.id &&
           document_type_id == o.document_type_id &&
           document_type_name == o.document_type_name &&
           document_identifier == o.document_identifier &&
+          status == o.status &&
           description == o.description &&
           receiver == o.receiver &&
           expires_at_utc == o.expires_at_utc &&
@@ -184,7 +208,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_type_id, document_type_name, document_identifier, description, receiver, expires_at_utc, metadata, created_at_utc].hash
+      [id, document_type_id, document_type_name, document_identifier, status, description, receiver, expires_at_utc, metadata, created_at_utc].hash
     end
 
     # Builds the object from hash

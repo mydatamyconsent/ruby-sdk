@@ -15,6 +15,8 @@ require 'time'
 
 module MyDataMyConsent
   class DocumentReceiver
+    attr_accessor :country_iso2_code
+
     attr_accessor :identifiers
 
     attr_accessor :identification_strategy
@@ -22,6 +24,7 @@ module MyDataMyConsent
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'country_iso2_code' => :'countryIso2Code',
         :'identifiers' => :'identifiers',
         :'identification_strategy' => :'identificationStrategy'
       }
@@ -35,6 +38,7 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'country_iso2_code' => :'String',
         :'identifiers' => :'Array<StringStringKeyValuePair>',
         :'identification_strategy' => :'IdentificationStrategy'
       }
@@ -61,6 +65,10 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'country_iso2_code')
+        self.country_iso2_code = attributes[:'country_iso2_code']
+      end
+
       if attributes.key?(:'identifiers')
         if (value = attributes[:'identifiers']).is_a?(Array)
           self.identifiers = value
@@ -76,6 +84,18 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @country_iso2_code.nil?
+        invalid_properties.push('invalid value for "country_iso2_code", country_iso2_code cannot be nil.')
+      end
+
+      if @country_iso2_code.to_s.length > 2
+        invalid_properties.push('invalid value for "country_iso2_code", the character length must be smaller than or equal to 2.')
+      end
+
+      if @country_iso2_code.to_s.length < 2
+        invalid_properties.push('invalid value for "country_iso2_code", the character length must be great than or equal to 2.')
+      end
+
       if @identifiers.nil?
         invalid_properties.push('invalid value for "identifiers", identifiers cannot be nil.')
       end
@@ -90,9 +110,30 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @country_iso2_code.nil?
+      return false if @country_iso2_code.to_s.length > 2
+      return false if @country_iso2_code.to_s.length < 2
       return false if @identifiers.nil?
       return false if @identification_strategy.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] country_iso2_code Value to be assigned
+    def country_iso2_code=(country_iso2_code)
+      if country_iso2_code.nil?
+        fail ArgumentError, 'country_iso2_code cannot be nil'
+      end
+
+      if country_iso2_code.to_s.length > 2
+        fail ArgumentError, 'invalid value for "country_iso2_code", the character length must be smaller than or equal to 2.'
+      end
+
+      if country_iso2_code.to_s.length < 2
+        fail ArgumentError, 'invalid value for "country_iso2_code", the character length must be great than or equal to 2.'
+      end
+
+      @country_iso2_code = country_iso2_code
     end
 
     # Checks equality by comparing each attribute.
@@ -100,6 +141,7 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          country_iso2_code == o.country_iso2_code &&
           identifiers == o.identifiers &&
           identification_strategy == o.identification_strategy
     end
@@ -113,7 +155,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [identifiers, identification_strategy].hash
+      [country_iso2_code, identifiers, identification_strategy].hash
     end
 
     # Builds the object from hash
