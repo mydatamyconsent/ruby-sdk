@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **consent_template_id** | **String** | Consent template id | [optional] |
-| **receiver** | [**Receiver**](Receiver.md) |  |  |
+| **receiver** | [**ConsentRequestReceiver**](ConsentRequestReceiver.md) |  |  |
 
 ## Example
 

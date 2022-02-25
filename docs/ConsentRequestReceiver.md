@@ -1,10 +1,9 @@
-# MyDataMyConsent::Receiver
+# MyDataMyConsent::ConsentRequestReceiver
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | [**ReceiverType**](ReceiverType.md) |  | [optional] |
 | **identifiers** | [**Array&lt;StringStringKeyValuePair&gt;**](StringStringKeyValuePair.md) | Consent request receiver identifiers | [optional] |
 | **identification_strategy** | [**IdentificationStrategy**](IdentificationStrategy.md) |  | [optional] |
 
@@ -13,8 +12,7 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::Receiver.new(
-  type: null,
+instance = MyDataMyConsent::ConsentRequestReceiver.new(
   identifiers: null,
   identification_strategy: null
 )

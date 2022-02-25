@@ -21,9 +21,9 @@ module MyDataMyConsent
 
     attr_accessor :document_type_id
 
-    attr_accessor :document_type_name
+    attr_accessor :type_name
 
-    attr_accessor :document_identifier
+    attr_accessor :identifier
 
     attr_accessor :status
 
@@ -31,9 +31,13 @@ module MyDataMyConsent
 
     attr_accessor :receiver
 
+    attr_accessor :issued_at_utc
+
+    attr_accessor :valid_from_utc
+
     attr_accessor :expires_at_utc
 
-    attr_accessor :metadata
+    attr_accessor :meta_data
 
     attr_accessor :created_at_utc
 
@@ -42,13 +46,15 @@ module MyDataMyConsent
       {
         :'id' => :'id',
         :'document_type_id' => :'documentTypeId',
-        :'document_type_name' => :'documentTypeName',
-        :'document_identifier' => :'documentIdentifier',
+        :'type_name' => :'typeName',
+        :'identifier' => :'identifier',
         :'status' => :'status',
         :'description' => :'description',
         :'receiver' => :'receiver',
+        :'issued_at_utc' => :'issuedAtUtc',
+        :'valid_from_utc' => :'validFromUtc',
         :'expires_at_utc' => :'expiresAtUtc',
-        :'metadata' => :'metadata',
+        :'meta_data' => :'metaData',
         :'created_at_utc' => :'createdAtUtc'
       }
     end
@@ -63,13 +69,15 @@ module MyDataMyConsent
       {
         :'id' => :'String',
         :'document_type_id' => :'String',
-        :'document_type_name' => :'String',
-        :'document_identifier' => :'String',
+        :'type_name' => :'String',
+        :'identifier' => :'String',
         :'status' => :'DocumentIssueRequestStatus',
         :'description' => :'String',
         :'receiver' => :'Object',
+        :'issued_at_utc' => :'Time',
+        :'valid_from_utc' => :'Time',
         :'expires_at_utc' => :'Time',
-        :'metadata' => :'Object',
+        :'meta_data' => :'Object',
         :'created_at_utc' => :'Time'
       }
     end
@@ -79,7 +87,7 @@ module MyDataMyConsent
       Set.new([
         :'receiver',
         :'expires_at_utc',
-        :'metadata',
+        :'meta_data',
       ])
     end
 
@@ -106,12 +114,12 @@ module MyDataMyConsent
         self.document_type_id = attributes[:'document_type_id']
       end
 
-      if attributes.key?(:'document_type_name')
-        self.document_type_name = attributes[:'document_type_name']
+      if attributes.key?(:'type_name')
+        self.type_name = attributes[:'type_name']
       end
 
-      if attributes.key?(:'document_identifier')
-        self.document_identifier = attributes[:'document_identifier']
+      if attributes.key?(:'identifier')
+        self.identifier = attributes[:'identifier']
       end
 
       if attributes.key?(:'status')
@@ -126,12 +134,20 @@ module MyDataMyConsent
         self.receiver = attributes[:'receiver']
       end
 
+      if attributes.key?(:'issued_at_utc')
+        self.issued_at_utc = attributes[:'issued_at_utc']
+      end
+
+      if attributes.key?(:'valid_from_utc')
+        self.valid_from_utc = attributes[:'valid_from_utc']
+      end
+
       if attributes.key?(:'expires_at_utc')
         self.expires_at_utc = attributes[:'expires_at_utc']
       end
 
-      if attributes.key?(:'metadata')
-        self.metadata = attributes[:'metadata']
+      if attributes.key?(:'meta_data')
+        self.meta_data = attributes[:'meta_data']
       end
 
       if attributes.key?(:'created_at_utc')
@@ -151,16 +167,28 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "document_type_id", document_type_id cannot be nil.')
       end
 
-      if @document_type_name.nil?
-        invalid_properties.push('invalid value for "document_type_name", document_type_name cannot be nil.')
+      if @type_name.nil?
+        invalid_properties.push('invalid value for "type_name", type_name cannot be nil.')
       end
 
-      if @document_identifier.nil?
-        invalid_properties.push('invalid value for "document_identifier", document_identifier cannot be nil.')
+      if @identifier.nil?
+        invalid_properties.push('invalid value for "identifier", identifier cannot be nil.')
+      end
+
+      if @status.nil?
+        invalid_properties.push('invalid value for "status", status cannot be nil.')
       end
 
       if @description.nil?
         invalid_properties.push('invalid value for "description", description cannot be nil.')
+      end
+
+      if @issued_at_utc.nil?
+        invalid_properties.push('invalid value for "issued_at_utc", issued_at_utc cannot be nil.')
+      end
+
+      if @valid_from_utc.nil?
+        invalid_properties.push('invalid value for "valid_from_utc", valid_from_utc cannot be nil.')
       end
 
       if @created_at_utc.nil?
@@ -175,9 +203,12 @@ module MyDataMyConsent
     def valid?
       return false if @id.nil?
       return false if @document_type_id.nil?
-      return false if @document_type_name.nil?
-      return false if @document_identifier.nil?
+      return false if @type_name.nil?
+      return false if @identifier.nil?
+      return false if @status.nil?
       return false if @description.nil?
+      return false if @issued_at_utc.nil?
+      return false if @valid_from_utc.nil?
       return false if @created_at_utc.nil?
       true
     end
@@ -189,13 +220,15 @@ module MyDataMyConsent
       self.class == o.class &&
           id == o.id &&
           document_type_id == o.document_type_id &&
-          document_type_name == o.document_type_name &&
-          document_identifier == o.document_identifier &&
+          type_name == o.type_name &&
+          identifier == o.identifier &&
           status == o.status &&
           description == o.description &&
           receiver == o.receiver &&
+          issued_at_utc == o.issued_at_utc &&
+          valid_from_utc == o.valid_from_utc &&
           expires_at_utc == o.expires_at_utc &&
-          metadata == o.metadata &&
+          meta_data == o.meta_data &&
           created_at_utc == o.created_at_utc
     end
 
@@ -208,7 +241,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, document_type_id, document_type_name, document_identifier, status, description, receiver, expires_at_utc, metadata, created_at_utc].hash
+      [id, document_type_id, type_name, identifier, status, description, receiver, issued_at_utc, valid_from_utc, expires_at_utc, meta_data, created_at_utc].hash
     end
 
     # Builds the object from hash

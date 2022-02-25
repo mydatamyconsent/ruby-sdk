@@ -6,6 +6,7 @@ Rakefile
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/ConsentRequestReceiver.md
 docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
 docs/CreateOrganizationDataConsentRequest.md
@@ -60,8 +61,6 @@ docs/OrganizationFinancialTransactionsDtoPaginatedList.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
-docs/Receiver.md
-docs/ReceiverType.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
 docs/SupportedEntityType.md
@@ -89,6 +88,7 @@ lib/mydatamyconsent/configuration.rb
 lib/mydatamyconsent/models/activity.rb
 lib/mydatamyconsent/models/approved_consent_request.rb
 lib/mydatamyconsent/models/bank_account_type.rb
+lib/mydatamyconsent/models/consent_request_receiver.rb
 lib/mydatamyconsent/models/create_data_processing_agreement_request_model.rb
 lib/mydatamyconsent/models/create_individual_data_consent_request.rb
 lib/mydatamyconsent/models/create_organization_data_consent_request.rb
@@ -137,8 +137,6 @@ lib/mydatamyconsent/models/organization_financial_transactions_dto_paginated_lis
 lib/mydatamyconsent/models/problem_details.rb
 lib/mydatamyconsent/models/push_uri_request.rb
 lib/mydatamyconsent/models/push_uri_response.rb
-lib/mydatamyconsent/models/receiver.rb
-lib/mydatamyconsent/models/receiver_type.rb
 lib/mydatamyconsent/models/shared_with.rb
 lib/mydatamyconsent/models/string_string_key_value_pair.rb
 lib/mydatamyconsent/models/supported_entity_type.rb

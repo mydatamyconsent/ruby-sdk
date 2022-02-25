@@ -38,7 +38,7 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'consent_template_id' => :'String',
-        :'receiver' => :'Receiver'
+        :'receiver' => :'ConsentRequestReceiver'
       }
     end
 

@@ -18,11 +18,15 @@ module MyDataMyConsent
   class DocumentIssueRequest
     attr_accessor :document_type_id
 
-    attr_accessor :document_identifier
+    attr_accessor :identifier
 
     attr_accessor :description
 
     attr_accessor :receiver
+
+    attr_accessor :issued_at_utc
+
+    attr_accessor :valid_from_utc
 
     attr_accessor :expires_at_utc
 
@@ -32,9 +36,11 @@ module MyDataMyConsent
     def self.attribute_map
       {
         :'document_type_id' => :'documentTypeId',
-        :'document_identifier' => :'documentIdentifier',
+        :'identifier' => :'identifier',
         :'description' => :'description',
         :'receiver' => :'receiver',
+        :'issued_at_utc' => :'issuedAtUtc',
+        :'valid_from_utc' => :'validFromUtc',
         :'expires_at_utc' => :'expiresAtUtc',
         :'metadata' => :'metadata'
       }
@@ -49,9 +55,11 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'document_type_id' => :'String',
-        :'document_identifier' => :'String',
+        :'identifier' => :'String',
         :'description' => :'String',
         :'receiver' => :'DocumentReceiver',
+        :'issued_at_utc' => :'Time',
+        :'valid_from_utc' => :'Time',
         :'expires_at_utc' => :'Time',
         :'metadata' => :'Hash<String, String>'
       }
@@ -84,8 +92,8 @@ module MyDataMyConsent
         self.document_type_id = attributes[:'document_type_id']
       end
 
-      if attributes.key?(:'document_identifier')
-        self.document_identifier = attributes[:'document_identifier']
+      if attributes.key?(:'identifier')
+        self.identifier = attributes[:'identifier']
       end
 
       if attributes.key?(:'description')
@@ -94,6 +102,14 @@ module MyDataMyConsent
 
       if attributes.key?(:'receiver')
         self.receiver = attributes[:'receiver']
+      end
+
+      if attributes.key?(:'issued_at_utc')
+        self.issued_at_utc = attributes[:'issued_at_utc']
+      end
+
+      if attributes.key?(:'valid_from_utc')
+        self.valid_from_utc = attributes[:'valid_from_utc']
       end
 
       if attributes.key?(:'expires_at_utc')
@@ -115,8 +131,8 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "document_type_id", document_type_id cannot be nil.')
       end
 
-      if @document_identifier.nil?
-        invalid_properties.push('invalid value for "document_identifier", document_identifier cannot be nil.')
+      if @identifier.nil?
+        invalid_properties.push('invalid value for "identifier", identifier cannot be nil.')
       end
 
       if @description.nil?
@@ -127,6 +143,14 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "receiver", receiver cannot be nil.')
       end
 
+      if @issued_at_utc.nil?
+        invalid_properties.push('invalid value for "issued_at_utc", issued_at_utc cannot be nil.')
+      end
+
+      if @valid_from_utc.nil?
+        invalid_properties.push('invalid value for "valid_from_utc", valid_from_utc cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -134,9 +158,11 @@ module MyDataMyConsent
     # @return true if the model is valid
     def valid?
       return false if @document_type_id.nil?
-      return false if @document_identifier.nil?
+      return false if @identifier.nil?
       return false if @description.nil?
       return false if @receiver.nil?
+      return false if @issued_at_utc.nil?
+      return false if @valid_from_utc.nil?
       true
     end
 
@@ -146,9 +172,11 @@ module MyDataMyConsent
       return true if self.equal?(o)
       self.class == o.class &&
           document_type_id == o.document_type_id &&
-          document_identifier == o.document_identifier &&
+          identifier == o.identifier &&
           description == o.description &&
           receiver == o.receiver &&
+          issued_at_utc == o.issued_at_utc &&
+          valid_from_utc == o.valid_from_utc &&
           expires_at_utc == o.expires_at_utc &&
           metadata == o.metadata
     end
@@ -162,7 +190,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_type_id, document_identifier, description, receiver, expires_at_utc, metadata].hash
+      [document_type_id, identifier, description, receiver, issued_at_utc, valid_from_utc, expires_at_utc, metadata].hash
     end
 
     # Builds the object from hash

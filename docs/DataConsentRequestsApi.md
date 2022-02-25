@@ -153,7 +153,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
-create_individual_data_consent_request = MyDataMyConsent::CreateIndividualDataConsentRequest.new({receiver: MyDataMyConsent::Receiver.new}) # CreateIndividualDataConsentRequest | The Individual data consent request payload
+create_individual_data_consent_request = MyDataMyConsent::CreateIndividualDataConsentRequest.new({receiver: MyDataMyConsent::ConsentRequestReceiver.new}) # CreateIndividualDataConsentRequest | The Individual data consent request payload
 
 begin
   # Create a individual data consent request.
@@ -217,7 +217,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentRequestsApi.new
-create_organization_data_consent_request = MyDataMyConsent::CreateOrganizationDataConsentRequest.new({receiver: MyDataMyConsent::Receiver.new}) # CreateOrganizationDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
+create_organization_data_consent_request = MyDataMyConsent::CreateOrganizationDataConsentRequest.new({receiver: MyDataMyConsent::ConsentRequestReceiver.new}) # CreateOrganizationDataConsentRequest | M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
 
 begin
   # Create a organization data consent request.
