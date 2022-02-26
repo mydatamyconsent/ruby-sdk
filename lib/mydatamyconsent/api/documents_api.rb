@@ -348,26 +348,30 @@ module MyDataMyConsent
 
     # Upload a document for issuance request of individual.
     # @param issue_request_id [String] Issue Request Id System.Guid.
+    # @param form_file [File] 
     # @param [Hash] opts the optional parameters
-    # @option opts [File] :form_file 
     # @return [String]
-    def upload_document_for_individual(issue_request_id, opts = {})
-      data, _status_code, _headers = upload_document_for_individual_with_http_info(issue_request_id, opts)
+    def upload_document_for_individual(issue_request_id, form_file, opts = {})
+      data, _status_code, _headers = upload_document_for_individual_with_http_info(issue_request_id, form_file, opts)
       data
     end
 
     # Upload a document for issuance request of individual.
     # @param issue_request_id [String] Issue Request Id System.Guid.
+    # @param form_file [File] 
     # @param [Hash] opts the optional parameters
-    # @option opts [File] :form_file 
     # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
-    def upload_document_for_individual_with_http_info(issue_request_id, opts = {})
+    def upload_document_for_individual_with_http_info(issue_request_id, form_file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DocumentsApi.upload_document_for_individual ...'
       end
       # verify the required parameter 'issue_request_id' is set
       if @api_client.config.client_side_validation && issue_request_id.nil?
         fail ArgumentError, "Missing the required parameter 'issue_request_id' when calling DocumentsApi.upload_document_for_individual"
+      end
+      # verify the required parameter 'form_file' is set
+      if @api_client.config.client_side_validation && form_file.nil?
+        fail ArgumentError, "Missing the required parameter 'form_file' when calling DocumentsApi.upload_document_for_individual"
       end
       # resource path
       local_var_path = '/v1/documents/issue/individual/upload/{issueRequestId}'.sub('{' + 'issueRequestId' + '}', CGI.escape(issue_request_id.to_s))
@@ -387,7 +391,7 @@ module MyDataMyConsent
 
       # form parameters
       form_params = opts[:form_params] || {}
-      form_params['formFile'] = opts[:'form_file'] if !opts[:'form_file'].nil?
+      form_params['formFile'] = form_file
 
       # http body (model)
       post_body = opts[:debug_body]

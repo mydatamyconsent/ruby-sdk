@@ -339,7 +339,7 @@ No authorization required
 
 ## upload_document_for_individual
 
-> String upload_document_for_individual(issue_request_id, opts)
+> String upload_document_for_individual(issue_request_id, form_file)
 
 Upload a document for issuance request of individual.
 
@@ -351,13 +351,11 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
 issue_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Issue Request Id System.Guid.
-opts = {
-  form_file: File.new('/path/to/some/file') # File | 
-}
+form_file = File.new('/path/to/some/file') # File | 
 
 begin
   # Upload a document for issuance request of individual.
-  result = api_instance.upload_document_for_individual(issue_request_id, opts)
+  result = api_instance.upload_document_for_individual(issue_request_id, form_file)
   p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->upload_document_for_individual: #{e}"
@@ -368,12 +366,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(String, Integer, Hash)> upload_document_for_individual_with_http_info(issue_request_id, opts)
+> <Array(String, Integer, Hash)> upload_document_for_individual_with_http_info(issue_request_id, form_file)
 
 ```ruby
 begin
   # Upload a document for issuance request of individual.
-  data, status_code, headers = api_instance.upload_document_for_individual_with_http_info(issue_request_id, opts)
+  data, status_code, headers = api_instance.upload_document_for_individual_with_http_info(issue_request_id, form_file)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => String
@@ -387,7 +385,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **issue_request_id** | **String** | Issue Request Id System.Guid. |  |
-| **form_file** | **File** |  | [optional] |
+| **form_file** | **File** |  |  |
 
 ### Return type
 

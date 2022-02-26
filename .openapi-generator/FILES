@@ -53,7 +53,7 @@ docs/Life.md
 docs/OrganizationDataConsentInfoDto.md
 docs/OrganizationDataConsentInfoDtoPaginatedList.md
 docs/OrganizationDataConsentRequestResponse.md
-docs/OrganizationDocumentDetailsDto.md
+docs/OrganizationDocumentDetails.md
 docs/OrganizationDocumentDownloadDto.md
 docs/OrganizationFinancialAccountDto.md
 docs/OrganizationFinancialTransactionsDto.md
@@ -72,8 +72,8 @@ docs/UserAccountFinancialTransactionsDto.md
 docs/UserAccountFinancialTransactionsDtoPaginatedList.md
 docs/UserDataConsentInfoDto.md
 docs/UserDataConsentInfoDtoPaginatedList.md
-docs/UserDocumentDetailsDto.md
-docs/UserDocumentDownloadDto.md
+docs/UserDocumentDetails.md
+docs/UserDocumentDownload.md
 lib/mydatamyconsent.rb
 lib/mydatamyconsent/api/data_consent_requests_api.rb
 lib/mydatamyconsent/api/data_consents_api.rb
@@ -129,7 +129,7 @@ lib/mydatamyconsent/models/life.rb
 lib/mydatamyconsent/models/organization_data_consent_info_dto.rb
 lib/mydatamyconsent/models/organization_data_consent_info_dto_paginated_list.rb
 lib/mydatamyconsent/models/organization_data_consent_request_response.rb
-lib/mydatamyconsent/models/organization_document_details_dto.rb
+lib/mydatamyconsent/models/organization_document_details.rb
 lib/mydatamyconsent/models/organization_document_download_dto.rb
 lib/mydatamyconsent/models/organization_financial_account_dto.rb
 lib/mydatamyconsent/models/organization_financial_transactions_dto.rb
@@ -147,7 +147,7 @@ lib/mydatamyconsent/models/user_account_financial_transactions_dto.rb
 lib/mydatamyconsent/models/user_account_financial_transactions_dto_paginated_list.rb
 lib/mydatamyconsent/models/user_data_consent_info_dto.rb
 lib/mydatamyconsent/models/user_data_consent_info_dto_paginated_list.rb
-lib/mydatamyconsent/models/user_document_details_dto.rb
-lib/mydatamyconsent/models/user_document_download_dto.rb
+lib/mydatamyconsent/models/user_document_details.rb
+lib/mydatamyconsent/models/user_document_download.rb
 lib/mydatamyconsent/version.rb
 mydatamyconsent.gemspec

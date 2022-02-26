@@ -1,11 +1,12 @@
-# MyDataMyConsent::UserDocumentDownloadDto
+# MyDataMyConsent::UserDocumentDownload
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
-| **storage_url** | **String** |  | [optional] |
+| **download_url** | **String** |  | [optional] |
+| **expires_at_utc** | **Time** |  | [optional] |
 | **owner_id** | **String** |  | [optional] |
 
 ## Example
@@ -13,9 +14,10 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::UserDocumentDownloadDto.new(
+instance = MyDataMyConsent::UserDocumentDownload.new(
   id: null,
-  storage_url: null,
+  download_url: null,
+  expires_at_utc: null,
   owner_id: null
 )
 ```

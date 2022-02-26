@@ -1,4 +1,4 @@
-# MyDataMyConsent::OrganizationDocumentDetailsDto
+# MyDataMyConsent::OrganizationDocumentDetails
 
 ## Properties
 
@@ -21,7 +21,7 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::OrganizationDocumentDetailsDto.new(
+instance = MyDataMyConsent::OrganizationDocumentDetails.new(
   id: null,
   organization_id: null,
   organization_name: null,

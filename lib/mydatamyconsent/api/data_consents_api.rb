@@ -23,7 +23,7 @@ module MyDataMyConsent
     # @param consent_id [String] Consent id.
     # @param document_id [String] Document id.
     # @param [Hash] opts the optional parameters
-    # @return [UserDocumentDownloadDto]
+    # @return [UserDocumentDownload]
     def download_consented_document_by_id(consent_id, document_id, opts = {})
       data, _status_code, _headers = download_consented_document_by_id_with_http_info(consent_id, document_id, opts)
       data
@@ -33,7 +33,7 @@ module MyDataMyConsent
     # @param consent_id [String] Consent id.
     # @param document_id [String] Document id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(UserDocumentDownloadDto, Integer, Hash)>] UserDocumentDownloadDto data, response status code and response headers
+    # @return [Array<(UserDocumentDownload, Integer, Hash)>] UserDocumentDownload data, response status code and response headers
     def download_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.download_consented_document_by_id ...'
@@ -64,7 +64,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UserDocumentDownloadDto'
+      return_type = opts[:debug_return_type] || 'UserDocumentDownload'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -236,7 +236,7 @@ module MyDataMyConsent
         fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_all_consented_financial_accounts"
       end
       # resource path
-      local_var_path = '/v1/consents/individuals/{consentId}/accounts'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
+      local_var_path = '/v1/consents/individuals/{consentId}/financial-accounts'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -419,7 +419,7 @@ module MyDataMyConsent
         fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_consent_financial_accounts"
       end
       # resource path
-      local_var_path = '/v1/consents/organizations/{consentId}/accounts'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
+      local_var_path = '/v1/consents/organizations/{consentId}/financial-accounts'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -486,7 +486,7 @@ module MyDataMyConsent
         fail ArgumentError, "Missing the required parameter 'account_id' when calling DataConsentsApi.get_consented_account_by_id"
       end
       # resource path
-      local_var_path = '/v1/consents/individuals/{consentId}/accounts/{accountId}'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/v1/consents/individuals/{consentId}/financial-accounts/{accountId}'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -529,7 +529,7 @@ module MyDataMyConsent
     # @param consent_id [String] Consent id.
     # @param document_id [String] Document Id.
     # @param [Hash] opts the optional parameters
-    # @return [UserDocumentDetailsDto]
+    # @return [UserDocumentDetails]
     def get_consented_document_by_id(consent_id, document_id, opts = {})
       data, _status_code, _headers = get_consented_document_by_id_with_http_info(consent_id, document_id, opts)
       data
@@ -539,7 +539,7 @@ module MyDataMyConsent
     # @param consent_id [String] Consent id.
     # @param document_id [String] Document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(UserDocumentDetailsDto, Integer, Hash)>] UserDocumentDetailsDto data, response status code and response headers
+    # @return [Array<(UserDocumentDetails, Integer, Hash)>] UserDocumentDetails data, response status code and response headers
     def get_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_consented_document_by_id ...'
@@ -570,7 +570,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UserDocumentDetailsDto'
+      return_type = opts[:debug_return_type] || 'UserDocumentDetails'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -620,7 +620,7 @@ module MyDataMyConsent
         fail ArgumentError, "Missing the required parameter 'account_id' when calling DataConsentsApi.get_consented_financial_account"
       end
       # resource path
-      local_var_path = '/v1/consents/organizations/{consentId}/accounts/{accountId}'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/v1/consents/organizations/{consentId}/financial-accounts/{accountId}'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -697,7 +697,7 @@ module MyDataMyConsent
         fail ArgumentError, "Missing the required parameter 'account_id' when calling DataConsentsApi.get_consented_financial_account_transactions"
       end
       # resource path
-      local_var_path = '/v1/consents/individuals/{consentId}/accounts/{accountId}/transactions'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -919,7 +919,7 @@ module MyDataMyConsent
         fail ArgumentError, "Missing the required parameter 'account_id' when calling DataConsentsApi.get_org_consented_account_transactions"
       end
       # resource path
-      local_var_path = '/v1/consents/organizations/{consentId}/accounts/{accountId}/transactions'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+      local_var_path = '/v1/consents/organizations/{consentId}/financial-accounts/{accountId}/transactions'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1028,7 +1028,7 @@ module MyDataMyConsent
     # @param consent_id [String] Consent id.
     # @param document_id [String] Document Id.
     # @param [Hash] opts the optional parameters
-    # @return [OrganizationDocumentDetailsDto]
+    # @return [OrganizationDocumentDetails]
     def get_organization_consented_document_by_id(consent_id, document_id, opts = {})
       data, _status_code, _headers = get_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts)
       data
@@ -1038,7 +1038,7 @@ module MyDataMyConsent
     # @param consent_id [String] Consent id.
     # @param document_id [String] Document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OrganizationDocumentDetailsDto, Integer, Hash)>] OrganizationDocumentDetailsDto data, response status code and response headers
+    # @return [Array<(OrganizationDocumentDetails, Integer, Hash)>] OrganizationDocumentDetails data, response status code and response headers
     def get_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_consented_document_by_id ...'
@@ -1069,7 +1069,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OrganizationDocumentDetailsDto'
+      return_type = opts[:debug_return_type] || 'OrganizationDocumentDetails'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
