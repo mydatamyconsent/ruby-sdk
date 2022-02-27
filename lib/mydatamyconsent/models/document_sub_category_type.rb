@@ -16,20 +16,28 @@ require 'time'
 module MyDataMyConsent
   class DocumentSubCategoryType
     IDENTITY = "Identity".freeze
-    HOUSE = "House".freeze
+    PROPERTY = "Property".freeze
     VEHICLE = "Vehicle".freeze
-    MARKS_MEMOS = "MarksMemos".freeze
+    ADMIT_AND_ID_CARDS = "AdmitAndIdCards".freeze
+    MARKSHEETS = "Marksheets".freeze
     TRANSCRIPTS = "Transcripts".freeze
     CERTIFICATES = "Certificates".freeze
     PRESCRIPTIONS = "Prescriptions".freeze
     MEDICAL_REPORTS = "MedicalReports".freeze
     DISCHARGE_SUMMARY = "DischargeSummary".freeze
-    BILLS = "Bills".freeze
-    INVOICES = "Invoices".freeze
+    ACCOUNT_AND_CERTIFICATES = "AccountAndCertificates".freeze
+    BILLS_AND_INVOICES = "BillsAndInvoices".freeze
+    INSURANCE = "Insurance".freeze
+    RECEIPTS_AND_SUBSCRIPTIONS = "ReceiptsAndSubscriptions".freeze
     TAXES = "Taxes".freeze
+    LICENCES_AND_CERTIFICATES = "LicencesAndCertificates".freeze
     CORPORATES = "Corporates".freeze
     COMPETITIONS = "Competitions".freeze
     INTELLECTUAL_PROPERTIES = "IntellectualProperties".freeze
+    OTHERS = "Others".freeze
+    APPLICATIONS_AND_CERTIFICATES = "ApplicationsAndCertificates".freeze
+    LICENSES = "Licenses".freeze
+    ORGANIZATION_IDS = "OrganizationIds".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

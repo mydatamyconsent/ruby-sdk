@@ -19,7 +19,9 @@ module MyDataMyConsent
     EDUCATION = "Education".freeze
     HEALTH = "Health".freeze
     FINANCE = "Finance".freeze
-    CERTIFICATES = "Certificates".freeze
+    WORK_AND_AWARDS = "WorkAndAwards".freeze
+    LICENCES_AND_CERTIFICATES = "LicencesAndCertificates".freeze
+    OTHERS = "Others".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
