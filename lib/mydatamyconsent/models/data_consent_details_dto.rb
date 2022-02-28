@@ -90,7 +90,7 @@ module MyDataMyConsent
         :'expires_at_utc' => :'Time',
         :'requested_at_utc' => :'Time',
         :'identifiers' => :'JsonSchema',
-        :'documents' => :'String',
+        :'documents' => :'Array<DataConsentDocumentDetailsDto>',
         :'financials' => :'String',
         :'health_records' => :'String'
       }
@@ -180,7 +180,9 @@ module MyDataMyConsent
       end
 
       if attributes.key?(:'documents')
-        self.documents = attributes[:'documents']
+        if (value = attributes[:'documents']).is_a?(Array)
+          self.documents = value
+        end
       end
 
       if attributes.key?(:'financials')

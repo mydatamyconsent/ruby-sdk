@@ -14,40 +14,22 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class UriDetails
-    attr_accessor :aadhaar
+  class DataConsentDocumentDetailsDto
+    attr_accessor :field_title
 
-    attr_accessor :uri
+    attr_accessor :field_slug
 
-    attr_accessor :doc_type
+    attr_accessor :supported_document_type_category_details
 
-    attr_accessor :doc_name
-
-    attr_accessor :doc_id
-
-    attr_accessor :issued_on
-
-    attr_accessor :valid_from
-
-    attr_accessor :valid_to
-
-    attr_accessor :timestamp
-
-    attr_accessor :action
+    attr_accessor :requirement
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'aadhaar' => :'aadhaar',
-        :'uri' => :'uri',
-        :'doc_type' => :'docType',
-        :'doc_name' => :'docName',
-        :'doc_id' => :'docId',
-        :'issued_on' => :'issuedOn',
-        :'valid_from' => :'validFrom',
-        :'valid_to' => :'validTo',
-        :'timestamp' => :'timestamp',
-        :'action' => :'action'
+        :'field_title' => :'fieldTitle',
+        :'field_slug' => :'fieldSlug',
+        :'supported_document_type_category_details' => :'supportedDocumentTypeCategoryDetails',
+        :'requirement' => :'requirement'
       }
     end
 
@@ -59,25 +41,16 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'aadhaar' => :'String',
-        :'uri' => :'String',
-        :'doc_type' => :'String',
-        :'doc_name' => :'String',
-        :'doc_id' => :'String',
-        :'issued_on' => :'String',
-        :'valid_from' => :'String',
-        :'valid_to' => :'String',
-        :'timestamp' => :'String',
-        :'action' => :'String'
+        :'field_title' => :'String',
+        :'field_slug' => :'String',
+        :'supported_document_type_category_details' => :'Array<SupportedDocumentTypeCategoryDetailsDto>',
+        :'requirement' => :'DocumentsRequired'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'valid_to',
-        :'timestamp',
-        :'action'
       ])
     end
 
@@ -85,55 +58,33 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::UriDetails` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DataConsentDocumentDetailsDto` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::UriDetails`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DataConsentDocumentDetailsDto`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'aadhaar')
-        self.aadhaar = attributes[:'aadhaar']
+      if attributes.key?(:'field_title')
+        self.field_title = attributes[:'field_title']
       end
 
-      if attributes.key?(:'uri')
-        self.uri = attributes[:'uri']
+      if attributes.key?(:'field_slug')
+        self.field_slug = attributes[:'field_slug']
       end
 
-      if attributes.key?(:'doc_type')
-        self.doc_type = attributes[:'doc_type']
+      if attributes.key?(:'supported_document_type_category_details')
+        if (value = attributes[:'supported_document_type_category_details']).is_a?(Array)
+          self.supported_document_type_category_details = value
+        end
       end
 
-      if attributes.key?(:'doc_name')
-        self.doc_name = attributes[:'doc_name']
-      end
-
-      if attributes.key?(:'doc_id')
-        self.doc_id = attributes[:'doc_id']
-      end
-
-      if attributes.key?(:'issued_on')
-        self.issued_on = attributes[:'issued_on']
-      end
-
-      if attributes.key?(:'valid_from')
-        self.valid_from = attributes[:'valid_from']
-      end
-
-      if attributes.key?(:'valid_to')
-        self.valid_to = attributes[:'valid_to']
-      end
-
-      if attributes.key?(:'timestamp')
-        self.timestamp = attributes[:'timestamp']
-      end
-
-      if attributes.key?(:'action')
-        self.action = attributes[:'action']
+      if attributes.key?(:'requirement')
+        self.requirement = attributes[:'requirement']
       end
     end
 
@@ -141,32 +92,20 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @aadhaar.nil?
-        invalid_properties.push('invalid value for "aadhaar", aadhaar cannot be nil.')
+      if @field_title.nil?
+        invalid_properties.push('invalid value for "field_title", field_title cannot be nil.')
       end
 
-      if @uri.nil?
-        invalid_properties.push('invalid value for "uri", uri cannot be nil.')
+      if @field_slug.nil?
+        invalid_properties.push('invalid value for "field_slug", field_slug cannot be nil.')
       end
 
-      if @doc_type.nil?
-        invalid_properties.push('invalid value for "doc_type", doc_type cannot be nil.')
+      if @supported_document_type_category_details.nil?
+        invalid_properties.push('invalid value for "supported_document_type_category_details", supported_document_type_category_details cannot be nil.')
       end
 
-      if @doc_name.nil?
-        invalid_properties.push('invalid value for "doc_name", doc_name cannot be nil.')
-      end
-
-      if @doc_id.nil?
-        invalid_properties.push('invalid value for "doc_id", doc_id cannot be nil.')
-      end
-
-      if @issued_on.nil?
-        invalid_properties.push('invalid value for "issued_on", issued_on cannot be nil.')
-      end
-
-      if @valid_from.nil?
-        invalid_properties.push('invalid value for "valid_from", valid_from cannot be nil.')
+      if @requirement.nil?
+        invalid_properties.push('invalid value for "requirement", requirement cannot be nil.')
       end
 
       invalid_properties
@@ -175,13 +114,10 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @aadhaar.nil?
-      return false if @uri.nil?
-      return false if @doc_type.nil?
-      return false if @doc_name.nil?
-      return false if @doc_id.nil?
-      return false if @issued_on.nil?
-      return false if @valid_from.nil?
+      return false if @field_title.nil?
+      return false if @field_slug.nil?
+      return false if @supported_document_type_category_details.nil?
+      return false if @requirement.nil?
       true
     end
 
@@ -190,16 +126,10 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          aadhaar == o.aadhaar &&
-          uri == o.uri &&
-          doc_type == o.doc_type &&
-          doc_name == o.doc_name &&
-          doc_id == o.doc_id &&
-          issued_on == o.issued_on &&
-          valid_from == o.valid_from &&
-          valid_to == o.valid_to &&
-          timestamp == o.timestamp &&
-          action == o.action
+          field_title == o.field_title &&
+          field_slug == o.field_slug &&
+          supported_document_type_category_details == o.supported_document_type_category_details &&
+          requirement == o.requirement
     end
 
     # @see the `==` method
@@ -211,7 +141,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [aadhaar, uri, doc_type, doc_name, doc_id, issued_on, valid_from, valid_to, timestamp, action].hash
+      [field_title, field_slug, supported_document_type_category_details, requirement].hash
     end
 
     # Builds the object from hash

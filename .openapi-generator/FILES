@@ -11,6 +11,7 @@ docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
 docs/CreateOrganizationDataConsentRequest.md
 docs/DataConsentDetailsDto.md
+docs/DataConsentDocumentDetailsDto.md
 docs/DataConsentDocumentsDto.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentRequestedDocument.md
@@ -63,6 +64,9 @@ docs/PushUriRequest.md
 docs/PushUriResponse.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
+docs/SupportedDocumentDetailsDto.md
+docs/SupportedDocumentProviderDetailsDto.md
+docs/SupportedDocumentTypeCategoryDetailsDto.md
 docs/SupportedEntityType.md
 docs/SupportedIdentifier.md
 docs/SupportedIdentifiersApi.md
@@ -93,6 +97,7 @@ lib/mydatamyconsent/models/create_data_processing_agreement_request_model.rb
 lib/mydatamyconsent/models/create_individual_data_consent_request.rb
 lib/mydatamyconsent/models/create_organization_data_consent_request.rb
 lib/mydatamyconsent/models/data_consent_details_dto.rb
+lib/mydatamyconsent/models/data_consent_document_details_dto.rb
 lib/mydatamyconsent/models/data_consent_documents_dto.rb
 lib/mydatamyconsent/models/data_consent_financials_dto.rb
 lib/mydatamyconsent/models/data_consent_requested_document.rb
@@ -139,6 +144,9 @@ lib/mydatamyconsent/models/push_uri_request.rb
 lib/mydatamyconsent/models/push_uri_response.rb
 lib/mydatamyconsent/models/shared_with.rb
 lib/mydatamyconsent/models/string_string_key_value_pair.rb
+lib/mydatamyconsent/models/supported_document_details_dto.rb
+lib/mydatamyconsent/models/supported_document_provider_details_dto.rb
+lib/mydatamyconsent/models/supported_document_type_category_details_dto.rb
 lib/mydatamyconsent/models/supported_entity_type.rb
 lib/mydatamyconsent/models/supported_identifier.rb
 lib/mydatamyconsent/models/update_data_processing_agreement_request_model.rb

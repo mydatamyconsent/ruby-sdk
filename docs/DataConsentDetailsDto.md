@@ -17,7 +17,7 @@
 | **expires_at_utc** | **Time** |  | [optional] |
 | **requested_at_utc** | **Time** |  | [optional] |
 | **identifiers** | [**JsonSchema**](JsonSchema.md) |  | [optional] |
-| **documents** | **String** |  | [optional] |
+| **documents** | [**Array&lt;DataConsentDocumentDetailsDto&gt;**](DataConsentDocumentDetailsDto.md) |  | [optional] |
 | **financials** | **String** |  | [optional] |
 | **health_records** | **String** |  | [optional] |
 

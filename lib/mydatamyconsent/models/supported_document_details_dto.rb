@@ -14,40 +14,28 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class UriDetails
-    attr_accessor :aadhaar
+  class SupportedDocumentDetailsDto
+    attr_accessor :id
 
-    attr_accessor :uri
+    attr_accessor :type_id
 
-    attr_accessor :doc_type
+    attr_accessor :logo_url
 
-    attr_accessor :doc_name
+    attr_accessor :storage_url
 
-    attr_accessor :doc_id
+    attr_accessor :issued_by
 
-    attr_accessor :issued_on
-
-    attr_accessor :valid_from
-
-    attr_accessor :valid_to
-
-    attr_accessor :timestamp
-
-    attr_accessor :action
+    attr_accessor :uploaded_at_utc
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'aadhaar' => :'aadhaar',
-        :'uri' => :'uri',
-        :'doc_type' => :'docType',
-        :'doc_name' => :'docName',
-        :'doc_id' => :'docId',
-        :'issued_on' => :'issuedOn',
-        :'valid_from' => :'validFrom',
-        :'valid_to' => :'validTo',
-        :'timestamp' => :'timestamp',
-        :'action' => :'action'
+        :'id' => :'id',
+        :'type_id' => :'typeId',
+        :'logo_url' => :'logoUrl',
+        :'storage_url' => :'storageUrl',
+        :'issued_by' => :'issuedBy',
+        :'uploaded_at_utc' => :'uploadedAtUtc'
       }
     end
 
@@ -59,25 +47,18 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'aadhaar' => :'String',
-        :'uri' => :'String',
-        :'doc_type' => :'String',
-        :'doc_name' => :'String',
-        :'doc_id' => :'String',
-        :'issued_on' => :'String',
-        :'valid_from' => :'String',
-        :'valid_to' => :'String',
-        :'timestamp' => :'String',
-        :'action' => :'String'
+        :'id' => :'String',
+        :'type_id' => :'String',
+        :'logo_url' => :'String',
+        :'storage_url' => :'String',
+        :'issued_by' => :'String',
+        :'uploaded_at_utc' => :'Time'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'valid_to',
-        :'timestamp',
-        :'action'
       ])
     end
 
@@ -85,55 +66,39 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::UriDetails` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::SupportedDocumentDetailsDto` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::UriDetails`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::SupportedDocumentDetailsDto`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'aadhaar')
-        self.aadhaar = attributes[:'aadhaar']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'uri')
-        self.uri = attributes[:'uri']
+      if attributes.key?(:'type_id')
+        self.type_id = attributes[:'type_id']
       end
 
-      if attributes.key?(:'doc_type')
-        self.doc_type = attributes[:'doc_type']
+      if attributes.key?(:'logo_url')
+        self.logo_url = attributes[:'logo_url']
       end
 
-      if attributes.key?(:'doc_name')
-        self.doc_name = attributes[:'doc_name']
+      if attributes.key?(:'storage_url')
+        self.storage_url = attributes[:'storage_url']
       end
 
-      if attributes.key?(:'doc_id')
-        self.doc_id = attributes[:'doc_id']
+      if attributes.key?(:'issued_by')
+        self.issued_by = attributes[:'issued_by']
       end
 
-      if attributes.key?(:'issued_on')
-        self.issued_on = attributes[:'issued_on']
-      end
-
-      if attributes.key?(:'valid_from')
-        self.valid_from = attributes[:'valid_from']
-      end
-
-      if attributes.key?(:'valid_to')
-        self.valid_to = attributes[:'valid_to']
-      end
-
-      if attributes.key?(:'timestamp')
-        self.timestamp = attributes[:'timestamp']
-      end
-
-      if attributes.key?(:'action')
-        self.action = attributes[:'action']
+      if attributes.key?(:'uploaded_at_utc')
+        self.uploaded_at_utc = attributes[:'uploaded_at_utc']
       end
     end
 
@@ -141,32 +106,28 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @aadhaar.nil?
-        invalid_properties.push('invalid value for "aadhaar", aadhaar cannot be nil.')
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
-      if @uri.nil?
-        invalid_properties.push('invalid value for "uri", uri cannot be nil.')
+      if @type_id.nil?
+        invalid_properties.push('invalid value for "type_id", type_id cannot be nil.')
       end
 
-      if @doc_type.nil?
-        invalid_properties.push('invalid value for "doc_type", doc_type cannot be nil.')
+      if @logo_url.nil?
+        invalid_properties.push('invalid value for "logo_url", logo_url cannot be nil.')
       end
 
-      if @doc_name.nil?
-        invalid_properties.push('invalid value for "doc_name", doc_name cannot be nil.')
+      if @storage_url.nil?
+        invalid_properties.push('invalid value for "storage_url", storage_url cannot be nil.')
       end
 
-      if @doc_id.nil?
-        invalid_properties.push('invalid value for "doc_id", doc_id cannot be nil.')
+      if @issued_by.nil?
+        invalid_properties.push('invalid value for "issued_by", issued_by cannot be nil.')
       end
 
-      if @issued_on.nil?
-        invalid_properties.push('invalid value for "issued_on", issued_on cannot be nil.')
-      end
-
-      if @valid_from.nil?
-        invalid_properties.push('invalid value for "valid_from", valid_from cannot be nil.')
+      if @uploaded_at_utc.nil?
+        invalid_properties.push('invalid value for "uploaded_at_utc", uploaded_at_utc cannot be nil.')
       end
 
       invalid_properties
@@ -175,13 +136,12 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @aadhaar.nil?
-      return false if @uri.nil?
-      return false if @doc_type.nil?
-      return false if @doc_name.nil?
-      return false if @doc_id.nil?
-      return false if @issued_on.nil?
-      return false if @valid_from.nil?
+      return false if @id.nil?
+      return false if @type_id.nil?
+      return false if @logo_url.nil?
+      return false if @storage_url.nil?
+      return false if @issued_by.nil?
+      return false if @uploaded_at_utc.nil?
       true
     end
 
@@ -190,16 +150,12 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          aadhaar == o.aadhaar &&
-          uri == o.uri &&
-          doc_type == o.doc_type &&
-          doc_name == o.doc_name &&
-          doc_id == o.doc_id &&
-          issued_on == o.issued_on &&
-          valid_from == o.valid_from &&
-          valid_to == o.valid_to &&
-          timestamp == o.timestamp &&
-          action == o.action
+          id == o.id &&
+          type_id == o.type_id &&
+          logo_url == o.logo_url &&
+          storage_url == o.storage_url &&
+          issued_by == o.issued_by &&
+          uploaded_at_utc == o.uploaded_at_utc
     end
 
     # @see the `==` method
@@ -211,7 +167,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [aadhaar, uri, doc_type, doc_name, doc_id, issued_on, valid_from, valid_to, timestamp, action].hash
+      [id, type_id, logo_url, storage_url, issued_by, uploaded_at_utc].hash
     end
 
     # Builds the object from hash
