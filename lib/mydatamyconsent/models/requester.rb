@@ -14,19 +14,34 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class JsonSchema
-    attr_accessor :keywords
+  class Requester
+    attr_accessor :id
 
-    attr_accessor :other_data
+    attr_accessor :name
 
-    attr_accessor :bool_value
+    attr_accessor :logo_url
+
+    attr_accessor :description
+
+    attr_accessor :location
+
+    attr_accessor :website_url
+
+    attr_accessor :support_email
+
+    attr_accessor :help_line_number
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'keywords' => :'keywords',
-        :'other_data' => :'otherData',
-        :'bool_value' => :'boolValue'
+        :'id' => :'id',
+        :'name' => :'name',
+        :'logo_url' => :'logoUrl',
+        :'description' => :'description',
+        :'location' => :'location',
+        :'website_url' => :'websiteUrl',
+        :'support_email' => :'supportEmail',
+        :'help_line_number' => :'helpLineNumber'
       }
     end
 
@@ -38,18 +53,26 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'keywords' => :'Array<Object>',
-        :'other_data' => :'Hash<String, Object>',
-        :'bool_value' => :'Boolean'
+        :'id' => :'String',
+        :'name' => :'String',
+        :'logo_url' => :'String',
+        :'description' => :'String',
+        :'location' => :'String',
+        :'website_url' => :'String',
+        :'support_email' => :'String',
+        :'help_line_number' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'keywords',
-        :'other_data',
-        :'bool_value'
+        :'logo_url',
+        :'description',
+        :'location',
+        :'website_url',
+        :'support_email',
+        :'help_line_number'
       ])
     end
 
@@ -57,31 +80,47 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::JsonSchema` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::Requester` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::JsonSchema`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::Requester`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'keywords')
-        if (value = attributes[:'keywords']).is_a?(Array)
-          self.keywords = value
-        end
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'other_data')
-        if (value = attributes[:'other_data']).is_a?(Hash)
-          self.other_data = value
-        end
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'bool_value')
-        self.bool_value = attributes[:'bool_value']
+      if attributes.key?(:'logo_url')
+        self.logo_url = attributes[:'logo_url']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'location')
+        self.location = attributes[:'location']
+      end
+
+      if attributes.key?(:'website_url')
+        self.website_url = attributes[:'website_url']
+      end
+
+      if attributes.key?(:'support_email')
+        self.support_email = attributes[:'support_email']
+      end
+
+      if attributes.key?(:'help_line_number')
+        self.help_line_number = attributes[:'help_line_number']
       end
     end
 
@@ -89,12 +128,22 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @id.nil?
+      return false if @name.nil?
       true
     end
 
@@ -103,9 +152,14 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          keywords == o.keywords &&
-          other_data == o.other_data &&
-          bool_value == o.bool_value
+          id == o.id &&
+          name == o.name &&
+          logo_url == o.logo_url &&
+          description == o.description &&
+          location == o.location &&
+          website_url == o.website_url &&
+          support_email == o.support_email &&
+          help_line_number == o.help_line_number
     end
 
     # @see the `==` method
@@ -117,7 +171,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [keywords, other_data, bool_value].hash
+      [id, name, logo_url, description, location, website_url, support_email, help_line_number].hash
     end
 
     # Builds the object from hash

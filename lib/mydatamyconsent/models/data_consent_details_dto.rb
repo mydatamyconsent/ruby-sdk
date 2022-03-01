@@ -23,11 +23,7 @@ module MyDataMyConsent
 
     attr_accessor :data_life
 
-    attr_accessor :requester_name
-
-    attr_accessor :requester_logo
-
-    attr_accessor :location
+    attr_accessor :requested_by_org
 
     attr_accessor :status
 
@@ -54,9 +50,7 @@ module MyDataMyConsent
         :'title' => :'title',
         :'description' => :'description',
         :'data_life' => :'dataLife',
-        :'requester_name' => :'requesterName',
-        :'requester_logo' => :'requesterLogo',
-        :'location' => :'location',
+        :'requested_by_org' => :'requestedByOrg',
         :'status' => :'status',
         :'approved_at_utc' => :'approvedAtUtc',
         :'rejected_at_utc' => :'rejectedAtUtc',
@@ -81,15 +75,13 @@ module MyDataMyConsent
         :'title' => :'String',
         :'description' => :'String',
         :'data_life' => :'Life',
-        :'requester_name' => :'String',
-        :'requester_logo' => :'String',
-        :'location' => :'String',
+        :'requested_by_org' => :'Requester',
         :'status' => :'DataConsentStatus',
         :'approved_at_utc' => :'Time',
         :'rejected_at_utc' => :'Time',
         :'expires_at_utc' => :'Time',
         :'requested_at_utc' => :'Time',
-        :'identifiers' => :'JsonSchema',
+        :'identifiers' => :'Object',
         :'documents' => :'Array<DataConsentDocumentDetailsDto>',
         :'financials' => :'String',
         :'health_records' => :'String'
@@ -101,11 +93,9 @@ module MyDataMyConsent
       Set.new([
         :'title',
         :'description',
-        :'requester_name',
-        :'requester_logo',
-        :'location',
         :'approved_at_utc',
         :'rejected_at_utc',
+        :'identifiers',
         :'documents',
         :'financials',
         :'health_records'
@@ -143,16 +133,8 @@ module MyDataMyConsent
         self.data_life = attributes[:'data_life']
       end
 
-      if attributes.key?(:'requester_name')
-        self.requester_name = attributes[:'requester_name']
-      end
-
-      if attributes.key?(:'requester_logo')
-        self.requester_logo = attributes[:'requester_logo']
-      end
-
-      if attributes.key?(:'location')
-        self.location = attributes[:'location']
+      if attributes.key?(:'requested_by_org')
+        self.requested_by_org = attributes[:'requested_by_org']
       end
 
       if attributes.key?(:'status')
@@ -221,9 +203,7 @@ module MyDataMyConsent
           title == o.title &&
           description == o.description &&
           data_life == o.data_life &&
-          requester_name == o.requester_name &&
-          requester_logo == o.requester_logo &&
-          location == o.location &&
+          requested_by_org == o.requested_by_org &&
           status == o.status &&
           approved_at_utc == o.approved_at_utc &&
           rejected_at_utc == o.rejected_at_utc &&
@@ -244,7 +224,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, title, description, data_life, requester_name, requester_logo, location, status, approved_at_utc, rejected_at_utc, expires_at_utc, requested_at_utc, identifiers, documents, financials, health_records].hash
+      [id, title, description, data_life, requested_by_org, status, approved_at_utc, rejected_at_utc, expires_at_utc, requested_at_utc, identifiers, documents, financials, health_records].hash
     end
 
     # Builds the object from hash

@@ -49,7 +49,6 @@ docs/Identifier.md
 docs/IndividualDataConsentRequestResponse.md
 docs/IssuedDocument.md
 docs/IssuedDocumentPaginatedList.md
-docs/JsonSchema.md
 docs/Life.md
 docs/OrganizationDataConsentInfoDto.md
 docs/OrganizationDataConsentInfoDtoPaginatedList.md
@@ -62,6 +61,7 @@ docs/OrganizationFinancialTransactionsDtoPaginatedList.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
+docs/Requester.md
 docs/SharedWith.md
 docs/StringStringKeyValuePair.md
 docs/SupportedDocumentDetailsDto.md
@@ -129,7 +129,6 @@ lib/mydatamyconsent/models/identifier.rb
 lib/mydatamyconsent/models/individual_data_consent_request_response.rb
 lib/mydatamyconsent/models/issued_document.rb
 lib/mydatamyconsent/models/issued_document_paginated_list.rb
-lib/mydatamyconsent/models/json_schema.rb
 lib/mydatamyconsent/models/life.rb
 lib/mydatamyconsent/models/organization_data_consent_info_dto.rb
 lib/mydatamyconsent/models/organization_data_consent_info_dto_paginated_list.rb
@@ -142,6 +141,7 @@ lib/mydatamyconsent/models/organization_financial_transactions_dto_paginated_lis
 lib/mydatamyconsent/models/problem_details.rb
 lib/mydatamyconsent/models/push_uri_request.rb
 lib/mydatamyconsent/models/push_uri_response.rb
+lib/mydatamyconsent/models/requester.rb
 lib/mydatamyconsent/models/shared_with.rb
 lib/mydatamyconsent/models/string_string_key_value_pair.rb
 lib/mydatamyconsent/models/supported_document_details_dto.rb
