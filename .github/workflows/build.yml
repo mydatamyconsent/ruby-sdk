@@ -12,7 +12,7 @@ jobs:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: SonarCloud Scan
@@ -24,7 +24,7 @@ jobs:
     name: Build Ruby Gem
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@7baabd2c5df089e6555585c1b8fb9886319e8952
         with:
           ruby-version: 2.6 
