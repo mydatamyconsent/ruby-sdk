@@ -15,7 +15,7 @@ require 'time'
 
 module MyDataMyConsent
   class DataConsentDetailsDto
-    attr_accessor :id
+    attr_accessor :consent_request_id
 
     attr_accessor :title
 
@@ -31,7 +31,9 @@ module MyDataMyConsent
 
     attr_accessor :rejected_at_utc
 
-    attr_accessor :expires_at_utc
+    attr_accessor :revoked_at_utc
+
+    attr_accessor :requested_expires_at_utc
 
     attr_accessor :requested_at_utc
 
@@ -39,14 +41,10 @@ module MyDataMyConsent
 
     attr_accessor :documents
 
-    attr_accessor :financials
-
-    attr_accessor :health_records
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
+        :'consent_request_id' => :'consentRequestId',
         :'title' => :'title',
         :'description' => :'description',
         :'data_life' => :'dataLife',
@@ -54,12 +52,11 @@ module MyDataMyConsent
         :'status' => :'status',
         :'approved_at_utc' => :'approvedAtUtc',
         :'rejected_at_utc' => :'rejectedAtUtc',
-        :'expires_at_utc' => :'expiresAtUtc',
+        :'revoked_at_utc' => :'revokedAtUtc',
+        :'requested_expires_at_utc' => :'requestedExpiresAtUtc',
         :'requested_at_utc' => :'requestedAtUtc',
         :'identifiers' => :'identifiers',
-        :'documents' => :'documents',
-        :'financials' => :'financials',
-        :'health_records' => :'healthRecords'
+        :'documents' => :'documents'
       }
     end
 
@@ -71,7 +68,7 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
+        :'consent_request_id' => :'String',
         :'title' => :'String',
         :'description' => :'String',
         :'data_life' => :'Life',
@@ -79,12 +76,11 @@ module MyDataMyConsent
         :'status' => :'DataConsentStatus',
         :'approved_at_utc' => :'Time',
         :'rejected_at_utc' => :'Time',
-        :'expires_at_utc' => :'Time',
+        :'revoked_at_utc' => :'Time',
+        :'requested_expires_at_utc' => :'Time',
         :'requested_at_utc' => :'Time',
         :'identifiers' => :'Object',
-        :'documents' => :'Array<DataConsentDocumentDetailsDto>',
-        :'financials' => :'String',
-        :'health_records' => :'String'
+        :'documents' => :'Array<DataConsentDocumentDetailsDto>'
       }
     end
 
@@ -95,10 +91,9 @@ module MyDataMyConsent
         :'description',
         :'approved_at_utc',
         :'rejected_at_utc',
+        :'revoked_at_utc',
         :'identifiers',
-        :'documents',
-        :'financials',
-        :'health_records'
+        :'documents'
       ])
     end
 
@@ -117,8 +112,8 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'consent_request_id')
+        self.consent_request_id = attributes[:'consent_request_id']
       end
 
       if attributes.key?(:'title')
@@ -149,8 +144,12 @@ module MyDataMyConsent
         self.rejected_at_utc = attributes[:'rejected_at_utc']
       end
 
-      if attributes.key?(:'expires_at_utc')
-        self.expires_at_utc = attributes[:'expires_at_utc']
+      if attributes.key?(:'revoked_at_utc')
+        self.revoked_at_utc = attributes[:'revoked_at_utc']
+      end
+
+      if attributes.key?(:'requested_expires_at_utc')
+        self.requested_expires_at_utc = attributes[:'requested_expires_at_utc']
       end
 
       if attributes.key?(:'requested_at_utc')
@@ -166,22 +165,14 @@ module MyDataMyConsent
           self.documents = value
         end
       end
-
-      if attributes.key?(:'financials')
-        self.financials = attributes[:'financials']
-      end
-
-      if attributes.key?(:'health_records')
-        self.health_records = attributes[:'health_records']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      if @consent_request_id.nil?
+        invalid_properties.push('invalid value for "consent_request_id", consent_request_id cannot be nil.')
       end
 
       invalid_properties
@@ -190,7 +181,7 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @id.nil?
+      return false if @consent_request_id.nil?
       true
     end
 
@@ -199,7 +190,7 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
+          consent_request_id == o.consent_request_id &&
           title == o.title &&
           description == o.description &&
           data_life == o.data_life &&
@@ -207,12 +198,11 @@ module MyDataMyConsent
           status == o.status &&
           approved_at_utc == o.approved_at_utc &&
           rejected_at_utc == o.rejected_at_utc &&
-          expires_at_utc == o.expires_at_utc &&
+          revoked_at_utc == o.revoked_at_utc &&
+          requested_expires_at_utc == o.requested_expires_at_utc &&
           requested_at_utc == o.requested_at_utc &&
           identifiers == o.identifiers &&
-          documents == o.documents &&
-          financials == o.financials &&
-          health_records == o.health_records
+          documents == o.documents
     end
 
     # @see the `==` method
@@ -224,7 +214,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, title, description, data_life, requested_by_org, status, approved_at_utc, rejected_at_utc, expires_at_utc, requested_at_utc, identifiers, documents, financials, health_records].hash
+      [consent_request_id, title, description, data_life, requested_by_org, status, approved_at_utc, rejected_at_utc, revoked_at_utc, requested_expires_at_utc, requested_at_utc, identifiers, documents].hash
     end
 
     # Builds the object from hash

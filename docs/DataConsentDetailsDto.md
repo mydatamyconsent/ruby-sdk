@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **id** | **String** |  |  |
+| **consent_request_id** | **String** |  |  |
 | **title** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
 | **data_life** | [**Life**](Life.md) |  | [optional] |
@@ -12,12 +12,11 @@
 | **status** | [**DataConsentStatus**](DataConsentStatus.md) |  | [optional] |
 | **approved_at_utc** | **Time** |  | [optional] |
 | **rejected_at_utc** | **Time** |  | [optional] |
-| **expires_at_utc** | **Time** |  | [optional] |
+| **revoked_at_utc** | **Time** |  | [optional] |
+| **requested_expires_at_utc** | **Time** |  | [optional] |
 | **requested_at_utc** | **Time** |  | [optional] |
 | **identifiers** | **Object** |  | [optional] |
 | **documents** | [**Array&lt;DataConsentDocumentDetailsDto&gt;**](DataConsentDocumentDetailsDto.md) |  | [optional] |
-| **financials** | **String** |  | [optional] |
-| **health_records** | **String** |  | [optional] |
 
 ## Example
 
@@ -25,7 +24,7 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::DataConsentDetailsDto.new(
-  id: null,
+  consent_request_id: null,
   title: null,
   description: null,
   data_life: null,
@@ -33,12 +32,11 @@ instance = MyDataMyConsent::DataConsentDetailsDto.new(
   status: null,
   approved_at_utc: null,
   rejected_at_utc: null,
-  expires_at_utc: null,
+  revoked_at_utc: null,
+  requested_expires_at_utc: null,
   requested_at_utc: null,
   identifiers: null,
-  documents: null,
-  financials: null,
-  health_records: null
+  documents: null
 )
 ```
 
