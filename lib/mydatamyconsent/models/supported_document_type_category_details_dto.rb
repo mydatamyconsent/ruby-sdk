@@ -51,6 +51,7 @@ module MyDataMyConsent
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'supported_document_provider_details'
       ])
     end
 
@@ -106,10 +107,6 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "supported_documents", supported_documents cannot be nil.')
       end
 
-      if @supported_document_provider_details.nil?
-        invalid_properties.push('invalid value for "supported_document_provider_details", supported_document_provider_details cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -119,7 +116,6 @@ module MyDataMyConsent
       return false if @document_type_category_id.nil?
       return false if @document_type_category_name.nil?
       return false if @supported_documents.nil?
-      return false if @supported_document_provider_details.nil?
       true
     end
 

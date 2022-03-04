@@ -20,6 +20,7 @@ module MyDataMyConsent
     REJECTED = "Rejected".freeze
     REVOKED = "Revoked".freeze
     EXPIRED = "Expired".freeze
+    TIMEOUT = "Timeout".freeze
     CANCELED = "Canceled".freeze
 
     # Builds the enum from string

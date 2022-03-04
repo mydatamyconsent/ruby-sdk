@@ -11,6 +11,7 @@
 | **requested_by_org** | [**Requester**](Requester.md) |  | [optional] |
 | **status** | [**DataConsentStatus**](DataConsentStatus.md) |  | [optional] |
 | **approved_at_utc** | **Time** |  | [optional] |
+| **approved_expires_at_utc** | **Time** |  | [optional] |
 | **rejected_at_utc** | **Time** |  | [optional] |
 | **revoked_at_utc** | **Time** |  | [optional] |
 | **requested_expires_at_utc** | **Time** |  | [optional] |
@@ -31,6 +32,7 @@ instance = MyDataMyConsent::DataConsentDetailsDto.new(
   requested_by_org: null,
   status: null,
   approved_at_utc: null,
+  approved_expires_at_utc: null,
   rejected_at_utc: null,
   revoked_at_utc: null,
   requested_expires_at_utc: null,

@@ -29,6 +29,8 @@ module MyDataMyConsent
 
     attr_accessor :approved_at_utc
 
+    attr_accessor :approved_expires_at_utc
+
     attr_accessor :rejected_at_utc
 
     attr_accessor :revoked_at_utc
@@ -51,6 +53,7 @@ module MyDataMyConsent
         :'requested_by_org' => :'requestedByOrg',
         :'status' => :'status',
         :'approved_at_utc' => :'approvedAtUtc',
+        :'approved_expires_at_utc' => :'approvedExpiresAtUtc',
         :'rejected_at_utc' => :'rejectedAtUtc',
         :'revoked_at_utc' => :'revokedAtUtc',
         :'requested_expires_at_utc' => :'requestedExpiresAtUtc',
@@ -75,6 +78,7 @@ module MyDataMyConsent
         :'requested_by_org' => :'Requester',
         :'status' => :'DataConsentStatus',
         :'approved_at_utc' => :'Time',
+        :'approved_expires_at_utc' => :'Time',
         :'rejected_at_utc' => :'Time',
         :'revoked_at_utc' => :'Time',
         :'requested_expires_at_utc' => :'Time',
@@ -90,6 +94,7 @@ module MyDataMyConsent
         :'title',
         :'description',
         :'approved_at_utc',
+        :'approved_expires_at_utc',
         :'rejected_at_utc',
         :'revoked_at_utc',
         :'identifiers',
@@ -138,6 +143,10 @@ module MyDataMyConsent
 
       if attributes.key?(:'approved_at_utc')
         self.approved_at_utc = attributes[:'approved_at_utc']
+      end
+
+      if attributes.key?(:'approved_expires_at_utc')
+        self.approved_expires_at_utc = attributes[:'approved_expires_at_utc']
       end
 
       if attributes.key?(:'rejected_at_utc')
@@ -197,6 +206,7 @@ module MyDataMyConsent
           requested_by_org == o.requested_by_org &&
           status == o.status &&
           approved_at_utc == o.approved_at_utc &&
+          approved_expires_at_utc == o.approved_expires_at_utc &&
           rejected_at_utc == o.rejected_at_utc &&
           revoked_at_utc == o.revoked_at_utc &&
           requested_expires_at_utc == o.requested_expires_at_utc &&
@@ -214,7 +224,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [consent_request_id, title, description, data_life, requested_by_org, status, approved_at_utc, rejected_at_utc, revoked_at_utc, requested_expires_at_utc, requested_at_utc, identifiers, documents].hash
+      [consent_request_id, title, description, data_life, requested_by_org, status, approved_at_utc, approved_expires_at_utc, rejected_at_utc, revoked_at_utc, requested_expires_at_utc, requested_at_utc, identifiers, documents].hash
     end
 
     # Builds the object from hash
