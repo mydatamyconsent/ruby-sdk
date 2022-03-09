@@ -6,6 +6,7 @@ Rakefile
 docs/Activity.md
 docs/ApprovedConsentRequest.md
 docs/BankAccountType.md
+docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataProcessingAgreementRequestModel.md
 docs/CreateIndividualDataConsentRequest.md
@@ -92,6 +93,7 @@ lib/mydatamyconsent/configuration.rb
 lib/mydatamyconsent/models/activity.rb
 lib/mydatamyconsent/models/approved_consent_request.rb
 lib/mydatamyconsent/models/bank_account_type.rb
+lib/mydatamyconsent/models/collectible_types.rb
 lib/mydatamyconsent/models/consent_request_receiver.rb
 lib/mydatamyconsent/models/create_data_processing_agreement_request_model.rb
 lib/mydatamyconsent/models/create_individual_data_consent_request.rb

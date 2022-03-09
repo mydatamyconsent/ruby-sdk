@@ -9,6 +9,7 @@
 | **description** | **String** |  | [optional] |
 | **data_life** | [**Life**](Life.md) |  | [optional] |
 | **requested_by_org** | [**Requester**](Requester.md) |  | [optional] |
+| **collectables** | [**Array&lt;CollectibleTypes&gt;**](CollectibleTypes.md) |  |  |
 | **status** | [**DataConsentStatus**](DataConsentStatus.md) |  | [optional] |
 | **approved_at_utc** | **Time** |  | [optional] |
 | **approved_expires_at_utc** | **Time** |  | [optional] |
@@ -30,6 +31,7 @@ instance = MyDataMyConsent::DataConsentDetailsDto.new(
   description: null,
   data_life: null,
   requested_by_org: null,
+  collectables: null,
   status: null,
   approved_at_utc: null,
   approved_expires_at_utc: null,

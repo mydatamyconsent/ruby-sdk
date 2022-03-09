@@ -25,6 +25,8 @@ module MyDataMyConsent
 
     attr_accessor :requested_by_org
 
+    attr_accessor :collectables
+
     attr_accessor :status
 
     attr_accessor :approved_at_utc
@@ -51,6 +53,7 @@ module MyDataMyConsent
         :'description' => :'description',
         :'data_life' => :'dataLife',
         :'requested_by_org' => :'requestedByOrg',
+        :'collectables' => :'collectables',
         :'status' => :'status',
         :'approved_at_utc' => :'approvedAtUtc',
         :'approved_expires_at_utc' => :'approvedExpiresAtUtc',
@@ -76,6 +79,7 @@ module MyDataMyConsent
         :'description' => :'String',
         :'data_life' => :'Life',
         :'requested_by_org' => :'Requester',
+        :'collectables' => :'Array<CollectibleTypes>',
         :'status' => :'DataConsentStatus',
         :'approved_at_utc' => :'Time',
         :'approved_expires_at_utc' => :'Time',
@@ -137,6 +141,12 @@ module MyDataMyConsent
         self.requested_by_org = attributes[:'requested_by_org']
       end
 
+      if attributes.key?(:'collectables')
+        if (value = attributes[:'collectables']).is_a?(Array)
+          self.collectables = value
+        end
+      end
+
       if attributes.key?(:'status')
         self.status = attributes[:'status']
       end
@@ -184,6 +194,10 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "consent_request_id", consent_request_id cannot be nil.')
       end
 
+      if @collectables.nil?
+        invalid_properties.push('invalid value for "collectables", collectables cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -191,6 +205,7 @@ module MyDataMyConsent
     # @return true if the model is valid
     def valid?
       return false if @consent_request_id.nil?
+      return false if @collectables.nil?
       true
     end
 
@@ -204,6 +219,7 @@ module MyDataMyConsent
           description == o.description &&
           data_life == o.data_life &&
           requested_by_org == o.requested_by_org &&
+          collectables == o.collectables &&
           status == o.status &&
           approved_at_utc == o.approved_at_utc &&
           approved_expires_at_utc == o.approved_expires_at_utc &&
@@ -224,7 +240,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [consent_request_id, title, description, data_life, requested_by_org, status, approved_at_utc, approved_expires_at_utc, rejected_at_utc, revoked_at_utc, requested_expires_at_utc, requested_at_utc, identifiers, documents].hash
+      [consent_request_id, title, description, data_life, requested_by_org, collectables, status, approved_at_utc, approved_expires_at_utc, rejected_at_utc, revoked_at_utc, requested_expires_at_utc, requested_at_utc, identifiers, documents].hash
     end
 
     # Builds the object from hash
