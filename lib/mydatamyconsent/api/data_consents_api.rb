@@ -19,6 +19,73 @@ module MyDataMyConsent
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Get analysis of a consented document.
+    # @param consent_id [String] 
+    # @param document_id [String] Document Id.
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def download_consented_document_analysis(consent_id, document_id, opts = {})
+      download_consented_document_analysis_with_http_info(consent_id, document_id, opts)
+      nil
+    end
+
+    # Get analysis of a consented document.
+    # @param consent_id [String] 
+    # @param document_id [String] Document Id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def download_consented_document_analysis_with_http_info(consent_id, document_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.download_consented_document_analysis ...'
+      end
+      # verify the required parameter 'consent_id' is set
+      if @api_client.config.client_side_validation && consent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.download_consented_document_analysis"
+      end
+      # verify the required parameter 'document_id' is set
+      if @api_client.config.client_side_validation && document_id.nil?
+        fail ArgumentError, "Missing the required parameter 'document_id' when calling DataConsentsApi.download_consented_document_analysis"
+      end
+      # resource path
+      local_var_path = '/v1/consents/{consentId}/documents/{documentId}/analysis'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'documentId' + '}', CGI.escape(document_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataConsentsApi.download_consented_document_analysis",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataConsentsApi#download_consented_document_analysis\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Download a individuals consented document.
     # @param consent_id [String] Consent id.
     # @param document_id [String] Document id.
@@ -655,6 +722,73 @@ module MyDataMyConsent
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DataConsentsApi#get_consented_financial_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get consented financial account insights.
+    # @param consent_id [String] 
+    # @param account_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def get_consented_financial_account_insights(consent_id, account_id, opts = {})
+      get_consented_financial_account_insights_with_http_info(consent_id, account_id, opts)
+      nil
+    end
+
+    # Get consented financial account insights.
+    # @param consent_id [String] 
+    # @param account_id [String] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def get_consented_financial_account_insights_with_http_info(consent_id, account_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_consented_financial_account_insights ...'
+      end
+      # verify the required parameter 'consent_id' is set
+      if @api_client.config.client_side_validation && consent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_consented_financial_account_insights"
+      end
+      # verify the required parameter 'account_id' is set
+      if @api_client.config.client_side_validation && account_id.nil?
+        fail ArgumentError, "Missing the required parameter 'account_id' when calling DataConsentsApi.get_consented_financial_account_insights"
+      end
+      # resource path
+      local_var_path = '/v1/consents/{consentId}/financial-accounts/{accountId}/insights'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'accountId' + '}', CGI.escape(account_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type]
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataConsentsApi.get_consented_financial_account_insights",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataConsentsApi#get_consented_financial_account_insights\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

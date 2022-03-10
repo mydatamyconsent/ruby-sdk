@@ -4,6 +4,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
+| [**download_consented_document_analysis**](DataConsentsApi.md#download_consented_document_analysis) | **GET** /v1/consents/{consentId}/documents/{documentId}/analysis | Get analysis of a consented document. |
 | [**download_consented_document_by_id**](DataConsentsApi.md#download_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId}/download | Download a individuals consented document. |
 | [**download_org_consented_document_by_id**](DataConsentsApi.md#download_org_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId}/download | Download a organizations consented document. |
 | [**get_all_consented_documents**](DataConsentsApi.md#get_all_consented_documents) | **GET** /v1/consents/individuals/{consentId}/documents | Get the individual documents based on ConsentId. |
@@ -14,12 +15,76 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 | [**get_consented_account_by_id**](DataConsentsApi.md#get_consented_account_by_id) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId} | Get individual consented financial account details based on account id. |
 | [**get_consented_document_by_id**](DataConsentsApi.md#get_consented_document_by_id) | **GET** /v1/consents/individuals/{consentId}/documents/{documentId} | Get individuals consent document based on document id. |
 | [**get_consented_financial_account**](DataConsentsApi.md#get_consented_financial_account) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId} | Get organization consented financial account details based on account id. |
+| [**get_consented_financial_account_insights**](DataConsentsApi.md#get_consented_financial_account_insights) | **GET** /v1/consents/{consentId}/financial-accounts/{accountId}/insights | Get consented financial account insights. |
 | [**get_consented_financial_account_transactions**](DataConsentsApi.md#get_consented_financial_account_transactions) | **GET** /v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions | Get individual consented financial account transactions of an individual based on accountId. |
 | [**get_consents_for_organizations**](DataConsentsApi.md#get_consents_for_organizations) | **GET** /v1/consents/organizations | Get the list of data consents sent for organizations. |
 | [**get_consents_sent_to_individuals**](DataConsentsApi.md#get_consents_sent_to_individuals) | **GET** /v1/consents/individuals | Get the list of Consents Sent to Individuals. |
 | [**get_org_consented_account_transactions**](DataConsentsApi.md#get_org_consented_account_transactions) | **GET** /v1/consents/organizations/{consentId}/financial-accounts/{accountId}/transactions | Get organization consented financial account transactions of an individual based on accountId. |
 | [**get_organization_consent_details_by_id**](DataConsentsApi.md#get_organization_consent_details_by_id) | **GET** /v1/consents/organizations/{consentId} | Get all organization consent details by consent id. |
 | [**get_organization_consented_document_by_id**](DataConsentsApi.md#get_organization_consented_document_by_id) | **GET** /v1/consents/organizations/{consentId}/documents/{documentId} | Get organization consent document based on document id. |
+
+
+## download_consented_document_analysis
+
+> download_consented_document_analysis(consent_id, document_id)
+
+Get analysis of a consented document.
+
+### Examples
+
+```ruby
+require 'time'
+require 'mydatamyconsent'
+
+api_instance = MyDataMyConsent::DataConsentsApi.new
+consent_id = 'consent_id_example' # String | 
+document_id = 'document_id_example' # String | Document Id.
+
+begin
+  # Get analysis of a consented document.
+  api_instance.download_consented_document_analysis(consent_id, document_id)
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentsApi->download_consented_document_analysis: #{e}"
+end
+```
+
+#### Using the download_consented_document_analysis_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> download_consented_document_analysis_with_http_info(consent_id, document_id)
+
+```ruby
+begin
+  # Get analysis of a consented document.
+  data, status_code, headers = api_instance.download_consented_document_analysis_with_http_info(consent_id, document_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentsApi->download_consented_document_analysis_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **consent_id** | **String** |  |  |
+| **document_id** | **String** | Document Id. |  |
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## download_consented_document_by_id
@@ -641,6 +706,69 @@ end
 ### Return type
 
 [**OrganizationFinancialAccountDto**](OrganizationFinancialAccountDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_consented_financial_account_insights
+
+> get_consented_financial_account_insights(consent_id, account_id)
+
+Get consented financial account insights.
+
+### Examples
+
+```ruby
+require 'time'
+require 'mydatamyconsent'
+
+api_instance = MyDataMyConsent::DataConsentsApi.new
+consent_id = 'consent_id_example' # String | 
+account_id = 'account_id_example' # String | 
+
+begin
+  # Get consented financial account insights.
+  api_instance.get_consented_financial_account_insights(consent_id, account_id)
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentsApi->get_consented_financial_account_insights: #{e}"
+end
+```
+
+#### Using the get_consented_financial_account_insights_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> get_consented_financial_account_insights_with_http_info(consent_id, account_id)
+
+```ruby
+begin
+  # Get consented financial account insights.
+  data, status_code, headers = api_instance.get_consented_financial_account_insights_with_http_info(consent_id, account_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue MyDataMyConsent::ApiError => e
+  puts "Error when calling DataConsentsApi->get_consented_financial_account_insights_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **consent_id** | **String** |  |  |
+| **account_id** | **String** |  |  |
+
+### Return type
+
+nil (empty response body)
 
 ### Authorization
 
