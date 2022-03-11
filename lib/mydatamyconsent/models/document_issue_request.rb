@@ -16,20 +16,27 @@ require 'time'
 module MyDataMyConsent
   # Document Issue Request.
   class DocumentIssueRequest
+    # Document type id.
     attr_accessor :document_type_id
 
+    # Document identifier.
     attr_accessor :identifier
 
+    # Document description.
     attr_accessor :description
 
     attr_accessor :receiver
 
+    # Datetime of issue in UTC timezone.
     attr_accessor :issued_at_utc
 
+    # Valid from datetime in UTC timezone.
     attr_accessor :valid_from_utc
 
+    # Datetime of expiry in UTC timezone.
     attr_accessor :expires_at_utc
 
+    # Metadata.
     attr_accessor :metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.

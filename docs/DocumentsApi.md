@@ -6,7 +6,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 | ------ | ------------ | ----------- |
 | [**get_issued_document_by_id**](DocumentsApi.md#get_issued_document_by_id) | **GET** /v1/documents/issued/{documentId} | Get issued document. |
 | [**get_issued_documents**](DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type. |
-| [**get_registered_document_types**](DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get registered document types. |
+| [**get_registered_document_types**](DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get paginated list of registered document types. |
 | [**issue_document_to_individual**](DocumentsApi.md#issue_document_to_individual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user. |
 | [**issue_document_to_organization**](DocumentsApi.md#issue_document_to_organization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization. |
 | [**upload_document_for_individual**](DocumentsApi.md#upload_document_for_individual) | **POST** /v1/documents/issue/individual/upload/{issueRequestId} | Upload a document for issuance request of individual. |
@@ -90,8 +90,8 @@ require 'mydatamyconsent'
 api_instance = MyDataMyConsent::DocumentsApi.new
 document_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Document type id.
 opts = {
-  from_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | From DateTime.
-  to_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | To DateTime.
+  from_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | From DateTime in UTC timezone.
+  to_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | To DateTime in UTC timezone.
   page_no: 56, # Integer | Page number.
   page_size: 56 # Integer | Number of items to return.
 }
@@ -128,8 +128,8 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **document_type_id** | **String** | Document type id. |  |
-| **from_date_time** | **Time** | From DateTime. | [optional] |
-| **to_date_time** | **Time** | To DateTime. | [optional] |
+| **from_date_time** | **Time** | From DateTime in UTC timezone. | [optional] |
+| **to_date_time** | **Time** | To DateTime in UTC timezone. | [optional] |
 | **page_no** | **Integer** | Page number. | [optional][default to 1] |
 | **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 
@@ -151,7 +151,7 @@ No authorization required
 
 > <DocumentTypePaginatedList> get_registered_document_types(opts)
 
-Get registered document types.
+Get paginated list of registered document types.
 
 ### Examples
 
@@ -166,7 +166,7 @@ opts = {
 }
 
 begin
-  # Get registered document types.
+  # Get paginated list of registered document types.
   result = api_instance.get_registered_document_types(opts)
   p result
 rescue MyDataMyConsent::ApiError => e
@@ -182,7 +182,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Get registered document types.
+  # Get paginated list of registered document types.
   data, status_code, headers = api_instance.get_registered_document_types_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
@@ -226,7 +226,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'identifier_example', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER}), issued_at_utc: Time.now, valid_from_utc: Time.now}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'GJ05FG67866586.', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER}), issued_at_utc: Time.now, valid_from_utc: Time.now}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
 
 begin
   # Issue a new document to an individual user.
@@ -288,7 +288,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'identifier_example', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER}), issued_at_utc: Time.now, valid_from_utc: Time.now}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'GJ05FG67866586.', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER}), issued_at_utc: Time.now, valid_from_utc: Time.now}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
 
 begin
   # Issue a new document to an organization.
@@ -339,7 +339,7 @@ No authorization required
 
 ## upload_document_for_individual
 
-> String upload_document_for_individual(issue_request_id, form_file)
+> upload_document_for_individual(issue_request_id, form_file)
 
 Upload a document for issuance request of individual.
 
@@ -350,13 +350,12 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-issue_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Issue Request Id System.Guid.
+issue_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Document issue request id.
 form_file = File.new('/path/to/some/file') # File | 
 
 begin
   # Upload a document for issuance request of individual.
-  result = api_instance.upload_document_for_individual(issue_request_id, form_file)
-  p result
+  api_instance.upload_document_for_individual(issue_request_id, form_file)
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->upload_document_for_individual: #{e}"
 end
@@ -364,9 +363,9 @@ end
 
 #### Using the upload_document_for_individual_with_http_info variant
 
-This returns an Array which contains the response data, status code and headers.
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(String, Integer, Hash)> upload_document_for_individual_with_http_info(issue_request_id, form_file)
+> <Array(nil, Integer, Hash)> upload_document_for_individual_with_http_info(issue_request_id, form_file)
 
 ```ruby
 begin
@@ -374,7 +373,7 @@ begin
   data, status_code, headers = api_instance.upload_document_for_individual_with_http_info(issue_request_id, form_file)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => String
+  p data # => nil
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->upload_document_for_individual_with_http_info: #{e}"
 end
@@ -384,12 +383,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **issue_request_id** | **String** | Issue Request Id System.Guid. |  |
+| **issue_request_id** | **String** | Document issue request id. |  |
 | **form_file** | **File** |  |  |
 
 ### Return type
 
-**String**
+nil (empty response body)
 
 ### Authorization
 
@@ -403,7 +402,7 @@ No authorization required
 
 ## upload_document_for_organization
 
-> String upload_document_for_organization(issue_request_id, form_file)
+> upload_document_for_organization(issue_request_id, form_file)
 
 Upload a document for issuance request of organization.
 
@@ -414,13 +413,12 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-issue_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Issue Request Id System.Guid.
+issue_request_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Document issue request id System.Guid.
 form_file = File.new('/path/to/some/file') # File | 
 
 begin
   # Upload a document for issuance request of organization.
-  result = api_instance.upload_document_for_organization(issue_request_id, form_file)
-  p result
+  api_instance.upload_document_for_organization(issue_request_id, form_file)
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->upload_document_for_organization: #{e}"
 end
@@ -428,9 +426,9 @@ end
 
 #### Using the upload_document_for_organization_with_http_info variant
 
-This returns an Array which contains the response data, status code and headers.
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(String, Integer, Hash)> upload_document_for_organization_with_http_info(issue_request_id, form_file)
+> <Array(nil, Integer, Hash)> upload_document_for_organization_with_http_info(issue_request_id, form_file)
 
 ```ruby
 begin
@@ -438,7 +436,7 @@ begin
   data, status_code, headers = api_instance.upload_document_for_organization_with_http_info(issue_request_id, form_file)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => String
+  p data # => nil
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->upload_document_for_organization_with_http_info: #{e}"
 end
@@ -448,12 +446,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **issue_request_id** | **String** | Issue Request Id System.Guid. |  |
+| **issue_request_id** | **String** | Document issue request id System.Guid. |  |
 | **form_file** | **File** |  |  |
 
 ### Return type
 
-**String**
+nil (empty response body)
 
 ### Authorization
 

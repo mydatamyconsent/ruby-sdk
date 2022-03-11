@@ -4,14 +4,14 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **document_type_id** | **String** |  |  |
-| **identifier** | **String** |  |  |
-| **description** | **String** |  |  |
+| **document_type_id** | **String** | Document type id. |  |
+| **identifier** | **String** | Document identifier. |  |
+| **description** | **String** | Document description. |  |
 | **receiver** | [**DocumentReceiver**](DocumentReceiver.md) |  |  |
-| **issued_at_utc** | **Time** |  |  |
-| **valid_from_utc** | **Time** |  |  |
-| **expires_at_utc** | **Time** |  | [optional] |
-| **metadata** | **Hash&lt;String, String&gt;** |  | [optional] |
+| **issued_at_utc** | **Time** | Datetime of issue in UTC timezone. |  |
+| **valid_from_utc** | **Time** | Valid from datetime in UTC timezone. |  |
+| **expires_at_utc** | **Time** | Datetime of expiry in UTC timezone. | [optional] |
+| **metadata** | **Hash&lt;String, String&gt;** | Metadata. | [optional] |
 
 ## Example
 
@@ -20,7 +20,7 @@ require 'mydatamyconsent'
 
 instance = MyDataMyConsent::DocumentIssueRequest.new(
   document_type_id: null,
-  identifier: null,
+  identifier: GJ05FG67866586.,
   description: null,
   receiver: null,
   issued_at_utc: null,

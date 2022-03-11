@@ -21,7 +21,7 @@ module MyDataMyConsent
     end
     # Digilocker Compatible endpoint to issue document.
     # @param [Hash] opts the optional parameters
-    # @option opts [PushUriRequest] :push_uri_request Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
+    # @option opts [PushUriRequest] :push_uri_request Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
     # @return [PushUriResponse]
     def digilocker_compat_issue_document(opts = {})
       data, _status_code, _headers = digilocker_compat_issue_document_with_http_info(opts)
@@ -30,7 +30,7 @@ module MyDataMyConsent
 
     # Digilocker Compatible endpoint to issue document.
     # @param [Hash] opts the optional parameters
-    # @option opts [PushUriRequest] :push_uri_request Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
+    # @option opts [PushUriRequest] :push_uri_request Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
     # @return [Array<(PushUriResponse, Integer, Hash)>] PushUriResponse data, response status code and response headers
     def digilocker_compat_issue_document_with_http_info(opts = {})
       if @api_client.config.debugging

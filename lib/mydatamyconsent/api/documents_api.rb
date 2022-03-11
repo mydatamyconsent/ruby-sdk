@@ -83,8 +83,8 @@ module MyDataMyConsent
     # Get paginated list of issued documents of given document type.
     # @param document_type_id [String] Document type id.
     # @param [Hash] opts the optional parameters
-    # @option opts [Time] :from_date_time From DateTime.
-    # @option opts [Time] :to_date_time To DateTime.
+    # @option opts [Time] :from_date_time From DateTime in UTC timezone.
+    # @option opts [Time] :to_date_time To DateTime in UTC timezone.
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
     # @return [IssuedDocumentPaginatedList]
@@ -96,8 +96,8 @@ module MyDataMyConsent
     # Get paginated list of issued documents of given document type.
     # @param document_type_id [String] Document type id.
     # @param [Hash] opts the optional parameters
-    # @option opts [Time] :from_date_time From DateTime.
-    # @option opts [Time] :to_date_time To DateTime.
+    # @option opts [Time] :from_date_time From DateTime in UTC timezone.
+    # @option opts [Time] :to_date_time To DateTime in UTC timezone.
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
     # @return [Array<(IssuedDocumentPaginatedList, Integer, Hash)>] IssuedDocumentPaginatedList data, response status code and response headers
@@ -153,7 +153,7 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Get registered document types.
+    # Get paginated list of registered document types.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
@@ -163,7 +163,7 @@ module MyDataMyConsent
       data
     end
 
-    # Get registered document types.
+    # Get paginated list of registered document types.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
@@ -347,20 +347,20 @@ module MyDataMyConsent
     end
 
     # Upload a document for issuance request of individual.
-    # @param issue_request_id [String] Issue Request Id System.Guid.
+    # @param issue_request_id [String] Document issue request id.
     # @param form_file [File] 
     # @param [Hash] opts the optional parameters
-    # @return [String]
+    # @return [nil]
     def upload_document_for_individual(issue_request_id, form_file, opts = {})
-      data, _status_code, _headers = upload_document_for_individual_with_http_info(issue_request_id, form_file, opts)
-      data
+      upload_document_for_individual_with_http_info(issue_request_id, form_file, opts)
+      nil
     end
 
     # Upload a document for issuance request of individual.
-    # @param issue_request_id [String] Issue Request Id System.Guid.
+    # @param issue_request_id [String] Document issue request id.
     # @param form_file [File] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def upload_document_for_individual_with_http_info(issue_request_id, form_file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DocumentsApi.upload_document_for_individual ...'
@@ -397,7 +397,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'String'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -420,20 +420,20 @@ module MyDataMyConsent
     end
 
     # Upload a document for issuance request of organization.
-    # @param issue_request_id [String] Issue Request Id System.Guid.
+    # @param issue_request_id [String] Document issue request id System.Guid.
     # @param form_file [File] 
     # @param [Hash] opts the optional parameters
-    # @return [String]
+    # @return [nil]
     def upload_document_for_organization(issue_request_id, form_file, opts = {})
-      data, _status_code, _headers = upload_document_for_organization_with_http_info(issue_request_id, form_file, opts)
-      data
+      upload_document_for_organization_with_http_info(issue_request_id, form_file, opts)
+      nil
     end
 
     # Upload a document for issuance request of organization.
-    # @param issue_request_id [String] Issue Request Id System.Guid.
+    # @param issue_request_id [String] Document issue request id System.Guid.
     # @param form_file [File] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def upload_document_for_organization_with_http_info(issue_request_id, form_file, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DocumentsApi.upload_document_for_organization ...'
@@ -470,7 +470,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'String'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

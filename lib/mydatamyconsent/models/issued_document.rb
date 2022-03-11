@@ -16,17 +16,19 @@ require 'time'
 module MyDataMyConsent
   # Issued Document Identifier.
   class IssuedDocument
-    # Document Identifier.
+    # Document Id.
     attr_accessor :id
 
-    # Document Identifier. eg: GJ05FG67866586.
+    # Document Identifier.
     attr_accessor :identifier
 
-    # Document type name. eg: Driving License.
+    # Document type name.
     attr_accessor :document_type
 
+    # User name.
     attr_accessor :issued_to
 
+    # Issued datetime in UTC timezone.
     attr_accessor :issued_at_utc
 
     # Attribute mapping from ruby-style variable name to JSON key.

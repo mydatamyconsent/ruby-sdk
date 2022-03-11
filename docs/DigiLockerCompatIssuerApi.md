@@ -21,7 +21,7 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DigiLockerCompatIssuerApi.new
 opts = {
-  push_uri_request: MyDataMyConsent::PushUriRequest.new({uri_details: MyDataMyConsent::UriDetails.new({aadhaar: 'aadhaar_example', uri: 'uri_example', doc_type: 'doc_type_example', doc_name: 'doc_name_example', doc_id: 'doc_id_example', issued_on: 'issued_on_example', valid_from: 'valid_from_example'})}) # PushUriRequest | Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
+  push_uri_request: MyDataMyConsent::PushUriRequest.new({uri_details: MyDataMyConsent::UriDetails.new({aadhaar: 'aadhaar_example', uri: 'uri_example', doc_type: 'doc_type_example', doc_name: 'doc_name_example', doc_id: 'doc_id_example', issued_on: 'issued_on_example', valid_from: 'valid_from_example'})}) # PushUriRequest | Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
 }
 
 begin
@@ -55,7 +55,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **push_uri_request** | [**PushUriRequest**](PushUriRequest.md) | Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest. | [optional] |
+| **push_uri_request** | [**PushUriRequest**](PushUriRequest.md) | Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest. | [optional] |
 
 ### Return type
 
