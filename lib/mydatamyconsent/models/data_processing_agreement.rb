@@ -14,22 +14,27 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # Consent request receiver details
-  class ConsentRequestReceiver
-    # Consent request receiver country ISO 2 code
-    attr_accessor :country_iso2_code
+  # Data processing agreement details.
+  class DataProcessingAgreement
+    # Agreement id.
+    attr_accessor :id
 
-    # Consent request receiver identifiers
-    attr_accessor :identifiers
+    # Agreement version.
+    attr_accessor :version
 
-    attr_accessor :identification_strategy
+    # Agreement body content.
+    attr_accessor :body
+
+    # Agreement attachment file URL.
+    attr_accessor :attachment_url
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'country_iso2_code' => :'countryIso2Code',
-        :'identifiers' => :'identifiers',
-        :'identification_strategy' => :'identificationStrategy'
+        :'id' => :'id',
+        :'version' => :'version',
+        :'body' => :'body',
+        :'attachment_url' => :'attachmentUrl'
       }
     end
 
@@ -41,9 +46,10 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'country_iso2_code' => :'String',
-        :'identifiers' => :'Array<StringStringKeyValuePair>',
-        :'identification_strategy' => :'IdentificationStrategy'
+        :'id' => :'String',
+        :'version' => :'String',
+        :'body' => :'String',
+        :'attachment_url' => :'String'
       }
     end
 
@@ -53,33 +59,42 @@ module MyDataMyConsent
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'DataProcessingAgreementBase'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::ConsentRequestReceiver` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DataProcessingAgreement` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::ConsentRequestReceiver`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DataProcessingAgreement`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'country_iso2_code')
-        self.country_iso2_code = attributes[:'country_iso2_code']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'identifiers')
-        if (value = attributes[:'identifiers']).is_a?(Array)
-          self.identifiers = value
-        end
+      if attributes.key?(:'version')
+        self.version = attributes[:'version']
       end
 
-      if attributes.key?(:'identification_strategy')
-        self.identification_strategy = attributes[:'identification_strategy']
+      if attributes.key?(:'body')
+        self.body = attributes[:'body']
+      end
+
+      if attributes.key?(:'attachment_url')
+        self.attachment_url = attributes[:'attachment_url']
       end
     end
 
@@ -87,24 +102,20 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @country_iso2_code.nil?
-        invalid_properties.push('invalid value for "country_iso2_code", country_iso2_code cannot be nil.')
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
-      if @country_iso2_code.to_s.length > 2
-        invalid_properties.push('invalid value for "country_iso2_code", the character length must be smaller than or equal to 2.')
+      if @version.nil?
+        invalid_properties.push('invalid value for "version", version cannot be nil.')
       end
 
-      if @country_iso2_code.to_s.length < 2
-        invalid_properties.push('invalid value for "country_iso2_code", the character length must be great than or equal to 2.')
+      if @body.nil?
+        invalid_properties.push('invalid value for "body", body cannot be nil.')
       end
 
-      if @identifiers.nil?
-        invalid_properties.push('invalid value for "identifiers", identifiers cannot be nil.')
-      end
-
-      if @identification_strategy.nil?
-        invalid_properties.push('invalid value for "identification_strategy", identification_strategy cannot be nil.')
+      if @attachment_url.nil?
+        invalid_properties.push('invalid value for "attachment_url", attachment_url cannot be nil.')
       end
 
       invalid_properties
@@ -113,30 +124,11 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @country_iso2_code.nil?
-      return false if @country_iso2_code.to_s.length > 2
-      return false if @country_iso2_code.to_s.length < 2
-      return false if @identifiers.nil?
-      return false if @identification_strategy.nil?
+      return false if @id.nil?
+      return false if @version.nil?
+      return false if @body.nil?
+      return false if @attachment_url.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] country_iso2_code Value to be assigned
-    def country_iso2_code=(country_iso2_code)
-      if country_iso2_code.nil?
-        fail ArgumentError, 'country_iso2_code cannot be nil'
-      end
-
-      if country_iso2_code.to_s.length > 2
-        fail ArgumentError, 'invalid value for "country_iso2_code", the character length must be smaller than or equal to 2.'
-      end
-
-      if country_iso2_code.to_s.length < 2
-        fail ArgumentError, 'invalid value for "country_iso2_code", the character length must be great than or equal to 2.'
-      end
-
-      @country_iso2_code = country_iso2_code
     end
 
     # Checks equality by comparing each attribute.
@@ -144,9 +136,10 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          country_iso2_code == o.country_iso2_code &&
-          identifiers == o.identifiers &&
-          identification_strategy == o.identification_strategy
+          id == o.id &&
+          version == o.version &&
+          body == o.body &&
+          attachment_url == o.attachment_url
     end
 
     # @see the `==` method
@@ -158,7 +151,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [country_iso2_code, identifiers, identification_strategy].hash
+      [id, version, body, attachment_url].hash
     end
 
     # Builds the object from hash

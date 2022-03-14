@@ -19,41 +19,41 @@ module MyDataMyConsent
 
     attr_accessor :name
 
+    attr_accessor :category
+
     attr_accessor :logo_url
 
     attr_accessor :website
 
-    attr_accessor :email
+    attr_accessor :support_email
 
-    attr_accessor :support_phone_number
+    attr_accessor :help_line_number
 
     attr_accessor :privacy_policy
 
     attr_accessor :term_of_service
 
-    attr_accessor :category
-
     attr_accessor :data_protection_officer
 
-    attr_accessor :supported_account_types
-
     attr_accessor :supported_document_types
+
+    attr_accessor :supported_account_types
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'name' => :'name',
+        :'category' => :'category',
         :'logo_url' => :'logoUrl',
         :'website' => :'website',
-        :'email' => :'email',
-        :'support_phone_number' => :'supportPhoneNumber',
+        :'support_email' => :'supportEmail',
+        :'help_line_number' => :'helpLineNumber',
         :'privacy_policy' => :'privacyPolicy',
         :'term_of_service' => :'termOfService',
-        :'category' => :'category',
         :'data_protection_officer' => :'dataProtectionOfficer',
-        :'supported_account_types' => :'supportedAccountTypes',
-        :'supported_document_types' => :'supportedDocumentTypes'
+        :'supported_document_types' => :'supportedDocumentTypes',
+        :'supported_account_types' => :'supportedAccountTypes'
       }
     end
 
@@ -67,33 +67,29 @@ module MyDataMyConsent
       {
         :'id' => :'String',
         :'name' => :'String',
+        :'category' => :'String',
         :'logo_url' => :'String',
         :'website' => :'String',
-        :'email' => :'String',
-        :'support_phone_number' => :'String',
+        :'support_email' => :'String',
+        :'help_line_number' => :'String',
         :'privacy_policy' => :'String',
         :'term_of_service' => :'String',
-        :'category' => :'String',
         :'data_protection_officer' => :'DataProtectionOfficer',
-        :'supported_account_types' => :'Array<String>',
-        :'supported_document_types' => :'Array<String>'
+        :'supported_document_types' => :'Array<String>',
+        :'supported_account_types' => :'Array<String>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'id',
-        :'name',
         :'logo_url',
         :'website',
-        :'email',
-        :'support_phone_number',
+        :'support_email',
+        :'help_line_number',
         :'privacy_policy',
         :'term_of_service',
-        :'category',
-        :'supported_account_types',
-        :'supported_document_types'
+        :'supported_account_types'
       ])
     end
 
@@ -120,6 +116,10 @@ module MyDataMyConsent
         self.name = attributes[:'name']
       end
 
+      if attributes.key?(:'category')
+        self.category = attributes[:'category']
+      end
+
       if attributes.key?(:'logo_url')
         self.logo_url = attributes[:'logo_url']
       end
@@ -128,12 +128,12 @@ module MyDataMyConsent
         self.website = attributes[:'website']
       end
 
-      if attributes.key?(:'email')
-        self.email = attributes[:'email']
+      if attributes.key?(:'support_email')
+        self.support_email = attributes[:'support_email']
       end
 
-      if attributes.key?(:'support_phone_number')
-        self.support_phone_number = attributes[:'support_phone_number']
+      if attributes.key?(:'help_line_number')
+        self.help_line_number = attributes[:'help_line_number']
       end
 
       if attributes.key?(:'privacy_policy')
@@ -144,23 +144,19 @@ module MyDataMyConsent
         self.term_of_service = attributes[:'term_of_service']
       end
 
-      if attributes.key?(:'category')
-        self.category = attributes[:'category']
-      end
-
       if attributes.key?(:'data_protection_officer')
         self.data_protection_officer = attributes[:'data_protection_officer']
-      end
-
-      if attributes.key?(:'supported_account_types')
-        if (value = attributes[:'supported_account_types']).is_a?(Array)
-          self.supported_account_types = value
-        end
       end
 
       if attributes.key?(:'supported_document_types')
         if (value = attributes[:'supported_document_types']).is_a?(Array)
           self.supported_document_types = value
+        end
+      end
+
+      if attributes.key?(:'supported_account_types')
+        if (value = attributes[:'supported_account_types']).is_a?(Array)
+          self.supported_account_types = value
         end
       end
     end
@@ -169,12 +165,32 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      end
+
+      if @category.nil?
+        invalid_properties.push('invalid value for "category", category cannot be nil.')
+      end
+
+      if @supported_document_types.nil?
+        invalid_properties.push('invalid value for "supported_document_types", supported_document_types cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @id.nil?
+      return false if @name.nil?
+      return false if @category.nil?
+      return false if @supported_document_types.nil?
       true
     end
 
@@ -185,16 +201,16 @@ module MyDataMyConsent
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
+          category == o.category &&
           logo_url == o.logo_url &&
           website == o.website &&
-          email == o.email &&
-          support_phone_number == o.support_phone_number &&
+          support_email == o.support_email &&
+          help_line_number == o.help_line_number &&
           privacy_policy == o.privacy_policy &&
           term_of_service == o.term_of_service &&
-          category == o.category &&
           data_protection_officer == o.data_protection_officer &&
-          supported_account_types == o.supported_account_types &&
-          supported_document_types == o.supported_document_types
+          supported_document_types == o.supported_document_types &&
+          supported_account_types == o.supported_account_types
     end
 
     # @see the `==` method
@@ -206,7 +222,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, logo_url, website, email, support_phone_number, privacy_policy, term_of_service, category, data_protection_officer, supported_account_types, supported_document_types].hash
+      [id, name, category, logo_url, website, support_email, help_line_number, privacy_policy, term_of_service, data_protection_officer, supported_document_types, supported_account_types].hash
     end
 
     # Builds the object from hash

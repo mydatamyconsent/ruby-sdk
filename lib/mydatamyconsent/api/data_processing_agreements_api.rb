@@ -20,21 +20,25 @@ module MyDataMyConsent
       @api_client = api_client
     end
     # Create a data processing agreement.
+    # @param create_data_processing_agreement [CreateDataProcessingAgreement] Create data processing agreement payload
     # @param [Hash] opts the optional parameters
-    # @option opts [CreateDataProcessingAgreementRequestModel] :create_data_processing_agreement_request_model Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.
-    # @return [DataProcessingAgreementDto]
-    def create_data_processing_agreement(opts = {})
-      data, _status_code, _headers = create_data_processing_agreement_with_http_info(opts)
+    # @return [DataProcessingAgreement]
+    def create_data_processing_agreement(create_data_processing_agreement, opts = {})
+      data, _status_code, _headers = create_data_processing_agreement_with_http_info(create_data_processing_agreement, opts)
       data
     end
 
     # Create a data processing agreement.
+    # @param create_data_processing_agreement [CreateDataProcessingAgreement] Create data processing agreement payload
     # @param [Hash] opts the optional parameters
-    # @option opts [CreateDataProcessingAgreementRequestModel] :create_data_processing_agreement_request_model Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.
-    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
-    def create_data_processing_agreement_with_http_info(opts = {})
+    # @return [Array<(DataProcessingAgreement, Integer, Hash)>] DataProcessingAgreement data, response status code and response headers
+    def create_data_processing_agreement_with_http_info(create_data_processing_agreement, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.create_data_processing_agreement ...'
+      end
+      # verify the required parameter 'create_data_processing_agreement' is set
+      if @api_client.config.client_side_validation && create_data_processing_agreement.nil?
+        fail ArgumentError, "Missing the required parameter 'create_data_processing_agreement' when calling DataProcessingAgreementsApi.create_data_processing_agreement"
       end
       # resource path
       local_var_path = '/v1/data-agreements'
@@ -56,10 +60,10 @@ module MyDataMyConsent
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'create_data_processing_agreement_request_model'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_data_processing_agreement)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreement'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -145,7 +149,7 @@ module MyDataMyConsent
     # Get data processing agreement by id.
     # @param id [String] Agreement id.
     # @param [Hash] opts the optional parameters
-    # @return [DataProcessingAgreementDto]
+    # @return [DataProcessingAgreement]
     def get_data_processing_agreement_by_id(id, opts = {})
       data, _status_code, _headers = get_data_processing_agreement_by_id_with_http_info(id, opts)
       data
@@ -154,7 +158,7 @@ module MyDataMyConsent
     # Get data processing agreement by id.
     # @param id [String] Agreement id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
+    # @return [Array<(DataProcessingAgreement, Integer, Hash)>] DataProcessingAgreement data, response status code and response headers
     def get_data_processing_agreement_by_id_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.get_data_processing_agreement_by_id ...'
@@ -181,7 +185,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreement'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -203,21 +207,21 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Get all data processing agreements.
+    # Get paginated data processing agreements.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [DataProcessingAgreementDtoPaginatedList]
+    # @return [DataProcessingAgreementPaginatedList]
     def get_data_processing_agreements(opts = {})
       data, _status_code, _headers = get_data_processing_agreements_with_http_info(opts)
       data
     end
 
-    # Get all data processing agreements.
+    # Get paginated data processing agreements.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(DataProcessingAgreementDtoPaginatedList, Integer, Hash)>] DataProcessingAgreementDtoPaginatedList data, response status code and response headers
+    # @return [Array<(DataProcessingAgreementPaginatedList, Integer, Hash)>] DataProcessingAgreementPaginatedList data, response status code and response headers
     def get_data_processing_agreements_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.get_data_processing_agreements ...'
@@ -242,7 +246,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDtoPaginatedList'
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreementPaginatedList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -327,26 +331,30 @@ module MyDataMyConsent
 
     # Update a data processing agreement.
     # @param id [String] Agreement id.
+    # @param update_data_processing_agreement [UpdateDataProcessingAgreement] Update data processing agreement payload
     # @param [Hash] opts the optional parameters
-    # @option opts [UpdateDataProcessingAgreementRequestModel] :update_data_processing_agreement_request_model Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
-    # @return [DataProcessingAgreementDto]
-    def update_data_processing_agreement(id, opts = {})
-      data, _status_code, _headers = update_data_processing_agreement_with_http_info(id, opts)
+    # @return [DataProcessingAgreement]
+    def update_data_processing_agreement(id, update_data_processing_agreement, opts = {})
+      data, _status_code, _headers = update_data_processing_agreement_with_http_info(id, update_data_processing_agreement, opts)
       data
     end
 
     # Update a data processing agreement.
     # @param id [String] Agreement id.
+    # @param update_data_processing_agreement [UpdateDataProcessingAgreement] Update data processing agreement payload
     # @param [Hash] opts the optional parameters
-    # @option opts [UpdateDataProcessingAgreementRequestModel] :update_data_processing_agreement_request_model Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
-    # @return [Array<(DataProcessingAgreementDto, Integer, Hash)>] DataProcessingAgreementDto data, response status code and response headers
-    def update_data_processing_agreement_with_http_info(id, opts = {})
+    # @return [Array<(DataProcessingAgreement, Integer, Hash)>] DataProcessingAgreement data, response status code and response headers
+    def update_data_processing_agreement_with_http_info(id, update_data_processing_agreement, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataProcessingAgreementsApi.update_data_processing_agreement ...'
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
         fail ArgumentError, "Missing the required parameter 'id' when calling DataProcessingAgreementsApi.update_data_processing_agreement"
+      end
+      # verify the required parameter 'update_data_processing_agreement' is set
+      if @api_client.config.client_side_validation && update_data_processing_agreement.nil?
+        fail ArgumentError, "Missing the required parameter 'update_data_processing_agreement' when calling DataProcessingAgreementsApi.update_data_processing_agreement"
       end
       # resource path
       local_var_path = '/v1/data-agreements/{id}'.sub('{' + 'id' + '}', CGI.escape(id.to_s))
@@ -368,10 +376,10 @@ module MyDataMyConsent
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'update_data_processing_agreement_request_model'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_data_processing_agreement)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataProcessingAgreementDto'
+      return_type = opts[:debug_return_type] || 'DataProcessingAgreement'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

@@ -215,7 +215,7 @@ module MyDataMyConsent
     end
 
     # Issue a new document to an individual user.
-    # @param document_issue_request [DocumentIssueRequest] Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+    # @param document_issue_request [DocumentIssueRequest] Document issue request payload
     # @param [Hash] opts the optional parameters
     # @return [DocumentIssueRequestDetails]
     def issue_document_to_individual(document_issue_request, opts = {})
@@ -224,7 +224,7 @@ module MyDataMyConsent
     end
 
     # Issue a new document to an individual user.
-    # @param document_issue_request [DocumentIssueRequest] Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+    # @param document_issue_request [DocumentIssueRequest] Document issue request payload
     # @param [Hash] opts the optional parameters
     # @return [Array<(DocumentIssueRequestDetails, Integer, Hash)>] DocumentIssueRequestDetails data, response status code and response headers
     def issue_document_to_individual_with_http_info(document_issue_request, opts = {})
@@ -281,7 +281,7 @@ module MyDataMyConsent
     end
 
     # Issue a new document to an organization.
-    # @param document_issue_request [DocumentIssueRequest] Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+    # @param document_issue_request [DocumentIssueRequest] Document issue request payload
     # @param [Hash] opts the optional parameters
     # @return [DocumentIssueRequestDetails]
     def issue_document_to_organization(document_issue_request, opts = {})
@@ -290,7 +290,7 @@ module MyDataMyConsent
     end
 
     # Issue a new document to an organization.
-    # @param document_issue_request [DocumentIssueRequest] Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+    # @param document_issue_request [DocumentIssueRequest] Document issue request payload
     # @param [Hash] opts the optional parameters
     # @return [Array<(DocumentIssueRequestDetails, Integer, Hash)>] DocumentIssueRequestDetails data, response status code and response headers
     def issue_document_to_organization_with_http_info(document_issue_request, opts = {})

@@ -19,8 +19,8 @@ module MyDataMyConsent
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Get a Data Provider details based on provider id.
-    # @param provider_id [String] Provider id.
+    # Get a Data Provider details by provider id.
+    # @param provider_id [String] Data provider id.
     # @param [Hash] opts the optional parameters
     # @return [DataProvider]
     def get_data_provider_by_id(provider_id, opts = {})
@@ -28,8 +28,8 @@ module MyDataMyConsent
       data
     end
 
-    # Get a Data Provider details based on provider id.
-    # @param provider_id [String] Provider id.
+    # Get a Data Provider details by provider id.
+    # @param provider_id [String] Data provider id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(DataProvider, Integer, Hash)>] DataProvider data, response status code and response headers
     def get_data_provider_by_id_with_http_info(provider_id, opts = {})
@@ -87,7 +87,7 @@ module MyDataMyConsent
     # @option opts [String] :organization_category Organization category.
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @option opts [String] :country ISO2 Country code. (default to 'IN')
+    # @option opts [String] :country_iso2_code ISO2 Country code. (default to 'IN')
     # @return [DataProviderPaginatedList]
     def get_data_providers(opts = {})
       data, _status_code, _headers = get_data_providers_with_http_info(opts)
@@ -101,7 +101,7 @@ module MyDataMyConsent
     # @option opts [String] :organization_category Organization category.
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
-    # @option opts [String] :country ISO2 Country code.
+    # @option opts [String] :country_iso2_code ISO2 Country code.
     # @return [Array<(DataProviderPaginatedList, Integer, Hash)>] DataProviderPaginatedList data, response status code and response headers
     def get_data_providers_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -117,7 +117,7 @@ module MyDataMyConsent
       query_params[:'organizationCategory'] = opts[:'organization_category'] if !opts[:'organization_category'].nil?
       query_params[:'pageNo'] = opts[:'page_no'] if !opts[:'page_no'].nil?
       query_params[:'pageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
-      query_params[:'country'] = opts[:'country'] if !opts[:'country'].nil?
+      query_params[:'countryIso2Code'] = opts[:'country_iso2_code'] if !opts[:'country_iso2_code'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

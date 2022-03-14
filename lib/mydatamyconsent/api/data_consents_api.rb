@@ -20,8 +20,8 @@ module MyDataMyConsent
       @api_client = api_client
     end
     # Get analysis of a consented document.
-    # @param consent_id [String] 
-    # @param document_id [String] Document Id.
+    # @param consent_id [String] Data consent id.
+    # @param document_id [String] Consented document Id.
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def download_consented_document_analysis(consent_id, document_id, opts = {})
@@ -30,8 +30,8 @@ module MyDataMyConsent
     end
 
     # Get analysis of a consented document.
-    # @param consent_id [String] 
-    # @param document_id [String] Document Id.
+    # @param consent_id [String] Data consent id.
+    # @param document_id [String] Consented document Id.
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def download_consented_document_analysis_with_http_info(consent_id, document_id, opts = {})
@@ -86,32 +86,32 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Download a individuals consented document.
-    # @param consent_id [String] Consent id.
-    # @param document_id [String] Document id.
+    # Download individual consented document by document id.
+    # @param consent_id [String] Individual data consent id.
+    # @param document_id [String] Consented document id.
     # @param [Hash] opts the optional parameters
-    # @return [UserDocumentDownload]
-    def download_consented_document_by_id(consent_id, document_id, opts = {})
-      data, _status_code, _headers = download_consented_document_by_id_with_http_info(consent_id, document_id, opts)
-      data
+    # @return [nil]
+    def download_individual_consented_document_by_id(consent_id, document_id, opts = {})
+      download_individual_consented_document_by_id_with_http_info(consent_id, document_id, opts)
+      nil
     end
 
-    # Download a individuals consented document.
-    # @param consent_id [String] Consent id.
-    # @param document_id [String] Document id.
+    # Download individual consented document by document id.
+    # @param consent_id [String] Individual data consent id.
+    # @param document_id [String] Consented document id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(UserDocumentDownload, Integer, Hash)>] UserDocumentDownload data, response status code and response headers
-    def download_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def download_individual_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataConsentsApi.download_consented_document_by_id ...'
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.download_individual_consented_document_by_id ...'
       end
       # verify the required parameter 'consent_id' is set
       if @api_client.config.client_side_validation && consent_id.nil?
-        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.download_consented_document_by_id"
+        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.download_individual_consented_document_by_id"
       end
       # verify the required parameter 'document_id' is set
       if @api_client.config.client_side_validation && document_id.nil?
-        fail ArgumentError, "Missing the required parameter 'document_id' when calling DataConsentsApi.download_consented_document_by_id"
+        fail ArgumentError, "Missing the required parameter 'document_id' when calling DataConsentsApi.download_individual_consented_document_by_id"
       end
       # resource path
       local_var_path = '/v1/consents/individuals/{consentId}/documents/{documentId}/download'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'documentId' + '}', CGI.escape(document_id.to_s))
@@ -131,13 +131,13 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UserDocumentDownload'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DataConsentsApi.download_consented_document_by_id",
+        :operation => :"DataConsentsApi.download_individual_consented_document_by_id",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -148,37 +148,37 @@ module MyDataMyConsent
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataConsentsApi#download_consented_document_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DataConsentsApi#download_individual_consented_document_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
-    # Download a organizations consented document.
-    # @param consent_id [String] Consent id.
-    # @param document_id [String] Document id.
+    # Download organization consent document based on document id.
+    # @param consent_id [String] Organization data consent id.
+    # @param document_id [String] Organization consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [OrganizationDocumentDownloadDto]
-    def download_org_consented_document_by_id(consent_id, document_id, opts = {})
-      data, _status_code, _headers = download_org_consented_document_by_id_with_http_info(consent_id, document_id, opts)
-      data
+    # @return [nil]
+    def download_organization_consented_document_by_id(consent_id, document_id, opts = {})
+      download_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts)
+      nil
     end
 
-    # Download a organizations consented document.
-    # @param consent_id [String] Consent id.
-    # @param document_id [String] Document id.
+    # Download organization consent document based on document id.
+    # @param consent_id [String] Organization data consent id.
+    # @param document_id [String] Organization consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OrganizationDocumentDownloadDto, Integer, Hash)>] OrganizationDocumentDownloadDto data, response status code and response headers
-    def download_org_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def download_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataConsentsApi.download_org_consented_document_by_id ...'
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.download_organization_consented_document_by_id ...'
       end
       # verify the required parameter 'consent_id' is set
       if @api_client.config.client_side_validation && consent_id.nil?
-        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.download_org_consented_document_by_id"
+        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.download_organization_consented_document_by_id"
       end
       # verify the required parameter 'document_id' is set
       if @api_client.config.client_side_validation && document_id.nil?
-        fail ArgumentError, "Missing the required parameter 'document_id' when calling DataConsentsApi.download_org_consented_document_by_id"
+        fail ArgumentError, "Missing the required parameter 'document_id' when calling DataConsentsApi.download_organization_consented_document_by_id"
       end
       # resource path
       local_var_path = '/v1/consents/organizations/{consentId}/documents/{documentId}/download'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s)).sub('{' + 'documentId' + '}', CGI.escape(document_id.to_s))
@@ -198,13 +198,13 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OrganizationDocumentDownloadDto'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DataConsentsApi.download_org_consented_document_by_id",
+        :operation => :"DataConsentsApi.download_organization_consented_document_by_id",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -215,68 +215,7 @@ module MyDataMyConsent
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataConsentsApi#download_org_consented_document_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get the individual documents based on ConsentId.
-    # @param consent_id [String] Consent id.
-    # @param [Hash] opts the optional parameters
-    # @return [DataConsentDocumentsDto]
-    def get_all_consented_documents(consent_id, opts = {})
-      data, _status_code, _headers = get_all_consented_documents_with_http_info(consent_id, opts)
-      data
-    end
-
-    # Get the individual documents based on ConsentId.
-    # @param consent_id [String] Consent id.
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(DataConsentDocumentsDto, Integer, Hash)>] DataConsentDocumentsDto data, response status code and response headers
-    def get_all_consented_documents_with_http_info(consent_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_all_consented_documents ...'
-      end
-      # verify the required parameter 'consent_id' is set
-      if @api_client.config.client_side_validation && consent_id.nil?
-        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_all_consented_documents"
-      end
-      # resource path
-      local_var_path = '/v1/consents/individuals/{consentId}/documents'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'DataConsentDocumentsDto'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataConsentsApi.get_all_consented_documents",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataConsentsApi#get_all_consented_documents\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DataConsentsApi#download_organization_consented_document_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -338,128 +277,6 @@ module MyDataMyConsent
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DataConsentsApi#get_all_consented_financial_accounts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get the organization documents based on ConsentId.
-    # @param consent_id [String] Consent id.
-    # @param [Hash] opts the optional parameters
-    # @return [DataConsentDocumentsDto]
-    def get_all_organization_consented_documents(consent_id, opts = {})
-      data, _status_code, _headers = get_all_organization_consented_documents_with_http_info(consent_id, opts)
-      data
-    end
-
-    # Get the organization documents based on ConsentId.
-    # @param consent_id [String] Consent id.
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(DataConsentDocumentsDto, Integer, Hash)>] DataConsentDocumentsDto data, response status code and response headers
-    def get_all_organization_consented_documents_with_http_info(consent_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_all_organization_consented_documents ...'
-      end
-      # verify the required parameter 'consent_id' is set
-      if @api_client.config.client_side_validation && consent_id.nil?
-        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_all_organization_consented_documents"
-      end
-      # resource path
-      local_var_path = '/v1/consents/organizations/{consentId}/documents'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'DataConsentDocumentsDto'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataConsentsApi.get_all_organization_consented_documents",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataConsentsApi#get_all_organization_consented_documents\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get all individuals consent details by consent id.
-    # @param consent_id [String] Consent id.
-    # @param [Hash] opts the optional parameters
-    # @return [DataConsentDetailsDto]
-    def get_consent_details_by_id(consent_id, opts = {})
-      data, _status_code, _headers = get_consent_details_by_id_with_http_info(consent_id, opts)
-      data
-    end
-
-    # Get all individuals consent details by consent id.
-    # @param consent_id [String] Consent id.
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(DataConsentDetailsDto, Integer, Hash)>] DataConsentDetailsDto data, response status code and response headers
-    def get_consent_details_by_id_with_http_info(consent_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_consent_details_by_id ...'
-      end
-      # verify the required parameter 'consent_id' is set
-      if @api_client.config.client_side_validation && consent_id.nil?
-        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_consent_details_by_id"
-      end
-      # resource path
-      local_var_path = '/v1/consents/individuals/{consentId}'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'DataConsentDetailsDto'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataConsentsApi.get_consent_details_by_id",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataConsentsApi#get_consent_details_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -592,21 +409,21 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Get individuals consent document based on document id.
-    # @param consent_id [String] Consent id.
-    # @param document_id [String] Document Id.
+    # Get individual consented document by document id.
+    # @param consent_id [String] Individual data consent id.
+    # @param document_id [String] Consented document id.
     # @param [Hash] opts the optional parameters
-    # @return [UserDocumentDetails]
+    # @return [IndividualDataConsentDocument]
     def get_consented_document_by_id(consent_id, document_id, opts = {})
       data, _status_code, _headers = get_consented_document_by_id_with_http_info(consent_id, document_id, opts)
       data
     end
 
-    # Get individuals consent document based on document id.
-    # @param consent_id [String] Consent id.
-    # @param document_id [String] Document Id.
+    # Get individual consented document by document id.
+    # @param consent_id [String] Individual data consent id.
+    # @param document_id [String] Consented document id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(UserDocumentDetails, Integer, Hash)>] UserDocumentDetails data, response status code and response headers
+    # @return [Array<(IndividualDataConsentDocument, Integer, Hash)>] IndividualDataConsentDocument data, response status code and response headers
     def get_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_consented_document_by_id ...'
@@ -637,7 +454,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UserDocumentDetails'
+      return_type = opts[:debug_return_type] || 'IndividualDataConsentDocument'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -875,100 +692,32 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Get the list of data consents sent for organizations.
+    # Get the paginated list of individual data consents.
+    # GetIndividualDataConsents
     # @param [Hash] opts the optional parameters
     # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
-    # @option opts [Time] :from From date time in utc timezone.
-    # @option opts [Time] :to Til date time in utc timezone.
+    # @option opts [Time] :from_date_time From datetime in UTC timezone.
+    # @option opts [Time] :to_date_time To datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [OrganizationDataConsentInfoDtoPaginatedList]
-    def get_consents_for_organizations(opts = {})
-      data, _status_code, _headers = get_consents_for_organizations_with_http_info(opts)
+    # @return [IndividualDataConsentDetailsPaginatedList]
+    def get_consents(opts = {})
+      data, _status_code, _headers = get_consents_with_http_info(opts)
       data
     end
 
-    # Get the list of data consents sent for organizations.
+    # Get the paginated list of individual data consents.
+    # GetIndividualDataConsents
     # @param [Hash] opts the optional parameters
     # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
-    # @option opts [Time] :from From date time in utc timezone.
-    # @option opts [Time] :to Til date time in utc timezone.
+    # @option opts [Time] :from_date_time From datetime in UTC timezone.
+    # @option opts [Time] :to_date_time To datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(OrganizationDataConsentInfoDtoPaginatedList, Integer, Hash)>] OrganizationDataConsentInfoDtoPaginatedList data, response status code and response headers
-    def get_consents_for_organizations_with_http_info(opts = {})
+    # @return [Array<(IndividualDataConsentDetailsPaginatedList, Integer, Hash)>] IndividualDataConsentDetailsPaginatedList data, response status code and response headers
+    def get_consents_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_consents_for_organizations ...'
-      end
-      # resource path
-      local_var_path = '/v1/consents/organizations'
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
-      query_params[:'from'] = opts[:'from'] if !opts[:'from'].nil?
-      query_params[:'to'] = opts[:'to'] if !opts[:'to'].nil?
-      query_params[:'pageNo'] = opts[:'page_no'] if !opts[:'page_no'].nil?
-      query_params[:'pageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'OrganizationDataConsentInfoDtoPaginatedList'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataConsentsApi.get_consents_for_organizations",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataConsentsApi#get_consents_for_organizations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Get the list of Consents Sent to Individuals.
-    # @param [Hash] opts the optional parameters
-    # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
-    # @option opts [Time] :from From date time in utc timezone.
-    # @option opts [Time] :to Til date time in utc timezone.
-    # @option opts [Integer] :page_no Page number. (default to 1)
-    # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [UserDataConsentInfoDtoPaginatedList]
-    def get_consents_sent_to_individuals(opts = {})
-      data, _status_code, _headers = get_consents_sent_to_individuals_with_http_info(opts)
-      data
-    end
-
-    # Get the list of Consents Sent to Individuals.
-    # @param [Hash] opts the optional parameters
-    # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
-    # @option opts [Time] :from From date time in utc timezone.
-    # @option opts [Time] :to Til date time in utc timezone.
-    # @option opts [Integer] :page_no Page number.
-    # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(UserDataConsentInfoDtoPaginatedList, Integer, Hash)>] UserDataConsentInfoDtoPaginatedList data, response status code and response headers
-    def get_consents_sent_to_individuals_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_consents_sent_to_individuals ...'
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_consents ...'
       end
       # resource path
       local_var_path = '/v1/consents/individuals'
@@ -976,8 +725,8 @@ module MyDataMyConsent
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
-      query_params[:'from'] = opts[:'from'] if !opts[:'from'].nil?
-      query_params[:'to'] = opts[:'to'] if !opts[:'to'].nil?
+      query_params[:'fromDateTime'] = opts[:'from_date_time'] if !opts[:'from_date_time'].nil?
+      query_params[:'toDateTime'] = opts[:'to_date_time'] if !opts[:'to_date_time'].nil?
       query_params[:'pageNo'] = opts[:'page_no'] if !opts[:'page_no'].nil?
       query_params[:'pageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
 
@@ -993,13 +742,13 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UserDataConsentInfoDtoPaginatedList'
+      return_type = opts[:debug_return_type] || 'IndividualDataConsentDetailsPaginatedList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DataConsentsApi.get_consents_sent_to_individuals",
+        :operation => :"DataConsentsApi.get_consents",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -1010,7 +759,129 @@ module MyDataMyConsent
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataConsentsApi#get_consents_sent_to_individuals\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DataConsentsApi#get_consents\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get individual consented documents by consent id.
+    # @param consent_id [String] Individual data consent id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<IndividualDataConsentDocument>]
+    def get_individual_consented_documents(consent_id, opts = {})
+      data, _status_code, _headers = get_individual_consented_documents_with_http_info(consent_id, opts)
+      data
+    end
+
+    # Get individual consented documents by consent id.
+    # @param consent_id [String] Individual data consent id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<IndividualDataConsentDocument>, Integer, Hash)>] Array<IndividualDataConsentDocument> data, response status code and response headers
+    def get_individual_consented_documents_with_http_info(consent_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_individual_consented_documents ...'
+      end
+      # verify the required parameter 'consent_id' is set
+      if @api_client.config.client_side_validation && consent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_individual_consented_documents"
+      end
+      # resource path
+      local_var_path = '/v1/consents/individuals/{consentId}/documents'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Array<IndividualDataConsentDocument>'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataConsentsApi.get_individual_consented_documents",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataConsentsApi#get_individual_consented_documents\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get individuals data consent details by consent id.
+    # @param consent_id [String] Individual data consent id.
+    # @param [Hash] opts the optional parameters
+    # @return [OneOfDataConsentIndividualDataConsentOrganizationDataConsent]
+    def get_individual_data_consent_by_id(consent_id, opts = {})
+      data, _status_code, _headers = get_individual_data_consent_by_id_with_http_info(consent_id, opts)
+      data
+    end
+
+    # Get individuals data consent details by consent id.
+    # @param consent_id [String] Individual data consent id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(OneOfDataConsentIndividualDataConsentOrganizationDataConsent, Integer, Hash)>] OneOfDataConsentIndividualDataConsentOrganizationDataConsent data, response status code and response headers
+    def get_individual_data_consent_by_id_with_http_info(consent_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_individual_data_consent_by_id ...'
+      end
+      # verify the required parameter 'consent_id' is set
+      if @api_client.config.client_side_validation && consent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_individual_data_consent_by_id"
+      end
+      # resource path
+      local_var_path = '/v1/consents/individuals/{consentId}'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'OneOfDataConsentIndividualDataConsentOrganizationDataConsent'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataConsentsApi.get_individual_data_consent_by_id",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataConsentsApi#get_individual_data_consent_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1097,82 +968,21 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Get all organization consent details by consent id.
-    # @param consent_id [String] Consent id.
-    # @param [Hash] opts the optional parameters
-    # @return [DataConsentDetailsDto]
-    def get_organization_consent_details_by_id(consent_id, opts = {})
-      data, _status_code, _headers = get_organization_consent_details_by_id_with_http_info(consent_id, opts)
-      data
-    end
-
-    # Get all organization consent details by consent id.
-    # @param consent_id [String] Consent id.
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(DataConsentDetailsDto, Integer, Hash)>] DataConsentDetailsDto data, response status code and response headers
-    def get_organization_consent_details_by_id_with_http_info(consent_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_consent_details_by_id ...'
-      end
-      # verify the required parameter 'consent_id' is set
-      if @api_client.config.client_side_validation && consent_id.nil?
-        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_organization_consent_details_by_id"
-      end
-      # resource path
-      local_var_path = '/v1/consents/organizations/{consentId}'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'DataConsentDetailsDto'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || []
-
-      new_options = opts.merge(
-        :operation => :"DataConsentsApi.get_organization_consent_details_by_id",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DataConsentsApi#get_organization_consent_details_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Get organization consent document based on document id.
-    # @param consent_id [String] Consent id.
-    # @param document_id [String] Document Id.
+    # @param consent_id [String] Organization data consent id.
+    # @param document_id [String] Organization consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [OrganizationDocumentDetails]
+    # @return [OrganizationDataConsentDocument]
     def get_organization_consented_document_by_id(consent_id, document_id, opts = {})
       data, _status_code, _headers = get_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts)
       data
     end
 
     # Get organization consent document based on document id.
-    # @param consent_id [String] Consent id.
-    # @param document_id [String] Document Id.
+    # @param consent_id [String] Organization data consent id.
+    # @param document_id [String] Organization consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OrganizationDocumentDetails, Integer, Hash)>] OrganizationDocumentDetails data, response status code and response headers
+    # @return [Array<(OrganizationDataConsentDocument, Integer, Hash)>] OrganizationDataConsentDocument data, response status code and response headers
     def get_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_consented_document_by_id ...'
@@ -1203,7 +1013,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OrganizationDocumentDetails'
+      return_type = opts[:debug_return_type] || 'OrganizationDataConsentDocument'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1221,6 +1031,198 @@ module MyDataMyConsent
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DataConsentsApi#get_organization_consented_document_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get organization consented documents by consent id.
+    # @param consent_id [String] Organization data consent id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<OrganizationDataConsentDocument>]
+    def get_organization_consented_documents(consent_id, opts = {})
+      data, _status_code, _headers = get_organization_consented_documents_with_http_info(consent_id, opts)
+      data
+    end
+
+    # Get organization consented documents by consent id.
+    # @param consent_id [String] Organization data consent id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<OrganizationDataConsentDocument>, Integer, Hash)>] Array<OrganizationDataConsentDocument> data, response status code and response headers
+    def get_organization_consented_documents_with_http_info(consent_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_consented_documents ...'
+      end
+      # verify the required parameter 'consent_id' is set
+      if @api_client.config.client_side_validation && consent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_organization_consented_documents"
+      end
+      # resource path
+      local_var_path = '/v1/consents/organizations/{consentId}/documents'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Array<OrganizationDataConsentDocument>'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataConsentsApi.get_organization_consented_documents",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataConsentsApi#get_organization_consented_documents\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get organizations data consent details by consent id.
+    # @param consent_id [String] Organization data consent id.
+    # @param [Hash] opts the optional parameters
+    # @return [OneOfDataConsentIndividualDataConsentOrganizationDataConsent]
+    def get_organization_data_consent_by_id(consent_id, opts = {})
+      data, _status_code, _headers = get_organization_data_consent_by_id_with_http_info(consent_id, opts)
+      data
+    end
+
+    # Get organizations data consent details by consent id.
+    # @param consent_id [String] Organization data consent id.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(OneOfDataConsentIndividualDataConsentOrganizationDataConsent, Integer, Hash)>] OneOfDataConsentIndividualDataConsentOrganizationDataConsent data, response status code and response headers
+    def get_organization_data_consent_by_id_with_http_info(consent_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_data_consent_by_id ...'
+      end
+      # verify the required parameter 'consent_id' is set
+      if @api_client.config.client_side_validation && consent_id.nil?
+        fail ArgumentError, "Missing the required parameter 'consent_id' when calling DataConsentsApi.get_organization_data_consent_by_id"
+      end
+      # resource path
+      local_var_path = '/v1/consents/organizations/{consentId}'.sub('{' + 'consentId' + '}', CGI.escape(consent_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'OneOfDataConsentIndividualDataConsentOrganizationDataConsent'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataConsentsApi.get_organization_data_consent_by_id",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataConsentsApi#get_organization_data_consent_by_id\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get the paginated list of organization data consents.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+    # @option opts [Time] :from_date_time From datetime in UTC timezone.
+    # @option opts [Time] :to_date_time To datetime in UTC timezone.
+    # @option opts [Integer] :page_no Page number. (default to 1)
+    # @option opts [Integer] :page_size Number of items to return. (default to 25)
+    # @return [OrganizationDataConsentDetailsPaginatedList]
+    def get_organization_data_consents(opts = {})
+      data, _status_code, _headers = get_organization_data_consents_with_http_info(opts)
+      data
+    end
+
+    # Get the paginated list of organization data consents.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+    # @option opts [Time] :from_date_time From datetime in UTC timezone.
+    # @option opts [Time] :to_date_time To datetime in UTC timezone.
+    # @option opts [Integer] :page_no Page number.
+    # @option opts [Integer] :page_size Number of items to return.
+    # @return [Array<(OrganizationDataConsentDetailsPaginatedList, Integer, Hash)>] OrganizationDataConsentDetailsPaginatedList data, response status code and response headers
+    def get_organization_data_consents_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_data_consents ...'
+      end
+      # resource path
+      local_var_path = '/v1/consents/organizations'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
+      query_params[:'fromDateTime'] = opts[:'from_date_time'] if !opts[:'from_date_time'].nil?
+      query_params[:'toDateTime'] = opts[:'to_date_time'] if !opts[:'to_date_time'].nil?
+      query_params[:'pageNo'] = opts[:'page_no'] if !opts[:'page_no'].nil?
+      query_params[:'pageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'OrganizationDataConsentDetailsPaginatedList'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DataConsentsApi.get_organization_data_consents",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DataConsentsApi#get_organization_data_consents\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

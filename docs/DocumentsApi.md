@@ -226,7 +226,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'GJ05FG67866586.', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER}), issued_at_utc: Time.now, valid_from_utc: Time.now}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'GJ05FG67866586.', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER}), issued_at_utc: Time.now, valid_from_utc: Time.now}) # DocumentIssueRequest | Document issue request payload
 
 begin
   # Issue a new document to an individual user.
@@ -259,7 +259,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md) | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. |  |
+| **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md) | Document issue request payload |  |
 
 ### Return type
 
@@ -288,7 +288,7 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'GJ05FG67866586.', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER}), issued_at_utc: Time.now, valid_from_utc: Time.now}) # DocumentIssueRequest | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+document_issue_request = MyDataMyConsent::DocumentIssueRequest.new({document_type_id: 'document_type_id_example', identifier: 'GJ05FG67866586.', description: 'description_example', receiver: MyDataMyConsent::DocumentReceiver.new({country_iso2_code: 'country_iso2_code_example', identifiers: [MyDataMyConsent::StringStringKeyValuePair.new], identification_strategy: MyDataMyConsent::IdentificationStrategy::MATCH_AT_LEAST_ONE_IDENTIFIER}), issued_at_utc: Time.now, valid_from_utc: Time.now}) # DocumentIssueRequest | Document issue request payload
 
 begin
   # Issue a new document to an organization.
@@ -321,7 +321,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md) | Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest. |  |
+| **document_issue_request** | [**DocumentIssueRequest**](DocumentIssueRequest.md) | Document issue request payload |  |
 
 ### Return type
 

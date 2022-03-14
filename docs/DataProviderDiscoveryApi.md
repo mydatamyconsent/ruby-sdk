@@ -4,7 +4,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**get_data_provider_by_id**](DataProviderDiscoveryApi.md#get_data_provider_by_id) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details based on provider id. |
+| [**get_data_provider_by_id**](DataProviderDiscoveryApi.md#get_data_provider_by_id) | **GET** /v1/data-providers/{providerId} | Get a Data Provider details by provider id. |
 | [**get_data_providers**](DataProviderDiscoveryApi.md#get_data_providers) | **GET** /v1/data-providers | Discover all data providers in My Data My Consent by country and filters. |
 
 
@@ -12,7 +12,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 > <DataProvider> get_data_provider_by_id(provider_id)
 
-Get a Data Provider details based on provider id.
+Get a Data Provider details by provider id.
 
 ### Examples
 
@@ -21,10 +21,10 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataProviderDiscoveryApi.new
-provider_id = 'provider_id_example' # String | Provider id.
+provider_id = 'provider_id_example' # String | Data provider id.
 
 begin
-  # Get a Data Provider details based on provider id.
+  # Get a Data Provider details by provider id.
   result = api_instance.get_data_provider_by_id(provider_id)
   p result
 rescue MyDataMyConsent::ApiError => e
@@ -40,7 +40,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Get a Data Provider details based on provider id.
+  # Get a Data Provider details by provider id.
   data, status_code, headers = api_instance.get_data_provider_by_id_with_http_info(provider_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -54,7 +54,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **provider_id** | **String** | Provider id. |  |
+| **provider_id** | **String** | Data provider id. |  |
 
 ### Return type
 
@@ -89,7 +89,7 @@ opts = {
   organization_category: 'organization_category_example', # String | Organization category.
   page_no: 56, # Integer | Page number.
   page_size: 56, # Integer | Number of items to return.
-  country: 'country_example' # String | ISO2 Country code.
+  country_iso2_code: 'country_iso2_code_example' # String | ISO2 Country code.
 }
 
 begin
@@ -128,7 +128,7 @@ end
 | **organization_category** | **String** | Organization category. | [optional] |
 | **page_no** | **Integer** | Page number. | [optional][default to 1] |
 | **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
-| **country** | **String** | ISO2 Country code. | [optional][default to &#39;IN&#39;] |
+| **country_iso2_code** | **String** | ISO2 Country code. | [optional][default to &#39;IN&#39;] |
 
 ### Return type
 

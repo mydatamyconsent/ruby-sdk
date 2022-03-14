@@ -19,19 +19,19 @@ module MyDataMyConsent
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
-    # Cancel the individual data consent request based on Id.
+    # Cancel the individual data consent request by Id.
     # @param request_id [String] Individual consent request id.
     # @param [Hash] opts the optional parameters
-    # @return [IndividualDataConsentRequestResponse]
+    # @return [nil]
     def cancel_individual_data_consent_request(request_id, opts = {})
-      data, _status_code, _headers = cancel_individual_data_consent_request_with_http_info(request_id, opts)
-      data
+      cancel_individual_data_consent_request_with_http_info(request_id, opts)
+      nil
     end
 
-    # Cancel the individual data consent request based on Id.
+    # Cancel the individual data consent request by Id.
     # @param request_id [String] Individual consent request id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(IndividualDataConsentRequestResponse, Integer, Hash)>] IndividualDataConsentRequestResponse data, response status code and response headers
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def cancel_individual_data_consent_request_with_http_info(request_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentRequestsApi.cancel_individual_data_consent_request ...'
@@ -58,7 +58,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'IndividualDataConsentRequestResponse'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -80,19 +80,19 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Cancel the Organization data consent request based on Id.
+    # Cancel the organization data consent request by Id.
     # @param request_id [String] Organization consent request id.
     # @param [Hash] opts the optional parameters
-    # @return [OrganizationDataConsentRequestResponse]
+    # @return [nil]
     def cancel_organization_data_consent_request(request_id, opts = {})
-      data, _status_code, _headers = cancel_organization_data_consent_request_with_http_info(request_id, opts)
-      data
+      cancel_organization_data_consent_request_with_http_info(request_id, opts)
+      nil
     end
 
-    # Cancel the Organization data consent request based on Id.
+    # Cancel the organization data consent request by Id.
     # @param request_id [String] Organization consent request id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OrganizationDataConsentRequestResponse, Integer, Hash)>] OrganizationDataConsentRequestResponse data, response status code and response headers
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def cancel_organization_data_consent_request_with_http_info(request_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentRequestsApi.cancel_organization_data_consent_request ...'
@@ -119,7 +119,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OrganizationDataConsentRequestResponse'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -141,28 +141,28 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Create a individual data consent request.
-    # Create a individual data consent request.
-    # @param create_individual_data_consent_request [CreateIndividualDataConsentRequest] The Individual data consent request payload
+    # Create data consent request for an individual.
+    # Create data consent request for an individual.
+    # @param create_data_consent_request [CreateDataConsentRequest] The Individual data consent request payload
     # @param [Hash] opts the optional parameters
-    # @return [IndividualDataConsentRequestResponse]
-    def create_individual_data_consent_request(create_individual_data_consent_request, opts = {})
-      data, _status_code, _headers = create_individual_data_consent_request_with_http_info(create_individual_data_consent_request, opts)
+    # @return [IndividualDataConsentRequestDetails]
+    def create_individual_data_consent_request(create_data_consent_request, opts = {})
+      data, _status_code, _headers = create_individual_data_consent_request_with_http_info(create_data_consent_request, opts)
       data
     end
 
-    # Create a individual data consent request.
-    # Create a individual data consent request.
-    # @param create_individual_data_consent_request [CreateIndividualDataConsentRequest] The Individual data consent request payload
+    # Create data consent request for an individual.
+    # Create data consent request for an individual.
+    # @param create_data_consent_request [CreateDataConsentRequest] The Individual data consent request payload
     # @param [Hash] opts the optional parameters
-    # @return [Array<(IndividualDataConsentRequestResponse, Integer, Hash)>] IndividualDataConsentRequestResponse data, response status code and response headers
-    def create_individual_data_consent_request_with_http_info(create_individual_data_consent_request, opts = {})
+    # @return [Array<(IndividualDataConsentRequestDetails, Integer, Hash)>] IndividualDataConsentRequestDetails data, response status code and response headers
+    def create_individual_data_consent_request_with_http_info(create_data_consent_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentRequestsApi.create_individual_data_consent_request ...'
       end
-      # verify the required parameter 'create_individual_data_consent_request' is set
-      if @api_client.config.client_side_validation && create_individual_data_consent_request.nil?
-        fail ArgumentError, "Missing the required parameter 'create_individual_data_consent_request' when calling DataConsentRequestsApi.create_individual_data_consent_request"
+      # verify the required parameter 'create_data_consent_request' is set
+      if @api_client.config.client_side_validation && create_data_consent_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_data_consent_request' when calling DataConsentRequestsApi.create_individual_data_consent_request"
       end
       # resource path
       local_var_path = '/v1/consent-requests/individual'
@@ -184,10 +184,10 @@ module MyDataMyConsent
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_individual_data_consent_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_data_consent_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'IndividualDataConsentRequestResponse'
+      return_type = opts[:debug_return_type] || 'IndividualDataConsentRequestDetails'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -209,28 +209,28 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Create a organization data consent request.
-    # Create a organization data consent request.
-    # @param create_organization_data_consent_request [CreateOrganizationDataConsentRequest] M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
+    # Create data consent request for an organization.
+    # Create data consent request for an organization.
+    # @param create_data_consent_request [CreateDataConsentRequest] The Organization data consent request payload
     # @param [Hash] opts the optional parameters
-    # @return [OrganizationDataConsentRequestResponse]
-    def create_organization_data_consent_request(create_organization_data_consent_request, opts = {})
-      data, _status_code, _headers = create_organization_data_consent_request_with_http_info(create_organization_data_consent_request, opts)
+    # @return [OrganizationDataConsentRequestDetails]
+    def create_organization_data_consent_request(create_data_consent_request, opts = {})
+      data, _status_code, _headers = create_organization_data_consent_request_with_http_info(create_data_consent_request, opts)
       data
     end
 
-    # Create a organization data consent request.
-    # Create a organization data consent request.
-    # @param create_organization_data_consent_request [CreateOrganizationDataConsentRequest] M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
+    # Create data consent request for an organization.
+    # Create data consent request for an organization.
+    # @param create_data_consent_request [CreateDataConsentRequest] The Organization data consent request payload
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OrganizationDataConsentRequestResponse, Integer, Hash)>] OrganizationDataConsentRequestResponse data, response status code and response headers
-    def create_organization_data_consent_request_with_http_info(create_organization_data_consent_request, opts = {})
+    # @return [Array<(OrganizationDataConsentRequestDetails, Integer, Hash)>] OrganizationDataConsentRequestDetails data, response status code and response headers
+    def create_organization_data_consent_request_with_http_info(create_data_consent_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentRequestsApi.create_organization_data_consent_request ...'
       end
-      # verify the required parameter 'create_organization_data_consent_request' is set
-      if @api_client.config.client_side_validation && create_organization_data_consent_request.nil?
-        fail ArgumentError, "Missing the required parameter 'create_organization_data_consent_request' when calling DataConsentRequestsApi.create_organization_data_consent_request"
+      # verify the required parameter 'create_data_consent_request' is set
+      if @api_client.config.client_side_validation && create_data_consent_request.nil?
+        fail ArgumentError, "Missing the required parameter 'create_data_consent_request' when calling DataConsentRequestsApi.create_organization_data_consent_request"
       end
       # resource path
       local_var_path = '/v1/consent-requests/organization'
@@ -252,10 +252,10 @@ module MyDataMyConsent
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_organization_data_consent_request)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(create_data_consent_request)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OrganizationDataConsentRequestResponse'
+      return_type = opts[:debug_return_type] || 'OrganizationDataConsentRequestDetails'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -277,27 +277,27 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Get all Consent Requests sent to Individuals.
+    # Get all Consent Requests sent to individuals.
     # @param [Hash] opts the optional parameters
     # @option opts [DataConsentStatus] :status Data consent status.
-    # @option opts [Time] :start_date_time Start date time.
-    # @option opts [Time] :end_date_time End date time.
+    # @option opts [Time] :start_date_time Start datetime in UTC timezone.
+    # @option opts [Time] :end_date_time End datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [UserDataConsentInfoDtoPaginatedList]
+    # @return [IndividualDataConsentRequestDetailsPaginatedList]
     def get_all_consent_requests_to_individuals(opts = {})
       data, _status_code, _headers = get_all_consent_requests_to_individuals_with_http_info(opts)
       data
     end
 
-    # Get all Consent Requests sent to Individuals.
+    # Get all Consent Requests sent to individuals.
     # @param [Hash] opts the optional parameters
     # @option opts [DataConsentStatus] :status Data consent status.
-    # @option opts [Time] :start_date_time Start date time.
-    # @option opts [Time] :end_date_time End date time.
+    # @option opts [Time] :start_date_time Start datetime in UTC timezone.
+    # @option opts [Time] :end_date_time End datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(UserDataConsentInfoDtoPaginatedList, Integer, Hash)>] UserDataConsentInfoDtoPaginatedList data, response status code and response headers
+    # @return [Array<(IndividualDataConsentRequestDetailsPaginatedList, Integer, Hash)>] IndividualDataConsentRequestDetailsPaginatedList data, response status code and response headers
     def get_all_consent_requests_to_individuals_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentRequestsApi.get_all_consent_requests_to_individuals ...'
@@ -325,7 +325,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'UserDataConsentInfoDtoPaginatedList'
+      return_type = opts[:debug_return_type] || 'IndividualDataConsentRequestDetailsPaginatedList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -347,27 +347,27 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Get All Consent Requests sent to Organizations.
+    # Get all Consent Requests sent to organizations.
     # @param [Hash] opts the optional parameters
     # @option opts [DataConsentStatus] :status Data consent status.
-    # @option opts [Time] :start_date_time Start date time.
-    # @option opts [Time] :end_date_time End date time.
+    # @option opts [Time] :start_date_time Start datetime in UTC timezone.
+    # @option opts [Time] :end_date_time End datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [OrganizationDataConsentInfoDtoPaginatedList]
+    # @return [OrganizationDataConsentRequestDetailsPaginatedList]
     def get_all_consent_requests_to_organizations(opts = {})
       data, _status_code, _headers = get_all_consent_requests_to_organizations_with_http_info(opts)
       data
     end
 
-    # Get All Consent Requests sent to Organizations.
+    # Get all Consent Requests sent to organizations.
     # @param [Hash] opts the optional parameters
     # @option opts [DataConsentStatus] :status Data consent status.
-    # @option opts [Time] :start_date_time Start date time.
-    # @option opts [Time] :end_date_time End date time.
+    # @option opts [Time] :start_date_time Start datetime in UTC timezone.
+    # @option opts [Time] :end_date_time End datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(OrganizationDataConsentInfoDtoPaginatedList, Integer, Hash)>] OrganizationDataConsentInfoDtoPaginatedList data, response status code and response headers
+    # @return [Array<(OrganizationDataConsentRequestDetailsPaginatedList, Integer, Hash)>] OrganizationDataConsentRequestDetailsPaginatedList data, response status code and response headers
     def get_all_consent_requests_to_organizations_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentRequestsApi.get_all_consent_requests_to_organizations ...'
@@ -395,7 +395,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OrganizationDataConsentInfoDtoPaginatedList'
+      return_type = opts[:debug_return_type] || 'OrganizationDataConsentRequestDetailsPaginatedList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -417,19 +417,19 @@ module MyDataMyConsent
       return data, status_code, headers
     end
 
-    # Get a Consent Request by ID.
-    # @param request_id [String] Individual consent request id.
+    # Get individual data consent request by id.
+    # @param request_id [String] Individual data consent request id.
     # @param [Hash] opts the optional parameters
-    # @return [DataConsentDetailsDto]
+    # @return [DataConsentRequest]
     def get_individual_consent_request_by_id(request_id, opts = {})
       data, _status_code, _headers = get_individual_consent_request_by_id_with_http_info(request_id, opts)
       data
     end
 
-    # Get a Consent Request by ID.
-    # @param request_id [String] Individual consent request id.
+    # Get individual data consent request by id.
+    # @param request_id [String] Individual data consent request id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(DataConsentDetailsDto, Integer, Hash)>] DataConsentDetailsDto data, response status code and response headers
+    # @return [Array<(DataConsentRequest, Integer, Hash)>] DataConsentRequest data, response status code and response headers
     def get_individual_consent_request_by_id_with_http_info(request_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentRequestsApi.get_individual_consent_request_by_id ...'
@@ -456,7 +456,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataConsentDetailsDto'
+      return_type = opts[:debug_return_type] || 'DataConsentRequest'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -481,7 +481,7 @@ module MyDataMyConsent
     # Get a OrganizationConsent Request by Id.
     # @param request_id [String] Organization consent request id.
     # @param [Hash] opts the optional parameters
-    # @return [DataConsentDetailsDto]
+    # @return [DataConsentRequest]
     def get_organization_consent_request_by_id(request_id, opts = {})
       data, _status_code, _headers = get_organization_consent_request_by_id_with_http_info(request_id, opts)
       data
@@ -490,7 +490,7 @@ module MyDataMyConsent
     # Get a OrganizationConsent Request by Id.
     # @param request_id [String] Organization consent request id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(DataConsentDetailsDto, Integer, Hash)>] DataConsentDetailsDto data, response status code and response headers
+    # @return [Array<(DataConsentRequest, Integer, Hash)>] DataConsentRequest data, response status code and response headers
     def get_organization_consent_request_by_id_with_http_info(request_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentRequestsApi.get_organization_consent_request_by_id ...'
@@ -517,7 +517,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'DataConsentDetailsDto'
+      return_type = opts[:debug_return_type] || 'DataConsentRequest'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

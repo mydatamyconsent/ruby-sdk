@@ -7,14 +7,14 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 | [**create_data_processing_agreement**](DataProcessingAgreementsApi.md#create_data_processing_agreement) | **POST** /v1/data-agreements | Create a data processing agreement. |
 | [**delete_data_processing_agreement_by_id**](DataProcessingAgreementsApi.md#delete_data_processing_agreement_by_id) | **DELETE** /v1/data-agreements/{id} | Delete a data processing agreement. This will not delete a published or a agreement in use with consents. |
 | [**get_data_processing_agreement_by_id**](DataProcessingAgreementsApi.md#get_data_processing_agreement_by_id) | **GET** /v1/data-agreements/{id} | Get data processing agreement by id. |
-| [**get_data_processing_agreements**](DataProcessingAgreementsApi.md#get_data_processing_agreements) | **GET** /v1/data-agreements | Get all data processing agreements. |
+| [**get_data_processing_agreements**](DataProcessingAgreementsApi.md#get_data_processing_agreements) | **GET** /v1/data-agreements | Get paginated data processing agreements. |
 | [**terminate_data_processing_agreement_by_id**](DataProcessingAgreementsApi.md#terminate_data_processing_agreement_by_id) | **PUT** /v1/data-agreements/{id}/terminate | Terminate a data processing agreement. |
 | [**update_data_processing_agreement**](DataProcessingAgreementsApi.md#update_data_processing_agreement) | **PUT** /v1/data-agreements/{id} | Update a data processing agreement. |
 
 
 ## create_data_processing_agreement
 
-> <DataProcessingAgreementDto> create_data_processing_agreement(opts)
+> <DataProcessingAgreement> create_data_processing_agreement(create_data_processing_agreement)
 
 Create a data processing agreement.
 
@@ -25,13 +25,11 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
-opts = {
-  create_data_processing_agreement_request_model: MyDataMyConsent::CreateDataProcessingAgreementRequestModel.new({version: 'version_example', body: 'body_example', attachment_url: 'attachment_url_example'}) # CreateDataProcessingAgreementRequestModel | Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.
-}
+create_data_processing_agreement = MyDataMyConsent::CreateDataProcessingAgreement.new({version: 'version_example', body: 'body_example', attachment_url: 'attachment_url_example'}) # CreateDataProcessingAgreement | Create data processing agreement payload
 
 begin
   # Create a data processing agreement.
-  result = api_instance.create_data_processing_agreement(opts)
+  result = api_instance.create_data_processing_agreement(create_data_processing_agreement)
   p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->create_data_processing_agreement: #{e}"
@@ -42,15 +40,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataProcessingAgreementDto>, Integer, Hash)> create_data_processing_agreement_with_http_info(opts)
+> <Array(<DataProcessingAgreement>, Integer, Hash)> create_data_processing_agreement_with_http_info(create_data_processing_agreement)
 
 ```ruby
 begin
   # Create a data processing agreement.
-  data, status_code, headers = api_instance.create_data_processing_agreement_with_http_info(opts)
+  data, status_code, headers = api_instance.create_data_processing_agreement_with_http_info(create_data_processing_agreement)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DataProcessingAgreementDto>
+  p data # => <DataProcessingAgreement>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->create_data_processing_agreement_with_http_info: #{e}"
 end
@@ -60,11 +58,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **create_data_processing_agreement_request_model** | [**CreateDataProcessingAgreementRequestModel**](CreateDataProcessingAgreementRequestModel.md) | Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel. | [optional] |
+| **create_data_processing_agreement** | [**CreateDataProcessingAgreement**](CreateDataProcessingAgreement.md) | Create data processing agreement payload |  |
 
 ### Return type
 
-[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+[**DataProcessingAgreement**](DataProcessingAgreement.md)
 
 ### Authorization
 
@@ -139,7 +137,7 @@ No authorization required
 
 ## get_data_processing_agreement_by_id
 
-> <DataProcessingAgreementDto> get_data_processing_agreement_by_id(id)
+> <DataProcessingAgreement> get_data_processing_agreement_by_id(id)
 
 Get data processing agreement by id.
 
@@ -165,7 +163,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataProcessingAgreementDto>, Integer, Hash)> get_data_processing_agreement_by_id_with_http_info(id)
+> <Array(<DataProcessingAgreement>, Integer, Hash)> get_data_processing_agreement_by_id_with_http_info(id)
 
 ```ruby
 begin
@@ -173,7 +171,7 @@ begin
   data, status_code, headers = api_instance.get_data_processing_agreement_by_id_with_http_info(id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DataProcessingAgreementDto>
+  p data # => <DataProcessingAgreement>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->get_data_processing_agreement_by_id_with_http_info: #{e}"
 end
@@ -187,7 +185,7 @@ end
 
 ### Return type
 
-[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+[**DataProcessingAgreement**](DataProcessingAgreement.md)
 
 ### Authorization
 
@@ -201,9 +199,9 @@ No authorization required
 
 ## get_data_processing_agreements
 
-> <DataProcessingAgreementDtoPaginatedList> get_data_processing_agreements(opts)
+> <DataProcessingAgreementPaginatedList> get_data_processing_agreements(opts)
 
-Get all data processing agreements.
+Get paginated data processing agreements.
 
 ### Examples
 
@@ -218,7 +216,7 @@ opts = {
 }
 
 begin
-  # Get all data processing agreements.
+  # Get paginated data processing agreements.
   result = api_instance.get_data_processing_agreements(opts)
   p result
 rescue MyDataMyConsent::ApiError => e
@@ -230,15 +228,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataProcessingAgreementDtoPaginatedList>, Integer, Hash)> get_data_processing_agreements_with_http_info(opts)
+> <Array(<DataProcessingAgreementPaginatedList>, Integer, Hash)> get_data_processing_agreements_with_http_info(opts)
 
 ```ruby
 begin
-  # Get all data processing agreements.
+  # Get paginated data processing agreements.
   data, status_code, headers = api_instance.get_data_processing_agreements_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DataProcessingAgreementDtoPaginatedList>
+  p data # => <DataProcessingAgreementPaginatedList>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->get_data_processing_agreements_with_http_info: #{e}"
 end
@@ -253,7 +251,7 @@ end
 
 ### Return type
 
-[**DataProcessingAgreementDtoPaginatedList**](DataProcessingAgreementDtoPaginatedList.md)
+[**DataProcessingAgreementPaginatedList**](DataProcessingAgreementPaginatedList.md)
 
 ### Authorization
 
@@ -328,7 +326,7 @@ No authorization required
 
 ## update_data_processing_agreement
 
-> <DataProcessingAgreementDto> update_data_processing_agreement(id, opts)
+> <DataProcessingAgreement> update_data_processing_agreement(id, update_data_processing_agreement)
 
 Update a data processing agreement.
 
@@ -340,13 +338,11 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Agreement id.
-opts = {
-  update_data_processing_agreement_request_model: MyDataMyConsent::UpdateDataProcessingAgreementRequestModel.new({version: 'version_example', body: 'body_example', attachment_url: 'attachment_url_example'}) # UpdateDataProcessingAgreementRequestModel | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
-}
+update_data_processing_agreement = MyDataMyConsent::UpdateDataProcessingAgreement.new({version: 'version_example', body: 'body_example', attachment_url: 'attachment_url_example'}) # UpdateDataProcessingAgreement | Update data processing agreement payload
 
 begin
   # Update a data processing agreement.
-  result = api_instance.update_data_processing_agreement(id, opts)
+  result = api_instance.update_data_processing_agreement(id, update_data_processing_agreement)
   p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->update_data_processing_agreement: #{e}"
@@ -357,15 +353,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<DataProcessingAgreementDto>, Integer, Hash)> update_data_processing_agreement_with_http_info(id, opts)
+> <Array(<DataProcessingAgreement>, Integer, Hash)> update_data_processing_agreement_with_http_info(id, update_data_processing_agreement)
 
 ```ruby
 begin
   # Update a data processing agreement.
-  data, status_code, headers = api_instance.update_data_processing_agreement_with_http_info(id, opts)
+  data, status_code, headers = api_instance.update_data_processing_agreement_with_http_info(id, update_data_processing_agreement)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <DataProcessingAgreementDto>
+  p data # => <DataProcessingAgreement>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataProcessingAgreementsApi->update_data_processing_agreement_with_http_info: #{e}"
 end
@@ -376,11 +372,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Agreement id. |  |
-| **update_data_processing_agreement_request_model** | [**UpdateDataProcessingAgreementRequestModel**](UpdateDataProcessingAgreementRequestModel.md) | Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel. | [optional] |
+| **update_data_processing_agreement** | [**UpdateDataProcessingAgreement**](UpdateDataProcessingAgreement.md) | Update data processing agreement payload |  |
 
 ### Return type
 
-[**DataProcessingAgreementDto**](DataProcessingAgreementDto.md)
+[**DataProcessingAgreement**](DataProcessingAgreement.md)
 
 ### Authorization
 

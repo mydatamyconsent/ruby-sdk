@@ -20,21 +20,25 @@ module MyDataMyConsent
       @api_client = api_client
     end
     # Digilocker Compatible endpoint to issue document.
+    # @param push_uri_request [PushUriRequest] Push URI request payload
     # @param [Hash] opts the optional parameters
-    # @option opts [PushUriRequest] :push_uri_request Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
     # @return [PushUriResponse]
-    def digilocker_compat_issue_document(opts = {})
-      data, _status_code, _headers = digilocker_compat_issue_document_with_http_info(opts)
+    def digilocker_compat_issue_document(push_uri_request, opts = {})
+      data, _status_code, _headers = digilocker_compat_issue_document_with_http_info(push_uri_request, opts)
       data
     end
 
     # Digilocker Compatible endpoint to issue document.
+    # @param push_uri_request [PushUriRequest] Push URI request payload
     # @param [Hash] opts the optional parameters
-    # @option opts [PushUriRequest] :push_uri_request Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
     # @return [Array<(PushUriResponse, Integer, Hash)>] PushUriResponse data, response status code and response headers
-    def digilocker_compat_issue_document_with_http_info(opts = {})
+    def digilocker_compat_issue_document_with_http_info(push_uri_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DigiLockerCompatIssuerApi.digilocker_compat_issue_document ...'
+      end
+      # verify the required parameter 'push_uri_request' is set
+      if @api_client.config.client_side_validation && push_uri_request.nil?
+        fail ArgumentError, "Missing the required parameter 'push_uri_request' when calling DigiLockerCompatIssuerApi.digilocker_compat_issue_document"
       end
       # resource path
       local_var_path = '/issuer/issuedoc/1/xml'
@@ -56,7 +60,7 @@ module MyDataMyConsent
       form_params = opts[:form_params] || {}
 
       # http body (model)
-      post_body = opts[:debug_body] || @api_client.object_to_http_body(opts[:'push_uri_request'])
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(push_uri_request)
 
       # return_type
       return_type = opts[:debug_return_type] || 'PushUriResponse'
