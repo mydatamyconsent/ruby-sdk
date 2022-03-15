@@ -26,7 +26,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 ## download_consented_document_analysis
 
-> download_consented_document_analysis(consent_id, document_id)
+> Object download_consented_document_analysis(consent_id, document_id)
 
 Get analysis of a consented document.
 
@@ -42,7 +42,8 @@ document_id = 'document_id_example' # String | Consented document Id.
 
 begin
   # Get analysis of a consented document.
-  api_instance.download_consented_document_analysis(consent_id, document_id)
+  result = api_instance.download_consented_document_analysis(consent_id, document_id)
+  p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->download_consented_document_analysis: #{e}"
 end
@@ -50,9 +51,9 @@ end
 
 #### Using the download_consented_document_analysis_with_http_info variant
 
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
+This returns an Array which contains the response data, status code and headers.
 
-> <Array(nil, Integer, Hash)> download_consented_document_analysis_with_http_info(consent_id, document_id)
+> <Array(Object, Integer, Hash)> download_consented_document_analysis_with_http_info(consent_id, document_id)
 
 ```ruby
 begin
@@ -60,7 +61,7 @@ begin
   data, status_code, headers = api_instance.download_consented_document_analysis_with_http_info(consent_id, document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => nil
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->download_consented_document_analysis_with_http_info: #{e}"
 end
@@ -75,7 +76,7 @@ end
 
 ### Return type
 
-nil (empty response body)
+**Object**
 
 ### Authorization
 
@@ -89,7 +90,7 @@ No authorization required
 
 ## download_individual_consented_document_by_id
 
-> download_individual_consented_document_by_id(consent_id, document_id)
+> Object download_individual_consented_document_by_id(consent_id, document_id)
 
 Download individual consented document by document id.
 
@@ -101,11 +102,12 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Individual data consent id.
-document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consented document id.
+document_id = 'document_id_example' # String | Consented document id.
 
 begin
   # Download individual consented document by document id.
-  api_instance.download_individual_consented_document_by_id(consent_id, document_id)
+  result = api_instance.download_individual_consented_document_by_id(consent_id, document_id)
+  p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->download_individual_consented_document_by_id: #{e}"
 end
@@ -113,9 +115,9 @@ end
 
 #### Using the download_individual_consented_document_by_id_with_http_info variant
 
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
+This returns an Array which contains the response data, status code and headers.
 
-> <Array(nil, Integer, Hash)> download_individual_consented_document_by_id_with_http_info(consent_id, document_id)
+> <Array(Object, Integer, Hash)> download_individual_consented_document_by_id_with_http_info(consent_id, document_id)
 
 ```ruby
 begin
@@ -123,7 +125,7 @@ begin
   data, status_code, headers = api_instance.download_individual_consented_document_by_id_with_http_info(consent_id, document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => nil
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->download_individual_consented_document_by_id_with_http_info: #{e}"
 end
@@ -138,7 +140,7 @@ end
 
 ### Return type
 
-nil (empty response body)
+**Object**
 
 ### Authorization
 
@@ -152,7 +154,7 @@ No authorization required
 
 ## download_organization_consented_document_by_id
 
-> download_organization_consented_document_by_id(consent_id, document_id)
+> Object download_organization_consented_document_by_id(consent_id, document_id)
 
 Download organization consent document based on document id.
 
@@ -164,11 +166,12 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Organization data consent id.
-document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Organization consented document Id.
+document_id = 'document_id_example' # String | Organization consented document Id.
 
 begin
   # Download organization consent document based on document id.
-  api_instance.download_organization_consented_document_by_id(consent_id, document_id)
+  result = api_instance.download_organization_consented_document_by_id(consent_id, document_id)
+  p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->download_organization_consented_document_by_id: #{e}"
 end
@@ -176,9 +179,9 @@ end
 
 #### Using the download_organization_consented_document_by_id_with_http_info variant
 
-This returns an Array which contains the response data (`nil` in this case), status code and headers.
+This returns an Array which contains the response data, status code and headers.
 
-> <Array(nil, Integer, Hash)> download_organization_consented_document_by_id_with_http_info(consent_id, document_id)
+> <Array(Object, Integer, Hash)> download_organization_consented_document_by_id_with_http_info(consent_id, document_id)
 
 ```ruby
 begin
@@ -186,7 +189,7 @@ begin
   data, status_code, headers = api_instance.download_organization_consented_document_by_id_with_http_info(consent_id, document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => nil
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->download_organization_consented_document_by_id_with_http_info: #{e}"
 end
@@ -201,7 +204,7 @@ end
 
 ### Return type
 
-nil (empty response body)
+**Object**
 
 ### Authorization
 
@@ -403,7 +406,7 @@ No authorization required
 
 ## get_consented_document_by_id
 
-> <IndividualDataConsentDocument> get_consented_document_by_id(consent_id, document_id)
+> Object get_consented_document_by_id(consent_id, document_id)
 
 Get individual consented document by document id.
 
@@ -415,7 +418,7 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Individual data consent id.
-document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Consented document id.
+document_id = 'document_id_example' # String | Consented document id.
 
 begin
   # Get individual consented document by document id.
@@ -430,7 +433,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<IndividualDataConsentDocument>, Integer, Hash)> get_consented_document_by_id_with_http_info(consent_id, document_id)
+> <Array(Object, Integer, Hash)> get_consented_document_by_id_with_http_info(consent_id, document_id)
 
 ```ruby
 begin
@@ -438,7 +441,7 @@ begin
   data, status_code, headers = api_instance.get_consented_document_by_id_with_http_info(consent_id, document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <IndividualDataConsentDocument>
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->get_consented_document_by_id_with_http_info: #{e}"
 end
@@ -453,7 +456,7 @@ end
 
 ### Return type
 
-[**IndividualDataConsentDocument**](IndividualDataConsentDocument.md)
+**Object**
 
 ### Authorization
 
@@ -670,7 +673,7 @@ No authorization required
 
 ## get_consents
 
-> <IndividualDataConsentDetailsPaginatedList> get_consents(opts)
+> Object get_consents(opts)
 
 Get the paginated list of individual data consents.
 
@@ -704,7 +707,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<IndividualDataConsentDetailsPaginatedList>, Integer, Hash)> get_consents_with_http_info(opts)
+> <Array(Object, Integer, Hash)> get_consents_with_http_info(opts)
 
 ```ruby
 begin
@@ -712,7 +715,7 @@ begin
   data, status_code, headers = api_instance.get_consents_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <IndividualDataConsentDetailsPaginatedList>
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->get_consents_with_http_info: #{e}"
 end
@@ -730,7 +733,7 @@ end
 
 ### Return type
 
-[**IndividualDataConsentDetailsPaginatedList**](IndividualDataConsentDetailsPaginatedList.md)
+**Object**
 
 ### Authorization
 
@@ -744,7 +747,7 @@ No authorization required
 
 ## get_individual_consented_documents
 
-> <Array<IndividualDataConsentDocument>> get_individual_consented_documents(consent_id)
+> Object get_individual_consented_documents(consent_id)
 
 Get individual consented documents by consent id.
 
@@ -770,7 +773,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IndividualDataConsentDocument>>, Integer, Hash)> get_individual_consented_documents_with_http_info(consent_id)
+> <Array(Object, Integer, Hash)> get_individual_consented_documents_with_http_info(consent_id)
 
 ```ruby
 begin
@@ -778,7 +781,7 @@ begin
   data, status_code, headers = api_instance.get_individual_consented_documents_with_http_info(consent_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<IndividualDataConsentDocument>>
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->get_individual_consented_documents_with_http_info: #{e}"
 end
@@ -792,7 +795,7 @@ end
 
 ### Return type
 
-[**Array&lt;IndividualDataConsentDocument&gt;**](IndividualDataConsentDocument.md)
+**Object**
 
 ### Authorization
 
@@ -806,7 +809,7 @@ No authorization required
 
 ## get_individual_data_consent_by_id
 
-> <OneOfDataConsentIndividualDataConsentOrganizationDataConsent> get_individual_data_consent_by_id(consent_id)
+> Object get_individual_data_consent_by_id(consent_id)
 
 Get individuals data consent details by consent id.
 
@@ -832,7 +835,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OneOfDataConsentIndividualDataConsentOrganizationDataConsent>, Integer, Hash)> get_individual_data_consent_by_id_with_http_info(consent_id)
+> <Array(Object, Integer, Hash)> get_individual_data_consent_by_id_with_http_info(consent_id)
 
 ```ruby
 begin
@@ -840,7 +843,7 @@ begin
   data, status_code, headers = api_instance.get_individual_data_consent_by_id_with_http_info(consent_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OneOfDataConsentIndividualDataConsentOrganizationDataConsent>
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->get_individual_data_consent_by_id_with_http_info: #{e}"
 end
@@ -854,7 +857,7 @@ end
 
 ### Return type
 
-[**OneOfDataConsentIndividualDataConsentOrganizationDataConsent**](OneOfDataConsentIndividualDataConsentOrganizationDataConsent.md)
+**Object**
 
 ### Authorization
 
@@ -944,7 +947,7 @@ No authorization required
 
 ## get_organization_consented_document_by_id
 
-> <OrganizationDataConsentDocument> get_organization_consented_document_by_id(consent_id, document_id)
+> Object get_organization_consented_document_by_id(consent_id, document_id)
 
 Get organization consent document based on document id.
 
@@ -956,7 +959,7 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DataConsentsApi.new
 consent_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Organization data consent id.
-document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Organization consented document Id.
+document_id = 'document_id_example' # String | Organization consented document Id.
 
 begin
   # Get organization consent document based on document id.
@@ -971,7 +974,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OrganizationDataConsentDocument>, Integer, Hash)> get_organization_consented_document_by_id_with_http_info(consent_id, document_id)
+> <Array(Object, Integer, Hash)> get_organization_consented_document_by_id_with_http_info(consent_id, document_id)
 
 ```ruby
 begin
@@ -979,7 +982,7 @@ begin
   data, status_code, headers = api_instance.get_organization_consented_document_by_id_with_http_info(consent_id, document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OrganizationDataConsentDocument>
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->get_organization_consented_document_by_id_with_http_info: #{e}"
 end
@@ -994,7 +997,7 @@ end
 
 ### Return type
 
-[**OrganizationDataConsentDocument**](OrganizationDataConsentDocument.md)
+**Object**
 
 ### Authorization
 
@@ -1008,7 +1011,7 @@ No authorization required
 
 ## get_organization_consented_documents
 
-> <Array<OrganizationDataConsentDocument>> get_organization_consented_documents(consent_id)
+> Object get_organization_consented_documents(consent_id)
 
 Get organization consented documents by consent id.
 
@@ -1034,7 +1037,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<OrganizationDataConsentDocument>>, Integer, Hash)> get_organization_consented_documents_with_http_info(consent_id)
+> <Array(Object, Integer, Hash)> get_organization_consented_documents_with_http_info(consent_id)
 
 ```ruby
 begin
@@ -1042,7 +1045,7 @@ begin
   data, status_code, headers = api_instance.get_organization_consented_documents_with_http_info(consent_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<OrganizationDataConsentDocument>>
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->get_organization_consented_documents_with_http_info: #{e}"
 end
@@ -1056,7 +1059,7 @@ end
 
 ### Return type
 
-[**Array&lt;OrganizationDataConsentDocument&gt;**](OrganizationDataConsentDocument.md)
+**Object**
 
 ### Authorization
 
@@ -1070,7 +1073,7 @@ No authorization required
 
 ## get_organization_data_consent_by_id
 
-> <OneOfDataConsentIndividualDataConsentOrganizationDataConsent> get_organization_data_consent_by_id(consent_id)
+> Object get_organization_data_consent_by_id(consent_id)
 
 Get organizations data consent details by consent id.
 
@@ -1096,7 +1099,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OneOfDataConsentIndividualDataConsentOrganizationDataConsent>, Integer, Hash)> get_organization_data_consent_by_id_with_http_info(consent_id)
+> <Array(Object, Integer, Hash)> get_organization_data_consent_by_id_with_http_info(consent_id)
 
 ```ruby
 begin
@@ -1104,7 +1107,7 @@ begin
   data, status_code, headers = api_instance.get_organization_data_consent_by_id_with_http_info(consent_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OneOfDataConsentIndividualDataConsentOrganizationDataConsent>
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->get_organization_data_consent_by_id_with_http_info: #{e}"
 end
@@ -1118,7 +1121,7 @@ end
 
 ### Return type
 
-[**OneOfDataConsentIndividualDataConsentOrganizationDataConsent**](OneOfDataConsentIndividualDataConsentOrganizationDataConsent.md)
+**Object**
 
 ### Authorization
 
@@ -1132,7 +1135,7 @@ No authorization required
 
 ## get_organization_data_consents
 
-> <OrganizationDataConsentDetailsPaginatedList> get_organization_data_consents(opts)
+> Object get_organization_data_consents(opts)
 
 Get the paginated list of organization data consents.
 
@@ -1164,7 +1167,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OrganizationDataConsentDetailsPaginatedList>, Integer, Hash)> get_organization_data_consents_with_http_info(opts)
+> <Array(Object, Integer, Hash)> get_organization_data_consents_with_http_info(opts)
 
 ```ruby
 begin
@@ -1172,7 +1175,7 @@ begin
   data, status_code, headers = api_instance.get_organization_data_consents_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OrganizationDataConsentDetailsPaginatedList>
+  p data # => Object
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DataConsentsApi->get_organization_data_consents_with_http_info: #{e}"
 end
@@ -1190,7 +1193,7 @@ end
 
 ### Return type
 
-[**OrganizationDataConsentDetailsPaginatedList**](OrganizationDataConsentDetailsPaginatedList.md)
+**Object**
 
 ### Authorization
 
