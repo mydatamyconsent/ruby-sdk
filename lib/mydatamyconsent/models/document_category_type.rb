@@ -19,7 +19,7 @@ module MyDataMyConsent
     EDUCATION = "Education".freeze
     HEALTH = "Health".freeze
     FINANCE = "Finance".freeze
-    WORK_AND_AWARDS = "WorkAndAwards".freeze
+    PROFESSIONAL = "Professional".freeze
     LICENCES_AND_CERTIFICATES = "LicencesAndCertificates".freeze
     OTHERS = "Others".freeze
 
