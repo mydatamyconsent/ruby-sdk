@@ -31,6 +31,12 @@ module MyDataMyConsent
     # Issued datetime in UTC timezone.
     attr_accessor :issued_at_utc
 
+    # Expires datetime in UTC timezone.
+    attr_accessor :expires_at_utc
+
+    # Accepted datetime in UTC timezone.
+    attr_accessor :accepted_at_utc
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -38,7 +44,9 @@ module MyDataMyConsent
         :'identifier' => :'identifier',
         :'document_type' => :'documentType',
         :'issued_to' => :'issuedTo',
-        :'issued_at_utc' => :'issuedAtUtc'
+        :'issued_at_utc' => :'issuedAtUtc',
+        :'expires_at_utc' => :'expiresAtUtc',
+        :'accepted_at_utc' => :'acceptedAtUtc'
       }
     end
 
@@ -54,13 +62,17 @@ module MyDataMyConsent
         :'identifier' => :'String',
         :'document_type' => :'String',
         :'issued_to' => :'String',
-        :'issued_at_utc' => :'Time'
+        :'issued_at_utc' => :'Time',
+        :'expires_at_utc' => :'Time',
+        :'accepted_at_utc' => :'Time'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'expires_at_utc',
+        :'accepted_at_utc'
       ])
     end
 
@@ -97,6 +109,14 @@ module MyDataMyConsent
 
       if attributes.key?(:'issued_at_utc')
         self.issued_at_utc = attributes[:'issued_at_utc']
+      end
+
+      if attributes.key?(:'expires_at_utc')
+        self.expires_at_utc = attributes[:'expires_at_utc']
+      end
+
+      if attributes.key?(:'accepted_at_utc')
+        self.accepted_at_utc = attributes[:'accepted_at_utc']
       end
     end
 
@@ -147,7 +167,9 @@ module MyDataMyConsent
           identifier == o.identifier &&
           document_type == o.document_type &&
           issued_to == o.issued_to &&
-          issued_at_utc == o.issued_at_utc
+          issued_at_utc == o.issued_at_utc &&
+          expires_at_utc == o.expires_at_utc &&
+          accepted_at_utc == o.accepted_at_utc
     end
 
     # @see the `==` method
@@ -159,7 +181,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, identifier, document_type, issued_to, issued_at_utc].hash
+      [id, identifier, document_type, issued_to, issued_at_utc, expires_at_utc, accepted_at_utc].hash
     end
 
     # Builds the object from hash

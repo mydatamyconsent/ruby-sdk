@@ -23,17 +23,17 @@ module MyDataMyConsent
     # @param consent_id [String] Data consent id.
     # @param document_id [String] Consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [nil]
     def download_consented_document_analysis(consent_id, document_id, opts = {})
-      data, _status_code, _headers = download_consented_document_analysis_with_http_info(consent_id, document_id, opts)
-      data
+      download_consented_document_analysis_with_http_info(consent_id, document_id, opts)
+      nil
     end
 
     # Get analysis of a consented document.
     # @param consent_id [String] Data consent id.
     # @param document_id [String] Consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def download_consented_document_analysis_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.download_consented_document_analysis ...'
@@ -64,7 +64,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -90,17 +90,17 @@ module MyDataMyConsent
     # @param consent_id [String] Individual data consent id.
     # @param document_id [String] Consented document id.
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [nil]
     def download_individual_consented_document_by_id(consent_id, document_id, opts = {})
-      data, _status_code, _headers = download_individual_consented_document_by_id_with_http_info(consent_id, document_id, opts)
-      data
+      download_individual_consented_document_by_id_with_http_info(consent_id, document_id, opts)
+      nil
     end
 
     # Download individual consented document by document id.
     # @param consent_id [String] Individual data consent id.
     # @param document_id [String] Consented document id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def download_individual_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.download_individual_consented_document_by_id ...'
@@ -131,7 +131,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -157,17 +157,17 @@ module MyDataMyConsent
     # @param consent_id [String] Organization data consent id.
     # @param document_id [String] Organization consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [nil]
     def download_organization_consented_document_by_id(consent_id, document_id, opts = {})
-      data, _status_code, _headers = download_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts)
-      data
+      download_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts)
+      nil
     end
 
     # Download organization consent document based on document id.
     # @param consent_id [String] Organization data consent id.
     # @param document_id [String] Organization consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def download_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.download_organization_consented_document_by_id ...'
@@ -198,7 +198,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type]
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -413,7 +413,7 @@ module MyDataMyConsent
     # @param consent_id [String] Individual data consent id.
     # @param document_id [String] Consented document id.
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [DataConsentDocument]
     def get_consented_document_by_id(consent_id, document_id, opts = {})
       data, _status_code, _headers = get_consented_document_by_id_with_http_info(consent_id, document_id, opts)
       data
@@ -423,7 +423,7 @@ module MyDataMyConsent
     # @param consent_id [String] Individual data consent id.
     # @param document_id [String] Consented document id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(DataConsentDocument, Integer, Hash)>] DataConsentDocument data, response status code and response headers
     def get_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_consented_document_by_id ...'
@@ -454,7 +454,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'DataConsentDocument'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -695,12 +695,12 @@ module MyDataMyConsent
     # Get the paginated list of individual data consents.
     # GetIndividualDataConsents
     # @param [Hash] opts the optional parameters
-    # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+    # @option opts [DataConsentStatus] :status Data consent status.
     # @option opts [Time] :from_date_time From datetime in UTC timezone.
     # @option opts [Time] :to_date_time To datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [Object]
+    # @return [DataConsentDetailsPaginatedList]
     def get_consents(opts = {})
       data, _status_code, _headers = get_consents_with_http_info(opts)
       data
@@ -709,12 +709,12 @@ module MyDataMyConsent
     # Get the paginated list of individual data consents.
     # GetIndividualDataConsents
     # @param [Hash] opts the optional parameters
-    # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+    # @option opts [DataConsentStatus] :status Data consent status.
     # @option opts [Time] :from_date_time From datetime in UTC timezone.
     # @option opts [Time] :to_date_time To datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(DataConsentDetailsPaginatedList, Integer, Hash)>] DataConsentDetailsPaginatedList data, response status code and response headers
     def get_consents_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_consents ...'
@@ -742,7 +742,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'DataConsentDetailsPaginatedList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -767,7 +767,7 @@ module MyDataMyConsent
     # Get individual consented documents by consent id.
     # @param consent_id [String] Individual data consent id.
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [Array<DataConsentDocument>]
     def get_individual_consented_documents(consent_id, opts = {})
       data, _status_code, _headers = get_individual_consented_documents_with_http_info(consent_id, opts)
       data
@@ -776,7 +776,7 @@ module MyDataMyConsent
     # Get individual consented documents by consent id.
     # @param consent_id [String] Individual data consent id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(Array<DataConsentDocument>, Integer, Hash)>] Array<DataConsentDocument> data, response status code and response headers
     def get_individual_consented_documents_with_http_info(consent_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_individual_consented_documents ...'
@@ -803,7 +803,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'Array<DataConsentDocument>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -828,7 +828,7 @@ module MyDataMyConsent
     # Get individuals data consent details by consent id.
     # @param consent_id [String] Individual data consent id.
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [DataConsent]
     def get_individual_data_consent_by_id(consent_id, opts = {})
       data, _status_code, _headers = get_individual_data_consent_by_id_with_http_info(consent_id, opts)
       data
@@ -837,7 +837,7 @@ module MyDataMyConsent
     # Get individuals data consent details by consent id.
     # @param consent_id [String] Individual data consent id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(DataConsent, Integer, Hash)>] DataConsent data, response status code and response headers
     def get_individual_data_consent_by_id_with_http_info(consent_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_individual_data_consent_by_id ...'
@@ -864,7 +864,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'DataConsent'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -972,7 +972,7 @@ module MyDataMyConsent
     # @param consent_id [String] Organization data consent id.
     # @param document_id [String] Organization consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [DataConsentDocument]
     def get_organization_consented_document_by_id(consent_id, document_id, opts = {})
       data, _status_code, _headers = get_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts)
       data
@@ -982,7 +982,7 @@ module MyDataMyConsent
     # @param consent_id [String] Organization data consent id.
     # @param document_id [String] Organization consented document Id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(DataConsentDocument, Integer, Hash)>] DataConsentDocument data, response status code and response headers
     def get_organization_consented_document_by_id_with_http_info(consent_id, document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_consented_document_by_id ...'
@@ -1013,7 +1013,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'DataConsentDocument'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1038,7 +1038,7 @@ module MyDataMyConsent
     # Get organization consented documents by consent id.
     # @param consent_id [String] Organization data consent id.
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [Array<DataConsentDocument>]
     def get_organization_consented_documents(consent_id, opts = {})
       data, _status_code, _headers = get_organization_consented_documents_with_http_info(consent_id, opts)
       data
@@ -1047,7 +1047,7 @@ module MyDataMyConsent
     # Get organization consented documents by consent id.
     # @param consent_id [String] Organization data consent id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(Array<DataConsentDocument>, Integer, Hash)>] Array<DataConsentDocument> data, response status code and response headers
     def get_organization_consented_documents_with_http_info(consent_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_consented_documents ...'
@@ -1074,7 +1074,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'Array<DataConsentDocument>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1099,7 +1099,7 @@ module MyDataMyConsent
     # Get organizations data consent details by consent id.
     # @param consent_id [String] Organization data consent id.
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [DataConsent]
     def get_organization_data_consent_by_id(consent_id, opts = {})
       data, _status_code, _headers = get_organization_data_consent_by_id_with_http_info(consent_id, opts)
       data
@@ -1108,7 +1108,7 @@ module MyDataMyConsent
     # Get organizations data consent details by consent id.
     # @param consent_id [String] Organization data consent id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(DataConsent, Integer, Hash)>] DataConsent data, response status code and response headers
     def get_organization_data_consent_by_id_with_http_info(consent_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_data_consent_by_id ...'
@@ -1135,7 +1135,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'DataConsent'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1159,12 +1159,12 @@ module MyDataMyConsent
 
     # Get the paginated list of organization data consents.
     # @param [Hash] opts the optional parameters
-    # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+    # @option opts [DataConsentStatus] :status Data consent status.
     # @option opts [Time] :from_date_time From datetime in UTC timezone.
     # @option opts [Time] :to_date_time To datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
-    # @return [Object]
+    # @return [DataConsentDetailsPaginatedList]
     def get_organization_data_consents(opts = {})
       data, _status_code, _headers = get_organization_data_consents_with_http_info(opts)
       data
@@ -1172,12 +1172,12 @@ module MyDataMyConsent
 
     # Get the paginated list of organization data consents.
     # @param [Hash] opts the optional parameters
-    # @option opts [DataConsentStatus] :status Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+    # @option opts [DataConsentStatus] :status Data consent status.
     # @option opts [Time] :from_date_time From datetime in UTC timezone.
     # @option opts [Time] :to_date_time To datetime in UTC timezone.
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(DataConsentDetailsPaginatedList, Integer, Hash)>] DataConsentDetailsPaginatedList data, response status code and response headers
     def get_organization_data_consents_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DataConsentsApi.get_organization_data_consents ...'
@@ -1205,7 +1205,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'DataConsentDetailsPaginatedList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

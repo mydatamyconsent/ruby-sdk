@@ -1,4 +1,4 @@
-# MyDataMyConsent::IssuedDocumentPaginatedList
+# MyDataMyConsent::DataConsentDetailsPaginatedList
 
 ## Properties
 
@@ -8,14 +8,14 @@
 | **page_size** | **Integer** |  | [optional] |
 | **total_pages** | **Integer** |  | [optional][readonly] |
 | **total_items** | **Integer** |  | [optional] |
-| **items** | [**Array&lt;OneOfIssuedDocumentIssuedDocumentDetails&gt;**](OneOfIssuedDocumentIssuedDocumentDetails.md) |  | [optional] |
+| **items** | [**Array&lt;DataConsentDetails&gt;**](DataConsentDetails.md) |  | [optional] |
 
 ## Example
 
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::IssuedDocumentPaginatedList.new(
+instance = MyDataMyConsent::DataConsentDetailsPaginatedList.new(
   page_index: null,
   page_size: null,
   total_pages: null,

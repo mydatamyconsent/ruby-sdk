@@ -10,6 +10,11 @@ docs/CollectibleTypes.md
 docs/ConsentRequestReceiver.md
 docs/CreateDataConsentRequest.md
 docs/CreateDataProcessingAgreement.md
+docs/DataConsent.md
+docs/DataConsentDetails.md
+docs/DataConsentDetailsPaginatedList.md
+docs/DataConsentDocument.md
+docs/DataConsentDocumentIssuer.md
 docs/DataConsentFinancialsDto.md
 docs/DataConsentRequest.md
 docs/DataConsentRequestDetails.md
@@ -27,6 +32,7 @@ docs/DataProviderDiscoveryApi.md
 docs/DataProviderPaginatedList.md
 docs/DigiLockerCompatIssuerApi.md
 docs/DocumentCategoryType.md
+docs/DocumentDigitalSignature.md
 docs/DocumentIssueRequest.md
 docs/DocumentIssueRequestDetails.md
 docs/DocumentIssueRequestStatus.md
@@ -46,6 +52,7 @@ docs/Identifier.md
 docs/IndividualDataConsentRequestDetails.md
 docs/IndividualDataConsentRequestDetailsPaginatedList.md
 docs/IssuedDocument.md
+docs/IssuedDocumentDetails.md
 docs/IssuedDocumentPaginatedList.md
 docs/Life.md
 docs/OrganizationDataConsentRequestDetails.md
@@ -83,6 +90,11 @@ lib/mydatamyconsent/models/collectible_types.rb
 lib/mydatamyconsent/models/consent_request_receiver.rb
 lib/mydatamyconsent/models/create_data_consent_request.rb
 lib/mydatamyconsent/models/create_data_processing_agreement.rb
+lib/mydatamyconsent/models/data_consent.rb
+lib/mydatamyconsent/models/data_consent_details.rb
+lib/mydatamyconsent/models/data_consent_details_paginated_list.rb
+lib/mydatamyconsent/models/data_consent_document.rb
+lib/mydatamyconsent/models/data_consent_document_issuer.rb
 lib/mydatamyconsent/models/data_consent_financials_dto.rb
 lib/mydatamyconsent/models/data_consent_request.rb
 lib/mydatamyconsent/models/data_consent_request_details.rb
@@ -95,6 +107,7 @@ lib/mydatamyconsent/models/data_protection_officer.rb
 lib/mydatamyconsent/models/data_provider.rb
 lib/mydatamyconsent/models/data_provider_paginated_list.rb
 lib/mydatamyconsent/models/document_category_type.rb
+lib/mydatamyconsent/models/document_digital_signature.rb
 lib/mydatamyconsent/models/document_issue_request.rb
 lib/mydatamyconsent/models/document_issue_request_details.rb
 lib/mydatamyconsent/models/document_issue_request_status.rb
@@ -113,6 +126,7 @@ lib/mydatamyconsent/models/identifier.rb
 lib/mydatamyconsent/models/individual_data_consent_request_details.rb
 lib/mydatamyconsent/models/individual_data_consent_request_details_paginated_list.rb
 lib/mydatamyconsent/models/issued_document.rb
+lib/mydatamyconsent/models/issued_document_details.rb
 lib/mydatamyconsent/models/issued_document_paginated_list.rb
 lib/mydatamyconsent/models/life.rb
 lib/mydatamyconsent/models/organization_data_consent_request_details.rb

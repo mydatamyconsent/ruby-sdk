@@ -14,50 +14,31 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # DataConsentRequestResponse
-  class DataConsentRequestDetails
-    # Consent request id
-    attr_accessor :id
+  # Document digital signature.
+  class DocumentDigitalSignature
+    # Name.
+    attr_accessor :name
 
-    # Consent request template id
-    attr_accessor :template_id
+    # Signature issued by.
+    attr_accessor :issued_by
 
-    # Data Consent id
-    attr_accessor :consent_id
+    # Signature issuer name.
+    attr_accessor :issuer_name
 
-    # Consent request title.
-    attr_accessor :title
+    # Signature valid from datatime in UTC timezone.
+    attr_accessor :valid_from_utc
 
-    # Consent request description.
-    attr_accessor :description
-
-    # Consent request purpose.
-    attr_accessor :purpose
-
-    attr_accessor :status
-
-    # Transaction id
-    attr_accessor :transaction_id
-
-    # Request creation datetime in UTC timezone
-    attr_accessor :created_at_utc
-
-    # Request expiration datetime in UTC timezone
-    attr_accessor :expires_at_utc
+    # Signature valid to datatime in UTC timezone.
+    attr_accessor :valid_to_utc
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'template_id' => :'templateId',
-        :'consent_id' => :'consentId',
-        :'title' => :'title',
-        :'description' => :'description',
-        :'purpose' => :'purpose',
-        :'status' => :'status',
-        :'transaction_id' => :'transactionId',
-        :'created_at_utc' => :'createdAtUtc',
-        :'expires_at_utc' => :'expiresAtUtc'
+        :'name' => :'name',
+        :'issued_by' => :'issuedBy',
+        :'issuer_name' => :'issuerName',
+        :'valid_from_utc' => :'validFromUtc',
+        :'valid_to_utc' => :'validToUtc'
       }
     end
 
@@ -69,26 +50,17 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'template_id' => :'String',
-        :'consent_id' => :'String',
-        :'title' => :'String',
-        :'description' => :'String',
-        :'purpose' => :'String',
-        :'status' => :'DataConsentStatus',
-        :'transaction_id' => :'String',
-        :'created_at_utc' => :'Time',
-        :'expires_at_utc' => :'Time'
+        :'name' => :'String',
+        :'issued_by' => :'String',
+        :'issuer_name' => :'String',
+        :'valid_from_utc' => :'Time',
+        :'valid_to_utc' => :'Time'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'template_id',
-        :'consent_id',
-        :'purpose',
-        :'transaction_id',
       ])
     end
 
@@ -96,55 +68,35 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DataConsentRequestDetails` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DocumentDigitalSignature` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DataConsentRequestDetails`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DocumentDigitalSignature`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'template_id')
-        self.template_id = attributes[:'template_id']
+      if attributes.key?(:'issued_by')
+        self.issued_by = attributes[:'issued_by']
       end
 
-      if attributes.key?(:'consent_id')
-        self.consent_id = attributes[:'consent_id']
+      if attributes.key?(:'issuer_name')
+        self.issuer_name = attributes[:'issuer_name']
       end
 
-      if attributes.key?(:'title')
-        self.title = attributes[:'title']
+      if attributes.key?(:'valid_from_utc')
+        self.valid_from_utc = attributes[:'valid_from_utc']
       end
 
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'purpose')
-        self.purpose = attributes[:'purpose']
-      end
-
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.key?(:'transaction_id')
-        self.transaction_id = attributes[:'transaction_id']
-      end
-
-      if attributes.key?(:'created_at_utc')
-        self.created_at_utc = attributes[:'created_at_utc']
-      end
-
-      if attributes.key?(:'expires_at_utc')
-        self.expires_at_utc = attributes[:'expires_at_utc']
+      if attributes.key?(:'valid_to_utc')
+        self.valid_to_utc = attributes[:'valid_to_utc']
       end
     end
 
@@ -152,28 +104,24 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @title.nil?
-        invalid_properties.push('invalid value for "title", title cannot be nil.')
+      if @issued_by.nil?
+        invalid_properties.push('invalid value for "issued_by", issued_by cannot be nil.')
       end
 
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      if @issuer_name.nil?
+        invalid_properties.push('invalid value for "issuer_name", issuer_name cannot be nil.')
       end
 
-      if @status.nil?
-        invalid_properties.push('invalid value for "status", status cannot be nil.')
+      if @valid_from_utc.nil?
+        invalid_properties.push('invalid value for "valid_from_utc", valid_from_utc cannot be nil.')
       end
 
-      if @created_at_utc.nil?
-        invalid_properties.push('invalid value for "created_at_utc", created_at_utc cannot be nil.')
-      end
-
-      if @expires_at_utc.nil?
-        invalid_properties.push('invalid value for "expires_at_utc", expires_at_utc cannot be nil.')
+      if @valid_to_utc.nil?
+        invalid_properties.push('invalid value for "valid_to_utc", valid_to_utc cannot be nil.')
       end
 
       invalid_properties
@@ -182,12 +130,11 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @id.nil?
-      return false if @title.nil?
-      return false if @description.nil?
-      return false if @status.nil?
-      return false if @created_at_utc.nil?
-      return false if @expires_at_utc.nil?
+      return false if @name.nil?
+      return false if @issued_by.nil?
+      return false if @issuer_name.nil?
+      return false if @valid_from_utc.nil?
+      return false if @valid_to_utc.nil?
       true
     end
 
@@ -196,16 +143,11 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          template_id == o.template_id &&
-          consent_id == o.consent_id &&
-          title == o.title &&
-          description == o.description &&
-          purpose == o.purpose &&
-          status == o.status &&
-          transaction_id == o.transaction_id &&
-          created_at_utc == o.created_at_utc &&
-          expires_at_utc == o.expires_at_utc
+          name == o.name &&
+          issued_by == o.issued_by &&
+          issuer_name == o.issuer_name &&
+          valid_from_utc == o.valid_from_utc &&
+          valid_to_utc == o.valid_to_utc
     end
 
     # @see the `==` method
@@ -217,7 +159,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, template_id, consent_id, title, description, purpose, status, transaction_id, created_at_utc, expires_at_utc].hash
+      [name, issued_by, issuer_name, valid_from_utc, valid_to_utc].hash
     end
 
     # Builds the object from hash

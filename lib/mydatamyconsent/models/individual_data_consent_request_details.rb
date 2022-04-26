@@ -25,6 +25,9 @@ module MyDataMyConsent
     # Consent request template id
     attr_accessor :template_id
 
+    # Data Consent id
+    attr_accessor :consent_id
+
     # Consent request title.
     attr_accessor :title
 
@@ -42,18 +45,23 @@ module MyDataMyConsent
     # Request creation datetime in UTC timezone
     attr_accessor :created_at_utc
 
+    # Request expiration datetime in UTC timezone
+    attr_accessor :expires_at_utc
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'receiver' => :'receiver',
         :'id' => :'id',
         :'template_id' => :'templateId',
+        :'consent_id' => :'consentId',
         :'title' => :'title',
         :'description' => :'description',
         :'purpose' => :'purpose',
         :'status' => :'status',
         :'transaction_id' => :'transactionId',
-        :'created_at_utc' => :'createdAtUtc'
+        :'created_at_utc' => :'createdAtUtc',
+        :'expires_at_utc' => :'expiresAtUtc'
       }
     end
 
@@ -68,12 +76,14 @@ module MyDataMyConsent
         :'receiver' => :'String',
         :'id' => :'String',
         :'template_id' => :'String',
+        :'consent_id' => :'String',
         :'title' => :'String',
         :'description' => :'String',
         :'purpose' => :'String',
         :'status' => :'DataConsentStatus',
         :'transaction_id' => :'String',
-        :'created_at_utc' => :'Time'
+        :'created_at_utc' => :'Time',
+        :'expires_at_utc' => :'Time'
       }
     end
 
@@ -81,6 +91,7 @@ module MyDataMyConsent
     def self.openapi_nullable
       Set.new([
         :'template_id',
+        :'consent_id',
         :'purpose',
         :'transaction_id',
       ])
@@ -120,6 +131,10 @@ module MyDataMyConsent
         self.template_id = attributes[:'template_id']
       end
 
+      if attributes.key?(:'consent_id')
+        self.consent_id = attributes[:'consent_id']
+      end
+
       if attributes.key?(:'title')
         self.title = attributes[:'title']
       end
@@ -142,6 +157,10 @@ module MyDataMyConsent
 
       if attributes.key?(:'created_at_utc')
         self.created_at_utc = attributes[:'created_at_utc']
+      end
+
+      if attributes.key?(:'expires_at_utc')
+        self.expires_at_utc = attributes[:'expires_at_utc']
       end
     end
 
@@ -173,6 +192,10 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "created_at_utc", created_at_utc cannot be nil.')
       end
 
+      if @expires_at_utc.nil?
+        invalid_properties.push('invalid value for "expires_at_utc", expires_at_utc cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -185,6 +208,7 @@ module MyDataMyConsent
       return false if @description.nil?
       return false if @status.nil?
       return false if @created_at_utc.nil?
+      return false if @expires_at_utc.nil?
       true
     end
 
@@ -196,12 +220,14 @@ module MyDataMyConsent
           receiver == o.receiver &&
           id == o.id &&
           template_id == o.template_id &&
+          consent_id == o.consent_id &&
           title == o.title &&
           description == o.description &&
           purpose == o.purpose &&
           status == o.status &&
           transaction_id == o.transaction_id &&
-          created_at_utc == o.created_at_utc
+          created_at_utc == o.created_at_utc &&
+          expires_at_utc == o.expires_at_utc
     end
 
     # @see the `==` method
@@ -213,7 +239,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [receiver, id, template_id, title, description, purpose, status, transaction_id, created_at_utc].hash
+      [receiver, id, template_id, consent_id, title, description, purpose, status, transaction_id, created_at_utc, expires_at_utc].hash
     end
 
     # Builds the object from hash

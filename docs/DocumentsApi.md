@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 ## get_issued_document_by_id
 
-> <IssuedDocument> get_issued_document_by_id(document_id)
+> <OneOfIssuedDocumentIssuedDocumentDetails> get_issued_document_by_id(document_id)
 
 Get issued document.
 
@@ -41,7 +41,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<IssuedDocument>, Integer, Hash)> get_issued_document_by_id_with_http_info(document_id)
+> <Array(<OneOfIssuedDocumentIssuedDocumentDetails>, Integer, Hash)> get_issued_document_by_id_with_http_info(document_id)
 
 ```ruby
 begin
@@ -49,7 +49,7 @@ begin
   data, status_code, headers = api_instance.get_issued_document_by_id_with_http_info(document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <IssuedDocument>
+  p data # => <OneOfIssuedDocumentIssuedDocumentDetails>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_issued_document_by_id_with_http_info: #{e}"
 end
@@ -63,7 +63,7 @@ end
 
 ### Return type
 
-[**IssuedDocument**](IssuedDocument.md)
+[**OneOfIssuedDocumentIssuedDocumentDetails**](OneOfIssuedDocumentIssuedDocumentDetails.md)
 
 ### Authorization
 

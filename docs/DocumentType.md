@@ -18,7 +18,6 @@
 | **payable_amount** | **Float** | Payable amount if document is chargeable. eg: 10.25. | [optional] |
 | **payable_amount_currency** | **String** | Payable amount currency. eg: INR, USD etc.,. | [optional] |
 | **approved_at_utc** | **Time** | DateTime of approval in UTC timezone. | [optional] |
-| **approved** | **Boolean** | Document type approval status. |  |
 
 ## Example
 
@@ -39,8 +38,7 @@ instance = MyDataMyConsent::DocumentType.new(
   added_by: null,
   payable_amount: null,
   payable_amount_currency: null,
-  approved_at_utc: null,
-  approved: null
+  approved_at_utc: null
 )
 ```
 

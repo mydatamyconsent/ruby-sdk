@@ -56,9 +56,6 @@ module MyDataMyConsent
     # DateTime of approval in UTC timezone.
     attr_accessor :approved_at_utc
 
-    # Document type approval status.
-    attr_accessor :approved
-
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -75,8 +72,7 @@ module MyDataMyConsent
         :'added_by' => :'addedBy',
         :'payable_amount' => :'payableAmount',
         :'payable_amount_currency' => :'payableAmountCurrency',
-        :'approved_at_utc' => :'approvedAtUtc',
-        :'approved' => :'approved'
+        :'approved_at_utc' => :'approvedAtUtc'
       }
     end
 
@@ -101,8 +97,7 @@ module MyDataMyConsent
         :'added_by' => :'String',
         :'payable_amount' => :'Float',
         :'payable_amount_currency' => :'String',
-        :'approved_at_utc' => :'Time',
-        :'approved' => :'Boolean'
+        :'approved_at_utc' => :'Time'
       }
     end
 
@@ -114,7 +109,7 @@ module MyDataMyConsent
         :'repository_service_name',
         :'payable_amount',
         :'payable_amount_currency',
-        :'approved_at_utc',
+        :'approved_at_utc'
       ])
     end
 
@@ -190,10 +185,6 @@ module MyDataMyConsent
       if attributes.key?(:'approved_at_utc')
         self.approved_at_utc = attributes[:'approved_at_utc']
       end
-
-      if attributes.key?(:'approved')
-        self.approved = attributes[:'approved']
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -232,10 +223,6 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "added_by", added_by cannot be nil.')
       end
 
-      if @approved.nil?
-        invalid_properties.push('invalid value for "approved", approved cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -250,7 +237,6 @@ module MyDataMyConsent
       return false if @logo_url.nil?
       return false if @supported_entity_types.nil?
       return false if @added_by.nil?
-      return false if @approved.nil?
       true
     end
 
@@ -272,8 +258,7 @@ module MyDataMyConsent
           added_by == o.added_by &&
           payable_amount == o.payable_amount &&
           payable_amount_currency == o.payable_amount_currency &&
-          approved_at_utc == o.approved_at_utc &&
-          approved == o.approved
+          approved_at_utc == o.approved_at_utc
     end
 
     # @see the `==` method
@@ -285,7 +270,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, category_type, sub_category_type, name, slug, description, logo_url, search_service_name, repository_service_name, supported_entity_types, added_by, payable_amount, payable_amount_currency, approved_at_utc, approved].hash
+      [id, category_type, sub_category_type, name, slug, description, logo_url, search_service_name, repository_service_name, supported_entity_types, added_by, payable_amount, payable_amount_currency, approved_at_utc].hash
     end
 
     # Builds the object from hash

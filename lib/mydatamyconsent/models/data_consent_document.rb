@@ -14,72 +14,50 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # Data consent request details.
-  class DataConsentRequest
-    # Data consent request id.
+  # Data Consent document details.
+  class DataConsentDocument
+    # Document id.
     attr_accessor :id
 
-    # Data consent template id.
-    attr_accessor :template_id
+    # Document name.
+    attr_accessor :name
 
-    # Data consent id.
-    attr_accessor :consent_id
+    # Document category.
+    attr_accessor :category
 
-    # Data consent title.
-    attr_accessor :title
+    # Document identifier.
+    attr_accessor :identifier
 
-    # Data consent description.
-    attr_accessor :description
+    # Document field title.
+    attr_accessor :field_title
 
-    # Data consent purpose.
-    attr_accessor :purpose
+    # Document field slug.
+    attr_accessor :field_slug
 
-    attr_accessor :data_life
+    # Document issued at datetime in UTC timezone.
+    attr_accessor :issued_at_utc
 
-    # List of supported collectables.
-    attr_accessor :collectables
-
-    attr_accessor :receiver
-
-    attr_accessor :status
-
-    # Request creation datetime in UTC timezone.
-    attr_accessor :created_at_utc
-
-    # Request expiration datetime in UTC timezone.
+    # Document expires at datetime in UTC timezone.
     attr_accessor :expires_at_utc
 
-    # Request approval datetime in UTC timezone.
-    attr_accessor :approved_at_utc
+    attr_accessor :issuer
 
-    # Data access expiration datetime in UTC timezone.
-    attr_accessor :data_access_expires_at_utc
-
-    # Request rejection datetime in UTC timezone.
-    attr_accessor :rejected_at_utc
-
-    # Request revocation datetime in UTC timezone.
-    attr_accessor :revoked_at_utc
+    # Digital signatures.
+    attr_accessor :digital_signatures
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'template_id' => :'templateId',
-        :'consent_id' => :'consentId',
-        :'title' => :'title',
-        :'description' => :'description',
-        :'purpose' => :'purpose',
-        :'data_life' => :'dataLife',
-        :'collectables' => :'collectables',
-        :'receiver' => :'receiver',
-        :'status' => :'status',
-        :'created_at_utc' => :'createdAtUtc',
+        :'name' => :'name',
+        :'category' => :'category',
+        :'identifier' => :'identifier',
+        :'field_title' => :'fieldTitle',
+        :'field_slug' => :'fieldSlug',
+        :'issued_at_utc' => :'issuedAtUtc',
         :'expires_at_utc' => :'expiresAtUtc',
-        :'approved_at_utc' => :'approvedAtUtc',
-        :'data_access_expires_at_utc' => :'dataAccessExpiresAtUtc',
-        :'rejected_at_utc' => :'rejectedAtUtc',
-        :'revoked_at_utc' => :'revokedAtUtc'
+        :'issuer' => :'issuer',
+        :'digital_signatures' => :'digitalSignatures'
       }
     end
 
@@ -92,34 +70,22 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'id' => :'String',
-        :'template_id' => :'String',
-        :'consent_id' => :'String',
-        :'title' => :'String',
-        :'description' => :'String',
-        :'purpose' => :'String',
-        :'data_life' => :'Life',
-        :'collectables' => :'Array<CollectibleTypes>',
-        :'receiver' => :'ConsentRequestReceiver',
-        :'status' => :'DataConsentStatus',
-        :'created_at_utc' => :'Time',
+        :'name' => :'String',
+        :'category' => :'String',
+        :'identifier' => :'String',
+        :'field_title' => :'String',
+        :'field_slug' => :'String',
+        :'issued_at_utc' => :'Time',
         :'expires_at_utc' => :'Time',
-        :'approved_at_utc' => :'Time',
-        :'data_access_expires_at_utc' => :'Time',
-        :'rejected_at_utc' => :'Time',
-        :'revoked_at_utc' => :'Time'
+        :'issuer' => :'DataConsentDocumentIssuer',
+        :'digital_signatures' => :'Array<DocumentDigitalSignature>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'template_id',
-        :'consent_id',
-        :'purpose',
-        :'approved_at_utc',
-        :'data_access_expires_at_utc',
-        :'rejected_at_utc',
-        :'revoked_at_utc'
+        :'expires_at_utc',
       ])
     end
 
@@ -127,13 +93,13 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DataConsentRequest` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DataConsentDocument` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DataConsentRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DataConsentDocument`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -142,66 +108,42 @@ module MyDataMyConsent
         self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'template_id')
-        self.template_id = attributes[:'template_id']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'consent_id')
-        self.consent_id = attributes[:'consent_id']
+      if attributes.key?(:'category')
+        self.category = attributes[:'category']
       end
 
-      if attributes.key?(:'title')
-        self.title = attributes[:'title']
+      if attributes.key?(:'identifier')
+        self.identifier = attributes[:'identifier']
       end
 
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
+      if attributes.key?(:'field_title')
+        self.field_title = attributes[:'field_title']
       end
 
-      if attributes.key?(:'purpose')
-        self.purpose = attributes[:'purpose']
+      if attributes.key?(:'field_slug')
+        self.field_slug = attributes[:'field_slug']
       end
 
-      if attributes.key?(:'data_life')
-        self.data_life = attributes[:'data_life']
-      end
-
-      if attributes.key?(:'collectables')
-        if (value = attributes[:'collectables']).is_a?(Array)
-          self.collectables = value
-        end
-      end
-
-      if attributes.key?(:'receiver')
-        self.receiver = attributes[:'receiver']
-      end
-
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.key?(:'created_at_utc')
-        self.created_at_utc = attributes[:'created_at_utc']
+      if attributes.key?(:'issued_at_utc')
+        self.issued_at_utc = attributes[:'issued_at_utc']
       end
 
       if attributes.key?(:'expires_at_utc')
         self.expires_at_utc = attributes[:'expires_at_utc']
       end
 
-      if attributes.key?(:'approved_at_utc')
-        self.approved_at_utc = attributes[:'approved_at_utc']
+      if attributes.key?(:'issuer')
+        self.issuer = attributes[:'issuer']
       end
 
-      if attributes.key?(:'data_access_expires_at_utc')
-        self.data_access_expires_at_utc = attributes[:'data_access_expires_at_utc']
-      end
-
-      if attributes.key?(:'rejected_at_utc')
-        self.rejected_at_utc = attributes[:'rejected_at_utc']
-      end
-
-      if attributes.key?(:'revoked_at_utc')
-        self.revoked_at_utc = attributes[:'revoked_at_utc']
+      if attributes.key?(:'digital_signatures')
+        if (value = attributes[:'digital_signatures']).is_a?(Array)
+          self.digital_signatures = value
+        end
       end
     end
 
@@ -213,32 +155,36 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
-      if @title.nil?
-        invalid_properties.push('invalid value for "title", title cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
+      if @category.nil?
+        invalid_properties.push('invalid value for "category", category cannot be nil.')
       end
 
-      if @collectables.nil?
-        invalid_properties.push('invalid value for "collectables", collectables cannot be nil.')
+      if @identifier.nil?
+        invalid_properties.push('invalid value for "identifier", identifier cannot be nil.')
       end
 
-      if @receiver.nil?
-        invalid_properties.push('invalid value for "receiver", receiver cannot be nil.')
+      if @field_title.nil?
+        invalid_properties.push('invalid value for "field_title", field_title cannot be nil.')
       end
 
-      if @status.nil?
-        invalid_properties.push('invalid value for "status", status cannot be nil.')
+      if @field_slug.nil?
+        invalid_properties.push('invalid value for "field_slug", field_slug cannot be nil.')
       end
 
-      if @created_at_utc.nil?
-        invalid_properties.push('invalid value for "created_at_utc", created_at_utc cannot be nil.')
+      if @issued_at_utc.nil?
+        invalid_properties.push('invalid value for "issued_at_utc", issued_at_utc cannot be nil.')
       end
 
-      if @expires_at_utc.nil?
-        invalid_properties.push('invalid value for "expires_at_utc", expires_at_utc cannot be nil.')
+      if @issuer.nil?
+        invalid_properties.push('invalid value for "issuer", issuer cannot be nil.')
+      end
+
+      if @digital_signatures.nil?
+        invalid_properties.push('invalid value for "digital_signatures", digital_signatures cannot be nil.')
       end
 
       invalid_properties
@@ -248,13 +194,14 @@ module MyDataMyConsent
     # @return true if the model is valid
     def valid?
       return false if @id.nil?
-      return false if @title.nil?
-      return false if @description.nil?
-      return false if @collectables.nil?
-      return false if @receiver.nil?
-      return false if @status.nil?
-      return false if @created_at_utc.nil?
-      return false if @expires_at_utc.nil?
+      return false if @name.nil?
+      return false if @category.nil?
+      return false if @identifier.nil?
+      return false if @field_title.nil?
+      return false if @field_slug.nil?
+      return false if @issued_at_utc.nil?
+      return false if @issuer.nil?
+      return false if @digital_signatures.nil?
       true
     end
 
@@ -264,21 +211,15 @@ module MyDataMyConsent
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          template_id == o.template_id &&
-          consent_id == o.consent_id &&
-          title == o.title &&
-          description == o.description &&
-          purpose == o.purpose &&
-          data_life == o.data_life &&
-          collectables == o.collectables &&
-          receiver == o.receiver &&
-          status == o.status &&
-          created_at_utc == o.created_at_utc &&
+          name == o.name &&
+          category == o.category &&
+          identifier == o.identifier &&
+          field_title == o.field_title &&
+          field_slug == o.field_slug &&
+          issued_at_utc == o.issued_at_utc &&
           expires_at_utc == o.expires_at_utc &&
-          approved_at_utc == o.approved_at_utc &&
-          data_access_expires_at_utc == o.data_access_expires_at_utc &&
-          rejected_at_utc == o.rejected_at_utc &&
-          revoked_at_utc == o.revoked_at_utc
+          issuer == o.issuer &&
+          digital_signatures == o.digital_signatures
     end
 
     # @see the `==` method
@@ -290,7 +231,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, template_id, consent_id, title, description, purpose, data_life, collectables, receiver, status, created_at_utc, expires_at_utc, approved_at_utc, data_access_expires_at_utc, rejected_at_utc, revoked_at_utc].hash
+      [id, name, category, identifier, field_title, field_slug, issued_at_utc, expires_at_utc, issuer, digital_signatures].hash
     end
 
     # Builds the object from hash

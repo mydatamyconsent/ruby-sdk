@@ -22,7 +22,7 @@ module MyDataMyConsent
     # Get issued document.
     # @param document_id [String] Document id.
     # @param [Hash] opts the optional parameters
-    # @return [IssuedDocument]
+    # @return [OneOfIssuedDocumentIssuedDocumentDetails]
     def get_issued_document_by_id(document_id, opts = {})
       data, _status_code, _headers = get_issued_document_by_id_with_http_info(document_id, opts)
       data
@@ -31,7 +31,7 @@ module MyDataMyConsent
     # Get issued document.
     # @param document_id [String] Document id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(IssuedDocument, Integer, Hash)>] IssuedDocument data, response status code and response headers
+    # @return [Array<(OneOfIssuedDocumentIssuedDocumentDetails, Integer, Hash)>] OneOfIssuedDocumentIssuedDocumentDetails data, response status code and response headers
     def get_issued_document_by_id_with_http_info(document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DocumentsApi.get_issued_document_by_id ...'
@@ -58,7 +58,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'IssuedDocument'
+      return_type = opts[:debug_return_type] || 'OneOfIssuedDocumentIssuedDocumentDetails'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []

@@ -1,9 +1,12 @@
-# MyDataMyConsent::IssuedDocument
+# MyDataMyConsent::IssuedDocumentDetails
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **receiver** | [**DocumentReceiver**](DocumentReceiver.md) |  |  |
+| **metadata** | **Hash&lt;String, String&gt;** | Metadata. | [optional] |
+| **digital_signatures** | [**Array&lt;DocumentDigitalSignature&gt;**](DocumentDigitalSignature.md) | Digital signatures. |  |
 | **id** | **String** | Document Id. |  |
 | **identifier** | **String** | Document Identifier. |  |
 | **document_type** | **String** | Document type name. |  |
@@ -17,7 +20,10 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::IssuedDocument.new(
+instance = MyDataMyConsent::IssuedDocumentDetails.new(
+  receiver: null,
+  metadata: null,
+  digital_signatures: null,
   id: null,
   identifier: GJ05FG67866586.,
   document_type: Driving License.,

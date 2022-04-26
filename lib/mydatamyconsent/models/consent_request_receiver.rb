@@ -14,12 +14,9 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # Consent request receiver details
   class ConsentRequestReceiver
-    # Consent request receiver country ISO 2 code
     attr_accessor :country_iso2_code
 
-    # Consent request receiver identifiers
     attr_accessor :identifiers
 
     attr_accessor :identification_strategy

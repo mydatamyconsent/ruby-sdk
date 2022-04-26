@@ -14,50 +14,25 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # DataConsentRequestResponse
-  class DataConsentRequestDetails
-    # Consent request id
-    attr_accessor :id
+  class DataConsentDetailsPaginatedList
+    attr_accessor :page_index
 
-    # Consent request template id
-    attr_accessor :template_id
+    attr_accessor :page_size
 
-    # Data Consent id
-    attr_accessor :consent_id
+    attr_accessor :total_pages
 
-    # Consent request title.
-    attr_accessor :title
+    attr_accessor :total_items
 
-    # Consent request description.
-    attr_accessor :description
-
-    # Consent request purpose.
-    attr_accessor :purpose
-
-    attr_accessor :status
-
-    # Transaction id
-    attr_accessor :transaction_id
-
-    # Request creation datetime in UTC timezone
-    attr_accessor :created_at_utc
-
-    # Request expiration datetime in UTC timezone
-    attr_accessor :expires_at_utc
+    attr_accessor :items
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'template_id' => :'templateId',
-        :'consent_id' => :'consentId',
-        :'title' => :'title',
-        :'description' => :'description',
-        :'purpose' => :'purpose',
-        :'status' => :'status',
-        :'transaction_id' => :'transactionId',
-        :'created_at_utc' => :'createdAtUtc',
-        :'expires_at_utc' => :'expiresAtUtc'
+        :'page_index' => :'pageIndex',
+        :'page_size' => :'pageSize',
+        :'total_pages' => :'totalPages',
+        :'total_items' => :'totalItems',
+        :'items' => :'items'
       }
     end
 
@@ -69,26 +44,18 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'template_id' => :'String',
-        :'consent_id' => :'String',
-        :'title' => :'String',
-        :'description' => :'String',
-        :'purpose' => :'String',
-        :'status' => :'DataConsentStatus',
-        :'transaction_id' => :'String',
-        :'created_at_utc' => :'Time',
-        :'expires_at_utc' => :'Time'
+        :'page_index' => :'Integer',
+        :'page_size' => :'Integer',
+        :'total_pages' => :'Integer',
+        :'total_items' => :'Integer',
+        :'items' => :'Array<DataConsentDetails>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'template_id',
-        :'consent_id',
-        :'purpose',
-        :'transaction_id',
+        :'items'
       ])
     end
 
@@ -96,55 +63,37 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DataConsentRequestDetails` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DataConsentDetailsPaginatedList` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DataConsentRequestDetails`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DataConsentDetailsPaginatedList`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'page_index')
+        self.page_index = attributes[:'page_index']
       end
 
-      if attributes.key?(:'template_id')
-        self.template_id = attributes[:'template_id']
+      if attributes.key?(:'page_size')
+        self.page_size = attributes[:'page_size']
       end
 
-      if attributes.key?(:'consent_id')
-        self.consent_id = attributes[:'consent_id']
+      if attributes.key?(:'total_pages')
+        self.total_pages = attributes[:'total_pages']
       end
 
-      if attributes.key?(:'title')
-        self.title = attributes[:'title']
+      if attributes.key?(:'total_items')
+        self.total_items = attributes[:'total_items']
       end
 
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'purpose')
-        self.purpose = attributes[:'purpose']
-      end
-
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.key?(:'transaction_id')
-        self.transaction_id = attributes[:'transaction_id']
-      end
-
-      if attributes.key?(:'created_at_utc')
-        self.created_at_utc = attributes[:'created_at_utc']
-      end
-
-      if attributes.key?(:'expires_at_utc')
-        self.expires_at_utc = attributes[:'expires_at_utc']
+      if attributes.key?(:'items')
+        if (value = attributes[:'items']).is_a?(Array)
+          self.items = value
+        end
       end
     end
 
@@ -152,42 +101,12 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @title.nil?
-        invalid_properties.push('invalid value for "title", title cannot be nil.')
-      end
-
-      if @description.nil?
-        invalid_properties.push('invalid value for "description", description cannot be nil.')
-      end
-
-      if @status.nil?
-        invalid_properties.push('invalid value for "status", status cannot be nil.')
-      end
-
-      if @created_at_utc.nil?
-        invalid_properties.push('invalid value for "created_at_utc", created_at_utc cannot be nil.')
-      end
-
-      if @expires_at_utc.nil?
-        invalid_properties.push('invalid value for "expires_at_utc", expires_at_utc cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @id.nil?
-      return false if @title.nil?
-      return false if @description.nil?
-      return false if @status.nil?
-      return false if @created_at_utc.nil?
-      return false if @expires_at_utc.nil?
       true
     end
 
@@ -196,16 +115,11 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          template_id == o.template_id &&
-          consent_id == o.consent_id &&
-          title == o.title &&
-          description == o.description &&
-          purpose == o.purpose &&
-          status == o.status &&
-          transaction_id == o.transaction_id &&
-          created_at_utc == o.created_at_utc &&
-          expires_at_utc == o.expires_at_utc
+          page_index == o.page_index &&
+          page_size == o.page_size &&
+          total_pages == o.total_pages &&
+          total_items == o.total_items &&
+          items == o.items
     end
 
     # @see the `==` method
@@ -217,7 +131,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, template_id, consent_id, title, description, purpose, status, transaction_id, created_at_utc, expires_at_utc].hash
+      [page_index, page_size, total_pages, total_items, items].hash
     end
 
     # Builds the object from hash
