@@ -15,14 +15,6 @@ require 'time'
 
 module MyDataMyConsent
   class IssuedDocumentDetails
-    attr_accessor :receiver
-
-    # Metadata.
-    attr_accessor :metadata
-
-    # Digital signatures.
-    attr_accessor :digital_signatures
-
     # Document Id.
     attr_accessor :id
 
@@ -44,19 +36,27 @@ module MyDataMyConsent
     # Accepted datetime in UTC timezone.
     attr_accessor :accepted_at_utc
 
+    attr_accessor :receiver
+
+    # Metadata.
+    attr_accessor :metadata
+
+    # Digital signatures.
+    attr_accessor :digital_signatures
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'receiver' => :'receiver',
-        :'metadata' => :'metadata',
-        :'digital_signatures' => :'digitalSignatures',
         :'id' => :'id',
         :'identifier' => :'identifier',
         :'document_type' => :'documentType',
         :'issued_to' => :'issuedTo',
         :'issued_at_utc' => :'issuedAtUtc',
         :'expires_at_utc' => :'expiresAtUtc',
-        :'accepted_at_utc' => :'acceptedAtUtc'
+        :'accepted_at_utc' => :'acceptedAtUtc',
+        :'receiver' => :'receiver',
+        :'metadata' => :'metadata',
+        :'digital_signatures' => :'digitalSignatures'
       }
     end
 
@@ -68,33 +68,26 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'receiver' => :'DocumentReceiver',
-        :'metadata' => :'Hash<String, String>',
-        :'digital_signatures' => :'Array<DocumentDigitalSignature>',
         :'id' => :'String',
         :'identifier' => :'String',
         :'document_type' => :'String',
         :'issued_to' => :'String',
         :'issued_at_utc' => :'Time',
         :'expires_at_utc' => :'Time',
-        :'accepted_at_utc' => :'Time'
+        :'accepted_at_utc' => :'Time',
+        :'receiver' => :'DocumentReceiver',
+        :'metadata' => :'Hash<String, String>',
+        :'digital_signatures' => :'Array<DocumentDigitalSignature>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'metadata',
         :'expires_at_utc',
-        :'accepted_at_utc'
+        :'accepted_at_utc',
+        :'metadata',
       ])
-    end
-
-    # List of class defined in allOf (OpenAPI v3)
-    def self.openapi_all_of
-      [
-      :'IssuedDocument'
-      ]
     end
 
     # Initializes the object
@@ -111,22 +104,6 @@ module MyDataMyConsent
         end
         h[k.to_sym] = v
       }
-
-      if attributes.key?(:'receiver')
-        self.receiver = attributes[:'receiver']
-      end
-
-      if attributes.key?(:'metadata')
-        if (value = attributes[:'metadata']).is_a?(Hash)
-          self.metadata = value
-        end
-      end
-
-      if attributes.key?(:'digital_signatures')
-        if (value = attributes[:'digital_signatures']).is_a?(Array)
-          self.digital_signatures = value
-        end
-      end
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
@@ -155,20 +132,28 @@ module MyDataMyConsent
       if attributes.key?(:'accepted_at_utc')
         self.accepted_at_utc = attributes[:'accepted_at_utc']
       end
+
+      if attributes.key?(:'receiver')
+        self.receiver = attributes[:'receiver']
+      end
+
+      if attributes.key?(:'metadata')
+        if (value = attributes[:'metadata']).is_a?(Hash)
+          self.metadata = value
+        end
+      end
+
+      if attributes.key?(:'digital_signatures')
+        if (value = attributes[:'digital_signatures']).is_a?(Array)
+          self.digital_signatures = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @receiver.nil?
-        invalid_properties.push('invalid value for "receiver", receiver cannot be nil.')
-      end
-
-      if @digital_signatures.nil?
-        invalid_properties.push('invalid value for "digital_signatures", digital_signatures cannot be nil.')
-      end
-
       if @id.nil?
         invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
@@ -189,19 +174,27 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "issued_at_utc", issued_at_utc cannot be nil.')
       end
 
+      if @receiver.nil?
+        invalid_properties.push('invalid value for "receiver", receiver cannot be nil.')
+      end
+
+      if @digital_signatures.nil?
+        invalid_properties.push('invalid value for "digital_signatures", digital_signatures cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @receiver.nil?
-      return false if @digital_signatures.nil?
       return false if @id.nil?
       return false if @identifier.nil?
       return false if @document_type.nil?
       return false if @issued_to.nil?
       return false if @issued_at_utc.nil?
+      return false if @receiver.nil?
+      return false if @digital_signatures.nil?
       true
     end
 
@@ -210,16 +203,16 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          receiver == o.receiver &&
-          metadata == o.metadata &&
-          digital_signatures == o.digital_signatures &&
           id == o.id &&
           identifier == o.identifier &&
           document_type == o.document_type &&
           issued_to == o.issued_to &&
           issued_at_utc == o.issued_at_utc &&
           expires_at_utc == o.expires_at_utc &&
-          accepted_at_utc == o.accepted_at_utc
+          accepted_at_utc == o.accepted_at_utc &&
+          receiver == o.receiver &&
+          metadata == o.metadata &&
+          digital_signatures == o.digital_signatures
     end
 
     # @see the `==` method
@@ -231,7 +224,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [receiver, metadata, digital_signatures, id, identifier, document_type, issued_to, issued_at_utc, expires_at_utc, accepted_at_utc].hash
+      [id, identifier, document_type, issued_to, issued_at_utc, expires_at_utc, accepted_at_utc, receiver, metadata, digital_signatures].hash
     end
 
     # Builds the object from hash

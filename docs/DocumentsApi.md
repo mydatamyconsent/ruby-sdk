@@ -5,7 +5,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**get_issued_document_by_id**](DocumentsApi.md#get_issued_document_by_id) | **GET** /v1/documents/issued/{documentId} | Get issued document. |
-| [**get_issued_documents**](DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued/{documentTypeId} | Get paginated list of issued documents of given document type. |
+| [**get_issued_documents**](DocumentsApi.md#get_issued_documents) | **GET** /v1/documents/issued | Get paginated list of issued documents of given document type. |
 | [**get_registered_document_types**](DocumentsApi.md#get_registered_document_types) | **GET** /v1/documents/types | Get paginated list of registered document types. |
 | [**issue_document_to_individual**](DocumentsApi.md#issue_document_to_individual) | **POST** /v1/documents/issue/individual | Issue a new document to an individual user. |
 | [**issue_document_to_organization**](DocumentsApi.md#issue_document_to_organization) | **POST** /v1/documents/issue/organization | Issue a new document to an organization. |
@@ -15,7 +15,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 ## get_issued_document_by_id
 
-> <OneOfIssuedDocumentIssuedDocumentDetails> get_issued_document_by_id(document_id)
+> <IssuedDocumentDetails> get_issued_document_by_id(document_id)
 
 Get issued document.
 
@@ -41,7 +41,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<OneOfIssuedDocumentIssuedDocumentDetails>, Integer, Hash)> get_issued_document_by_id_with_http_info(document_id)
+> <Array(<IssuedDocumentDetails>, Integer, Hash)> get_issued_document_by_id_with_http_info(document_id)
 
 ```ruby
 begin
@@ -49,7 +49,7 @@ begin
   data, status_code, headers = api_instance.get_issued_document_by_id_with_http_info(document_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <OneOfIssuedDocumentIssuedDocumentDetails>
+  p data # => <IssuedDocumentDetails>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_issued_document_by_id_with_http_info: #{e}"
 end
@@ -63,7 +63,7 @@ end
 
 ### Return type
 
-[**OneOfIssuedDocumentIssuedDocumentDetails**](OneOfIssuedDocumentIssuedDocumentDetails.md)
+[**IssuedDocumentDetails**](IssuedDocumentDetails.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ No authorization required
 
 ## get_issued_documents
 
-> <IssuedDocumentPaginatedList> get_issued_documents(document_type_id, opts)
+> <IssuedDocumentPaginatedList> get_issued_documents(opts)
 
 Get paginated list of issued documents of given document type.
 
@@ -88,8 +88,8 @@ require 'time'
 require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
-document_type_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Document type id.
 opts = {
+  document_type_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | Document type id.
   from_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | From DateTime in UTC timezone.
   to_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | To DateTime in UTC timezone.
   page_no: 56, # Integer | Page number.
@@ -98,7 +98,7 @@ opts = {
 
 begin
   # Get paginated list of issued documents of given document type.
-  result = api_instance.get_issued_documents(document_type_id, opts)
+  result = api_instance.get_issued_documents(opts)
   p result
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling DocumentsApi->get_issued_documents: #{e}"
@@ -109,12 +109,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<IssuedDocumentPaginatedList>, Integer, Hash)> get_issued_documents_with_http_info(document_type_id, opts)
+> <Array(<IssuedDocumentPaginatedList>, Integer, Hash)> get_issued_documents_with_http_info(opts)
 
 ```ruby
 begin
   # Get paginated list of issued documents of given document type.
-  data, status_code, headers = api_instance.get_issued_documents_with_http_info(document_type_id, opts)
+  data, status_code, headers = api_instance.get_issued_documents_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <IssuedDocumentPaginatedList>
@@ -127,7 +127,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **document_type_id** | **String** | Document type id. |  |
+| **document_type_id** | **String** | Document type id. | [optional] |
 | **from_date_time** | **Time** | From DateTime in UTC timezone. | [optional] |
 | **to_date_time** | **Time** | To DateTime in UTC timezone. | [optional] |
 | **page_no** | **Integer** | Page number. | [optional][default to 1] |
@@ -161,6 +161,7 @@ require 'mydatamyconsent'
 
 api_instance = MyDataMyConsent::DocumentsApi.new
 opts = {
+  supported_entity_type: MyDataMyConsent::SupportedEntityType::INDIVIDUAL, # SupportedEntityType | Supported entity type.
   page_no: 56, # Integer | Page number.
   page_size: 56 # Integer | Number of items to return.
 }
@@ -196,6 +197,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **supported_entity_type** | [**SupportedEntityType**](.md) | Supported entity type. | [optional] |
 | **page_no** | **Integer** | Page number. | [optional][default to 1] |
 | **page_size** | **Integer** | Number of items to return. | [optional][default to 25] |
 

@@ -48,7 +48,7 @@ module MyDataMyConsent
         :'page_size' => :'Integer',
         :'total_pages' => :'Integer',
         :'total_items' => :'Integer',
-        :'items' => :'Array<OneOfIssuedDocumentIssuedDocumentDetails>'
+        :'items' => :'Array<IssuedDocument>'
       }
     end
 

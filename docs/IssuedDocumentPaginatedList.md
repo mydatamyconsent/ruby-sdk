@@ -8,7 +8,7 @@
 | **page_size** | **Integer** |  | [optional] |
 | **total_pages** | **Integer** |  | [optional][readonly] |
 | **total_items** | **Integer** |  | [optional] |
-| **items** | [**Array&lt;OneOfIssuedDocumentIssuedDocumentDetails&gt;**](OneOfIssuedDocumentIssuedDocumentDetails.md) |  | [optional] |
+| **items** | [**Array&lt;IssuedDocument&gt;**](IssuedDocument.md) |  | [optional] |
 
 ## Example
 

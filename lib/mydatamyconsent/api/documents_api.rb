@@ -22,7 +22,7 @@ module MyDataMyConsent
     # Get issued document.
     # @param document_id [String] Document id.
     # @param [Hash] opts the optional parameters
-    # @return [OneOfIssuedDocumentIssuedDocumentDetails]
+    # @return [IssuedDocumentDetails]
     def get_issued_document_by_id(document_id, opts = {})
       data, _status_code, _headers = get_issued_document_by_id_with_http_info(document_id, opts)
       data
@@ -31,7 +31,7 @@ module MyDataMyConsent
     # Get issued document.
     # @param document_id [String] Document id.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(OneOfIssuedDocumentIssuedDocumentDetails, Integer, Hash)>] OneOfIssuedDocumentIssuedDocumentDetails data, response status code and response headers
+    # @return [Array<(IssuedDocumentDetails, Integer, Hash)>] IssuedDocumentDetails data, response status code and response headers
     def get_issued_document_by_id_with_http_info(document_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DocumentsApi.get_issued_document_by_id ...'
@@ -58,7 +58,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'OneOfIssuedDocumentIssuedDocumentDetails'
+      return_type = opts[:debug_return_type] || 'IssuedDocumentDetails'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -81,39 +81,36 @@ module MyDataMyConsent
     end
 
     # Get paginated list of issued documents of given document type.
-    # @param document_type_id [String] Document type id.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :document_type_id Document type id.
     # @option opts [Time] :from_date_time From DateTime in UTC timezone.
     # @option opts [Time] :to_date_time To DateTime in UTC timezone.
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
     # @return [IssuedDocumentPaginatedList]
-    def get_issued_documents(document_type_id, opts = {})
-      data, _status_code, _headers = get_issued_documents_with_http_info(document_type_id, opts)
+    def get_issued_documents(opts = {})
+      data, _status_code, _headers = get_issued_documents_with_http_info(opts)
       data
     end
 
     # Get paginated list of issued documents of given document type.
-    # @param document_type_id [String] Document type id.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :document_type_id Document type id.
     # @option opts [Time] :from_date_time From DateTime in UTC timezone.
     # @option opts [Time] :to_date_time To DateTime in UTC timezone.
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
     # @return [Array<(IssuedDocumentPaginatedList, Integer, Hash)>] IssuedDocumentPaginatedList data, response status code and response headers
-    def get_issued_documents_with_http_info(document_type_id, opts = {})
+    def get_issued_documents_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DocumentsApi.get_issued_documents ...'
       end
-      # verify the required parameter 'document_type_id' is set
-      if @api_client.config.client_side_validation && document_type_id.nil?
-        fail ArgumentError, "Missing the required parameter 'document_type_id' when calling DocumentsApi.get_issued_documents"
-      end
       # resource path
-      local_var_path = '/v1/documents/issued/{documentTypeId}'.sub('{' + 'documentTypeId' + '}', CGI.escape(document_type_id.to_s))
+      local_var_path = '/v1/documents/issued'
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'documentTypeId'] = opts[:'document_type_id'] if !opts[:'document_type_id'].nil?
       query_params[:'fromDateTime'] = opts[:'from_date_time'] if !opts[:'from_date_time'].nil?
       query_params[:'toDateTime'] = opts[:'to_date_time'] if !opts[:'to_date_time'].nil?
       query_params[:'pageNo'] = opts[:'page_no'] if !opts[:'page_no'].nil?
@@ -155,6 +152,7 @@ module MyDataMyConsent
 
     # Get paginated list of registered document types.
     # @param [Hash] opts the optional parameters
+    # @option opts [SupportedEntityType] :supported_entity_type Supported entity type.
     # @option opts [Integer] :page_no Page number. (default to 1)
     # @option opts [Integer] :page_size Number of items to return. (default to 25)
     # @return [DocumentTypePaginatedList]
@@ -165,6 +163,7 @@ module MyDataMyConsent
 
     # Get paginated list of registered document types.
     # @param [Hash] opts the optional parameters
+    # @option opts [SupportedEntityType] :supported_entity_type Supported entity type.
     # @option opts [Integer] :page_no Page number.
     # @option opts [Integer] :page_size Number of items to return.
     # @return [Array<(DocumentTypePaginatedList, Integer, Hash)>] DocumentTypePaginatedList data, response status code and response headers
@@ -177,6 +176,7 @@ module MyDataMyConsent
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'supportedEntityType'] = opts[:'supported_entity_type'] if !opts[:'supported_entity_type'].nil?
       query_params[:'pageNo'] = opts[:'page_no'] if !opts[:'page_no'].nil?
       query_params[:'pageSize'] = opts[:'page_size'] if !opts[:'page_size'].nil?
 
