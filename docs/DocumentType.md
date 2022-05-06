@@ -15,7 +15,7 @@
 | **repository_service_name** | **String** | Document repository service name. | [optional] |
 | **supported_entity_types** | [**Array&lt;SupportedEntityType&gt;**](SupportedEntityType.md) | Supported entity types. eg: Individual, Organization. |  |
 | **added_by** | **String** | Name of the document type creator. |  |
-| **payable_amount** | **Float** | Payable amount if document is chargeable. eg: 10.25. | [optional] |
+| **payable_amount** | **Float** | Payable amount if document is chargeable. eg: 10.25. |  |
 | **payable_amount_currency** | **String** | Payable amount currency. eg: INR, USD etc.,. | [optional] |
 | **approved_at_utc** | **Time** | DateTime of approval in UTC timezone. | [optional] |
 

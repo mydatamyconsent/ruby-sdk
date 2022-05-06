@@ -60,6 +60,7 @@ docs/OrganizationDataConsentRequestDetailsPaginatedList.md
 docs/OrganizationFinancialAccountDto.md
 docs/OrganizationFinancialTransactionsDto.md
 docs/OrganizationFinancialTransactionsDtoPaginatedList.md
+docs/PaymentRequest.md
 docs/ProblemDetails.md
 docs/PushUriRequest.md
 docs/PushUriResponse.md
@@ -134,6 +135,7 @@ lib/mydatamyconsent/models/organization_data_consent_request_details_paginated_l
 lib/mydatamyconsent/models/organization_financial_account_dto.rb
 lib/mydatamyconsent/models/organization_financial_transactions_dto.rb
 lib/mydatamyconsent/models/organization_financial_transactions_dto_paginated_list.rb
+lib/mydatamyconsent/models/payment_request.rb
 lib/mydatamyconsent/models/problem_details.rb
 lib/mydatamyconsent/models/push_uri_request.rb
 lib/mydatamyconsent/models/push_uri_response.rb

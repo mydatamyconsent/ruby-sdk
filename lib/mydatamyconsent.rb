@@ -68,6 +68,7 @@ require 'mydatamyconsent/models/organization_data_consent_request_details_pagina
 require 'mydatamyconsent/models/organization_financial_account_dto'
 require 'mydatamyconsent/models/organization_financial_transactions_dto'
 require 'mydatamyconsent/models/organization_financial_transactions_dto_paginated_list'
+require 'mydatamyconsent/models/payment_request'
 require 'mydatamyconsent/models/problem_details'
 require 'mydatamyconsent/models/push_uri_request'
 require 'mydatamyconsent/models/push_uri_response'

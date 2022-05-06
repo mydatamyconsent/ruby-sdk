@@ -14,65 +14,28 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # Issuable Document Type details.
-  class DocumentType
-    # Document Type Identifier.
-    attr_accessor :id
+  class PaymentRequest
+    attr_accessor :identifier
 
-    attr_accessor :category_type
+    attr_accessor :amount
 
-    attr_accessor :sub_category_type
+    attr_accessor :currency_code
 
-    # Document Type Name. eg: Driving License.
-    attr_accessor :name
+    attr_accessor :payment_url
 
-    # Document Type Unique Slug. eg: \"in.gov.gj.transport.dl\".
-    attr_accessor :slug
-
-    # Document Type description. eg: Gujarat State Driving License.
     attr_accessor :description
 
-    # Logo URL of document type.
-    attr_accessor :logo_url
-
-    # Document search repository service name.
-    attr_accessor :search_service_name
-
-    # Document repository service name.
-    attr_accessor :repository_service_name
-
-    # Supported entity types. eg: Individual, Organization.
-    attr_accessor :supported_entity_types
-
-    # Name of the document type creator.
-    attr_accessor :added_by
-
-    # Payable amount if document is chargeable. eg: 10.25.
-    attr_accessor :payable_amount
-
-    # Payable amount currency. eg: INR, USD etc.,.
-    attr_accessor :payable_amount_currency
-
-    # DateTime of approval in UTC timezone.
-    attr_accessor :approved_at_utc
+    attr_accessor :due_by_utc
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'category_type' => :'categoryType',
-        :'sub_category_type' => :'subCategoryType',
-        :'name' => :'name',
-        :'slug' => :'slug',
+        :'identifier' => :'identifier',
+        :'amount' => :'amount',
+        :'currency_code' => :'currencyCode',
+        :'payment_url' => :'paymentUrl',
         :'description' => :'description',
-        :'logo_url' => :'logoUrl',
-        :'search_service_name' => :'searchServiceName',
-        :'repository_service_name' => :'repositoryServiceName',
-        :'supported_entity_types' => :'supportedEntityTypes',
-        :'added_by' => :'addedBy',
-        :'payable_amount' => :'payableAmount',
-        :'payable_amount_currency' => :'payableAmountCurrency',
-        :'approved_at_utc' => :'approvedAtUtc'
+        :'due_by_utc' => :'dueByUtc'
       }
     end
 
@@ -84,31 +47,23 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'category_type' => :'DocumentCategoryType',
-        :'sub_category_type' => :'DocumentSubCategoryType',
-        :'name' => :'String',
-        :'slug' => :'String',
+        :'identifier' => :'String',
+        :'amount' => :'String',
+        :'currency_code' => :'String',
+        :'payment_url' => :'String',
         :'description' => :'String',
-        :'logo_url' => :'String',
-        :'search_service_name' => :'String',
-        :'repository_service_name' => :'String',
-        :'supported_entity_types' => :'Array<SupportedEntityType>',
-        :'added_by' => :'String',
-        :'payable_amount' => :'Float',
-        :'payable_amount_currency' => :'String',
-        :'approved_at_utc' => :'Time'
+        :'due_by_utc' => :'Time'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'identifier',
+        :'amount',
+        :'currency_code',
+        :'payment_url',
         :'description',
-        :'search_service_name',
-        :'repository_service_name',
-        :'payable_amount_currency',
-        :'approved_at_utc'
       ])
     end
 
@@ -116,73 +71,39 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::DocumentType` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::PaymentRequest` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::DocumentType`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::PaymentRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'identifier')
+        self.identifier = attributes[:'identifier']
       end
 
-      if attributes.key?(:'category_type')
-        self.category_type = attributes[:'category_type']
+      if attributes.key?(:'amount')
+        self.amount = attributes[:'amount']
       end
 
-      if attributes.key?(:'sub_category_type')
-        self.sub_category_type = attributes[:'sub_category_type']
+      if attributes.key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'slug')
-        self.slug = attributes[:'slug']
+      if attributes.key?(:'payment_url')
+        self.payment_url = attributes[:'payment_url']
       end
 
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       end
 
-      if attributes.key?(:'logo_url')
-        self.logo_url = attributes[:'logo_url']
-      end
-
-      if attributes.key?(:'search_service_name')
-        self.search_service_name = attributes[:'search_service_name']
-      end
-
-      if attributes.key?(:'repository_service_name')
-        self.repository_service_name = attributes[:'repository_service_name']
-      end
-
-      if attributes.key?(:'supported_entity_types')
-        if (value = attributes[:'supported_entity_types']).is_a?(Array)
-          self.supported_entity_types = value
-        end
-      end
-
-      if attributes.key?(:'added_by')
-        self.added_by = attributes[:'added_by']
-      end
-
-      if attributes.key?(:'payable_amount')
-        self.payable_amount = attributes[:'payable_amount']
-      end
-
-      if attributes.key?(:'payable_amount_currency')
-        self.payable_amount_currency = attributes[:'payable_amount_currency']
-      end
-
-      if attributes.key?(:'approved_at_utc')
-        self.approved_at_utc = attributes[:'approved_at_utc']
+      if attributes.key?(:'due_by_utc')
+        self.due_by_utc = attributes[:'due_by_utc']
       end
     end
 
@@ -190,57 +111,12 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @category_type.nil?
-        invalid_properties.push('invalid value for "category_type", category_type cannot be nil.')
-      end
-
-      if @sub_category_type.nil?
-        invalid_properties.push('invalid value for "sub_category_type", sub_category_type cannot be nil.')
-      end
-
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @slug.nil?
-        invalid_properties.push('invalid value for "slug", slug cannot be nil.')
-      end
-
-      if @logo_url.nil?
-        invalid_properties.push('invalid value for "logo_url", logo_url cannot be nil.')
-      end
-
-      if @supported_entity_types.nil?
-        invalid_properties.push('invalid value for "supported_entity_types", supported_entity_types cannot be nil.')
-      end
-
-      if @added_by.nil?
-        invalid_properties.push('invalid value for "added_by", added_by cannot be nil.')
-      end
-
-      if @payable_amount.nil?
-        invalid_properties.push('invalid value for "payable_amount", payable_amount cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @id.nil?
-      return false if @category_type.nil?
-      return false if @sub_category_type.nil?
-      return false if @name.nil?
-      return false if @slug.nil?
-      return false if @logo_url.nil?
-      return false if @supported_entity_types.nil?
-      return false if @added_by.nil?
-      return false if @payable_amount.nil?
       true
     end
 
@@ -249,20 +125,12 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          category_type == o.category_type &&
-          sub_category_type == o.sub_category_type &&
-          name == o.name &&
-          slug == o.slug &&
+          identifier == o.identifier &&
+          amount == o.amount &&
+          currency_code == o.currency_code &&
+          payment_url == o.payment_url &&
           description == o.description &&
-          logo_url == o.logo_url &&
-          search_service_name == o.search_service_name &&
-          repository_service_name == o.repository_service_name &&
-          supported_entity_types == o.supported_entity_types &&
-          added_by == o.added_by &&
-          payable_amount == o.payable_amount &&
-          payable_amount_currency == o.payable_amount_currency &&
-          approved_at_utc == o.approved_at_utc
+          due_by_utc == o.due_by_utc
     end
 
     # @see the `==` method
@@ -274,7 +142,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, category_type, sub_category_type, name, slug, description, logo_url, search_service_name, repository_service_name, supported_entity_types, added_by, payable_amount, payable_amount_currency, approved_at_utc].hash
+      [identifier, amount, currency_code, payment_url, description, due_by_utc].hash
     end
 
     # Builds the object from hash

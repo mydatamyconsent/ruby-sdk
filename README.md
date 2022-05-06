@@ -173,6 +173,7 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::OrganizationFinancialAccountDto](docs/OrganizationFinancialAccountDto.md)
  - [MyDataMyConsent::OrganizationFinancialTransactionsDto](docs/OrganizationFinancialTransactionsDto.md)
  - [MyDataMyConsent::OrganizationFinancialTransactionsDtoPaginatedList](docs/OrganizationFinancialTransactionsDtoPaginatedList.md)
+ - [MyDataMyConsent::PaymentRequest](docs/PaymentRequest.md)
  - [MyDataMyConsent::ProblemDetails](docs/ProblemDetails.md)
  - [MyDataMyConsent::PushUriRequest](docs/PushUriRequest.md)
  - [MyDataMyConsent::PushUriResponse](docs/PushUriResponse.md)

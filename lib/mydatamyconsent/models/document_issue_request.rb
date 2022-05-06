@@ -36,6 +36,8 @@ module MyDataMyConsent
     # Datetime of expiry in UTC timezone.
     attr_accessor :expires_at_utc
 
+    attr_accessor :payment_request
+
     # Metadata.
     attr_accessor :metadata
 
@@ -49,6 +51,7 @@ module MyDataMyConsent
         :'issued_at_utc' => :'issuedAtUtc',
         :'valid_from_utc' => :'validFromUtc',
         :'expires_at_utc' => :'expiresAtUtc',
+        :'payment_request' => :'paymentRequest',
         :'metadata' => :'metadata'
       }
     end
@@ -68,6 +71,7 @@ module MyDataMyConsent
         :'issued_at_utc' => :'Time',
         :'valid_from_utc' => :'Time',
         :'expires_at_utc' => :'Time',
+        :'payment_request' => :'PaymentRequest',
         :'metadata' => :'Hash<String, String>'
       }
     end
@@ -121,6 +125,10 @@ module MyDataMyConsent
 
       if attributes.key?(:'expires_at_utc')
         self.expires_at_utc = attributes[:'expires_at_utc']
+      end
+
+      if attributes.key?(:'payment_request')
+        self.payment_request = attributes[:'payment_request']
       end
 
       if attributes.key?(:'metadata')
@@ -185,6 +193,7 @@ module MyDataMyConsent
           issued_at_utc == o.issued_at_utc &&
           valid_from_utc == o.valid_from_utc &&
           expires_at_utc == o.expires_at_utc &&
+          payment_request == o.payment_request &&
           metadata == o.metadata
     end
 
@@ -197,7 +206,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_type_id, identifier, description, receiver, issued_at_utc, valid_from_utc, expires_at_utc, metadata].hash
+      [document_type_id, identifier, description, receiver, issued_at_utc, valid_from_utc, expires_at_utc, payment_request, metadata].hash
     end
 
     # Builds the object from hash
