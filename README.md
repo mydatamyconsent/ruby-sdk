@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::Activity](docs/Activity.md)
  - [MyDataMyConsent::ApprovedConsentRequest](docs/ApprovedConsentRequest.md)
  - [MyDataMyConsent::BankAccountType](docs/BankAccountType.md)
+ - [MyDataMyConsent::BillPaymentOrderItem](docs/BillPaymentOrderItem.md)
  - [MyDataMyConsent::CollectibleTypes](docs/CollectibleTypes.md)
  - [MyDataMyConsent::ConsentRequestReceiver](docs/ConsentRequestReceiver.md)
  - [MyDataMyConsent::CreateDataConsentRequest](docs/CreateDataConsentRequest.md)

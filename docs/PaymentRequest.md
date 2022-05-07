@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **identifier** | **String** |  | [optional] |
-| **amount** | **String** |  | [optional] |
+| **items** | [**Array&lt;BillPaymentOrderItem&gt;**](BillPaymentOrderItem.md) |  | [optional] |
 | **currency_code** | **String** |  | [optional] |
 | **payment_url** | **String** |  | [optional] |
 | **description** | **String** |  | [optional] |
@@ -18,7 +18,7 @@ require 'mydatamyconsent'
 
 instance = MyDataMyConsent::PaymentRequest.new(
   identifier: null,
-  amount: null,
+  items: null,
   currency_code: null,
   payment_url: null,
   description: null,
