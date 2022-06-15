@@ -14,46 +14,31 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class OrganizationFinancialAccountDto
-    attr_accessor :id
+  class Error
+    attr_accessor :type
 
-    attr_accessor :organization_id
+    attr_accessor :title
 
-    attr_accessor :organization_name
+    attr_accessor :status
 
-    attr_accessor :beneficiary_name
+    attr_accessor :code
 
-    attr_accessor :account_number
+    attr_accessor :detail
 
-    attr_accessor :routing_number
+    attr_accessor :trace_id
 
-    attr_accessor :is_primary
-
-    attr_accessor :is_verified
-
-    attr_accessor :logo_url
-
-    attr_accessor :bank_name
-
-    attr_accessor :bank_account_type
-
-    attr_accessor :bank_account_proof_url
+    attr_accessor :errors
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'organization_id' => :'organizationId',
-        :'organization_name' => :'organizationName',
-        :'beneficiary_name' => :'beneficiaryName',
-        :'account_number' => :'accountNumber',
-        :'routing_number' => :'routingNumber',
-        :'is_primary' => :'isPrimary',
-        :'is_verified' => :'isVerified',
-        :'logo_url' => :'logoUrl',
-        :'bank_name' => :'bankName',
-        :'bank_account_type' => :'bankAccountType',
-        :'bank_account_proof_url' => :'bankAccountProofUrl'
+        :'type' => :'type',
+        :'title' => :'title',
+        :'status' => :'status',
+        :'code' => :'code',
+        :'detail' => :'detail',
+        :'trace_id' => :'traceId',
+        :'errors' => :'errors'
       }
     end
 
@@ -65,31 +50,25 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'organization_id' => :'String',
-        :'organization_name' => :'String',
-        :'beneficiary_name' => :'String',
-        :'account_number' => :'String',
-        :'routing_number' => :'String',
-        :'is_primary' => :'Boolean',
-        :'is_verified' => :'Boolean',
-        :'logo_url' => :'String',
-        :'bank_name' => :'String',
-        :'bank_account_type' => :'BankAccountType',
-        :'bank_account_proof_url' => :'String'
+        :'type' => :'ErrorType',
+        :'title' => :'String',
+        :'status' => :'Integer',
+        :'code' => :'Integer',
+        :'detail' => :'String',
+        :'trace_id' => :'String',
+        :'errors' => :'Array<String>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'organization_name',
-        :'beneficiary_name',
-        :'account_number',
-        :'routing_number',
-        :'logo_url',
-        :'bank_name',
-        :'bank_account_proof_url'
+        :'title',
+        :'status',
+        :'code',
+        :'detail',
+        :'trace_id',
+        :'errors'
       ])
     end
 
@@ -97,63 +76,45 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::OrganizationFinancialAccountDto` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::Error` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::OrganizationFinancialAccountDto`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::Error`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
       end
 
-      if attributes.key?(:'organization_id')
-        self.organization_id = attributes[:'organization_id']
+      if attributes.key?(:'title')
+        self.title = attributes[:'title']
       end
 
-      if attributes.key?(:'organization_name')
-        self.organization_name = attributes[:'organization_name']
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
       end
 
-      if attributes.key?(:'beneficiary_name')
-        self.beneficiary_name = attributes[:'beneficiary_name']
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
       end
 
-      if attributes.key?(:'account_number')
-        self.account_number = attributes[:'account_number']
+      if attributes.key?(:'detail')
+        self.detail = attributes[:'detail']
       end
 
-      if attributes.key?(:'routing_number')
-        self.routing_number = attributes[:'routing_number']
+      if attributes.key?(:'trace_id')
+        self.trace_id = attributes[:'trace_id']
       end
 
-      if attributes.key?(:'is_primary')
-        self.is_primary = attributes[:'is_primary']
-      end
-
-      if attributes.key?(:'is_verified')
-        self.is_verified = attributes[:'is_verified']
-      end
-
-      if attributes.key?(:'logo_url')
-        self.logo_url = attributes[:'logo_url']
-      end
-
-      if attributes.key?(:'bank_name')
-        self.bank_name = attributes[:'bank_name']
-      end
-
-      if attributes.key?(:'bank_account_type')
-        self.bank_account_type = attributes[:'bank_account_type']
-      end
-
-      if attributes.key?(:'bank_account_proof_url')
-        self.bank_account_proof_url = attributes[:'bank_account_proof_url']
+      if attributes.key?(:'errors')
+        if (value = attributes[:'errors']).is_a?(Array)
+          self.errors = value
+        end
       end
     end
 
@@ -175,18 +136,13 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          organization_id == o.organization_id &&
-          organization_name == o.organization_name &&
-          beneficiary_name == o.beneficiary_name &&
-          account_number == o.account_number &&
-          routing_number == o.routing_number &&
-          is_primary == o.is_primary &&
-          is_verified == o.is_verified &&
-          logo_url == o.logo_url &&
-          bank_name == o.bank_name &&
-          bank_account_type == o.bank_account_type &&
-          bank_account_proof_url == o.bank_account_proof_url
+          type == o.type &&
+          title == o.title &&
+          status == o.status &&
+          code == o.code &&
+          detail == o.detail &&
+          trace_id == o.trace_id &&
+          errors == o.errors
     end
 
     # @see the `==` method
@@ -198,7 +154,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, organization_id, organization_name, beneficiary_name, account_number, routing_number, is_primary, is_verified, logo_url, bank_name, bank_account_type, bank_account_proof_url].hash
+      [type, title, status, code, detail, trace_id, errors].hash
     end
 
     # Builds the object from hash

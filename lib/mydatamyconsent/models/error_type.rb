@@ -14,9 +14,15 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class FileType
-    PDF = "Pdf".freeze
-    IMAGE = "Image".freeze
+  class ErrorType
+    INVALID_ACCESS_TOKEN = "InvalidAccessToken".freeze
+    INVALID_REFRESH_TOKEN = "InvalidRefreshToken".freeze
+    INSUFFICIENT_PERMISSION = "InsufficientPermission".freeze
+    INTERNAL_SERVER_ERROR = "InternalServerError".freeze
+    BAD_REQUEST = "BadRequest".freeze
+    NOT_FOUND = "NotFound".freeze
+    INVALID_ORGANIZATION = "InvalidOrganization".freeze
+    INVALID_FILE_UPLOAD_TYPE = "InvalidFileUploadType".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
@@ -29,8 +35,8 @@ module MyDataMyConsent
     # @param [String] The enum value in the form of the string
     # @return [String] The enum value
     def build_from_hash(value)
-      constantValues = FileType.constants.select { |c| FileType::const_get(c) == value }
-      raise "Invalid ENUM value #{value} for class #FileType" if constantValues.empty?
+      constantValues = ErrorType.constants.select { |c| ErrorType::const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #ErrorType" if constantValues.empty?
       value
     end
   end

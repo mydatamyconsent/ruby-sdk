@@ -16,7 +16,6 @@
 | **bank_name** | **String** |  | [optional] |
 | **bank_account_type** | [**BankAccountType**](BankAccountType.md) |  | [optional] |
 | **bank_account_proof_url** | **String** |  | [optional] |
-| **file_type** | [**FileType**](FileType.md) |  | [optional] |
 
 ## Example
 
@@ -35,8 +34,7 @@ instance = MyDataMyConsent::OrganizationFinancialAccountDto.new(
   logo_url: null,
   bank_name: null,
   bank_account_type: null,
-  bank_account_proof_url: null,
-  file_type: null
+  bank_account_proof_url: null
 )
 ```
 

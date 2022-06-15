@@ -1,4 +1,4 @@
-# MyDataMyConsent::FileType
+# MyDataMyConsent::ErrorType
 
 ## Properties
 
@@ -10,6 +10,6 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::FileType.new()
+instance = MyDataMyConsent::ErrorType.new()
 ```
 

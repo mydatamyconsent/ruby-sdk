@@ -43,7 +43,8 @@ docs/DocumentType.md
 docs/DocumentTypePaginatedList.md
 docs/DocumentsApi.md
 docs/DocumentsRequired.md
-docs/FileType.md
+docs/Error.md
+docs/ErrorType.md
 docs/Financial.md
 docs/FinancialAccount.md
 docs/FinancialAccountDetailsRequired.md
@@ -119,7 +120,8 @@ lib/mydatamyconsent/models/document_sub_category_type.rb
 lib/mydatamyconsent/models/document_type.rb
 lib/mydatamyconsent/models/document_type_paginated_list.rb
 lib/mydatamyconsent/models/documents_required.rb
-lib/mydatamyconsent/models/file_type.rb
+lib/mydatamyconsent/models/error.rb
+lib/mydatamyconsent/models/error_type.rb
 lib/mydatamyconsent/models/financial.rb
 lib/mydatamyconsent/models/financial_account.rb
 lib/mydatamyconsent/models/financial_account_details_required.rb
