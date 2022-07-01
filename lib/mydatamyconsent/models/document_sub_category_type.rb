@@ -30,7 +30,6 @@ module MyDataMyConsent
     INSURANCE = "Insurance".freeze
     RECEIPTS_AND_SUBSCRIPTIONS = "ReceiptsAndSubscriptions".freeze
     TAXES = "Taxes".freeze
-    LICENCES_AND_CERTIFICATES = "LicencesAndCertificates".freeze
     CORPORATES = "Corporates".freeze
     COMPETITIONS = "Competitions".freeze
     INTELLECTUAL_PROPERTIES = "IntellectualProperties".freeze
@@ -38,6 +37,8 @@ module MyDataMyConsent
     APPLICATIONS_AND_CERTIFICATES = "ApplicationsAndCertificates".freeze
     LICENSES = "Licenses".freeze
     ORGANIZATION_IDS = "OrganizationIds".freeze
+    PERMITS = "Permits".freeze
+    LEGAL = "Legal".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

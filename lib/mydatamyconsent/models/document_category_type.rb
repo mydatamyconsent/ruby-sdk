@@ -20,7 +20,10 @@ module MyDataMyConsent
     HEALTH = "Health".freeze
     FINANCE = "Finance".freeze
     PROFESSIONAL = "Professional".freeze
-    LICENCES_AND_CERTIFICATES = "LicencesAndCertificates".freeze
+    LICENSES = "Licenses".freeze
+    PERMITS = "Permits".freeze
+    CERTIFICATES = "Certificates".freeze
+    LEGAL = "Legal".freeze
     OTHERS = "Others".freeze
 
     # Builds the enum from string
