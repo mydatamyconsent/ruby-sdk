@@ -4,12 +4,12 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **identifier** | **String** |  | [optional] |
-| **items** | [**Array&lt;BillPaymentOrderItem&gt;**](BillPaymentOrderItem.md) |  | [optional] |
-| **currency_code** | **String** |  | [optional] |
+| **identifier** | **String** |  |  |
+| **items** | [**Array&lt;PaymentOrderItem&gt;**](PaymentOrderItem.md) |  |  |
+| **currency_code** | **String** |  |  |
 | **payment_url** | **String** |  | [optional] |
-| **description** | **String** |  | [optional] |
-| **due_by_utc** | **Time** |  | [optional] |
+| **description** | **String** |  |  |
+| **due_by_utc** | **Time** |  |  |
 
 ## Example
 

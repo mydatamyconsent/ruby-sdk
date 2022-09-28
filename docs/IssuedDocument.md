@@ -10,7 +10,7 @@
 | **issued_to** | **String** | User name. |  |
 | **issued_at_utc** | **Time** | Issued datetime in UTC timezone. |  |
 | **expires_at_utc** | **Time** | Expires datetime in UTC timezone. | [optional] |
-| **accepted_at_utc** | **Time** | Accepted datetime in UTC timezone. | [optional] |
+| **accepted_at_utc** | **Time** | Accepted datetime in UTC timezone. |  |
 
 ## Example
 
@@ -19,8 +19,8 @@ require 'mydatamyconsent'
 
 instance = MyDataMyConsent::IssuedDocument.new(
   id: null,
-  identifier: GJ05FG67866586.,
-  document_type: Driving License.,
+  identifier: null,
+  document_type: null,
   issued_to: null,
   issued_at_utc: null,
   expires_at_utc: null,

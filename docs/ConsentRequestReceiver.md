@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **country_iso2_code** | **String** |  |  |
-| **identifiers** | [**Array&lt;StringStringKeyValuePair&gt;**](StringStringKeyValuePair.md) |  |  |
+| **identifiers** | [**Array&lt;KeyValuePair&gt;**](KeyValuePair.md) |  |  |
 | **identification_strategy** | [**IdentificationStrategy**](IdentificationStrategy.md) |  |  |
 
 ## Example

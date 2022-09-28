@@ -7,8 +7,8 @@
 | **name** | **String** | Name. |  |
 | **issued_by** | **String** | Signature issued by. |  |
 | **issuer_name** | **String** | Signature issuer name. |  |
-| **valid_from_utc** | **Time** | Signature valid from datatime in UTC timezone. |  |
-| **valid_to_utc** | **Time** | Signature valid to datatime in UTC timezone. |  |
+| **valid_from_utc** | **String** | Signature valid from datatime in UTC timezone. |  |
+| **valid_to_utc** | **String** | Signature valid to datatime in UTC timezone. |  |
 
 ## Example
 

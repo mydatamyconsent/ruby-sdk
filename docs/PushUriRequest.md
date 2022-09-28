@@ -10,7 +10,7 @@
 | **ts** | **String** |  | [optional] |
 | **txn** | **String** |  | [optional] |
 | **org_id** | **String** |  | [optional] |
-| **keyhash** | **String** |  | [optional] |
+| **key_hash** | **String** |  | [optional] |
 
 ## Example
 
@@ -24,7 +24,7 @@ instance = MyDataMyConsent::PushUriRequest.new(
   ts: null,
   txn: null,
   org_id: null,
-  keyhash: null
+  key_hash: null
 )
 ```
 

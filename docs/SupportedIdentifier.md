@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **iso2** | **String** |  | [optional] |
-| **name** | **String** |  | [optional] |
-| **individual_identifiers** | [**Array&lt;Identifier&gt;**](Identifier.md) |  | [optional] |
-| **organization_identifiers** | [**Array&lt;Identifier&gt;**](Identifier.md) |  | [optional] |
+| **iso2** | **String** | Country ISO 2 code. Example: IN, US, etc. |  |
+| **name** | **String** | Country name. Example: India, United States of America, etc. |  |
+| **individual_identifiers** | [**Array&lt;Identifier&gt;**](Identifier.md) | List of supported identifiers for an individual. |  |
+| **organization_identifiers** | [**Array&lt;Identifier&gt;**](Identifier.md) | List of supported identifiers for an organization. |  |
 
 ## Example
 

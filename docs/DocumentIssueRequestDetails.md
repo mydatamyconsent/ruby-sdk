@@ -10,7 +10,8 @@
 | **identifier** | **String** | Document identifier. |  |
 | **status** | [**DocumentIssueRequestStatus**](DocumentIssueRequestStatus.md) |  |  |
 | **description** | **String** | Document description. |  |
-| **receiver** | **Object** | Document receiver details. |  |
+| **receiver** | [**DocumentIssueRequestDetailsReceiver**](DocumentIssueRequestDetailsReceiver.md) |  |  |
+| **payment_request** | [**PaymentRequest**](PaymentRequest.md) |  | [optional] |
 | **issued_at_utc** | **Time** | Datetime of issue in UTC timezone. |  |
 | **valid_from_utc** | **Time** | Valid from datetime in UTC timezone. |  |
 | **expires_at_utc** | **Time** | Datetime of expiry in UTC timezone. | [optional] |
@@ -25,11 +26,12 @@ require 'mydatamyconsent'
 instance = MyDataMyConsent::DocumentIssueRequestDetails.new(
   id: null,
   document_type_id: null,
-  type_name: Driving License.,
-  identifier: GJ05FG67866586.,
+  type_name: null,
+  identifier: null,
   status: null,
   description: null,
   receiver: null,
+  payment_request: null,
   issued_at_utc: null,
   valid_from_utc: null,
   expires_at_utc: null,

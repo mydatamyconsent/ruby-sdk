@@ -4,14 +4,12 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**get_all_supported_identifiers**](SupportedIdentifiersApi.md#get_all_supported_identifiers) | **GET** /v1/supported-identifiers/{countryIso2Code} | Get all supported identifiers by country. |
+| [**v1_supported_identifiers_country_iso2_code_get**](SupportedIdentifiersApi.md#v1_supported_identifiers_country_iso2_code_get) | **GET** /v1/supported-identifiers/{country_iso2_code} | Get all supported identifiers by country. |
 
 
-## get_all_supported_identifiers
+## v1_supported_identifiers_country_iso2_code_get
 
-> <SupportedIdentifier> get_all_supported_identifiers(country_iso2_code)
-
-Get all supported identifiers by country.
+> <SupportedIdentifier> v1_supported_identifiers_country_iso2_code_get(country_iso2_code)
 
 Get all supported identifiers by country.
 
@@ -20,34 +18,39 @@ Get all supported identifiers by country.
 ```ruby
 require 'time'
 require 'mydatamyconsent'
+# setup authorization
+MyDataMyConsent.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2ClientCredentials
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = MyDataMyConsent::SupportedIdentifiersApi.new
-country_iso2_code = 'country_iso2_code_example' # String | Country ISO 2 code.
+country_iso2_code = 'country_iso2_code_example' # String | 
 
 begin
   # Get all supported identifiers by country.
-  result = api_instance.get_all_supported_identifiers(country_iso2_code)
+  result = api_instance.v1_supported_identifiers_country_iso2_code_get(country_iso2_code)
   p result
 rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling SupportedIdentifiersApi->get_all_supported_identifiers: #{e}"
+  puts "Error when calling SupportedIdentifiersApi->v1_supported_identifiers_country_iso2_code_get: #{e}"
 end
 ```
 
-#### Using the get_all_supported_identifiers_with_http_info variant
+#### Using the v1_supported_identifiers_country_iso2_code_get_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<SupportedIdentifier>, Integer, Hash)> get_all_supported_identifiers_with_http_info(country_iso2_code)
+> <Array(<SupportedIdentifier>, Integer, Hash)> v1_supported_identifiers_country_iso2_code_get_with_http_info(country_iso2_code)
 
 ```ruby
 begin
   # Get all supported identifiers by country.
-  data, status_code, headers = api_instance.get_all_supported_identifiers_with_http_info(country_iso2_code)
+  data, status_code, headers = api_instance.v1_supported_identifiers_country_iso2_code_get_with_http_info(country_iso2_code)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SupportedIdentifier>
 rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling SupportedIdentifiersApi->get_all_supported_identifiers_with_http_info: #{e}"
+  puts "Error when calling SupportedIdentifiersApi->v1_supported_identifiers_country_iso2_code_get_with_http_info: #{e}"
 end
 ```
 
@@ -55,7 +58,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **country_iso2_code** | **String** | Country ISO 2 code. |  |
+| **country_iso2_code** | **String** |  |  |
 
 ### Return type
 
@@ -63,7 +66,7 @@ end
 
 ### Authorization
 
-No authorization required
+[OAuth2ClientCredentials](../README.md#OAuth2ClientCredentials)
 
 ### HTTP request headers
 
