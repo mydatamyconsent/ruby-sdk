@@ -19,22 +19,6 @@ module MyDataMyConsent
 
     attr_accessor :id
 
-    attr_accessor :txn_type
-
-    attr_accessor :txn_date
-
-    attr_accessor :amount
-
-    attr_accessor :value_date
-
-    attr_accessor :narration
-
-    attr_accessor :statement_date
-
-    attr_accessor :mcc
-
-    attr_accessor :masked_card_number
-
     attr_accessor :amc
 
     attr_accessor :registrar
@@ -57,6 +41,8 @@ module MyDataMyConsent
 
     attr_accessor :ucc
 
+    attr_accessor :amount
+
     attr_accessor :closing_units
 
     attr_accessor :lien_units
@@ -75,19 +61,13 @@ module MyDataMyConsent
 
     attr_accessor :mode
 
+    attr_accessor :narration
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'type' => :'type',
         :'id' => :'id',
-        :'txn_type' => :'txn_type',
-        :'txn_date' => :'txn_date',
-        :'amount' => :'amount',
-        :'value_date' => :'value_date',
-        :'narration' => :'narration',
-        :'statement_date' => :'statement_date',
-        :'mcc' => :'mcc',
-        :'masked_card_number' => :'masked_card_number',
         :'amc' => :'amc',
         :'registrar' => :'registrar',
         :'scheme_code' => :'scheme_code',
@@ -99,6 +79,7 @@ module MyDataMyConsent
         :'scheme_types' => :'scheme_types',
         :'scheme_category' => :'scheme_category',
         :'ucc' => :'ucc',
+        :'amount' => :'amount',
         :'closing_units' => :'closing_units',
         :'lien_units' => :'lien_units',
         :'nav' => :'nav',
@@ -107,7 +88,8 @@ module MyDataMyConsent
         :'execution_date' => :'execution_date',
         :'lockin_flag' => :'lockin_flag',
         :'lockin_days' => :'lockin_days',
-        :'mode' => :'mode'
+        :'mode' => :'mode',
+        :'narration' => :'narration'
       }
     end
 
@@ -121,14 +103,6 @@ module MyDataMyConsent
       {
         :'type' => :'String',
         :'id' => :'String',
-        :'txn_type' => :'CreditCardTransactionType',
-        :'txn_date' => :'Time',
-        :'amount' => :'String',
-        :'value_date' => :'Time',
-        :'narration' => :'String',
-        :'statement_date' => :'Time',
-        :'mcc' => :'String',
-        :'masked_card_number' => :'String',
         :'amc' => :'String',
         :'registrar' => :'String',
         :'scheme_code' => :'String',
@@ -140,6 +114,7 @@ module MyDataMyConsent
         :'scheme_types' => :'MutualFundSchemeType',
         :'scheme_category' => :'MutualFundSchemeCategory',
         :'ucc' => :'String',
+        :'amount' => :'String',
         :'closing_units' => :'String',
         :'lien_units' => :'String',
         :'nav' => :'String',
@@ -148,7 +123,8 @@ module MyDataMyConsent
         :'execution_date' => :'Time',
         :'lockin_flag' => :'String',
         :'lockin_days' => :'String',
-        :'mode' => :'MutualFundHoldingMode'
+        :'mode' => :'MutualFundHoldingMode',
+        :'narration' => :'String'
       }
     end
 
@@ -161,31 +137,9 @@ module MyDataMyConsent
     # List of class defined in anyOf (OpenAPI v3)
     def self.openapi_any_of
       [
-      :'FinancialAccountAifTransaction',
-      :'FinancialAccountBillPaymentTransaction',
-      :'FinancialAccountBondTransaction',
-      :'FinancialAccountCISTransaction',
-      :'FinancialAccountCertificateOfDepositTransaction',
-      :'FinancialAccountCommercialPaperTransaction',
-      :'FinancialAccountCreditCardTransaction',
-      :'FinancialAccountDebentureTransaction',
-      :'FinancialAccountDepositTransaction',
-      :'FinancialAccountEpfTransaction',
       :'FinancialAccountEquityTransaction',
-      :'FinancialAccountEtfTransaction',
-      :'FinancialAccountGovtSecurityTransaction',
-      :'FinancialAccountIdrTransaction',
-      :'FinancialAccountInsurancePolicyTransaction',
-      :'FinancialAccountInvitTransaction',
-      :'FinancialAccountLoanTransaction',
       :'FinancialAccountMutualFundTransaction',
-      :'FinancialAccountNpsTransaction',
-      :'FinancialAccountPpfTransaction',
-      :'FinancialAccountRecurringDepositTransaction',
-      :'FinancialAccountReitTransaction',
-      :'FinancialAccountSipTransaction',
-      :'FinancialAccountTermDepositTransaction',
-      :'FinancialAccountUlipTransaction'
+      :'FinancialAccountSipTransaction'
       ]
     end
 
@@ -215,38 +169,6 @@ module MyDataMyConsent
 
       if attributes.key?(:'id')
         self.id = attributes[:'id']
-      end
-
-      if attributes.key?(:'txn_type')
-        self.txn_type = attributes[:'txn_type']
-      end
-
-      if attributes.key?(:'txn_date')
-        self.txn_date = attributes[:'txn_date']
-      end
-
-      if attributes.key?(:'amount')
-        self.amount = attributes[:'amount']
-      end
-
-      if attributes.key?(:'value_date')
-        self.value_date = attributes[:'value_date']
-      end
-
-      if attributes.key?(:'narration')
-        self.narration = attributes[:'narration']
-      end
-
-      if attributes.key?(:'statement_date')
-        self.statement_date = attributes[:'statement_date']
-      end
-
-      if attributes.key?(:'mcc')
-        self.mcc = attributes[:'mcc']
-      end
-
-      if attributes.key?(:'masked_card_number')
-        self.masked_card_number = attributes[:'masked_card_number']
       end
 
       if attributes.key?(:'amc')
@@ -293,6 +215,10 @@ module MyDataMyConsent
         self.ucc = attributes[:'ucc']
       end
 
+      if attributes.key?(:'amount')
+        self.amount = attributes[:'amount']
+      end
+
       if attributes.key?(:'closing_units')
         self.closing_units = attributes[:'closing_units']
       end
@@ -328,6 +254,10 @@ module MyDataMyConsent
       if attributes.key?(:'mode')
         self.mode = attributes[:'mode']
       end
+
+      if attributes.key?(:'narration')
+        self.narration = attributes[:'narration']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -340,38 +270,6 @@ module MyDataMyConsent
 
       if @id.nil?
         invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @txn_type.nil?
-        invalid_properties.push('invalid value for "txn_type", txn_type cannot be nil.')
-      end
-
-      if @txn_date.nil?
-        invalid_properties.push('invalid value for "txn_date", txn_date cannot be nil.')
-      end
-
-      if @amount.nil?
-        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
-      end
-
-      if @value_date.nil?
-        invalid_properties.push('invalid value for "value_date", value_date cannot be nil.')
-      end
-
-      if @narration.nil?
-        invalid_properties.push('invalid value for "narration", narration cannot be nil.')
-      end
-
-      if @statement_date.nil?
-        invalid_properties.push('invalid value for "statement_date", statement_date cannot be nil.')
-      end
-
-      if @mcc.nil?
-        invalid_properties.push('invalid value for "mcc", mcc cannot be nil.')
-      end
-
-      if @masked_card_number.nil?
-        invalid_properties.push('invalid value for "masked_card_number", masked_card_number cannot be nil.')
       end
 
       if @amc.nil?
@@ -418,6 +316,10 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "ucc", ucc cannot be nil.')
       end
 
+      if @amount.nil?
+        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
+      end
+
       if @closing_units.nil?
         invalid_properties.push('invalid value for "closing_units", closing_units cannot be nil.')
       end
@@ -454,6 +356,10 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "mode", mode cannot be nil.')
       end
 
+      if @narration.nil?
+        invalid_properties.push('invalid value for "narration", narration cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -462,14 +368,6 @@ module MyDataMyConsent
     def valid?
       return false if @type.nil?
       return false if @id.nil?
-      return false if @txn_type.nil?
-      return false if @txn_date.nil?
-      return false if @amount.nil?
-      return false if @value_date.nil?
-      return false if @narration.nil?
-      return false if @statement_date.nil?
-      return false if @mcc.nil?
-      return false if @masked_card_number.nil?
       return false if @amc.nil?
       return false if @registrar.nil?
       return false if @scheme_code.nil?
@@ -481,6 +379,7 @@ module MyDataMyConsent
       return false if @scheme_types.nil?
       return false if @scheme_category.nil?
       return false if @ucc.nil?
+      return false if @amount.nil?
       return false if @closing_units.nil?
       return false if @lien_units.nil?
       return false if @nav.nil?
@@ -490,6 +389,7 @@ module MyDataMyConsent
       return false if @lockin_flag.nil?
       return false if @lockin_days.nil?
       return false if @mode.nil?
+      return false if @narration.nil?
       _any_of_found = false
       self.class.openapi_any_of.each do |_class|
         _any_of = MyDataMyConsent.const_get(_class).build_from_hash(self.to_hash)
@@ -512,14 +412,6 @@ module MyDataMyConsent
       self.class == o.class &&
           type == o.type &&
           id == o.id &&
-          txn_type == o.txn_type &&
-          txn_date == o.txn_date &&
-          amount == o.amount &&
-          value_date == o.value_date &&
-          narration == o.narration &&
-          statement_date == o.statement_date &&
-          mcc == o.mcc &&
-          masked_card_number == o.masked_card_number &&
           amc == o.amc &&
           registrar == o.registrar &&
           scheme_code == o.scheme_code &&
@@ -531,6 +423,7 @@ module MyDataMyConsent
           scheme_types == o.scheme_types &&
           scheme_category == o.scheme_category &&
           ucc == o.ucc &&
+          amount == o.amount &&
           closing_units == o.closing_units &&
           lien_units == o.lien_units &&
           nav == o.nav &&
@@ -539,7 +432,8 @@ module MyDataMyConsent
           execution_date == o.execution_date &&
           lockin_flag == o.lockin_flag &&
           lockin_days == o.lockin_days &&
-          mode == o.mode
+          mode == o.mode &&
+          narration == o.narration
     end
 
     # @see the `==` method
@@ -551,7 +445,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, id, txn_type, txn_date, amount, value_date, narration, statement_date, mcc, masked_card_number, amc, registrar, scheme_code, scheme_plan, isin, amfi_code, fund_type, scheme_option, scheme_types, scheme_category, ucc, closing_units, lien_units, nav, nav_date, order_date, execution_date, lockin_flag, lockin_days, mode].hash
+      [type, id, amc, registrar, scheme_code, scheme_plan, isin, amfi_code, fund_type, scheme_option, scheme_types, scheme_category, ucc, amount, closing_units, lien_units, nav, nav_date, order_date, execution_date, lockin_flag, lockin_days, mode, narration].hash
     end
 
     # Builds the object from hash

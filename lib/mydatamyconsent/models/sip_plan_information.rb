@@ -14,28 +14,34 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class Holder
-    attr_accessor :name
+  class SipPlanInformation
+    attr_accessor :amc
 
-    attr_accessor :date_of_birth
+    attr_accessor :registrar
 
-    attr_accessor :mobile
+    attr_accessor :scheme
 
-    attr_accessor :demat_id
+    attr_accessor :isin
 
-    attr_accessor :email
+    attr_accessor :folio_number
 
-    attr_accessor :pan
+    attr_accessor :nav
+
+    attr_accessor :dividend_type
+
+    attr_accessor :creation_date
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'date_of_birth' => :'date_of_birth',
-        :'mobile' => :'mobile',
-        :'demat_id' => :'demat_id',
-        :'email' => :'email',
-        :'pan' => :'pan'
+        :'amc' => :'amc',
+        :'registrar' => :'registrar',
+        :'scheme' => :'scheme',
+        :'isin' => :'isin',
+        :'folio_number' => :'folio_number',
+        :'nav' => :'nav',
+        :'dividend_type' => :'dividend_type',
+        :'creation_date' => :'creation_date'
       }
     end
 
@@ -47,12 +53,14 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'date_of_birth' => :'Time',
-        :'mobile' => :'String',
-        :'demat_id' => :'String',
-        :'email' => :'String',
-        :'pan' => :'String'
+        :'amc' => :'String',
+        :'registrar' => :'String',
+        :'scheme' => :'String',
+        :'isin' => :'String',
+        :'folio_number' => :'String',
+        :'nav' => :'String',
+        :'dividend_type' => :'String',
+        :'creation_date' => :'Time'
       }
     end
 
@@ -66,39 +74,47 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::Holder` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::SipPlanInformation` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::Holder`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::SipPlanInformation`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.key?(:'amc')
+        self.amc = attributes[:'amc']
       end
 
-      if attributes.key?(:'date_of_birth')
-        self.date_of_birth = attributes[:'date_of_birth']
+      if attributes.key?(:'registrar')
+        self.registrar = attributes[:'registrar']
       end
 
-      if attributes.key?(:'mobile')
-        self.mobile = attributes[:'mobile']
+      if attributes.key?(:'scheme')
+        self.scheme = attributes[:'scheme']
       end
 
-      if attributes.key?(:'demat_id')
-        self.demat_id = attributes[:'demat_id']
+      if attributes.key?(:'isin')
+        self.isin = attributes[:'isin']
       end
 
-      if attributes.key?(:'email')
-        self.email = attributes[:'email']
+      if attributes.key?(:'folio_number')
+        self.folio_number = attributes[:'folio_number']
       end
 
-      if attributes.key?(:'pan')
-        self.pan = attributes[:'pan']
+      if attributes.key?(:'nav')
+        self.nav = attributes[:'nav']
+      end
+
+      if attributes.key?(:'dividend_type')
+        self.dividend_type = attributes[:'dividend_type']
+      end
+
+      if attributes.key?(:'creation_date')
+        self.creation_date = attributes[:'creation_date']
       end
     end
 
@@ -106,16 +122,16 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      if @scheme.nil?
+        invalid_properties.push('invalid value for "scheme", scheme cannot be nil.')
       end
 
-      if @demat_id.nil?
-        invalid_properties.push('invalid value for "demat_id", demat_id cannot be nil.')
+      if @isin.nil?
+        invalid_properties.push('invalid value for "isin", isin cannot be nil.')
       end
 
-      if @email.nil?
-        invalid_properties.push('invalid value for "email", email cannot be nil.')
+      if @dividend_type.nil?
+        invalid_properties.push('invalid value for "dividend_type", dividend_type cannot be nil.')
       end
 
       invalid_properties
@@ -124,9 +140,9 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
-      return false if @demat_id.nil?
-      return false if @email.nil?
+      return false if @scheme.nil?
+      return false if @isin.nil?
+      return false if @dividend_type.nil?
       true
     end
 
@@ -135,12 +151,14 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          date_of_birth == o.date_of_birth &&
-          mobile == o.mobile &&
-          demat_id == o.demat_id &&
-          email == o.email &&
-          pan == o.pan
+          amc == o.amc &&
+          registrar == o.registrar &&
+          scheme == o.scheme &&
+          isin == o.isin &&
+          folio_number == o.folio_number &&
+          nav == o.nav &&
+          dividend_type == o.dividend_type &&
+          creation_date == o.creation_date
     end
 
     # @see the `==` method
@@ -152,7 +170,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, date_of_birth, mobile, demat_id, email, pan].hash
+      [amc, registrar, scheme, isin, folio_number, nav, dividend_type, creation_date].hash
     end
 
     # Builds the object from hash

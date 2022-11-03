@@ -21,21 +21,45 @@ module MyDataMyConsent
 
     attr_accessor :name
 
-    attr_accessor :identifier
+    attr_accessor :issuer_name
 
-    attr_accessor :balance
+    attr_accessor :exchange
 
-    attr_accessor :profile
+    attr_accessor :isin
 
-    attr_accessor :summary
+    attr_accessor :units
 
-    attr_accessor :masked_account_number
+    attr_accessor :investment_value
 
-    attr_accessor :linked_account_ref
+    attr_accessor :current_value
 
-    attr_accessor :version
+    attr_accessor :currency_code
 
-    attr_accessor :amount
+    attr_accessor :holder
+
+    attr_accessor :transactions
+
+    attr_accessor :amc
+
+    attr_accessor :registrar
+
+    attr_accessor :fund_name
+
+    attr_accessor :folio_number
+
+    attr_accessor :scheme_code
+
+    attr_accessor :fund_type
+
+    attr_accessor :fund_category
+
+    attr_accessor :lien_units
+
+    attr_accessor :creation_date
+
+    attr_accessor :plan_info
+
+    attr_accessor :investment_info
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -43,14 +67,26 @@ module MyDataMyConsent
         :'type' => :'type',
         :'id' => :'id',
         :'name' => :'name',
-        :'identifier' => :'identifier',
-        :'balance' => :'balance',
-        :'profile' => :'profile',
-        :'summary' => :'summary',
-        :'masked_account_number' => :'masked_account_number',
-        :'linked_account_ref' => :'linked_account_ref',
-        :'version' => :'version',
-        :'amount' => :'amount'
+        :'issuer_name' => :'issuer_name',
+        :'exchange' => :'exchange',
+        :'isin' => :'isin',
+        :'units' => :'units',
+        :'investment_value' => :'investment_value',
+        :'current_value' => :'current_value',
+        :'currency_code' => :'currency_code',
+        :'holder' => :'holder',
+        :'transactions' => :'transactions',
+        :'amc' => :'amc',
+        :'registrar' => :'registrar',
+        :'fund_name' => :'fund_name',
+        :'folio_number' => :'folio_number',
+        :'scheme_code' => :'scheme_code',
+        :'fund_type' => :'fund_type',
+        :'fund_category' => :'fund_category',
+        :'lien_units' => :'lien_units',
+        :'creation_date' => :'creation_date',
+        :'plan_info' => :'plan_info',
+        :'investment_info' => :'investment_info'
       }
     end
 
@@ -65,14 +101,26 @@ module MyDataMyConsent
         :'type' => :'String',
         :'id' => :'String',
         :'name' => :'String',
-        :'identifier' => :'String',
-        :'balance' => :'Float',
-        :'profile' => :'Profile',
-        :'summary' => :'EquitySummary',
-        :'masked_account_number' => :'String',
-        :'linked_account_ref' => :'String',
-        :'version' => :'Float',
-        :'amount' => :'Float'
+        :'issuer_name' => :'String',
+        :'exchange' => :'String',
+        :'isin' => :'String',
+        :'units' => :'Float',
+        :'investment_value' => :'Float',
+        :'current_value' => :'Float',
+        :'currency_code' => :'String',
+        :'holder' => :'Holder',
+        :'transactions' => :'Boolean',
+        :'amc' => :'String',
+        :'registrar' => :'String',
+        :'fund_name' => :'String',
+        :'folio_number' => :'String',
+        :'scheme_code' => :'String',
+        :'fund_type' => :'String',
+        :'fund_category' => :'String',
+        :'lien_units' => :'String',
+        :'creation_date' => :'Time',
+        :'plan_info' => :'SipPlanInformation',
+        :'investment_info' => :'SipInvestmentInformation'
       }
     end
 
@@ -85,31 +133,9 @@ module MyDataMyConsent
     # List of class defined in anyOf (OpenAPI v3)
     def self.openapi_any_of
       [
-      :'FinancialAccountAif',
-      :'FinancialAccountBillPayment',
-      :'FinancialAccountBond',
-      :'FinancialAccountCIS',
-      :'FinancialAccountCertificateOfDeposit',
-      :'FinancialAccountCommercialPaper',
-      :'FinancialAccountCreditCard',
-      :'FinancialAccountDebenture',
-      :'FinancialAccountDeposit',
-      :'FinancialAccountEpf',
       :'FinancialAccountEquity',
-      :'FinancialAccountEtf',
-      :'FinancialAccountGovtSecurity',
-      :'FinancialAccountIdr',
-      :'FinancialAccountInsurancePolicy',
-      :'FinancialAccountInvit',
-      :'FinancialAccountLoan',
       :'FinancialAccountMutualFund',
-      :'FinancialAccountNps',
-      :'FinancialAccountPpf',
-      :'FinancialAccountRecurringDeposit',
-      :'FinancialAccountReit',
-      :'FinancialAccountSip',
-      :'FinancialAccountTermDeposit',
-      :'FinancialAccountUlip'
+      :'FinancialAccountSip'
       ]
     end
 
@@ -145,36 +171,84 @@ module MyDataMyConsent
         self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'identifier')
-        self.identifier = attributes[:'identifier']
+      if attributes.key?(:'issuer_name')
+        self.issuer_name = attributes[:'issuer_name']
       end
 
-      if attributes.key?(:'balance')
-        self.balance = attributes[:'balance']
+      if attributes.key?(:'exchange')
+        self.exchange = attributes[:'exchange']
       end
 
-      if attributes.key?(:'profile')
-        self.profile = attributes[:'profile']
+      if attributes.key?(:'isin')
+        self.isin = attributes[:'isin']
       end
 
-      if attributes.key?(:'summary')
-        self.summary = attributes[:'summary']
+      if attributes.key?(:'units')
+        self.units = attributes[:'units']
       end
 
-      if attributes.key?(:'masked_account_number')
-        self.masked_account_number = attributes[:'masked_account_number']
+      if attributes.key?(:'investment_value')
+        self.investment_value = attributes[:'investment_value']
       end
 
-      if attributes.key?(:'linked_account_ref')
-        self.linked_account_ref = attributes[:'linked_account_ref']
+      if attributes.key?(:'current_value')
+        self.current_value = attributes[:'current_value']
       end
 
-      if attributes.key?(:'version')
-        self.version = attributes[:'version']
+      if attributes.key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
-      if attributes.key?(:'amount')
-        self.amount = attributes[:'amount']
+      if attributes.key?(:'holder')
+        self.holder = attributes[:'holder']
+      end
+
+      if attributes.key?(:'transactions')
+        self.transactions = attributes[:'transactions']
+      end
+
+      if attributes.key?(:'amc')
+        self.amc = attributes[:'amc']
+      end
+
+      if attributes.key?(:'registrar')
+        self.registrar = attributes[:'registrar']
+      end
+
+      if attributes.key?(:'fund_name')
+        self.fund_name = attributes[:'fund_name']
+      end
+
+      if attributes.key?(:'folio_number')
+        self.folio_number = attributes[:'folio_number']
+      end
+
+      if attributes.key?(:'scheme_code')
+        self.scheme_code = attributes[:'scheme_code']
+      end
+
+      if attributes.key?(:'fund_type')
+        self.fund_type = attributes[:'fund_type']
+      end
+
+      if attributes.key?(:'fund_category')
+        self.fund_category = attributes[:'fund_category']
+      end
+
+      if attributes.key?(:'lien_units')
+        self.lien_units = attributes[:'lien_units']
+      end
+
+      if attributes.key?(:'creation_date')
+        self.creation_date = attributes[:'creation_date']
+      end
+
+      if attributes.key?(:'plan_info')
+        self.plan_info = attributes[:'plan_info']
+      end
+
+      if attributes.key?(:'investment_info')
+        self.investment_info = attributes[:'investment_info']
       end
     end
 
@@ -194,36 +268,56 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @identifier.nil?
-        invalid_properties.push('invalid value for "identifier", identifier cannot be nil.')
+      if @issuer_name.nil?
+        invalid_properties.push('invalid value for "issuer_name", issuer_name cannot be nil.')
       end
 
-      if @balance.nil?
-        invalid_properties.push('invalid value for "balance", balance cannot be nil.')
+      if @exchange.nil?
+        invalid_properties.push('invalid value for "exchange", exchange cannot be nil.')
       end
 
-      if @profile.nil?
-        invalid_properties.push('invalid value for "profile", profile cannot be nil.')
+      if @isin.nil?
+        invalid_properties.push('invalid value for "isin", isin cannot be nil.')
       end
 
-      if @summary.nil?
-        invalid_properties.push('invalid value for "summary", summary cannot be nil.')
+      if @units.nil?
+        invalid_properties.push('invalid value for "units", units cannot be nil.')
       end
 
-      if @masked_account_number.nil?
-        invalid_properties.push('invalid value for "masked_account_number", masked_account_number cannot be nil.')
+      if @investment_value.nil?
+        invalid_properties.push('invalid value for "investment_value", investment_value cannot be nil.')
       end
 
-      if @linked_account_ref.nil?
-        invalid_properties.push('invalid value for "linked_account_ref", linked_account_ref cannot be nil.')
+      if @current_value.nil?
+        invalid_properties.push('invalid value for "current_value", current_value cannot be nil.')
       end
 
-      if @version.nil?
-        invalid_properties.push('invalid value for "version", version cannot be nil.')
+      if @currency_code.nil?
+        invalid_properties.push('invalid value for "currency_code", currency_code cannot be nil.')
       end
 
-      if @amount.nil?
-        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
+      if @holder.nil?
+        invalid_properties.push('invalid value for "holder", holder cannot be nil.')
+      end
+
+      if @transactions.nil?
+        invalid_properties.push('invalid value for "transactions", transactions cannot be nil.')
+      end
+
+      if @fund_name.nil?
+        invalid_properties.push('invalid value for "fund_name", fund_name cannot be nil.')
+      end
+
+      if @folio_number.nil?
+        invalid_properties.push('invalid value for "folio_number", folio_number cannot be nil.')
+      end
+
+      if @plan_info.nil?
+        invalid_properties.push('invalid value for "plan_info", plan_info cannot be nil.')
+      end
+
+      if @investment_info.nil?
+        invalid_properties.push('invalid value for "investment_info", investment_info cannot be nil.')
       end
 
       invalid_properties
@@ -235,14 +329,19 @@ module MyDataMyConsent
       return false if @type.nil?
       return false if @id.nil?
       return false if @name.nil?
-      return false if @identifier.nil?
-      return false if @balance.nil?
-      return false if @profile.nil?
-      return false if @summary.nil?
-      return false if @masked_account_number.nil?
-      return false if @linked_account_ref.nil?
-      return false if @version.nil?
-      return false if @amount.nil?
+      return false if @issuer_name.nil?
+      return false if @exchange.nil?
+      return false if @isin.nil?
+      return false if @units.nil?
+      return false if @investment_value.nil?
+      return false if @current_value.nil?
+      return false if @currency_code.nil?
+      return false if @holder.nil?
+      return false if @transactions.nil?
+      return false if @fund_name.nil?
+      return false if @folio_number.nil?
+      return false if @plan_info.nil?
+      return false if @investment_info.nil?
       _any_of_found = false
       self.class.openapi_any_of.each do |_class|
         _any_of = MyDataMyConsent.const_get(_class).build_from_hash(self.to_hash)
@@ -266,14 +365,26 @@ module MyDataMyConsent
           type == o.type &&
           id == o.id &&
           name == o.name &&
-          identifier == o.identifier &&
-          balance == o.balance &&
-          profile == o.profile &&
-          summary == o.summary &&
-          masked_account_number == o.masked_account_number &&
-          linked_account_ref == o.linked_account_ref &&
-          version == o.version &&
-          amount == o.amount
+          issuer_name == o.issuer_name &&
+          exchange == o.exchange &&
+          isin == o.isin &&
+          units == o.units &&
+          investment_value == o.investment_value &&
+          current_value == o.current_value &&
+          currency_code == o.currency_code &&
+          holder == o.holder &&
+          transactions == o.transactions &&
+          amc == o.amc &&
+          registrar == o.registrar &&
+          fund_name == o.fund_name &&
+          folio_number == o.folio_number &&
+          scheme_code == o.scheme_code &&
+          fund_type == o.fund_type &&
+          fund_category == o.fund_category &&
+          lien_units == o.lien_units &&
+          creation_date == o.creation_date &&
+          plan_info == o.plan_info &&
+          investment_info == o.investment_info
     end
 
     # @see the `==` method
@@ -285,7 +396,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, id, name, identifier, balance, profile, summary, masked_account_number, linked_account_ref, version, amount].hash
+      [type, id, name, issuer_name, exchange, isin, units, investment_value, current_value, currency_code, holder, transactions, amc, registrar, fund_name, folio_number, scheme_code, fund_type, fund_category, lien_units, creation_date, plan_info, investment_info].hash
     end
 
     # Builds the object from hash

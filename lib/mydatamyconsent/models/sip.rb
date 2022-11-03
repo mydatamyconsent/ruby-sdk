@@ -19,17 +19,32 @@ module MyDataMyConsent
 
     attr_accessor :name
 
-    attr_accessor :identifier
+    attr_accessor :investment_value
 
-    attr_accessor :amount
+    attr_accessor :current_value
+
+    attr_accessor :currency_code
+
+    attr_accessor :plan_info
+
+    attr_accessor :investment_info
+
+    attr_accessor :holder
+
+    attr_accessor :transactions
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
         :'name' => :'name',
-        :'identifier' => :'identifier',
-        :'amount' => :'amount'
+        :'investment_value' => :'investment_value',
+        :'current_value' => :'current_value',
+        :'currency_code' => :'currency_code',
+        :'plan_info' => :'plan_info',
+        :'investment_info' => :'investment_info',
+        :'holder' => :'holder',
+        :'transactions' => :'transactions'
       }
     end
 
@@ -43,8 +58,13 @@ module MyDataMyConsent
       {
         :'id' => :'String',
         :'name' => :'String',
-        :'identifier' => :'String',
-        :'amount' => :'Float'
+        :'investment_value' => :'Float',
+        :'current_value' => :'Float',
+        :'currency_code' => :'String',
+        :'plan_info' => :'SipPlanInformation',
+        :'investment_info' => :'SipInvestmentInformation',
+        :'holder' => :'Holder',
+        :'transactions' => :'Boolean'
       }
     end
 
@@ -77,12 +97,32 @@ module MyDataMyConsent
         self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'identifier')
-        self.identifier = attributes[:'identifier']
+      if attributes.key?(:'investment_value')
+        self.investment_value = attributes[:'investment_value']
       end
 
-      if attributes.key?(:'amount')
-        self.amount = attributes[:'amount']
+      if attributes.key?(:'current_value')
+        self.current_value = attributes[:'current_value']
+      end
+
+      if attributes.key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
+      end
+
+      if attributes.key?(:'plan_info')
+        self.plan_info = attributes[:'plan_info']
+      end
+
+      if attributes.key?(:'investment_info')
+        self.investment_info = attributes[:'investment_info']
+      end
+
+      if attributes.key?(:'holder')
+        self.holder = attributes[:'holder']
+      end
+
+      if attributes.key?(:'transactions')
+        self.transactions = attributes[:'transactions']
       end
     end
 
@@ -98,12 +138,32 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @identifier.nil?
-        invalid_properties.push('invalid value for "identifier", identifier cannot be nil.')
+      if @investment_value.nil?
+        invalid_properties.push('invalid value for "investment_value", investment_value cannot be nil.')
       end
 
-      if @amount.nil?
-        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
+      if @current_value.nil?
+        invalid_properties.push('invalid value for "current_value", current_value cannot be nil.')
+      end
+
+      if @currency_code.nil?
+        invalid_properties.push('invalid value for "currency_code", currency_code cannot be nil.')
+      end
+
+      if @plan_info.nil?
+        invalid_properties.push('invalid value for "plan_info", plan_info cannot be nil.')
+      end
+
+      if @investment_info.nil?
+        invalid_properties.push('invalid value for "investment_info", investment_info cannot be nil.')
+      end
+
+      if @holder.nil?
+        invalid_properties.push('invalid value for "holder", holder cannot be nil.')
+      end
+
+      if @transactions.nil?
+        invalid_properties.push('invalid value for "transactions", transactions cannot be nil.')
       end
 
       invalid_properties
@@ -114,8 +174,13 @@ module MyDataMyConsent
     def valid?
       return false if @id.nil?
       return false if @name.nil?
-      return false if @identifier.nil?
-      return false if @amount.nil?
+      return false if @investment_value.nil?
+      return false if @current_value.nil?
+      return false if @currency_code.nil?
+      return false if @plan_info.nil?
+      return false if @investment_info.nil?
+      return false if @holder.nil?
+      return false if @transactions.nil?
       true
     end
 
@@ -126,8 +191,13 @@ module MyDataMyConsent
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
-          identifier == o.identifier &&
-          amount == o.amount
+          investment_value == o.investment_value &&
+          current_value == o.current_value &&
+          currency_code == o.currency_code &&
+          plan_info == o.plan_info &&
+          investment_info == o.investment_info &&
+          holder == o.holder &&
+          transactions == o.transactions
     end
 
     # @see the `==` method
@@ -139,7 +209,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, identifier, amount].hash
+      [id, name, investment_value, current_value, currency_code, plan_info, investment_info, holder, transactions].hash
     end
 
     # Builds the object from hash

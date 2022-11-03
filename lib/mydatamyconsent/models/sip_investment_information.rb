@@ -14,28 +14,28 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class Holder
-    attr_accessor :name
+  class SipInvestmentInformation
+    attr_accessor :instalment_amount
 
-    attr_accessor :date_of_birth
+    attr_accessor :frequency
 
-    attr_accessor :mobile
+    attr_accessor :completed_instalments
 
-    attr_accessor :demat_id
+    attr_accessor :investment_value
 
-    attr_accessor :email
+    attr_accessor :last_instalment_date
 
-    attr_accessor :pan
+    attr_accessor :next_instalment_date
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'date_of_birth' => :'date_of_birth',
-        :'mobile' => :'mobile',
-        :'demat_id' => :'demat_id',
-        :'email' => :'email',
-        :'pan' => :'pan'
+        :'instalment_amount' => :'instalment_amount',
+        :'frequency' => :'frequency',
+        :'completed_instalments' => :'completed_instalments',
+        :'investment_value' => :'investment_value',
+        :'last_instalment_date' => :'last_instalment_date',
+        :'next_instalment_date' => :'next_instalment_date'
       }
     end
 
@@ -47,12 +47,12 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'date_of_birth' => :'Time',
-        :'mobile' => :'String',
-        :'demat_id' => :'String',
-        :'email' => :'String',
-        :'pan' => :'String'
+        :'instalment_amount' => :'Float',
+        :'frequency' => :'String',
+        :'completed_instalments' => :'Float',
+        :'investment_value' => :'Float',
+        :'last_instalment_date' => :'Time',
+        :'next_instalment_date' => :'Time'
       }
     end
 
@@ -66,39 +66,39 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::Holder` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::SipInvestmentInformation` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::Holder`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::SipInvestmentInformation`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.key?(:'instalment_amount')
+        self.instalment_amount = attributes[:'instalment_amount']
       end
 
-      if attributes.key?(:'date_of_birth')
-        self.date_of_birth = attributes[:'date_of_birth']
+      if attributes.key?(:'frequency')
+        self.frequency = attributes[:'frequency']
       end
 
-      if attributes.key?(:'mobile')
-        self.mobile = attributes[:'mobile']
+      if attributes.key?(:'completed_instalments')
+        self.completed_instalments = attributes[:'completed_instalments']
       end
 
-      if attributes.key?(:'demat_id')
-        self.demat_id = attributes[:'demat_id']
+      if attributes.key?(:'investment_value')
+        self.investment_value = attributes[:'investment_value']
       end
 
-      if attributes.key?(:'email')
-        self.email = attributes[:'email']
+      if attributes.key?(:'last_instalment_date')
+        self.last_instalment_date = attributes[:'last_instalment_date']
       end
 
-      if attributes.key?(:'pan')
-        self.pan = attributes[:'pan']
+      if attributes.key?(:'next_instalment_date')
+        self.next_instalment_date = attributes[:'next_instalment_date']
       end
     end
 
@@ -106,16 +106,20 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
+      if @instalment_amount.nil?
+        invalid_properties.push('invalid value for "instalment_amount", instalment_amount cannot be nil.')
       end
 
-      if @demat_id.nil?
-        invalid_properties.push('invalid value for "demat_id", demat_id cannot be nil.')
+      if @frequency.nil?
+        invalid_properties.push('invalid value for "frequency", frequency cannot be nil.')
       end
 
-      if @email.nil?
-        invalid_properties.push('invalid value for "email", email cannot be nil.')
+      if @completed_instalments.nil?
+        invalid_properties.push('invalid value for "completed_instalments", completed_instalments cannot be nil.')
+      end
+
+      if @investment_value.nil?
+        invalid_properties.push('invalid value for "investment_value", investment_value cannot be nil.')
       end
 
       invalid_properties
@@ -124,9 +128,10 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @name.nil?
-      return false if @demat_id.nil?
-      return false if @email.nil?
+      return false if @instalment_amount.nil?
+      return false if @frequency.nil?
+      return false if @completed_instalments.nil?
+      return false if @investment_value.nil?
       true
     end
 
@@ -135,12 +140,12 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          date_of_birth == o.date_of_birth &&
-          mobile == o.mobile &&
-          demat_id == o.demat_id &&
-          email == o.email &&
-          pan == o.pan
+          instalment_amount == o.instalment_amount &&
+          frequency == o.frequency &&
+          completed_instalments == o.completed_instalments &&
+          investment_value == o.investment_value &&
+          last_instalment_date == o.last_instalment_date &&
+          next_instalment_date == o.next_instalment_date
     end
 
     # @see the `==` method
@@ -152,7 +157,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, date_of_birth, mobile, demat_id, email, pan].hash
+      [instalment_amount, frequency, completed_instalments, investment_value, last_instalment_date, next_instalment_date].hash
     end
 
     # Builds the object from hash

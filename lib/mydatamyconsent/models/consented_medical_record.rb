@@ -25,6 +25,12 @@ module MyDataMyConsent
     # Health field slug.
     attr_accessor :field_slug
 
+    # Issuer id.
+    attr_accessor :issuer_id
+
+    # Issuer name.
+    attr_accessor :issuer_name
+
     # health category type.
     attr_accessor :category
 
@@ -40,6 +46,8 @@ module MyDataMyConsent
         :'id' => :'id',
         :'field_title' => :'fieldTitle',
         :'field_slug' => :'fieldSlug',
+        :'issuer_id' => :'issuerId',
+        :'issuer_name' => :'issuerName',
         :'category' => :'category',
         :'to_date' => :'toDate',
         :'from_date' => :'fromDate'
@@ -57,6 +65,8 @@ module MyDataMyConsent
         :'id' => :'String',
         :'field_title' => :'String',
         :'field_slug' => :'String',
+        :'issuer_id' => :'String',
+        :'issuer_name' => :'String',
         :'category' => :'String',
         :'to_date' => :'Time',
         :'from_date' => :'Time'
@@ -96,6 +106,14 @@ module MyDataMyConsent
         self.field_slug = attributes[:'field_slug']
       end
 
+      if attributes.key?(:'issuer_id')
+        self.issuer_id = attributes[:'issuer_id']
+      end
+
+      if attributes.key?(:'issuer_name')
+        self.issuer_name = attributes[:'issuer_name']
+      end
+
       if attributes.key?(:'category')
         self.category = attributes[:'category']
       end
@@ -121,6 +139,14 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "field_slug", field_slug cannot be nil.')
       end
 
+      if @issuer_id.nil?
+        invalid_properties.push('invalid value for "issuer_id", issuer_id cannot be nil.')
+      end
+
+      if @issuer_name.nil?
+        invalid_properties.push('invalid value for "issuer_name", issuer_name cannot be nil.')
+      end
+
       if @category.nil?
         invalid_properties.push('invalid value for "category", category cannot be nil.')
       end
@@ -133,6 +159,8 @@ module MyDataMyConsent
     def valid?
       return false if @field_title.nil?
       return false if @field_slug.nil?
+      return false if @issuer_id.nil?
+      return false if @issuer_name.nil?
       return false if @category.nil?
       true
     end
@@ -145,6 +173,8 @@ module MyDataMyConsent
           id == o.id &&
           field_title == o.field_title &&
           field_slug == o.field_slug &&
+          issuer_id == o.issuer_id &&
+          issuer_name == o.issuer_name &&
           category == o.category &&
           to_date == o.to_date &&
           from_date == o.from_date
@@ -159,7 +189,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, field_title, field_slug, category, to_date, from_date].hash
+      [id, field_title, field_slug, issuer_id, issuer_name, category, to_date, from_date].hash
     end
 
     # Builds the object from hash

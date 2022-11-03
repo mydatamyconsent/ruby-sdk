@@ -6,14 +6,6 @@
 | ---- | ---- | ----------- | ----- |
 | **type** | **String** |  |  |
 | **id** | **String** |  |  |
-| **txn_type** | [**CreditCardTransactionType**](CreditCardTransactionType.md) |  |  |
-| **txn_date** | **Time** |  |  |
-| **amount** | **String** |  |  |
-| **value_date** | **Time** |  |  |
-| **narration** | **String** |  |  |
-| **statement_date** | **Time** |  |  |
-| **mcc** | **String** |  |  |
-| **masked_card_number** | **String** |  |  |
 | **amc** | **String** |  |  |
 | **registrar** | **String** |  |  |
 | **scheme_code** | **String** |  |  |
@@ -25,6 +17,7 @@
 | **scheme_types** | [**MutualFundSchemeType**](MutualFundSchemeType.md) |  |  |
 | **scheme_category** | [**MutualFundSchemeCategory**](MutualFundSchemeCategory.md) |  |  |
 | **ucc** | **String** |  |  |
+| **amount** | **String** |  |  |
 | **closing_units** | **String** |  |  |
 | **lien_units** | **String** |  |  |
 | **nav** | **String** |  |  |
@@ -34,6 +27,7 @@
 | **lockin_flag** | **String** |  |  |
 | **lockin_days** | **String** |  |  |
 | **mode** | [**MutualFundHoldingMode**](MutualFundHoldingMode.md) |  |  |
+| **narration** | **String** |  |  |
 
 ## Example
 
@@ -41,16 +35,8 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::FinancialAccountTransaction.new(
-  type: UlipTransaction,
+  type: SipTransaction,
   id: null,
-  txn_type: null,
-  txn_date: null,
-  amount: null,
-  value_date: null,
-  narration: null,
-  statement_date: null,
-  mcc: null,
-  masked_card_number: null,
   amc: null,
   registrar: null,
   scheme_code: null,
@@ -62,6 +48,7 @@ instance = MyDataMyConsent::FinancialAccountTransaction.new(
   scheme_types: null,
   scheme_category: null,
   ucc: null,
+  amount: null,
   closing_units: null,
   lien_units: null,
   nav: null,
@@ -70,7 +57,8 @@ instance = MyDataMyConsent::FinancialAccountTransaction.new(
   execution_date: null,
   lockin_flag: null,
   lockin_days: null,
-  mode: null
+  mode: null,
+  narration: null
 )
 ```
 
