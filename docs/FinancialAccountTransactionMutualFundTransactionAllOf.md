@@ -1,4 +1,4 @@
-# MyDataMyConsent::FinancialAccountMutualFundTransactionAllOf
+# MyDataMyConsent::FinancialAccountTransactionMutualFundTransactionAllOf
 
 ## Properties
 
@@ -11,7 +11,7 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::FinancialAccountMutualFundTransactionAllOf.new(
+instance = MyDataMyConsent::FinancialAccountTransactionMutualFundTransactionAllOf.new(
   type: MutualFundTransaction
 )
 ```

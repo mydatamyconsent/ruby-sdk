@@ -1,4 +1,4 @@
-# MyDataMyConsent::FinancialAccountMutualFundTransaction
+# MyDataMyConsent::FinancialAccountTransactionMutualFundTransaction
 
 ## Properties
 
@@ -34,7 +34,7 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::FinancialAccountMutualFundTransaction.new(
+instance = MyDataMyConsent::FinancialAccountTransactionMutualFundTransaction.new(
   type: null,
   id: null,
   amc: null,

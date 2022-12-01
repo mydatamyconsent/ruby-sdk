@@ -80,7 +80,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_data_agreements_id_delete
@@ -147,7 +147,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_data_agreements_id_get
@@ -214,7 +214,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_data_agreements_id_put
@@ -282,8 +282,8 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=utf-8
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_data_agreements_id_terminate_put
@@ -350,7 +350,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_data_agreements_post
@@ -416,6 +416,6 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=utf-8
+- **Accept**: application/json; charset=utf-8
 

@@ -14,13 +14,16 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class FinancialAccountMutualFundTransactionAllOf
+  class FinancialAccountTransactionSipTransaction
     attr_accessor :type
+
+    attr_accessor :id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type'
+        :'type' => :'type',
+        :'id' => :'id'
       }
     end
 
@@ -32,7 +35,8 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'String'
+        :'type' => :'String',
+        :'id' => :'String'
       }
     end
 
@@ -42,23 +46,35 @@ module MyDataMyConsent
       ])
     end
 
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
+      [
+      :'FinancialAccountTransactionSipTransactionAllOf',
+      :'SipTransaction'
+      ]
+    end
+
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::FinancialAccountMutualFundTransactionAllOf` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::FinancialAccountTransactionSipTransaction` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::FinancialAccountMutualFundTransactionAllOf`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::FinancialAccountTransactionSipTransaction`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
       if attributes.key?(:'type')
         self.type = attributes[:'type']
+      end
+
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       end
     end
 
@@ -70,6 +86,10 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -77,6 +97,7 @@ module MyDataMyConsent
     # @return true if the model is valid
     def valid?
       return false if @type.nil?
+      return false if @id.nil?
       true
     end
 
@@ -85,7 +106,8 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type
+          type == o.type &&
+          id == o.id
     end
 
     # @see the `==` method
@@ -97,7 +119,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type].hash
+      [type, id].hash
     end
 
     # Builds the object from hash

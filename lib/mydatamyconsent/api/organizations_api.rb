@@ -58,7 +58,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -119,9 +119,9 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
       # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
+      content_type = @api_client.select_header_content_type(['application/json; charset=utf-8'])
       if !content_type.nil?
           header_params['Content-Type'] = content_type
       end
@@ -185,7 +185,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -246,7 +246,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -307,7 +307,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -368,7 +368,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -435,7 +435,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/octet-stream', 'application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/octet-stream', 'application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -502,7 +502,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -563,7 +563,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -630,7 +630,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -712,7 +712,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -773,7 +773,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -834,7 +834,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -904,7 +904,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -965,9 +965,9 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
       # HTTP header 'Content-Type'
-      content_type = @api_client.select_header_content_type(['application/json'])
+      content_type = @api_client.select_header_content_type(['application/json; charset=utf-8'])
       if !content_type.nil?
           header_params['Content-Type'] = content_type
       end
@@ -1037,7 +1037,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
       # HTTP header 'Content-Type'
       content_type = @api_client.select_header_content_type(['multipart/form-data'])
       if !content_type.nil?
@@ -1104,7 +1104,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -1178,7 +1178,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -1239,7 +1239,7 @@ module MyDataMyConsent
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json; charset=utf-8'])
 
       # form parameters
       form_params = opts[:form_params] || {}

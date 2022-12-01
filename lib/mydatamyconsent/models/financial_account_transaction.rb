@@ -137,9 +137,9 @@ module MyDataMyConsent
     # List of class defined in anyOf (OpenAPI v3)
     def self.openapi_any_of
       [
-      :'FinancialAccountEquityTransaction',
-      :'FinancialAccountMutualFundTransaction',
-      :'FinancialAccountSipTransaction'
+      :'FinancialAccountTransactionEquityTransaction',
+      :'FinancialAccountTransactionMutualFundTransaction',
+      :'FinancialAccountTransactionSipTransaction'
       ]
     end
 

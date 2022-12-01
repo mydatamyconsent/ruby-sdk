@@ -99,7 +99,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consent_requests_post
@@ -165,8 +165,8 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=utf-8
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consent_requests_request_id_cancel_put
@@ -233,7 +233,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consent_requests_request_id_get
@@ -300,7 +300,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consent_templates_get
@@ -371,7 +371,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consent_templates_template_id_get
@@ -438,7 +438,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consents_consent_id_documents_document_id_download_get
@@ -507,7 +507,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/octet-stream, application/json
+- **Accept**: application/octet-stream, application/json; charset=utf-8
 
 
 ## v1_organizations_consents_consent_id_documents_document_id_get
@@ -576,7 +576,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consents_consent_id_documents_get
@@ -643,7 +643,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consents_consent_id_financial_accounts_account_id_get
@@ -712,7 +712,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consents_consent_id_financial_accounts_account_id_transactions_get
@@ -793,7 +793,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consents_consent_id_financial_accounts_get
@@ -860,7 +860,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consents_consent_id_get
@@ -927,7 +927,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_consents_get
@@ -1004,7 +1004,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_documents_issue_post
@@ -1070,8 +1070,8 @@ end
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json; charset=utf-8
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_documents_issue_upload_issue_request_id_post
@@ -1140,7 +1140,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_documents_issued_document_id_get
@@ -1207,7 +1207,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_documents_issued_get
@@ -1284,7 +1284,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## v1_organizations_documents_types_get
@@ -1355,5 +1355,5 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/json; charset=utf-8
 

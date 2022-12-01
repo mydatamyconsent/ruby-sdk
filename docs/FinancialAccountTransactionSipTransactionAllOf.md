@@ -1,4 +1,4 @@
-# MyDataMyConsent::FinancialAccountEquityTransactionAllOf
+# MyDataMyConsent::FinancialAccountTransactionSipTransactionAllOf
 
 ## Properties
 
@@ -11,8 +11,8 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::FinancialAccountEquityTransactionAllOf.new(
-  type: EquityTransaction
+instance = MyDataMyConsent::FinancialAccountTransactionSipTransactionAllOf.new(
+  type: SipTransaction
 )
 ```
 
