@@ -4,7 +4,11 @@
 Gemfile
 README.md
 Rakefile
+docs/AllergyDetails.md
+docs/AllergyIntoleranceReaction.md
 docs/ApiErrorType.md
+docs/CodeableConcept.md
+docs/Coding.md
 docs/CollectibleTypes.md
 docs/Consent.md
 docs/ConsentDetails.md
@@ -61,6 +65,9 @@ docs/FinancialAccountTransactionMutualFundTransactionAllOf.md
 docs/FinancialAccountTransactionPeriod.md
 docs/FinancialAccountTransactionSipTransaction.md
 docs/FinancialAccountTransactionSipTransactionAllOf.md
+docs/HealthRecord.md
+docs/HealthRecordAllergyDetails.md
+docs/HealthRecordAllergyDetailsAllOf.md
 docs/Holder.md
 docs/IdentificationStrategy.md
 docs/Identifier.md
@@ -121,7 +128,11 @@ lib/mydatamyconsent/api/supported_identifiers_api.rb
 lib/mydatamyconsent/api_client.rb
 lib/mydatamyconsent/api_error.rb
 lib/mydatamyconsent/configuration.rb
+lib/mydatamyconsent/models/allergy_details.rb
+lib/mydatamyconsent/models/allergy_intolerance_reaction.rb
 lib/mydatamyconsent/models/api_error_type.rb
+lib/mydatamyconsent/models/codeable_concept.rb
+lib/mydatamyconsent/models/coding.rb
 lib/mydatamyconsent/models/collectible_types.rb
 lib/mydatamyconsent/models/consent.rb
 lib/mydatamyconsent/models/consent_details.rb
@@ -176,6 +187,9 @@ lib/mydatamyconsent/models/financial_account_transaction_mutual_fund_transaction
 lib/mydatamyconsent/models/financial_account_transaction_period.rb
 lib/mydatamyconsent/models/financial_account_transaction_sip_transaction.rb
 lib/mydatamyconsent/models/financial_account_transaction_sip_transaction_all_of.rb
+lib/mydatamyconsent/models/health_record.rb
+lib/mydatamyconsent/models/health_record_allergy_details.rb
+lib/mydatamyconsent/models/health_record_allergy_details_all_of.rb
 lib/mydatamyconsent/models/holder.rb
 lib/mydatamyconsent/models/identification_strategy.rb
 lib/mydatamyconsent/models/identifier.rb

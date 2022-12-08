@@ -8,7 +8,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 | [**v1_individuals_consent_requests_get**](IndividualsApi.md#v1_individuals_consent_requests_get) | **GET** /v1/individuals/consent-requests | Get all consent requests sent to Individuals. |
 | [**v1_individuals_consent_requests_post**](IndividualsApi.md#v1_individuals_consent_requests_post) | **POST** /v1/individuals/consent-requests | Create individual consent request. |
 | [**v1_individuals_consent_requests_request_id_cancel_put**](IndividualsApi.md#v1_individuals_consent_requests_request_id_cancel_put) | **PUT** /v1/individuals/consent-requests/{request_id}/cancel | Cancel the Individual data request by id. |
-| [**v1_individuals_consent_requests_request_id_get**](IndividualsApi.md#v1_individuals_consent_requests_request_id_get) | **GET** /v1/individuals/consent-requests/{request_id} | Get Individual data request by id. |
+| [**v1_individuals_consent_requests_request_id_get**](IndividualsApi.md#v1_individuals_consent_requests_request_id_get) | **GET** /v1/individuals/consent-requests/{request_id} | Get Individual data consent request by id. |
 | [**v1_individuals_consent_templates_get**](IndividualsApi.md#v1_individuals_consent_templates_get) | **GET** /v1/individuals/consent-templates | Get the paginated list of individual consent templates. |
 | [**v1_individuals_consent_templates_template_id_get**](IndividualsApi.md#v1_individuals_consent_templates_template_id_get) | **GET** /v1/individuals/consent-templates/{template_id} | Get Individual consent template details by consent id. |
 | [**v1_individuals_consents_consent_id_documents_document_id_download_get**](IndividualsApi.md#v1_individuals_consents_consent_id_documents_document_id_download_get) | **GET** /v1/individuals/consents/{consent_id}/documents/{document_id}/download | Download Individual consented document by document id. |
@@ -18,7 +18,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 | [**v1_individuals_consents_consent_id_financial_accounts_account_id_transactions_get**](IndividualsApi.md#v1_individuals_consents_consent_id_financial_accounts_account_id_transactions_get) | **GET** /v1/individuals/consents/{consent_id}/financial-accounts/{account_id}/transactions | Get individual consented financial account transactions. |
 | [**v1_individuals_consents_consent_id_financial_accounts_get**](IndividualsApi.md#v1_individuals_consents_consent_id_financial_accounts_get) | **GET** /v1/individuals/consents/{consent_id}/financial-accounts | Get all individual consented financial accounts. |
 | [**v1_individuals_consents_consent_id_get**](IndividualsApi.md#v1_individuals_consents_consent_id_get) | **GET** /v1/individuals/consents/{consent_id} | Get Individuals consent details by consent id. |
-| [**v1_individuals_consents_consent_id_health_fhir_bundle_get**](IndividualsApi.md#v1_individuals_consents_consent_id_health_fhir_bundle_get) | **GET** /v1/individuals/consents/{consent_id}/health/fhir/bundle | Get Individual consented document by consent id. |
+| [**v1_individuals_consents_consent_id_health_fhir_bundle_get**](IndividualsApi.md#v1_individuals_consents_consent_id_health_fhir_bundle_get) | **GET** /v1/individuals/consents/{consent_id}/health/fhir/bundle | Get Individual consented Health Records by consent id. |
 | [**v1_individuals_consents_get**](IndividualsApi.md#v1_individuals_consents_get) | **GET** /v1/individuals/consents | Get the paginated list of Individual consents. |
 | [**v1_individuals_documents_issue_issue_request_id_upload_post**](IndividualsApi.md#v1_individuals_documents_issue_issue_request_id_upload_post) | **POST** /v1/individuals/documents/issue/{issue_request_id}/upload | Upload a document for issuance request of individual. |
 | [**v1_individuals_documents_issue_post**](IndividualsApi.md#v1_individuals_documents_issue_post) | **POST** /v1/individuals/documents/issue | Issue a new document to an individual user. |
@@ -309,7 +309,7 @@ end
 
 > <ConsentRequest> v1_individuals_consent_requests_request_id_get(request_id)
 
-Get Individual data request by id.
+Get Individual data consent request by id.
 
 ### Examples
 
@@ -326,7 +326,7 @@ api_instance = MyDataMyConsent::IndividualsApi.new
 request_id = 'request_id_example' # String | 
 
 begin
-  # Get Individual data request by id.
+  # Get Individual data consent request by id.
   result = api_instance.v1_individuals_consent_requests_request_id_get(request_id)
   p result
 rescue MyDataMyConsent::ApiError => e
@@ -342,7 +342,7 @@ This returns an Array which contains the response data, status code and headers.
 
 ```ruby
 begin
-  # Get Individual data request by id.
+  # Get Individual data consent request by id.
   data, status_code, headers = api_instance.v1_individuals_consent_requests_request_id_get_with_http_info(request_id)
   p status_code # => 2xx
   p headers # => { ... }
@@ -1001,9 +1001,9 @@ end
 
 ## v1_individuals_consents_consent_id_health_fhir_bundle_get
 
-> Object v1_individuals_consents_consent_id_health_fhir_bundle_get(consent_id)
+> <Array<HealthRecord>> v1_individuals_consents_consent_id_health_fhir_bundle_get(consent_id)
 
-Get Individual consented document by consent id.
+Get Individual consented Health Records by consent id.
 
 ### Examples
 
@@ -1020,7 +1020,7 @@ api_instance = MyDataMyConsent::IndividualsApi.new
 consent_id = 'consent_id_example' # String | 
 
 begin
-  # Get Individual consented document by consent id.
+  # Get Individual consented Health Records by consent id.
   result = api_instance.v1_individuals_consents_consent_id_health_fhir_bundle_get(consent_id)
   p result
 rescue MyDataMyConsent::ApiError => e
@@ -1032,15 +1032,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info(consent_id)
+> <Array(<Array<HealthRecord>>, Integer, Hash)> v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info(consent_id)
 
 ```ruby
 begin
-  # Get Individual consented document by consent id.
+  # Get Individual consented Health Records by consent id.
   data, status_code, headers = api_instance.v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info(consent_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <Array<HealthRecord>>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling IndividualsApi->v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info: #{e}"
 end
@@ -1054,7 +1054,7 @@ end
 
 ### Return type
 
-**Object**
+[**Array&lt;HealthRecord&gt;**](HealthRecord.md)
 
 ### Authorization
 
