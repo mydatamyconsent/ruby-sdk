@@ -138,11 +138,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [MyDataMyConsent::AllergyDetails](docs/AllergyDetails.md)
- - [MyDataMyConsent::AllergyIntoleranceReaction](docs/AllergyIntoleranceReaction.md)
  - [MyDataMyConsent::ApiErrorType](docs/ApiErrorType.md)
- - [MyDataMyConsent::CodeableConcept](docs/CodeableConcept.md)
- - [MyDataMyConsent::Coding](docs/Coding.md)
  - [MyDataMyConsent::CollectibleTypes](docs/CollectibleTypes.md)
  - [MyDataMyConsent::Consent](docs/Consent.md)
  - [MyDataMyConsent::ConsentDetails](docs/ConsentDetails.md)
@@ -197,9 +193,6 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::FinancialAccountTransactionPeriod](docs/FinancialAccountTransactionPeriod.md)
  - [MyDataMyConsent::FinancialAccountTransactionSipTransaction](docs/FinancialAccountTransactionSipTransaction.md)
  - [MyDataMyConsent::FinancialAccountTransactionSipTransactionAllOf](docs/FinancialAccountTransactionSipTransactionAllOf.md)
- - [MyDataMyConsent::HealthRecord](docs/HealthRecord.md)
- - [MyDataMyConsent::HealthRecordAllergyDetails](docs/HealthRecordAllergyDetails.md)
- - [MyDataMyConsent::HealthRecordAllergyDetailsAllOf](docs/HealthRecordAllergyDetailsAllOf.md)
  - [MyDataMyConsent::Holder](docs/Holder.md)
  - [MyDataMyConsent::IdentificationStrategy](docs/IdentificationStrategy.md)
  - [MyDataMyConsent::Identifier](docs/Identifier.md)
