@@ -1001,7 +1001,7 @@ end
 
 ## v1_individuals_consents_consent_id_health_fhir_bundle_get
 
-> Object v1_individuals_consents_consent_id_health_fhir_bundle_get(consent_id)
+> <FhirBundleany> v1_individuals_consents_consent_id_health_fhir_bundle_get(consent_id)
 
 Get Individual consented Health Records by consent id.
 
@@ -1032,7 +1032,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info(consent_id)
+> <Array(<FhirBundleany>, Integer, Hash)> v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info(consent_id)
 
 ```ruby
 begin
@@ -1040,7 +1040,7 @@ begin
   data, status_code, headers = api_instance.v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info(consent_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <FhirBundleany>
 rescue MyDataMyConsent::ApiError => e
   puts "Error when calling IndividualsApi->v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info: #{e}"
 end
@@ -1054,7 +1054,7 @@ end
 
 ### Return type
 
-**Object**
+[**FhirBundleany**](FhirBundleany.md)
 
 ### Authorization
 

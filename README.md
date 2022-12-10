@@ -174,6 +174,7 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::Equity](docs/Equity.md)
  - [MyDataMyConsent::EquityTransaction](docs/EquityTransaction.md)
  - [MyDataMyConsent::Error](docs/Error.md)
+ - [MyDataMyConsent::FhirBundleany](docs/FhirBundleany.md)
  - [MyDataMyConsent::FinancialAccount](docs/FinancialAccount.md)
  - [MyDataMyConsent::FinancialAccountCategoryType](docs/FinancialAccountCategoryType.md)
  - [MyDataMyConsent::FinancialAccountDetailsRequired](docs/FinancialAccountDetailsRequired.md)

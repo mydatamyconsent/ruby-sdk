@@ -934,7 +934,7 @@ module MyDataMyConsent
     # Get Individual consented Health Records by consent id.
     # @param consent_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Object]
+    # @return [FhirBundleany]
     def v1_individuals_consents_consent_id_health_fhir_bundle_get(consent_id, opts = {})
       data, _status_code, _headers = v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info(consent_id, opts)
       data
@@ -943,7 +943,7 @@ module MyDataMyConsent
     # Get Individual consented Health Records by consent id.
     # @param consent_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
+    # @return [Array<(FhirBundleany, Integer, Hash)>] FhirBundleany data, response status code and response headers
     def v1_individuals_consents_consent_id_health_fhir_bundle_get_with_http_info(consent_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IndividualsApi.v1_individuals_consents_consent_id_health_fhir_bundle_get ...'
@@ -970,7 +970,7 @@ module MyDataMyConsent
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Object'
+      return_type = opts[:debug_return_type] || 'FhirBundleany'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['OAuth2ClientCredentials']
