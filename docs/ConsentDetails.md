@@ -19,7 +19,7 @@
 | **identifiers** | [**Array&lt;ConsentedIdentifier&gt;**](ConsentedIdentifier.md) | Consented identity details. | [optional] |
 | **documents** | [**Array&lt;ConsentedDocument&gt;**](ConsentedDocument.md) | List of consented documents. | [optional] |
 | **medical_records** | [**Array&lt;ConsentedMedicalRecord&gt;**](ConsentedMedicalRecord.md) | List of consented medical records. | [optional] |
-| **financial_accounts** | [**Array&lt;ConsentedFinancialAccount&gt;**](ConsentedFinancialAccount.md) | List of consented financial accounts. | [optional] |
+| **financial_accounts** | [**Array&lt;ConsentedFinancialAccountField&gt;**](ConsentedFinancialAccountField.md) | List of consented financial accounts. | [optional] |
 
 ## Example
 

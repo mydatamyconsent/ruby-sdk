@@ -29,17 +29,6 @@ module MyDataMyConsent
     # Financial account identifier.
     attr_accessor :identifier
 
-    # Financial account field title.
-    attr_accessor :field_title
-
-    # Financial account field slug.
-    attr_accessor :field_slug
-
-    # Requested financial account details.
-    attr_accessor :requested_details
-
-    attr_accessor :transaction_period
-
     # Financial account issuer id.
     attr_accessor :issuer_id
 
@@ -54,10 +43,6 @@ module MyDataMyConsent
         :'category' => :'category',
         :'sub_category' => :'subCategory',
         :'identifier' => :'identifier',
-        :'field_title' => :'fieldTitle',
-        :'field_slug' => :'fieldSlug',
-        :'requested_details' => :'requestedDetails',
-        :'transaction_period' => :'transactionPeriod',
         :'issuer_id' => :'issuerId',
         :'issuer_name' => :'issuerName'
       }
@@ -76,10 +61,6 @@ module MyDataMyConsent
         :'category' => :'FinancialAccountCategoryType',
         :'sub_category' => :'FinancialAccountSubCategoryType',
         :'identifier' => :'String',
-        :'field_title' => :'String',
-        :'field_slug' => :'String',
-        :'requested_details' => :'Array<FinancialAccountDetailsRequired>',
-        :'transaction_period' => :'ConsentedFinancialAccountTransactionPeriod',
         :'issuer_id' => :'String',
         :'issuer_name' => :'String'
       }
@@ -126,24 +107,6 @@ module MyDataMyConsent
         self.identifier = attributes[:'identifier']
       end
 
-      if attributes.key?(:'field_title')
-        self.field_title = attributes[:'field_title']
-      end
-
-      if attributes.key?(:'field_slug')
-        self.field_slug = attributes[:'field_slug']
-      end
-
-      if attributes.key?(:'requested_details')
-        if (value = attributes[:'requested_details']).is_a?(Array)
-          self.requested_details = value
-        end
-      end
-
-      if attributes.key?(:'transaction_period')
-        self.transaction_period = attributes[:'transaction_period']
-      end
-
       if attributes.key?(:'issuer_id')
         self.issuer_id = attributes[:'issuer_id']
       end
@@ -177,18 +140,6 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "identifier", identifier cannot be nil.')
       end
 
-      if @field_title.nil?
-        invalid_properties.push('invalid value for "field_title", field_title cannot be nil.')
-      end
-
-      if @field_slug.nil?
-        invalid_properties.push('invalid value for "field_slug", field_slug cannot be nil.')
-      end
-
-      if @requested_details.nil?
-        invalid_properties.push('invalid value for "requested_details", requested_details cannot be nil.')
-      end
-
       if @issuer_id.nil?
         invalid_properties.push('invalid value for "issuer_id", issuer_id cannot be nil.')
       end
@@ -208,9 +159,6 @@ module MyDataMyConsent
       return false if @category.nil?
       return false if @sub_category.nil?
       return false if @identifier.nil?
-      return false if @field_title.nil?
-      return false if @field_slug.nil?
-      return false if @requested_details.nil?
       return false if @issuer_id.nil?
       return false if @issuer_name.nil?
       true
@@ -226,10 +174,6 @@ module MyDataMyConsent
           category == o.category &&
           sub_category == o.sub_category &&
           identifier == o.identifier &&
-          field_title == o.field_title &&
-          field_slug == o.field_slug &&
-          requested_details == o.requested_details &&
-          transaction_period == o.transaction_period &&
           issuer_id == o.issuer_id &&
           issuer_name == o.issuer_name
     end
@@ -243,7 +187,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, category, sub_category, identifier, field_title, field_slug, requested_details, transaction_period, issuer_id, issuer_name].hash
+      [id, name, category, sub_category, identifier, issuer_id, issuer_name].hash
     end
 
     # Builds the object from hash

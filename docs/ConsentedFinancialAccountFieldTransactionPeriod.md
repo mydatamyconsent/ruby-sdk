@@ -1,4 +1,4 @@
-# MyDataMyConsent::ConsentedFinancialAccountTransactionPeriod
+# MyDataMyConsent::ConsentedFinancialAccountFieldTransactionPeriod
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::ConsentedFinancialAccountTransactionPeriod.new(
+instance = MyDataMyConsent::ConsentedFinancialAccountFieldTransactionPeriod.new(
   from: null,
   to: null
 )

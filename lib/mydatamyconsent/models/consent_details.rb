@@ -108,7 +108,7 @@ module MyDataMyConsent
         :'identifiers' => :'Array<ConsentedIdentifier>',
         :'documents' => :'Array<ConsentedDocument>',
         :'medical_records' => :'Array<ConsentedMedicalRecord>',
-        :'financial_accounts' => :'Array<ConsentedFinancialAccount>'
+        :'financial_accounts' => :'Array<ConsentedFinancialAccountField>'
       }
     end
 

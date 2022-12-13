@@ -14,18 +14,30 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  # SelectedFinancialAccountType : Selected financial account type of financial account field of consent request template.
-  class SelectedFinancialAccountType
-    attr_accessor :sub_category
+  # ConsentedFinancialAccountField : Consented financial account field details.
+  class ConsentedFinancialAccountField
+    # Financial account field title.
+    attr_accessor :field_title
 
-    # DRNs.
-    attr_accessor :drns
+    # Financial account field slug.
+    attr_accessor :field_slug
+
+    # Requested financial account details.
+    attr_accessor :requested_details
+
+    attr_accessor :transaction_period
+
+    # Consented financial accounts.
+    attr_accessor :consented_accounts
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'sub_category' => :'subCategory',
-        :'drns' => :'drns'
+        :'field_title' => :'fieldTitle',
+        :'field_slug' => :'fieldSlug',
+        :'requested_details' => :'requestedDetails',
+        :'transaction_period' => :'transactionPeriod',
+        :'consented_accounts' => :'consentedAccounts'
       }
     end
 
@@ -37,8 +49,11 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'sub_category' => :'FinancialAccountSubCategoryType',
-        :'drns' => :'Array<String>'
+        :'field_title' => :'String',
+        :'field_slug' => :'String',
+        :'requested_details' => :'Array<FinancialAccountDetailsRequired>',
+        :'transaction_period' => :'ConsentedFinancialAccountFieldTransactionPeriod',
+        :'consented_accounts' => :'Array<ConsentedFinancialAccount>'
       }
     end
 
@@ -52,24 +67,38 @@ module MyDataMyConsent
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::SelectedFinancialAccountType` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::ConsentedFinancialAccountField` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::SelectedFinancialAccountType`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::ConsentedFinancialAccountField`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'sub_category')
-        self.sub_category = attributes[:'sub_category']
+      if attributes.key?(:'field_title')
+        self.field_title = attributes[:'field_title']
       end
 
-      if attributes.key?(:'drns')
-        if (value = attributes[:'drns']).is_a?(Array)
-          self.drns = value
+      if attributes.key?(:'field_slug')
+        self.field_slug = attributes[:'field_slug']
+      end
+
+      if attributes.key?(:'requested_details')
+        if (value = attributes[:'requested_details']).is_a?(Array)
+          self.requested_details = value
+        end
+      end
+
+      if attributes.key?(:'transaction_period')
+        self.transaction_period = attributes[:'transaction_period']
+      end
+
+      if attributes.key?(:'consented_accounts')
+        if (value = attributes[:'consented_accounts']).is_a?(Array)
+          self.consented_accounts = value
         end
       end
     end
@@ -78,8 +107,20 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @drns.nil?
-        invalid_properties.push('invalid value for "drns", drns cannot be nil.')
+      if @field_title.nil?
+        invalid_properties.push('invalid value for "field_title", field_title cannot be nil.')
+      end
+
+      if @field_slug.nil?
+        invalid_properties.push('invalid value for "field_slug", field_slug cannot be nil.')
+      end
+
+      if @requested_details.nil?
+        invalid_properties.push('invalid value for "requested_details", requested_details cannot be nil.')
+      end
+
+      if @consented_accounts.nil?
+        invalid_properties.push('invalid value for "consented_accounts", consented_accounts cannot be nil.')
       end
 
       invalid_properties
@@ -88,7 +129,10 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @drns.nil?
+      return false if @field_title.nil?
+      return false if @field_slug.nil?
+      return false if @requested_details.nil?
+      return false if @consented_accounts.nil?
       true
     end
 
@@ -97,8 +141,11 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          sub_category == o.sub_category &&
-          drns == o.drns
+          field_title == o.field_title &&
+          field_slug == o.field_slug &&
+          requested_details == o.requested_details &&
+          transaction_period == o.transaction_period &&
+          consented_accounts == o.consented_accounts
     end
 
     # @see the `==` method
@@ -110,7 +157,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [sub_category, drns].hash
+      [field_title, field_slug, requested_details, transaction_period, consented_accounts].hash
     end
 
     # Builds the object from hash

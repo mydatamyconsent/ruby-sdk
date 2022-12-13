@@ -15,7 +15,8 @@ docs/ConsentRequestTemplate.md
 docs/ConsentRequestTemplateStatus.md
 docs/ConsentedDocument.md
 docs/ConsentedFinancialAccount.md
-docs/ConsentedFinancialAccountTransactionPeriod.md
+docs/ConsentedFinancialAccountField.md
+docs/ConsentedFinancialAccountFieldTransactionPeriod.md
 docs/ConsentedIdentifier.md
 docs/ConsentedMedicalRecord.md
 docs/CreateConsentRequest.md
@@ -133,7 +134,8 @@ lib/mydatamyconsent/models/consent_request_template.rb
 lib/mydatamyconsent/models/consent_request_template_status.rb
 lib/mydatamyconsent/models/consented_document.rb
 lib/mydatamyconsent/models/consented_financial_account.rb
-lib/mydatamyconsent/models/consented_financial_account_transaction_period.rb
+lib/mydatamyconsent/models/consented_financial_account_field.rb
+lib/mydatamyconsent/models/consented_financial_account_field_transaction_period.rb
 lib/mydatamyconsent/models/consented_identifier.rb
 lib/mydatamyconsent/models/consented_medical_record.rb
 lib/mydatamyconsent/models/create_consent_request.rb

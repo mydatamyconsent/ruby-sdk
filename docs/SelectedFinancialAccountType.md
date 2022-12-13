@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **sub_category** | [**FinancialAccountSubCategoryType**](FinancialAccountSubCategoryType.md) |  |  |
+| **sub_category** | [**FinancialAccountSubCategoryType**](FinancialAccountSubCategoryType.md) |  | [optional] |
 | **drns** | **Array&lt;String&gt;** | DRNs. |  |
 
 ## Example
