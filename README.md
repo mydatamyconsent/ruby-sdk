@@ -205,6 +205,7 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::IndividualConsentRequestTemplateDetailsDataLife](docs/IndividualConsentRequestTemplateDetailsDataLife.md)
  - [MyDataMyConsent::IndividualConsentRequestTemplateDetailsRequestLife](docs/IndividualConsentRequestTemplateDetailsRequestLife.md)
  - [MyDataMyConsent::IssuedDocument](docs/IssuedDocument.md)
+ - [MyDataMyConsent::IssuerType](docs/IssuerType.md)
  - [MyDataMyConsent::KeyValuePair](docs/KeyValuePair.md)
  - [MyDataMyConsent::Life](docs/Life.md)
  - [MyDataMyConsent::MedicalRecordField](docs/MedicalRecordField.md)

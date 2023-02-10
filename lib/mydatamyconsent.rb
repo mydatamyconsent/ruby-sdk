@@ -84,6 +84,7 @@ require 'mydatamyconsent/models/individual_consent_request_template_details_data
 require 'mydatamyconsent/models/individual_consent_request_template_details_data_life'
 require 'mydatamyconsent/models/individual_consent_request_template_details_request_life'
 require 'mydatamyconsent/models/issued_document'
+require 'mydatamyconsent/models/issuer_type'
 require 'mydatamyconsent/models/key_value_pair'
 require 'mydatamyconsent/models/life'
 require 'mydatamyconsent/models/medical_record_field'

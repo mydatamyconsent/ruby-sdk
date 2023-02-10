@@ -16,21 +16,20 @@ require 'time'
 module MyDataMyConsent
   # CreateDataProcessingAgreement : Create data processing agreement details.
   class CreateDataProcessingAgreement
-    # Agreement version.
-    attr_accessor :version
+    # Agreement version. Agreement body content.
+    attr_accessor :name
 
-    # Agreement body content.
-    attr_accessor :body
+    attr_accessor :issuer_type
 
     # Agreement attachment file URL.
-    attr_accessor :attachment_url
+    attr_accessor :agreement_url
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'version' => :'version',
-        :'body' => :'body',
-        :'attachment_url' => :'attachmentUrl'
+        :'name' => :'name',
+        :'issuer_type' => :'issuerType',
+        :'agreement_url' => :'agreementUrl'
       }
     end
 
@@ -42,9 +41,9 @@ module MyDataMyConsent
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'version' => :'String',
-        :'body' => :'String',
-        :'attachment_url' => :'String'
+        :'name' => :'String',
+        :'issuer_type' => :'IssuerType',
+        :'agreement_url' => :'String'
       }
     end
 
@@ -69,16 +68,16 @@ module MyDataMyConsent
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'version')
-        self.version = attributes[:'version']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
-      if attributes.key?(:'body')
-        self.body = attributes[:'body']
+      if attributes.key?(:'issuer_type')
+        self.issuer_type = attributes[:'issuer_type']
       end
 
-      if attributes.key?(:'attachment_url')
-        self.attachment_url = attributes[:'attachment_url']
+      if attributes.key?(:'agreement_url')
+        self.agreement_url = attributes[:'agreement_url']
       end
     end
 
@@ -86,16 +85,16 @@ module MyDataMyConsent
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @version.nil?
-        invalid_properties.push('invalid value for "version", version cannot be nil.')
+      if @name.nil?
+        invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
-      if @body.nil?
-        invalid_properties.push('invalid value for "body", body cannot be nil.')
+      if @issuer_type.nil?
+        invalid_properties.push('invalid value for "issuer_type", issuer_type cannot be nil.')
       end
 
-      if @attachment_url.nil?
-        invalid_properties.push('invalid value for "attachment_url", attachment_url cannot be nil.')
+      if @agreement_url.nil?
+        invalid_properties.push('invalid value for "agreement_url", agreement_url cannot be nil.')
       end
 
       invalid_properties
@@ -104,9 +103,9 @@ module MyDataMyConsent
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @version.nil?
-      return false if @body.nil?
-      return false if @attachment_url.nil?
+      return false if @name.nil?
+      return false if @issuer_type.nil?
+      return false if @agreement_url.nil?
       true
     end
 
@@ -115,9 +114,9 @@ module MyDataMyConsent
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          version == o.version &&
-          body == o.body &&
-          attachment_url == o.attachment_url
+          name == o.name &&
+          issuer_type == o.issuer_type &&
+          agreement_url == o.agreement_url
     end
 
     # @see the `==` method
@@ -129,7 +128,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [version, body, attachment_url].hash
+      [name, issuer_type, agreement_url].hash
     end
 
     # Builds the object from hash

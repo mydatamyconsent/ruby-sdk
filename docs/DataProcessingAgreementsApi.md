@@ -236,7 +236,7 @@ end
 
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
 id = 'id_example' # String | 
-update_data_processing_agreement = MyDataMyConsent::UpdateDataProcessingAgreement.new({version: 'version_example', body: 'body_example', attachment_url: 'attachment_url_example'}) # UpdateDataProcessingAgreement | 
+update_data_processing_agreement = MyDataMyConsent::UpdateDataProcessingAgreement.new({name: 'name_example', issuer_type: MyDataMyConsent::IssuerType::INDIVIDUAL, agreement_url: 'agreement_url_example'}) # UpdateDataProcessingAgreement | 
 
 begin
   # Update data processing agreement.
@@ -371,7 +371,7 @@ MyDataMyConsent.configure do |config|
 end
 
 api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
-create_data_processing_agreement = MyDataMyConsent::CreateDataProcessingAgreement.new({version: 'version_example', body: 'body_example', attachment_url: 'attachment_url_example'}) # CreateDataProcessingAgreement | 
+create_data_processing_agreement = MyDataMyConsent::CreateDataProcessingAgreement.new({name: 'name_example', issuer_type: MyDataMyConsent::IssuerType::INDIVIDUAL, agreement_url: 'agreement_url_example'}) # CreateDataProcessingAgreement | 
 
 begin
   # Create a data processing agreement.

@@ -5,9 +5,9 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Agreement id. |  |
-| **version** | **String** | Agreement version. |  |
-| **body** | **String** | Agreement body content. |  |
-| **attachment_url** | **String** | Agreement attachment file URL. |  |
+| **name** | **String** | Agreement name. |  |
+| **issuer_type** | [**IssuerType**](IssuerType.md) |  |  |
+| **agreement_url** | **String** | Agreement attachment file URL. |  |
 
 ## Example
 
@@ -16,9 +16,9 @@ require 'mydatamyconsent'
 
 instance = MyDataMyConsent::DataProcessingAgreement.new(
   id: null,
-  version: null,
-  body: null,
-  attachment_url: null
+  name: null,
+  issuer_type: null,
+  agreement_url: null
 )
 ```
 
