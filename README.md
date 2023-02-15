@@ -88,9 +88,7 @@ Class | Method | HTTP request | Description
 *MyDataMyConsent::DataProcessingAgreementsApi* | [**v1_data_agreements_get**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_get) | **GET** /v1/data-agreements | Get paginated data processing agreements.
 *MyDataMyConsent::DataProcessingAgreementsApi* | [**v1_data_agreements_id_delete**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_id_delete) | **DELETE** /v1/data-agreements/{id} | Delete a data processing agreement this will not delete a published or a agreement in use with consents.
 *MyDataMyConsent::DataProcessingAgreementsApi* | [**v1_data_agreements_id_get**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_id_get) | **GET** /v1/data-agreements/{id} | Get data processing agreement by id.
-*MyDataMyConsent::DataProcessingAgreementsApi* | [**v1_data_agreements_id_put**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_id_put) | **PUT** /v1/data-agreements/{id} | Update data processing agreement.
 *MyDataMyConsent::DataProcessingAgreementsApi* | [**v1_data_agreements_id_terminate_put**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_id_terminate_put) | **PUT** /v1/data-agreements/{id}/terminate | Terminate a data processing agreement by id.
-*MyDataMyConsent::DataProcessingAgreementsApi* | [**v1_data_agreements_post**](docs/DataProcessingAgreementsApi.md#v1_data_agreements_post) | **POST** /v1/data-agreements | Create a data processing agreement.
 *MyDataMyConsent::DataProvidersDiscoveryApi* | [**v1_data_providers_get**](docs/DataProvidersDiscoveryApi.md#v1_data_providers_get) | **GET** /v1/data-providers | Discover all data providers in my data my consent by country and filters.
 *MyDataMyConsent::DataProvidersDiscoveryApi* | [**v1_data_providers_id_get**](docs/DataProvidersDiscoveryApi.md#v1_data_providers_id_get) | **GET** /v1/data-providers/{id} | Get a data provider details by provider id.
 *MyDataMyConsent::IndividualsApi* | [**issuer_issuedoc1_xml_post**](docs/IndividualsApi.md#issuer_issuedoc1_xml_post) | **POST** /issuer/issuedoc/1/xml | Digilocker compatible endpoint to issue document.
@@ -154,7 +152,6 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::ConsentedIdentifier](docs/ConsentedIdentifier.md)
  - [MyDataMyConsent::ConsentedMedicalRecord](docs/ConsentedMedicalRecord.md)
  - [MyDataMyConsent::CreateConsentRequest](docs/CreateConsentRequest.md)
- - [MyDataMyConsent::CreateDataProcessingAgreement](docs/CreateDataProcessingAgreement.md)
  - [MyDataMyConsent::DataConsentStatus](docs/DataConsentStatus.md)
  - [MyDataMyConsent::DataProcessingAgreement](docs/DataProcessingAgreement.md)
  - [MyDataMyConsent::DataProtectionOfficer](docs/DataProtectionOfficer.md)
@@ -241,7 +238,6 @@ Class | Method | HTTP request | Description
  - [MyDataMyConsent::SupportedDocumentType](docs/SupportedDocumentType.md)
  - [MyDataMyConsent::SupportedEntityType](docs/SupportedEntityType.md)
  - [MyDataMyConsent::SupportedIdentifier](docs/SupportedIdentifier.md)
- - [MyDataMyConsent::UpdateDataProcessingAgreement](docs/UpdateDataProcessingAgreement.md)
  - [MyDataMyConsent::UploadDocumentResponse](docs/UploadDocumentResponse.md)
  - [MyDataMyConsent::UriDetails](docs/UriDetails.md)
 

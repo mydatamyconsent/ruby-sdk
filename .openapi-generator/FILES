@@ -20,7 +20,6 @@ docs/ConsentedFinancialAccountFieldTransactionPeriod.md
 docs/ConsentedIdentifier.md
 docs/ConsentedMedicalRecord.md
 docs/CreateConsentRequest.md
-docs/CreateDataProcessingAgreement.md
 docs/DataConsentStatus.md
 docs/DataProcessingAgreement.md
 docs/DataProcessingAgreementsApi.md
@@ -112,7 +111,6 @@ docs/SupportedDocumentType.md
 docs/SupportedEntityType.md
 docs/SupportedIdentifier.md
 docs/SupportedIdentifiersApi.md
-docs/UpdateDataProcessingAgreement.md
 docs/UploadDocumentResponse.md
 docs/UriDetails.md
 lib/mydatamyconsent.rb
@@ -140,7 +138,6 @@ lib/mydatamyconsent/models/consented_financial_account_field_transaction_period.
 lib/mydatamyconsent/models/consented_identifier.rb
 lib/mydatamyconsent/models/consented_medical_record.rb
 lib/mydatamyconsent/models/create_consent_request.rb
-lib/mydatamyconsent/models/create_data_processing_agreement.rb
 lib/mydatamyconsent/models/data_consent_status.rb
 lib/mydatamyconsent/models/data_processing_agreement.rb
 lib/mydatamyconsent/models/data_protection_officer.rb
@@ -227,7 +224,6 @@ lib/mydatamyconsent/models/sip_transaction.rb
 lib/mydatamyconsent/models/supported_document_type.rb
 lib/mydatamyconsent/models/supported_entity_type.rb
 lib/mydatamyconsent/models/supported_identifier.rb
-lib/mydatamyconsent/models/update_data_processing_agreement.rb
 lib/mydatamyconsent/models/upload_document_response.rb
 lib/mydatamyconsent/models/uri_details.rb
 lib/mydatamyconsent/version.rb

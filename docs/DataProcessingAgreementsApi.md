@@ -7,9 +7,7 @@ All URIs are relative to *https://api.mydatamyconsent.com*
 | [**v1_data_agreements_get**](DataProcessingAgreementsApi.md#v1_data_agreements_get) | **GET** /v1/data-agreements | Get paginated data processing agreements. |
 | [**v1_data_agreements_id_delete**](DataProcessingAgreementsApi.md#v1_data_agreements_id_delete) | **DELETE** /v1/data-agreements/{id} | Delete a data processing agreement this will not delete a published or a agreement in use with consents. |
 | [**v1_data_agreements_id_get**](DataProcessingAgreementsApi.md#v1_data_agreements_id_get) | **GET** /v1/data-agreements/{id} | Get data processing agreement by id. |
-| [**v1_data_agreements_id_put**](DataProcessingAgreementsApi.md#v1_data_agreements_id_put) | **PUT** /v1/data-agreements/{id} | Update data processing agreement. |
 | [**v1_data_agreements_id_terminate_put**](DataProcessingAgreementsApi.md#v1_data_agreements_id_terminate_put) | **PUT** /v1/data-agreements/{id}/terminate | Terminate a data processing agreement by id. |
-| [**v1_data_agreements_post**](DataProcessingAgreementsApi.md#v1_data_agreements_post) | **POST** /v1/data-agreements | Create a data processing agreement. |
 
 
 ## v1_data_agreements_get
@@ -217,75 +215,6 @@ end
 - **Accept**: application/json; charset=utf-8
 
 
-## v1_data_agreements_id_put
-
-> <DataProcessingAgreement> v1_data_agreements_id_put(id, update_data_processing_agreement)
-
-Update data processing agreement.
-
-### Examples
-
-```ruby
-require 'time'
-require 'mydatamyconsent'
-# setup authorization
-MyDataMyConsent.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2ClientCredentials
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
-id = 'id_example' # String | 
-update_data_processing_agreement = MyDataMyConsent::UpdateDataProcessingAgreement.new({name: 'name_example', issuer_type: MyDataMyConsent::IssuerType::INDIVIDUAL, agreement_url: 'agreement_url_example'}) # UpdateDataProcessingAgreement | 
-
-begin
-  # Update data processing agreement.
-  result = api_instance.v1_data_agreements_id_put(id, update_data_processing_agreement)
-  p result
-rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_put: #{e}"
-end
-```
-
-#### Using the v1_data_agreements_id_put_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<DataProcessingAgreement>, Integer, Hash)> v1_data_agreements_id_put_with_http_info(id, update_data_processing_agreement)
-
-```ruby
-begin
-  # Update data processing agreement.
-  data, status_code, headers = api_instance.v1_data_agreements_id_put_with_http_info(id, update_data_processing_agreement)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <DataProcessingAgreement>
-rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_id_put_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **String** |  |  |
-| **update_data_processing_agreement** | [**UpdateDataProcessingAgreement**](UpdateDataProcessingAgreement.md) |  |  |
-
-### Return type
-
-[**DataProcessingAgreement**](DataProcessingAgreement.md)
-
-### Authorization
-
-[OAuth2ClientCredentials](../README.md#OAuth2ClientCredentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json; charset=utf-8
-- **Accept**: application/json; charset=utf-8
-
-
 ## v1_data_agreements_id_terminate_put
 
 > Boolean v1_data_agreements_id_terminate_put(id)
@@ -350,72 +279,5 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json; charset=utf-8
-
-
-## v1_data_agreements_post
-
-> <DataProcessingAgreement> v1_data_agreements_post(create_data_processing_agreement)
-
-Create a data processing agreement.
-
-### Examples
-
-```ruby
-require 'time'
-require 'mydatamyconsent'
-# setup authorization
-MyDataMyConsent.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2ClientCredentials
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = MyDataMyConsent::DataProcessingAgreementsApi.new
-create_data_processing_agreement = MyDataMyConsent::CreateDataProcessingAgreement.new({name: 'name_example', issuer_type: MyDataMyConsent::IssuerType::INDIVIDUAL, agreement_url: 'agreement_url_example'}) # CreateDataProcessingAgreement | 
-
-begin
-  # Create a data processing agreement.
-  result = api_instance.v1_data_agreements_post(create_data_processing_agreement)
-  p result
-rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_post: #{e}"
-end
-```
-
-#### Using the v1_data_agreements_post_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<DataProcessingAgreement>, Integer, Hash)> v1_data_agreements_post_with_http_info(create_data_processing_agreement)
-
-```ruby
-begin
-  # Create a data processing agreement.
-  data, status_code, headers = api_instance.v1_data_agreements_post_with_http_info(create_data_processing_agreement)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <DataProcessingAgreement>
-rescue MyDataMyConsent::ApiError => e
-  puts "Error when calling DataProcessingAgreementsApi->v1_data_agreements_post_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **create_data_processing_agreement** | [**CreateDataProcessingAgreement**](CreateDataProcessingAgreement.md) |  |  |
-
-### Return type
-
-[**DataProcessingAgreement**](DataProcessingAgreement.md)
-
-### Authorization
-
-[OAuth2ClientCredentials](../README.md#OAuth2ClientCredentials)
-
-### HTTP request headers
-
-- **Content-Type**: application/json; charset=utf-8
 - **Accept**: application/json; charset=utf-8
 
