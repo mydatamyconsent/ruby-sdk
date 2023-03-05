@@ -665,11 +665,10 @@ module MyDataMyConsent
     # @param consent_id [String] 
     # @param account_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :_filters 
-    # @option opts [String] :_from_date_time 
-    # @option opts [String] :_to_date_time 
-    # @option opts [Integer] :_page_no 
-    # @option opts [Integer] :_page_size 
+    # @option opts [Time] :from_date_time 
+    # @option opts [Time] :to_date_time 
+    # @option opts [Integer] :page_no 
+    # @option opts [Integer] :page_size 
     # @return [PaginatedListOfFinancialAccountTransactions]
     def v1_organizations_consents_consent_id_financial_accounts_account_id_transactions_get(consent_id, account_id, opts = {})
       data, _status_code, _headers = v1_organizations_consents_consent_id_financial_accounts_account_id_transactions_get_with_http_info(consent_id, account_id, opts)
@@ -680,11 +679,10 @@ module MyDataMyConsent
     # @param consent_id [String] 
     # @param account_id [String] 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :_filters 
-    # @option opts [String] :_from_date_time 
-    # @option opts [String] :_to_date_time 
-    # @option opts [Integer] :_page_no 
-    # @option opts [Integer] :_page_size 
+    # @option opts [Time] :from_date_time 
+    # @option opts [Time] :to_date_time 
+    # @option opts [Integer] :page_no 
+    # @option opts [Integer] :page_size 
     # @return [Array<(PaginatedListOfFinancialAccountTransactions, Integer, Hash)>] PaginatedListOfFinancialAccountTransactions data, response status code and response headers
     def v1_organizations_consents_consent_id_financial_accounts_account_id_transactions_get_with_http_info(consent_id, account_id, opts = {})
       if @api_client.config.debugging
@@ -703,11 +701,10 @@ module MyDataMyConsent
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'_filters'] = opts[:'_filters'] if !opts[:'_filters'].nil?
-      query_params[:'_from_date_time'] = opts[:'_from_date_time'] if !opts[:'_from_date_time'].nil?
-      query_params[:'_to_date_time'] = opts[:'_to_date_time'] if !opts[:'_to_date_time'].nil?
-      query_params[:'_page_no'] = opts[:'_page_no'] if !opts[:'_page_no'].nil?
-      query_params[:'_page_size'] = opts[:'_page_size'] if !opts[:'_page_size'].nil?
+      query_params[:'from_date_time'] = opts[:'from_date_time'] if !opts[:'from_date_time'].nil?
+      query_params[:'to_date_time'] = opts[:'to_date_time'] if !opts[:'to_date_time'].nil?
+      query_params[:'page_no'] = opts[:'page_no'] if !opts[:'page_no'].nil?
+      query_params[:'page_size'] = opts[:'page_size'] if !opts[:'page_size'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

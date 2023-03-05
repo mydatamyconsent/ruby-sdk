@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class FinancialAccountTransaction
+  class FinancialAccountTransactionTermDepositTransaction
     attr_accessor :type
 
     attr_accessor :id
@@ -23,15 +23,13 @@ module MyDataMyConsent
 
     attr_accessor :currency_code
 
-    attr_accessor :txn_type
-
-    attr_accessor :units
-
-    attr_accessor :transacted_at_utc
-
     attr_accessor :narration
 
+    attr_accessor :txn_type
+
     attr_accessor :mode
+
+    attr_accessor :transacted_at_utc
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -40,11 +38,10 @@ module MyDataMyConsent
         :'id' => :'id',
         :'amount' => :'amount',
         :'currency_code' => :'currency_code',
-        :'txn_type' => :'txn_type',
-        :'units' => :'units',
-        :'transacted_at_utc' => :'transacted_at_utc',
         :'narration' => :'narration',
-        :'mode' => :'mode'
+        :'txn_type' => :'txn_type',
+        :'mode' => :'mode',
+        :'transacted_at_utc' => :'transacted_at_utc'
       }
     end
 
@@ -60,11 +57,10 @@ module MyDataMyConsent
         :'id' => :'String',
         :'amount' => :'Float',
         :'currency_code' => :'String',
-        :'txn_type' => :'TermDepositTransactionType',
-        :'units' => :'String',
-        :'transacted_at_utc' => :'Time',
         :'narration' => :'String',
-        :'mode' => :'TermDepositTransactionMode'
+        :'txn_type' => :'TermDepositTransactionType',
+        :'mode' => :'TermDepositTransactionMode',
+        :'transacted_at_utc' => :'Time'
       }
     end
 
@@ -74,32 +70,25 @@ module MyDataMyConsent
       ])
     end
 
-    # List of class defined in anyOf (OpenAPI v3)
-    def self.openapi_any_of
+    # List of class defined in allOf (OpenAPI v3)
+    def self.openapi_all_of
       [
-      :'FinancialAccountTransactionEquityTransaction',
-      :'FinancialAccountTransactionMutualFundTransaction',
-      :'FinancialAccountTransactionSipTransaction',
-      :'FinancialAccountTransactionTermDepositTransaction'
+      :'FinancialAccountTransactionTermDepositTransactionAllOf',
+      :'TermDepositTransaction'
       ]
-    end
-
-    # discriminator's property name in OpenAPI v3
-    def self.openapi_discriminator_name
-      :'type'
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::FinancialAccountTransaction` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `MyDataMyConsent::FinancialAccountTransactionTermDepositTransaction` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::FinancialAccountTransaction`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `MyDataMyConsent::FinancialAccountTransactionTermDepositTransaction`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -120,24 +109,20 @@ module MyDataMyConsent
         self.currency_code = attributes[:'currency_code']
       end
 
-      if attributes.key?(:'txn_type')
-        self.txn_type = attributes[:'txn_type']
-      end
-
-      if attributes.key?(:'units')
-        self.units = attributes[:'units']
-      end
-
-      if attributes.key?(:'transacted_at_utc')
-        self.transacted_at_utc = attributes[:'transacted_at_utc']
-      end
-
       if attributes.key?(:'narration')
         self.narration = attributes[:'narration']
       end
 
+      if attributes.key?(:'txn_type')
+        self.txn_type = attributes[:'txn_type']
+      end
+
       if attributes.key?(:'mode')
         self.mode = attributes[:'mode']
+      end
+
+      if attributes.key?(:'transacted_at_utc')
+        self.transacted_at_utc = attributes[:'transacted_at_utc']
       end
     end
 
@@ -161,24 +146,20 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "currency_code", currency_code cannot be nil.')
       end
 
-      if @txn_type.nil?
-        invalid_properties.push('invalid value for "txn_type", txn_type cannot be nil.')
-      end
-
-      if @units.nil?
-        invalid_properties.push('invalid value for "units", units cannot be nil.')
-      end
-
-      if @transacted_at_utc.nil?
-        invalid_properties.push('invalid value for "transacted_at_utc", transacted_at_utc cannot be nil.')
-      end
-
       if @narration.nil?
         invalid_properties.push('invalid value for "narration", narration cannot be nil.')
       end
 
+      if @txn_type.nil?
+        invalid_properties.push('invalid value for "txn_type", txn_type cannot be nil.')
+      end
+
       if @mode.nil?
         invalid_properties.push('invalid value for "mode", mode cannot be nil.')
+      end
+
+      if @transacted_at_utc.nil?
+        invalid_properties.push('invalid value for "transacted_at_utc", transacted_at_utc cannot be nil.')
       end
 
       invalid_properties
@@ -191,23 +172,10 @@ module MyDataMyConsent
       return false if @id.nil?
       return false if @amount.nil?
       return false if @currency_code.nil?
-      return false if @txn_type.nil?
-      return false if @units.nil?
-      return false if @transacted_at_utc.nil?
       return false if @narration.nil?
+      return false if @txn_type.nil?
       return false if @mode.nil?
-      _any_of_found = false
-      self.class.openapi_any_of.each do |_class|
-        _any_of = MyDataMyConsent.const_get(_class).build_from_hash(self.to_hash)
-        if _any_of.valid?
-          _any_of_found = true
-        end
-      end
-
-      if !_any_of_found
-        return false
-      end
-
+      return false if @transacted_at_utc.nil?
       true
     end
 
@@ -220,11 +188,10 @@ module MyDataMyConsent
           id == o.id &&
           amount == o.amount &&
           currency_code == o.currency_code &&
-          txn_type == o.txn_type &&
-          units == o.units &&
-          transacted_at_utc == o.transacted_at_utc &&
           narration == o.narration &&
-          mode == o.mode
+          txn_type == o.txn_type &&
+          mode == o.mode &&
+          transacted_at_utc == o.transacted_at_utc
     end
 
     # @see the `==` method
@@ -236,7 +203,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, id, amount, currency_code, txn_type, units, transacted_at_utc, narration, mode].hash
+      [type, id, amount, currency_code, narration, txn_type, mode, transacted_at_utc].hash
     end
 
     # Builds the object from hash

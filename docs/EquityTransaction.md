@@ -5,6 +5,11 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  |  |
+| **amount** | **String** |  |  |
+| **currency_code** | **String** |  |  |
+| **txn_type** | [**EquityTransactionsType**](EquityTransactionsType.md) |  |  |
+| **units** | **String** |  |  |
+| **transacted_at_utc** | **Time** |  |  |
 
 ## Example
 
@@ -12,7 +17,12 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::EquityTransaction.new(
-  id: null
+  id: null,
+  amount: null,
+  currency_code: null,
+  txn_type: null,
+  units: null,
+  transacted_at_utc: null
 )
 ```
 

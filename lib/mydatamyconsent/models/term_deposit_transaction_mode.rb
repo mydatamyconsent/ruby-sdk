@@ -14,12 +14,16 @@ require 'date'
 require 'time'
 
 module MyDataMyConsent
-  class MutualFundSchemePlan
-    DIRECT = "Direct".freeze
-    REGULAR = "Regular".freeze
+  class TermDepositTransactionMode
+    CASH = "Cash".freeze
+    ATM = "Atm".freeze
+    CARD_PAYMENT = "CardPayment".freeze
+    UPI = "Upi".freeze
+    FT = "Ft".freeze
+    OTHERS = "Others".freeze
 
     def self.all_vars
-      @all_vars ||= [DIRECT, REGULAR].freeze
+      @all_vars ||= [CASH, ATM, CARD_PAYMENT, UPI, FT, OTHERS].freeze
     end
 
     # Builds the enum from string
@@ -33,8 +37,8 @@ module MyDataMyConsent
     # @param [String] The enum value in the form of the string
     # @return [String] The enum value
     def build_from_hash(value)
-      return value if MutualFundSchemePlan.all_vars.include?(value)
-      raise "Invalid ENUM value #{value} for class #MutualFundSchemePlan"
+      return value if TermDepositTransactionMode.all_vars.include?(value)
+      raise "Invalid ENUM value #{value} for class #TermDepositTransactionMode"
     end
   end
 end

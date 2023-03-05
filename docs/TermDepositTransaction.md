@@ -1,4 +1,4 @@
-# MyDataMyConsent::SipTransaction
+# MyDataMyConsent::TermDepositTransaction
 
 ## Properties
 
@@ -7,7 +7,9 @@
 | **id** | **String** |  |  |
 | **amount** | **Float** |  |  |
 | **currency_code** | **String** |  |  |
-| **txn_type** | [**SipTransactionType**](SipTransactionType.md) |  |  |
+| **narration** | **String** |  |  |
+| **txn_type** | [**TermDepositTransactionType**](TermDepositTransactionType.md) |  |  |
+| **mode** | [**TermDepositTransactionMode**](TermDepositTransactionMode.md) |  |  |
 | **transacted_at_utc** | **Time** |  |  |
 
 ## Example
@@ -15,11 +17,13 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::SipTransaction.new(
+instance = MyDataMyConsent::TermDepositTransaction.new(
   id: null,
   amount: null,
   currency_code: null,
+  narration: null,
   txn_type: null,
+  mode: null,
   transacted_at_utc: null
 )
 ```

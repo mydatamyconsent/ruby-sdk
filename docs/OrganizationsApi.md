@@ -736,11 +736,10 @@ api_instance = MyDataMyConsent::OrganizationsApi.new
 consent_id = 'consent_id_example' # String | 
 account_id = 'account_id_example' # String | 
 opts = {
-  _filters: '_filters_example', # String | 
-  _from_date_time: '_from_date_time_example', # String | 
-  _to_date_time: '_to_date_time_example', # String | 
-  _page_no: 56, # Integer | 
-  _page_size: 56 # Integer | 
+  from_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | 
+  to_date_time: Time.parse('2013-10-20T19:20:30+01:00'), # Time | 
+  page_no: 56, # Integer | 
+  page_size: 56 # Integer | 
 }
 
 begin
@@ -776,11 +775,10 @@ end
 | ---- | ---- | ----------- | ----- |
 | **consent_id** | **String** |  |  |
 | **account_id** | **String** |  |  |
-| **_filters** | **String** |  | [optional] |
-| **_from_date_time** | **String** |  | [optional] |
-| **_to_date_time** | **String** |  | [optional] |
-| **_page_no** | **Integer** |  | [optional] |
-| **_page_size** | **Integer** |  | [optional] |
+| **from_date_time** | **Time** |  | [optional] |
+| **to_date_time** | **Time** |  | [optional] |
+| **page_no** | **Integer** |  | [optional] |
+| **page_size** | **Integer** |  | [optional] |
 
 ### Return type
 

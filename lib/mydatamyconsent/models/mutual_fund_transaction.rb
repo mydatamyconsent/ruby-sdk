@@ -17,79 +17,25 @@ module MyDataMyConsent
   class MutualFundTransaction
     attr_accessor :id
 
-    attr_accessor :amc
-
-    attr_accessor :registrar
-
-    attr_accessor :scheme_code
-
-    attr_accessor :scheme_plan
-
-    attr_accessor :isin
-
-    attr_accessor :amfi_code
-
-    attr_accessor :fund_type
-
-    attr_accessor :scheme_option
-
-    attr_accessor :scheme_types
-
-    attr_accessor :scheme_category
-
-    attr_accessor :ucc
-
     attr_accessor :amount
 
-    attr_accessor :closing_units
+    attr_accessor :currency_code
 
-    attr_accessor :lien_units
+    attr_accessor :txn_type
 
-    attr_accessor :nav
+    attr_accessor :units
 
-    attr_accessor :nav_date
-
-    attr_accessor :type
-
-    attr_accessor :order_date
-
-    attr_accessor :execution_date
-
-    attr_accessor :lockin_flag
-
-    attr_accessor :lockin_days
-
-    attr_accessor :mode
-
-    attr_accessor :narration
+    attr_accessor :transacted_at_utc
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'amc' => :'amc',
-        :'registrar' => :'registrar',
-        :'scheme_code' => :'scheme_code',
-        :'scheme_plan' => :'scheme_plan',
-        :'isin' => :'isin',
-        :'amfi_code' => :'amfi_code',
-        :'fund_type' => :'fund_type',
-        :'scheme_option' => :'scheme_option',
-        :'scheme_types' => :'scheme_types',
-        :'scheme_category' => :'scheme_category',
-        :'ucc' => :'ucc',
         :'amount' => :'amount',
-        :'closing_units' => :'closing_units',
-        :'lien_units' => :'lien_units',
-        :'nav' => :'nav',
-        :'nav_date' => :'nav_date',
-        :'type' => :'type',
-        :'order_date' => :'order_date',
-        :'execution_date' => :'execution_date',
-        :'lockin_flag' => :'lockin_flag',
-        :'lockin_days' => :'lockin_days',
-        :'mode' => :'mode',
-        :'narration' => :'narration'
+        :'currency_code' => :'currency_code',
+        :'txn_type' => :'txn_type',
+        :'units' => :'units',
+        :'transacted_at_utc' => :'transacted_at_utc'
       }
     end
 
@@ -102,29 +48,11 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'id' => :'String',
-        :'amc' => :'String',
-        :'registrar' => :'String',
-        :'scheme_code' => :'String',
-        :'scheme_plan' => :'MutualFundSchemePlan',
-        :'isin' => :'String',
-        :'amfi_code' => :'String',
-        :'fund_type' => :'MutualFundFundType',
-        :'scheme_option' => :'MutualFundSchemeOption',
-        :'scheme_types' => :'MutualFundSchemeType',
-        :'scheme_category' => :'MutualFundSchemeCategory',
-        :'ucc' => :'String',
         :'amount' => :'String',
-        :'closing_units' => :'String',
-        :'lien_units' => :'String',
-        :'nav' => :'String',
-        :'nav_date' => :'Time',
-        :'type' => :'MutualFundTransactionType',
-        :'order_date' => :'Time',
-        :'execution_date' => :'Time',
-        :'lockin_flag' => :'String',
-        :'lockin_days' => :'String',
-        :'mode' => :'MutualFundHoldingMode',
-        :'narration' => :'String'
+        :'currency_code' => :'String',
+        :'txn_type' => :'MutualFundTransactionType',
+        :'units' => :'String',
+        :'transacted_at_utc' => :'Time'
       }
     end
 
@@ -153,96 +81,24 @@ module MyDataMyConsent
         self.id = attributes[:'id']
       end
 
-      if attributes.key?(:'amc')
-        self.amc = attributes[:'amc']
-      end
-
-      if attributes.key?(:'registrar')
-        self.registrar = attributes[:'registrar']
-      end
-
-      if attributes.key?(:'scheme_code')
-        self.scheme_code = attributes[:'scheme_code']
-      end
-
-      if attributes.key?(:'scheme_plan')
-        self.scheme_plan = attributes[:'scheme_plan']
-      end
-
-      if attributes.key?(:'isin')
-        self.isin = attributes[:'isin']
-      end
-
-      if attributes.key?(:'amfi_code')
-        self.amfi_code = attributes[:'amfi_code']
-      end
-
-      if attributes.key?(:'fund_type')
-        self.fund_type = attributes[:'fund_type']
-      end
-
-      if attributes.key?(:'scheme_option')
-        self.scheme_option = attributes[:'scheme_option']
-      end
-
-      if attributes.key?(:'scheme_types')
-        self.scheme_types = attributes[:'scheme_types']
-      end
-
-      if attributes.key?(:'scheme_category')
-        self.scheme_category = attributes[:'scheme_category']
-      end
-
-      if attributes.key?(:'ucc')
-        self.ucc = attributes[:'ucc']
-      end
-
       if attributes.key?(:'amount')
         self.amount = attributes[:'amount']
       end
 
-      if attributes.key?(:'closing_units')
-        self.closing_units = attributes[:'closing_units']
+      if attributes.key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
       end
 
-      if attributes.key?(:'lien_units')
-        self.lien_units = attributes[:'lien_units']
+      if attributes.key?(:'txn_type')
+        self.txn_type = attributes[:'txn_type']
       end
 
-      if attributes.key?(:'nav')
-        self.nav = attributes[:'nav']
+      if attributes.key?(:'units')
+        self.units = attributes[:'units']
       end
 
-      if attributes.key?(:'nav_date')
-        self.nav_date = attributes[:'nav_date']
-      end
-
-      if attributes.key?(:'type')
-        self.type = attributes[:'type']
-      end
-
-      if attributes.key?(:'order_date')
-        self.order_date = attributes[:'order_date']
-      end
-
-      if attributes.key?(:'execution_date')
-        self.execution_date = attributes[:'execution_date']
-      end
-
-      if attributes.key?(:'lockin_flag')
-        self.lockin_flag = attributes[:'lockin_flag']
-      end
-
-      if attributes.key?(:'lockin_days')
-        self.lockin_days = attributes[:'lockin_days']
-      end
-
-      if attributes.key?(:'mode')
-        self.mode = attributes[:'mode']
-      end
-
-      if attributes.key?(:'narration')
-        self.narration = attributes[:'narration']
+      if attributes.key?(:'transacted_at_utc')
+        self.transacted_at_utc = attributes[:'transacted_at_utc']
       end
     end
 
@@ -254,96 +110,24 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
-      if @amc.nil?
-        invalid_properties.push('invalid value for "amc", amc cannot be nil.')
-      end
-
-      if @registrar.nil?
-        invalid_properties.push('invalid value for "registrar", registrar cannot be nil.')
-      end
-
-      if @scheme_code.nil?
-        invalid_properties.push('invalid value for "scheme_code", scheme_code cannot be nil.')
-      end
-
-      if @scheme_plan.nil?
-        invalid_properties.push('invalid value for "scheme_plan", scheme_plan cannot be nil.')
-      end
-
-      if @isin.nil?
-        invalid_properties.push('invalid value for "isin", isin cannot be nil.')
-      end
-
-      if @amfi_code.nil?
-        invalid_properties.push('invalid value for "amfi_code", amfi_code cannot be nil.')
-      end
-
-      if @fund_type.nil?
-        invalid_properties.push('invalid value for "fund_type", fund_type cannot be nil.')
-      end
-
-      if @scheme_option.nil?
-        invalid_properties.push('invalid value for "scheme_option", scheme_option cannot be nil.')
-      end
-
-      if @scheme_types.nil?
-        invalid_properties.push('invalid value for "scheme_types", scheme_types cannot be nil.')
-      end
-
-      if @scheme_category.nil?
-        invalid_properties.push('invalid value for "scheme_category", scheme_category cannot be nil.')
-      end
-
-      if @ucc.nil?
-        invalid_properties.push('invalid value for "ucc", ucc cannot be nil.')
-      end
-
       if @amount.nil?
         invalid_properties.push('invalid value for "amount", amount cannot be nil.')
       end
 
-      if @closing_units.nil?
-        invalid_properties.push('invalid value for "closing_units", closing_units cannot be nil.')
+      if @currency_code.nil?
+        invalid_properties.push('invalid value for "currency_code", currency_code cannot be nil.')
       end
 
-      if @lien_units.nil?
-        invalid_properties.push('invalid value for "lien_units", lien_units cannot be nil.')
+      if @txn_type.nil?
+        invalid_properties.push('invalid value for "txn_type", txn_type cannot be nil.')
       end
 
-      if @nav.nil?
-        invalid_properties.push('invalid value for "nav", nav cannot be nil.')
+      if @units.nil?
+        invalid_properties.push('invalid value for "units", units cannot be nil.')
       end
 
-      if @nav_date.nil?
-        invalid_properties.push('invalid value for "nav_date", nav_date cannot be nil.')
-      end
-
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
-      if @order_date.nil?
-        invalid_properties.push('invalid value for "order_date", order_date cannot be nil.')
-      end
-
-      if @execution_date.nil?
-        invalid_properties.push('invalid value for "execution_date", execution_date cannot be nil.')
-      end
-
-      if @lockin_flag.nil?
-        invalid_properties.push('invalid value for "lockin_flag", lockin_flag cannot be nil.')
-      end
-
-      if @lockin_days.nil?
-        invalid_properties.push('invalid value for "lockin_days", lockin_days cannot be nil.')
-      end
-
-      if @mode.nil?
-        invalid_properties.push('invalid value for "mode", mode cannot be nil.')
-      end
-
-      if @narration.nil?
-        invalid_properties.push('invalid value for "narration", narration cannot be nil.')
+      if @transacted_at_utc.nil?
+        invalid_properties.push('invalid value for "transacted_at_utc", transacted_at_utc cannot be nil.')
       end
 
       invalid_properties
@@ -353,29 +137,11 @@ module MyDataMyConsent
     # @return true if the model is valid
     def valid?
       return false if @id.nil?
-      return false if @amc.nil?
-      return false if @registrar.nil?
-      return false if @scheme_code.nil?
-      return false if @scheme_plan.nil?
-      return false if @isin.nil?
-      return false if @amfi_code.nil?
-      return false if @fund_type.nil?
-      return false if @scheme_option.nil?
-      return false if @scheme_types.nil?
-      return false if @scheme_category.nil?
-      return false if @ucc.nil?
       return false if @amount.nil?
-      return false if @closing_units.nil?
-      return false if @lien_units.nil?
-      return false if @nav.nil?
-      return false if @nav_date.nil?
-      return false if @type.nil?
-      return false if @order_date.nil?
-      return false if @execution_date.nil?
-      return false if @lockin_flag.nil?
-      return false if @lockin_days.nil?
-      return false if @mode.nil?
-      return false if @narration.nil?
+      return false if @currency_code.nil?
+      return false if @txn_type.nil?
+      return false if @units.nil?
+      return false if @transacted_at_utc.nil?
       true
     end
 
@@ -385,29 +151,11 @@ module MyDataMyConsent
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          amc == o.amc &&
-          registrar == o.registrar &&
-          scheme_code == o.scheme_code &&
-          scheme_plan == o.scheme_plan &&
-          isin == o.isin &&
-          amfi_code == o.amfi_code &&
-          fund_type == o.fund_type &&
-          scheme_option == o.scheme_option &&
-          scheme_types == o.scheme_types &&
-          scheme_category == o.scheme_category &&
-          ucc == o.ucc &&
           amount == o.amount &&
-          closing_units == o.closing_units &&
-          lien_units == o.lien_units &&
-          nav == o.nav &&
-          nav_date == o.nav_date &&
-          type == o.type &&
-          order_date == o.order_date &&
-          execution_date == o.execution_date &&
-          lockin_flag == o.lockin_flag &&
-          lockin_days == o.lockin_days &&
-          mode == o.mode &&
-          narration == o.narration
+          currency_code == o.currency_code &&
+          txn_type == o.txn_type &&
+          units == o.units &&
+          transacted_at_utc == o.transacted_at_utc
     end
 
     # @see the `==` method
@@ -419,7 +167,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, amc, registrar, scheme_code, scheme_plan, isin, amfi_code, fund_type, scheme_option, scheme_types, scheme_category, ucc, amount, closing_units, lien_units, nav, nav_date, type, order_date, execution_date, lockin_flag, lockin_days, mode, narration].hash
+      [id, amount, currency_code, txn_type, units, transacted_at_utc].hash
     end
 
     # Builds the object from hash

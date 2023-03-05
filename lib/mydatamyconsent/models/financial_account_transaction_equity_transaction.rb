@@ -19,11 +19,26 @@ module MyDataMyConsent
 
     attr_accessor :id
 
+    attr_accessor :amount
+
+    attr_accessor :currency_code
+
+    attr_accessor :txn_type
+
+    attr_accessor :units
+
+    attr_accessor :transacted_at_utc
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'type' => :'type',
-        :'id' => :'id'
+        :'id' => :'id',
+        :'amount' => :'amount',
+        :'currency_code' => :'currency_code',
+        :'txn_type' => :'txn_type',
+        :'units' => :'units',
+        :'transacted_at_utc' => :'transacted_at_utc'
       }
     end
 
@@ -36,7 +51,12 @@ module MyDataMyConsent
     def self.openapi_types
       {
         :'type' => :'String',
-        :'id' => :'String'
+        :'id' => :'String',
+        :'amount' => :'String',
+        :'currency_code' => :'String',
+        :'txn_type' => :'EquityTransactionsType',
+        :'units' => :'String',
+        :'transacted_at_utc' => :'Time'
       }
     end
 
@@ -76,6 +96,26 @@ module MyDataMyConsent
       if attributes.key?(:'id')
         self.id = attributes[:'id']
       end
+
+      if attributes.key?(:'amount')
+        self.amount = attributes[:'amount']
+      end
+
+      if attributes.key?(:'currency_code')
+        self.currency_code = attributes[:'currency_code']
+      end
+
+      if attributes.key?(:'txn_type')
+        self.txn_type = attributes[:'txn_type']
+      end
+
+      if attributes.key?(:'units')
+        self.units = attributes[:'units']
+      end
+
+      if attributes.key?(:'transacted_at_utc')
+        self.transacted_at_utc = attributes[:'transacted_at_utc']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -90,6 +130,26 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
+      if @amount.nil?
+        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
+      end
+
+      if @currency_code.nil?
+        invalid_properties.push('invalid value for "currency_code", currency_code cannot be nil.')
+      end
+
+      if @txn_type.nil?
+        invalid_properties.push('invalid value for "txn_type", txn_type cannot be nil.')
+      end
+
+      if @units.nil?
+        invalid_properties.push('invalid value for "units", units cannot be nil.')
+      end
+
+      if @transacted_at_utc.nil?
+        invalid_properties.push('invalid value for "transacted_at_utc", transacted_at_utc cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -98,6 +158,11 @@ module MyDataMyConsent
     def valid?
       return false if @type.nil?
       return false if @id.nil?
+      return false if @amount.nil?
+      return false if @currency_code.nil?
+      return false if @txn_type.nil?
+      return false if @units.nil?
+      return false if @transacted_at_utc.nil?
       true
     end
 
@@ -107,7 +172,12 @@ module MyDataMyConsent
       return true if self.equal?(o)
       self.class == o.class &&
           type == o.type &&
-          id == o.id
+          id == o.id &&
+          amount == o.amount &&
+          currency_code == o.currency_code &&
+          txn_type == o.txn_type &&
+          units == o.units &&
+          transacted_at_utc == o.transacted_at_utc
     end
 
     # @see the `==` method
@@ -119,7 +189,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, id].hash
+      [type, id, amount, currency_code, txn_type, units, transacted_at_utc].hash
     end
 
     # Builds the object from hash

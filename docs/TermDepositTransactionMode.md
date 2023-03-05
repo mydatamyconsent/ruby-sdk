@@ -1,4 +1,4 @@
-# MyDataMyConsent::MutualFundSchemeType
+# MyDataMyConsent::TermDepositTransactionMode
 
 ## Properties
 
@@ -10,6 +10,6 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::MutualFundSchemeType.new()
+instance = MyDataMyConsent::TermDepositTransactionMode.new()
 ```
 

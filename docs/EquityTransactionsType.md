@@ -1,4 +1,4 @@
-# MyDataMyConsent::MutualFundHoldingMode
+# MyDataMyConsent::EquityTransactionsType
 
 ## Properties
 
@@ -10,6 +10,6 @@
 ```ruby
 require 'mydatamyconsent'
 
-instance = MyDataMyConsent::MutualFundHoldingMode.new()
+instance = MyDataMyConsent::EquityTransactionsType.new()
 ```
 
