@@ -27,6 +27,10 @@
 | **creation_date** | **Time** |  | [optional] |
 | **plan_info** | [**SipPlanInformation**](SipPlanInformation.md) |  |  |
 | **investment_info** | [**SipInvestmentInformation**](SipInvestmentInformation.md) |  |  |
+| **account_number** | **String** |  |  |
+| **account_type** | [**TermDepositAccountType**](TermDepositAccountType.md) |  |  |
+| **issuer_logo_url** | **String** |  |  |
+| **account_details** | [**TermDepositAccountDetails**](TermDepositAccountDetails.md) |  |  |
 
 ## Example
 
@@ -34,7 +38,7 @@
 require 'mydatamyconsent'
 
 instance = MyDataMyConsent::FinancialAccount.new(
-  type: Sip,
+  type: TermDeposit,
   id: null,
   name: null,
   issuer_name: null,
@@ -56,7 +60,11 @@ instance = MyDataMyConsent::FinancialAccount.new(
   lien_units: null,
   creation_date: null,
   plan_info: null,
-  investment_info: null
+  investment_info: null,
+  account_number: null,
+  account_type: null,
+  issuer_logo_url: null,
+  account_details: null
 )
 ```
 

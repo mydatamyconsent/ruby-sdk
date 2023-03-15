@@ -61,6 +61,14 @@ module MyDataMyConsent
 
     attr_accessor :investment_info
 
+    attr_accessor :account_number
+
+    attr_accessor :account_type
+
+    attr_accessor :issuer_logo_url
+
+    attr_accessor :account_details
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -86,7 +94,11 @@ module MyDataMyConsent
         :'lien_units' => :'lien_units',
         :'creation_date' => :'creation_date',
         :'plan_info' => :'plan_info',
-        :'investment_info' => :'investment_info'
+        :'investment_info' => :'investment_info',
+        :'account_number' => :'account_number',
+        :'account_type' => :'account_type',
+        :'issuer_logo_url' => :'issuer_logo_url',
+        :'account_details' => :'account_details'
       }
     end
 
@@ -120,7 +132,11 @@ module MyDataMyConsent
         :'lien_units' => :'String',
         :'creation_date' => :'Time',
         :'plan_info' => :'SipPlanInformation',
-        :'investment_info' => :'SipInvestmentInformation'
+        :'investment_info' => :'SipInvestmentInformation',
+        :'account_number' => :'String',
+        :'account_type' => :'TermDepositAccountType',
+        :'issuer_logo_url' => :'String',
+        :'account_details' => :'TermDepositAccountDetails'
       }
     end
 
@@ -135,7 +151,8 @@ module MyDataMyConsent
       [
       :'FinancialAccountEquity',
       :'FinancialAccountMutualFund',
-      :'FinancialAccountSip'
+      :'FinancialAccountSip',
+      :'FinancialAccountTermDeposit'
       ]
     end
 
@@ -250,6 +267,22 @@ module MyDataMyConsent
       if attributes.key?(:'investment_info')
         self.investment_info = attributes[:'investment_info']
       end
+
+      if attributes.key?(:'account_number')
+        self.account_number = attributes[:'account_number']
+      end
+
+      if attributes.key?(:'account_type')
+        self.account_type = attributes[:'account_type']
+      end
+
+      if attributes.key?(:'issuer_logo_url')
+        self.issuer_logo_url = attributes[:'issuer_logo_url']
+      end
+
+      if attributes.key?(:'account_details')
+        self.account_details = attributes[:'account_details']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -320,6 +353,22 @@ module MyDataMyConsent
         invalid_properties.push('invalid value for "investment_info", investment_info cannot be nil.')
       end
 
+      if @account_number.nil?
+        invalid_properties.push('invalid value for "account_number", account_number cannot be nil.')
+      end
+
+      if @account_type.nil?
+        invalid_properties.push('invalid value for "account_type", account_type cannot be nil.')
+      end
+
+      if @issuer_logo_url.nil?
+        invalid_properties.push('invalid value for "issuer_logo_url", issuer_logo_url cannot be nil.')
+      end
+
+      if @account_details.nil?
+        invalid_properties.push('invalid value for "account_details", account_details cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -342,6 +391,10 @@ module MyDataMyConsent
       return false if @folio_number.nil?
       return false if @plan_info.nil?
       return false if @investment_info.nil?
+      return false if @account_number.nil?
+      return false if @account_type.nil?
+      return false if @issuer_logo_url.nil?
+      return false if @account_details.nil?
       _any_of_found = false
       self.class.openapi_any_of.each do |_class|
         _any_of = MyDataMyConsent.const_get(_class).build_from_hash(self.to_hash)
@@ -384,7 +437,11 @@ module MyDataMyConsent
           lien_units == o.lien_units &&
           creation_date == o.creation_date &&
           plan_info == o.plan_info &&
-          investment_info == o.investment_info
+          investment_info == o.investment_info &&
+          account_number == o.account_number &&
+          account_type == o.account_type &&
+          issuer_logo_url == o.issuer_logo_url &&
+          account_details == o.account_details
     end
 
     # @see the `==` method
@@ -396,7 +453,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, id, name, issuer_name, exchange, isin, units, investment_value, current_value, currency_code, holder, transactions, amc, registrar, fund_name, folio_number, scheme_code, fund_type, fund_category, lien_units, creation_date, plan_info, investment_info].hash
+      [type, id, name, issuer_name, exchange, isin, units, investment_value, current_value, currency_code, holder, transactions, amc, registrar, fund_name, folio_number, scheme_code, fund_type, fund_category, lien_units, creation_date, plan_info, investment_info, account_number, account_type, issuer_logo_url, account_details].hash
     end
 
     # Builds the object from hash
