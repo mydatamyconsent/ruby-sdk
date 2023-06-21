@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **document_type_id** | **String** | Document type id. |  |
 | **identifier** | **String** | Document identifier. |  |
+| **name** | **String** | Document name (Optional). | [optional] |
 | **description** | **String** | Document description. |  |
 | **receiver** | [**DocumentIssueRequestReceiver**](DocumentIssueRequestReceiver.md) |  |  |
 | **payment_request** | [**DocumentIssueRequestPaymentRequest**](DocumentIssueRequestPaymentRequest.md) |  | [optional] |
@@ -22,6 +23,7 @@ require 'mydatamyconsent'
 instance = MyDataMyConsent::DocumentIssueRequest.new(
   document_type_id: null,
   identifier: null,
+  name: null,
   description: null,
   receiver: null,
   payment_request: null,

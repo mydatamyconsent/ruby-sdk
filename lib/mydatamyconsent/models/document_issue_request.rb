@@ -22,6 +22,9 @@ module MyDataMyConsent
     # Document identifier.
     attr_accessor :identifier
 
+    # Document name (Optional).
+    attr_accessor :name
+
     # Document description.
     attr_accessor :description
 
@@ -46,6 +49,7 @@ module MyDataMyConsent
       {
         :'document_type_id' => :'documentTypeId',
         :'identifier' => :'identifier',
+        :'name' => :'name',
         :'description' => :'description',
         :'receiver' => :'receiver',
         :'payment_request' => :'paymentRequest',
@@ -66,6 +70,7 @@ module MyDataMyConsent
       {
         :'document_type_id' => :'String',
         :'identifier' => :'String',
+        :'name' => :'String',
         :'description' => :'String',
         :'receiver' => :'DocumentIssueRequestReceiver',
         :'payment_request' => :'DocumentIssueRequestPaymentRequest',
@@ -103,6 +108,10 @@ module MyDataMyConsent
 
       if attributes.key?(:'identifier')
         self.identifier = attributes[:'identifier']
+      end
+
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.key?(:'description')
@@ -186,6 +195,7 @@ module MyDataMyConsent
       self.class == o.class &&
           document_type_id == o.document_type_id &&
           identifier == o.identifier &&
+          name == o.name &&
           description == o.description &&
           receiver == o.receiver &&
           payment_request == o.payment_request &&
@@ -204,7 +214,7 @@ module MyDataMyConsent
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [document_type_id, identifier, description, receiver, payment_request, issued_at_utc, valid_from_utc, expires_at_utc, metadata].hash
+      [document_type_id, identifier, name, description, receiver, payment_request, issued_at_utc, valid_from_utc, expires_at_utc, metadata].hash
     end
 
     # Builds the object from hash
